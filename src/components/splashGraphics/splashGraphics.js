@@ -7,7 +7,9 @@ import SplashBubbles from '../splashBubbles/splashBubbles';
 import './splashGraphics.css';
 
 // Image
-import BG from './splash.jpg';
+import BG from './splashBGscroll.png';
+import Train from './newTrain.png';
+import Wheel from './wheel.png';
 
 class SplashGraphics extends React.Component{
     render(){
@@ -15,10 +17,21 @@ class SplashGraphics extends React.Component{
             <div className="splashGraphics">
 
                 <div className="splashBG">
-                    <img src={ BG } id='splashBGimg' alt=''/>
+                    <img src={ BG } id='splashImg1'/>
                 </div>
 
-                <SplashBubbles/>
+                <div className='splashTrain'>
+                    <img src={Train} className='trainBody'/>
+                    <img src={Wheel} className='trainWheel one'/>
+                    <img src={Wheel} className='trainWheel two'/>
+                    <img src={Wheel} className='trainWheel three'/>
+                    <img src={Wheel} className='trainWheel four'/>
+                    <img src={Wheel} className='trainWheel five'/>
+                    <img src={Wheel} className='trainWheel six'/>
+                    <SplashBubbles/>
+                </div>
+
+                
 
             </div>
 

@@ -1,12 +1,11 @@
 .bubbleContainer{
     /* Position */
     position: absolute;
-    bottom: 75%;
-    left: 37%;
+    top: -15%;
+    right: 10%;
 
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
+    width: 25vh;
+    height: 20vh;
 
     animation: bubbleFloatRight 3s infinite ease-in;
 }
@@ -14,10 +13,11 @@
     content: '';
     /* Position */
     /* Size & Shape */
-    width: 9rem;
+    width: 100%;
     height: auto;
     border-radius: 100%;
     /* Color */
+    opacity: 0;
     
     animation: bubbleFloatUp 3s infinite ease-out, fade 3s infinite linear;
 }
@@ -62,7 +62,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(400%) scale(0.3);
+        transform: translateX(-400%) scale(0.3);
     }
 }
 @keyframes bubbleFloatUp{

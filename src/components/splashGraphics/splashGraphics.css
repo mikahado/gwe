@@ -1,21 +1,100 @@
 .splashGraphics{
+    position: relative;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 .splashBG{
-    height: 100%;
-    width: 100%;
-}
-.splashBG img{
-    object-fit: cover;
-    object-position: bottom;
+    /* Position */
+    position: relative;
+    /* Sizing */
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Border */
+    
 }
-@media only screen and (max-width: 1000px){
-    /*
-    #splashBGimg{
-        content: url('./splash1.5k.jpg')
+.splashBG1{
+    /* Position */
+    position: absolute;
+    right: 0;
+    /* Sizing */
+    height: 100%;
+    /* Border */
+    border: 0.2rem solid orange;
+    transform: translate3d(0,0,0);
+}
+#splashImg1{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border: 0.2rem solid green;
+    animation: moveBG 20s infinite linear;
+}
+
+.splashTrain{
+    position: absolute;
+    left: 0;
+    bottom: 4.5%;
+    height: 40%;
+    width: 100vh;
+    animation: trainBump 0.5s infinite linear;
+}
+.trainBody{
+    position: absolute;
+    bottom: 2%;
+    height: 80%;
+    width: 100%;
+}
+.trainWheel{
+    position: absolute;
+    bottom: 0;
+    width: 7%;
+    animation: spinWheels 1s infinite linear;
+}
+.trainWheel.one{
+    left: 6%;
+}
+.trainWheel.two{
+    left: 19.5%;
+}
+.trainWheel.three{
+    left: 32.5%;
+}
+.trainWheel.four{
+    left: 48.5%;
+}
+.trainWheel.five{
+    left: 62%;
+}
+.trainWheel.six{
+    left: 74.5%;
+}
+
+
+@keyframes moveBG{
+    100%{
+        transform: translateX(-76%);
     }
-    */
+}
+@keyframes spinWheels{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes trainBump{
+    50%{
+        transform: translateY(4%);
+    }
+}
+
+@media only screen and (orientation: portrait){
+    .splashTrain{
+        right: 0;
+        left: auto;
+    }
 }

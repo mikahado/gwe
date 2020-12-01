@@ -4,7 +4,7 @@ import React from 'react';
 import './splashBubbles.css';
 
 // Images
-import bubbles from '../splashGraphics/bubbles.png';
+import bubbles from './bubbles.png';
 
 class SplashBubbles extends React.Component{
     render(){

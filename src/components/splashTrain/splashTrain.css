@@ -1,0 +1,59 @@
+
+.splashTrain{
+    position: absolute;
+    z-index: 5;
+    left: 0%;
+    bottom: 4.5%;
+    height: 40%;
+    width: 110vh;
+    animation: trainBump 0.5s infinite linear;
+}
+.trainBody{
+    position: absolute;
+    bottom: 2%;
+    height: 80%;
+    width: 100%;
+    right: 0;
+}
+.trainWheel{
+    position: absolute;
+    bottom: 0;
+    width: 7%;
+    animation: spinWheels 1s infinite linear;
+}
+.trainWheel.one{
+    left: 6%;
+}
+.trainWheel.two{
+    left: 19.5%;
+}
+.trainWheel.three{
+    left: 32.5%;
+}
+.trainWheel.four{
+    left: 48.5%;
+}
+.trainWheel.five{
+    left: 62%;
+}
+.trainWheel.six{
+    left: 74.5%;
+}
+
+@keyframes spinWheels{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes trainBump{
+    50%{
+        transform: translateY(1%);
+    }
+}
+
+@media only screen and (orientation: portrait){
+    .splashTrain{
+        right: 0;
+        left: auto;
+    }
+}

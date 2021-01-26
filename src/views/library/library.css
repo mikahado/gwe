@@ -1,12 +1,122 @@
 /* Page Container */
 #Library{
+    box-sizing: border-box;
     position: absolute;
-    top: 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     width: 100%;
-    height: fit-content;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.libraryBody{
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 35rem;
+
+    width: 95%;
+    height: 95%;
+
+}
+
+.libraryScroll{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: 0.5rem solid aliceblue;
+    overflow-y: auto;
+
+    scrollbar-color: var(--green) var(--light-blue);
+
+
+
+
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+
+    background-image: url('./LibraryFull.png');
+    background-position: bottom;
+    background-repeat: repeat-y;
+    background-size: 100%;
+    padding-bottom: 0rem;
+
+
+
+}
+
+
+
+.libraryInfo{
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: hidden;
+}
+
+/* Page Title */
+.libraryTitle{
+    position: fixed;
+    /* Size */
+    width: fit-content;
+    padding: 1rem;
+    margin-top: -0.5rem;
+    /* Border & Background */
+    border: 0.5rem solid aliceblue;
+    border-radius: 1rem;
+    background: hsl(200,50%,60%);
+    /* Text */
+    text-align: center;
+    color: aliceblue;
+    /* Animation */
+    /*animation: slowGrowPulse 5s infinite linear;*/
+}
+
+@media only screen and (max-width: 900px){
+    .libraryBody{
+        grid-template-columns: 17rem 1fr;
+    }
+}
+@media only screen and (max-width: 700px){
+
+
+
+    #Library{
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .libraryScroll{
+    }
+
+    .libraryBody{
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+    .libraryInfo{
+        height: fit-content;
+    }
+    .summaryEntryTop{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

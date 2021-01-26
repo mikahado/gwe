@@ -1,0 +1,8 @@
+/* Animations */
+@keyframes slide-up{
+    from {
+        margin-top: 100vh;
+    } to {
+          margin-top: 0vh;
+      }
+}

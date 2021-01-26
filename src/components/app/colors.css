@@ -1,0 +1,15 @@
+/* COLORS */
+
+:root{
+    --green: hsl(120,40%,50%);
+    --blue: hsl(200,40%,50%);
+    --light-blue: hsl(200,60%,70%);
+    --light-green: hsl(120,60%,70%);
+    --yellow: hsl(55, 80%, 70%);
+    --red: hsl(0,60%,60%);
+}
+
+/* BACKGROUND COLORS */
+.lightTransparent{
+    background-color: hsla(0,0%,100%,0.5);
+}

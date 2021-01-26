@@ -16,14 +16,7 @@ class TopNav extends React.Component{
     render(){
         return(
             <div className={`TopNav ${this.props.type ? this.props.type : ''}`} id="topNav">
-                
-                <div className="logoWrap">
-                    <img 
-                        src={ this.getLogo() }
-                        alt='GWE Logo'
-                        id="logo"
-                    />
-                </div>
+
 
                 <div className="topButtons">
 

@@ -10,16 +10,33 @@
     animation: bubbleFloatRight 3s infinite ease-in;
 }
 .bubble{
-    content: '';
     /* Position */
+    position: absolute;
     /* Size & Shape */
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 100%;
     /* Color */
     opacity: 0;
-    
     animation: bubbleFloatUp 3s infinite ease-out, fade 3s infinite linear;
+}
+body.loaded .bubbleContainer{
+    animation-play-state: running;
+}
+body.loaded .bubble{
+    animation-play-state: running;
+}
+
+.bubble img{
+    width: 100%;
+    height: auto;
+}
+
+.bubbleContainer.one{
+    animation-delay: 0;
+}
+.bubbleContainer.one .bubble{
+    animation-delay: 0;
 }
 
 .bubbleContainer.two{
@@ -83,13 +100,3 @@
     }
 }
 
-@media only screen and (max-width: 1000px) and (orientation: portrait){
-    .bubbleContainer{
-        left: 25%;
-    }
-}
-@media only screen and (max-width: 500px) and (orientation: portrait){
-    .bubbleContainer{
-        left: 10%;
-    }
-}

@@ -20,7 +20,7 @@ class Splash extends React.Component{
                     changeLanguage={this.props.changeLanguage}
                 />
 
-                <SplashLogo/>
+
 
             </div>
         )

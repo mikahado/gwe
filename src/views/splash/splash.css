@@ -1,13 +1,17 @@
 /* Full Page Container */
 .Splash{
     /* Position */
-    position: relative;
+    position: absolute;
+    
     overflow: hidden;
     /* Display */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     /* Size */
     width: 100%;
     height: 100%;
+    
 }
+

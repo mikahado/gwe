@@ -9,11 +9,46 @@ import bubbles from './bubbles.png';
 class SplashBubbles extends React.Component{
     render(){
         return(
-            <div className="splashBubbles">
+            <div className="splashBubbles paused">
 
-                <div className="bubbleContainer">
-                    <img className="bubble" src={bubbles}/>
+                <div className="bubbleContainer one">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
                 </div>
+
+                <div className="bubbleContainer two">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
+                </div>
+
+                <div className="bubbleContainer three">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
+                </div>
+
+                <div className="bubbleContainer four">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
+                </div>
+
+                <div className="bubbleContainer five">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
+                </div>
+
+                <div className="bubbleContainer six">
+                    <div className='bubble'>
+                        <img src={bubbles}/>
+                    </div>
+                </div>
+                
+
+                {/*}
 
                 <div className="bubbleContainer two">
                     <img className="bubble" src={bubbles}/>
@@ -34,6 +69,9 @@ class SplashBubbles extends React.Component{
                 <div className="bubbleContainer six">
                     <img className="bubble" src={bubbles}/>
                 </div>
+
+
+        {*/}
 
             </div>
         )

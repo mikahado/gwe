@@ -1,0 +1,6 @@
+.Button{
+    width: fit-content;
+}
+.Button span{
+    display: flex;
+}

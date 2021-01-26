@@ -1,40 +1,50 @@
 import React from 'react';
 
 // Sub-Components
-import SplashBubbles from '../splashBubbles/splashBubbles';
+import SplashTrain from '../splashTrain/splashTrain';
+import SplashBG from '../splashBG/splashBG';
 
 // Style Sheet
 import './splashGraphics.css';
+import SplashLogo from "../splashLogo/splashLogo";
 
-// Image
-import BG from './splashBGscroll.png';
-import Train from './newTrain.png';
-import Wheel from './wheel.png';
 
 class SplashGraphics extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+        }
+        this.newLoad=this.newLoad.bind(this);
+        this.moveTrain = this.moveTrain.bind(this);
+    }
+    moveTrain(){
+        const bg = document.getElementById('movingBGwrap');
+    }
+    newLoad(){
+        this.setState({ loaded: this.state.loaded + 1 });
+    }
+    getPanes(){
+        const panes = [];
+        for ( let i = 1; i <= 11; i++){
+            const img = new Image();
+            img.src = `/.splitBG/${i}`;
+            panes.push( img );
+        }
+        return panes.map( img => img);
+    }
+    componentDidMount(){
+        this.getPanes();
+    }
     render(){
         return(
             <div className="splashGraphics">
 
-                <div className="splashBG">
-                    <img src={ BG } id='splashImg1'/>
-                </div>
+                <SplashBG/>
+                <SplashTrain/>
 
-                <div className='splashTrain'>
-                    <img src={Train} className='trainBody'/>
-                    <img src={Wheel} className='trainWheel one'/>
-                    <img src={Wheel} className='trainWheel two'/>
-                    <img src={Wheel} className='trainWheel three'/>
-                    <img src={Wheel} className='trainWheel four'/>
-                    <img src={Wheel} className='trainWheel five'/>
-                    <img src={Wheel} className='trainWheel six'/>
-                    <SplashBubbles/>
-                </div>
-
-                
+                <SplashLogo/>
 
             </div>
-
         )
     }
 }

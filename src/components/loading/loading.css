@@ -1,13 +1,24 @@
 /* Loading Icon */
 #loading{
-    position: absolute;
-
     display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
-    width: 4rem;
-    height: 4rem;
-    background-color: hsla(0,0%,100%,0.6);
-    padding: 0.5rem;
+.loadCircle{
+
+    /*display: none;*/
+
+    width: 25%;
+    height: fit-content;
+    min-width: 2rem;
+    min-height: 2rem;
+
+    background-color: hsla(0,0%,80%,0.6);
+    padding: 0;
     margin: 0;
     border-radius: 100%;
 
@@ -15,6 +26,9 @@
     animation-duration: 2500ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+.loadCircle.noBG{
+    background-color: transparent;
 }
 #loading img{
     width: 100%;
@@ -24,11 +38,16 @@
 }
 
 #loading.loading{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+/*
 #loading.loaded{
     display: none;
 }
+
+ */
 
 @keyframes spin {
     from {

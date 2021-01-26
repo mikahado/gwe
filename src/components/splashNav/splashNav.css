@@ -1,8 +1,8 @@
 .splashNav{
     /* Position */
     position: absolute;
-    right: 5%;
-    top: 10%;
+    right: 7%;
+    top: 15%;
     /* Display & Size */
     display: flex;
     flex-direction: column;
@@ -18,7 +18,6 @@
 
 @media only screen and (max-width: 550px){
     .splashNav{
-        bottom: 5%;
-        top: auto;
+        top: 30%;
     }
 }

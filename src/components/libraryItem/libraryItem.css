@@ -4,18 +4,20 @@
     flex-direction: column;
     align-items: center;
     /* Size */
-    width: 20em;
-    height: fit-content;
+    width: fit-content;
+    height: auto;
     padding: 0.5em;
     margin: 1em;
     /* Border & Background */
     border-radius: 1em;
     border: 0;
-    box-shadow: 0 0 2rem hsla(0,0%,0%,1);
-    background: hsla(200,30%,80%,0.5);
-    background: linear-gradient(180deg, hsla(200,70%,90%,0.5) 0%, hsla(200,70%,60%, 0.5) 100%);
+    background: hsl(200,50%,60%);
     /* Animation */
-    animation: slowShrinkPulse 5s infinite linear;
+    /* animation: slowShrinkPulse 5s infinite linear; */
+}
+
+.mediaTitle{
+    border-radius: 1rem;
 }
 @keyframes slowShrinkPulse {
     50%{
@@ -24,45 +26,51 @@
 }
 .mediaListEntry:hover{
     animation: none;
-    background: hsla(200,30%,80%);
-    background: linear-gradient(180deg, 
-        hsla(200,70%,90%) 0%,
-         hsla(200,70%,60%) 100%);
 }
 
-
+.mediaGraphics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 /* Book Graphic */
 .mediaGraphic{
-    width: 95%;
-    margin: auto;
+    width: 10rem;
+    margin: 0 0.5rem;
     margin-bottom: 0.5em;
+
 }
 .mediaGraphic img{
     width: 95%;
     border-radius: 1rem;
     border: 0.25rem solid white;
+    background-color: var(--light-green);
+}
+.mediaGraphic.noGraphic{
+    border-radius: 1rem;
+    border: 0.25rem solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Text Box */
 #summaryMediaDets{
     /* Size */
     width: 80%;
-    margin: 0;
+    margin: 0 0 1rem 0;
     padding: 0.5rem;
     /* Background */
-    background: hsla(200,30%,80%, 0.7);
-    background: linear-gradient(180deg, 
-        hsla(200,70%,70%, 0.7) 0%, 
-        hsla(200,70%,45%, 0.7) 100%);
+    background: hsla(200,50%,40%, 0.7);
+    border-radius: 1rem;
     /* Animation */
     animation: none;
 }
-.mediaTitle{
-}
+
 #summaryMediaDets hr{
     border-bottom: 0.15rem solid white;
-    box-shadow: 0rem 0.1rem 0.25rem dimgray;
 }
 
 /* Small Screen Landscape */

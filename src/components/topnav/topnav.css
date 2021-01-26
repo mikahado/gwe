@@ -1,16 +1,14 @@
 .TopNav{
     /* Display */
+    position: relative;
+
+
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     /* Size */
-    width: 100%;
-    height: fit-content;
-    padding-bottom: 0.25rem;
+
     /* Background & Border */
-    background-color: white;
-    border-bottom: 0.5rem solid #52AA5E;
+
 }
 
 .logoWrap{
@@ -28,6 +26,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background-color: white;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 .navButtons{
     display: flex;

@@ -12,41 +12,60 @@ import Mascot from '../mascot/mascot';
 // Style Sheet
 import './congrats.css';
 import pageText from '../../data/pageText';
+import Sally from '../sally/sally';
+import { Button } from '../button/button';
 
 class Congrats extends React.Component{
+    constructor(props) {
+        super(props);
+        this.readAgain=this.readAgain.bind(this);
+    }
+
+    readAgain(){
+        //Set State
+        this.props.changePage(1);
+        //Remove Congrats Window
+        const congrats = document.getElementById('complete');
+        congrats.style.display = 'none';
+    }
+
     render(){
         return(
             <div id="complete">
                 <div className="completeWindow controlBox">
 
-                    <h1 className="label">{ pageText.messages.congrats[ this.props.language ] }</h1>
+                    <h1 className="label">Congrats, you've completed this material!</h1>
 
-                    <Mascot
-                        character="polarbear"
-                        type="congrats"
-                        language={this.props.language}
-                        message='congrats'
-                        id='congratsPenguin'
-                    />
-
-                    
-                        
                         <div className="congratsOptions label">
 
-                            <button onClick={this.props.readAgain }>
-                                { pageText.buttons.readAgain[ this.props.language ] }
-                            </button>
+                            <Button
+                                text={ 'Continue' }
+                                link={ `/s${ this.props.sessionId }/p${ this.props.partNo}/next` }
+                                language={ this.props.language }
+                                iconType={'rightArrow'}
+                            />
 
-                            <Link to="/library">
-                                <button>
-                                    { pageText.buttons.backLibrary[ this.props.language ] }
-                                </button>
-                            </Link>
+                            <div className={'otherOptions'}>
+
+                                <Button
+                                    text={ 'backLibrary' }
+                                    link={ '/library'}
+                                    language={this.props.language}
+                                    iconType={'leftArrow'}
+                                />
+
+                                <Button
+                                    text ={ 'readAgain' }
+                                    click={ this.readAgain }
+                                    language={ this.props.language }
+                                    iconType={'leftArrow'}
+                                />
+
+                            </div>
+
+
 
                         </div>
-                    
-
-                    
 
                 </div>
             </div>

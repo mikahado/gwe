@@ -1,0 +1,107 @@
+/* ELEMENTS */
+
+/* BUTTONS */
+button{
+    padding: 0.75rem;
+    margin: 0.5rem;
+    height: fit-content;
+
+    background-color: #52AA5E;
+    background: var(--green);
+
+    border: 0.25rem solid white;
+    border-radius: 1rem;
+
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+}
+button:hover{
+    transition: all 0.25s;
+    border-color: yellow;
+    border-width: 0.35rem;
+    transform: scale(1.1);
+}
+button:hover:after{
+    transform: scale(1.1);
+}
+button:active{
+    animation-name: click;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+@keyframes click{
+    from {
+        transform: scale(1.1);
+    } to {
+          transform: scale(0.9);
+      }
+}
+Link,a{
+    text-decoration: none;
+    color: white;
+}
+
+/* SCROLL BARS */
+
+.App{
+    scrollbar-color: var(--green) var(--light-blue);
+}
+
+.App -webkit-scrollbar-track {
+    background-color: var(--light-blue);
+}
+
+.App -webkit-scrollbar-thumb {
+    background-color: var(--green);
+}
+
+/* Control Element Global Styles */
+.controlBox{
+    /* Background & Border */
+    /* background: hsla(200,50%,60%,1); */
+    border-radius: 1rem;
+    border: 0.1rem solid hsla(200,70%,60%, 0.5);
+}
+.controlBox .label{
+    padding: 0.5rem;
+    /* Background & Border */
+    background-color: hsla(0,70%,0%,0.1);
+    border-radius: 1rem;
+    border: 0.25rem solid hsla(0,0%,90%, 0.5);
+    box-sizing: border-box;
+    /* Text */
+    text-align: center;
+    color: aliceblue;
+    font-weight: 600;
+}
+.controlBox .label hr{
+    border-bottom: 0.2rem solid aliceblue;
+}
+
+/* CLOSE BARS */
+.closeBar{
+    width: 100%;
+    height: fit-content;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+.close{
+    margin: 0;
+    position: absolute;
+    right: 1rem;
+    background-color: hsl(0,50%,70%);
+}
+
+/* SPEECH BUBBLES */
+.speechBubble{
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.25rem solid aliceblue;
+    line-height: 2.3rem;
+    height: fit-content;
+}
+

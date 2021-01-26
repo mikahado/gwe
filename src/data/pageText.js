@@ -19,8 +19,8 @@ const pageText = {
         },
         library: {
             eng: [
-                'So many great options to choose from!',
-                `Which do you want to read today?`
+                'Look how many cool books we can choose from!',
+                `Which book should we read today?`
             ],
             spa: [
                 `¡Tantas buenas opciones para elegir!`,
@@ -30,7 +30,7 @@ const pageText = {
         summary: {
             eng: [
                 `That's one of my favorites!`,
-                `That's a great one!`
+                `That book is awesome! `
             ],
             spa: [
                 `¡Ese es uno de mis favoritos!`,
@@ -39,8 +39,8 @@ const pageText = {
         },
         congrats: {
             eng: [
-                'I knew you could do it!',
-                `Wasn't that a great one?`,
+                'I knew we could do it!',
+                `I loved that book!`,
                 `You're a great reader!`
             ],
             spa: [
@@ -62,7 +62,7 @@ const pageText = {
         },
         home: {
             eng: 'Home',
-            spa: 'Casa'
+            spa: 'Inicio'
         },
         aboutGWE: {
             eng: 'About GWE',

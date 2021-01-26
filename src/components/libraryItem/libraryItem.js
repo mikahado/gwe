@@ -8,6 +8,22 @@ class LibraryItem extends React.Component{
         super(props);
         this.setBook = this.setBook.bind(this);
     }
+    showImages( image ){
+        if ( image !== 'No Graphic' ){
+            return(
+                <div className="mediaGraphic">
+                    <img src={ image } alt="Book Cover"/>
+                </div>
+            ) 
+        }
+        else {
+            return(
+                <div className="mediaGraphic noGraphic">
+                    <p>Media Graphic</p>
+                </div>
+            )
+        }
+    }
     scrollTo(){
         if ( document.getElementById('Summary') ){
             const summary = document.getElementById('Summary');
@@ -15,31 +31,25 @@ class LibraryItem extends React.Component{
         }
     }
     setBook(){
-        console.log('SetBook')
-        this.props.changeBook(this.props.label);
+        this.props.changeSession(this.props.sessionId);
         setTimeout(this.scrollTo,500)
     }
     render(){
         return(
-            
-            
-                <button 
-                    className="mediaListEntry"
-                    onClick={this.setBook}>
+            <button 
+                className="mediaListEntry"
+                onClick={this.setBook}
+            >
 
-                    <div className="mediaGraphic">
-                        <img src={this.props.cover} alt="Book Cover"/>
-                    </div>
+                <div className='sessionIconTitle' id="summaryMediaDets">
+                    <h2 className='mediaTitle'>Session #{this.props.sessionId}</h2>
+                </div>
 
-                    <div className='libraryTitle' id="summaryMediaDets">
-                        <h2 className='mediaTitle'>{this.props.title}</h2>
-                        <hr/>
-                        <h3 className='mediaAuthor'>{this.props.author}</h3>
-                    </div>
+                <div className="mediaGraphics">
+                    {this.showImages( this.props.image ) }
+                </div>
 
-                </button>
-            
-            
+            </button>
         )        
     }
 }

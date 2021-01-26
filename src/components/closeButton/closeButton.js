@@ -9,12 +9,15 @@ class CloseButton extends React.Component{
     }
     clickHandler(){
         if (this.props.type === 'summary'){
-            this.props.closeCurrent()
+            this.props.closeCurrent();
+
+        } else if (this.props.click){
+            this.props.click();
         }
     }
     render(){
         return(
-            <button className="closeButton" onClick={this.clickHandler}>
+            <button className="closeButton" onClick={this.clickHandler} id={this.props.buttonId}>
                 <p>x</p>
             </button>
         )

@@ -9,20 +9,18 @@ import loadIcon from './loadIcon.png';
 class Loading extends React.Component{
     render(){
         return(
-            <div id="loading"
-                className={ 
-                    this.props.loadedInitalPage &&
-                    this.props.loadedInitialAudio &&
-                    this.props.loadedReaderPhoto
-                    ? 'loaded' 
-                    : 'loading' }
+            <div id='loading'
+                 className={
+                     `loadingWrap ${
+                         this.props.loading === 0 ? "loaded": "loading" 
+                     } ${this.props.class}`}
             >
-
-                <img 
-                    src={loadIcon}
-                    alt="loading"
-                />
-
+                <div className={`loadCircle ${this.props.circleClass}`}>
+                    <img
+                        src={loadIcon}
+                        alt="loading"
+                    />
+                </div>
             </div>
         )
     }

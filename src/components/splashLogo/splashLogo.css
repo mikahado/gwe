@@ -2,18 +2,16 @@
 .splashLogo{
     /* Position */
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 2rem;
+    left: 2rem;
     /* Size */
-    width: 15rem;
+    width: 10rem;
     height: fit-content;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     /* Background & Border */
+
     border-radius: 2rem;
-    background-color: hsla(0,0%,100%,0.6);
-    box-shadow: 0 0 1rem hsla(0,0%,100%,0.5);
-    /* Animation */
-    animation: slideDown 1.5s ease-out;
+    background-color: hsl(0,0%,100%);
 }
 /* Image */
 .splashLogo img{

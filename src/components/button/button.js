@@ -56,6 +56,14 @@ export function Button(props){
             }
     }
 
+    if(props.extLink){
+        return(
+            <a href={props.extLink} target={'_blank'}>
+                {getType()}
+            </a>
+        )
+    }
+
     if (props.link){
         return(
             <Link to={ props.link }>

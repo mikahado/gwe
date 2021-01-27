@@ -5,6 +5,7 @@ import React from 'react';
 import Translate from '../translate/translate';
 import NavHome from '../navHome';
 import AboutGWE from '../aboutGWE/aboutGWE';
+import {Button} from "../button/button";
 
 // Style Sheet
 import './topnav.css';
@@ -20,13 +21,24 @@ class TopNav extends React.Component{
 
                 <div className="topButtons">
 
-
-
                     <div className="navButtons">
+
+
 
                         <NavHome
                             language={ this.props.language }
                         />
+
+                        {
+                            this.props.page !== 'library' ?
+                                <Button text={'Library'} link={'/library'} />
+                                :''
+                        }
+                        {
+                            this.props.page !== 'resources' ?
+                                <Button text={'Resources'} link={'/resources'} />
+                                :''
+                        }
 
                         <AboutGWE
                             language={this.props.language}

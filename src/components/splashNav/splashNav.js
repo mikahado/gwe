@@ -6,6 +6,8 @@ import Translate from '../translate/translate';
 
 // Style Sheet
 import './splashNav.css';
+import {Button} from "../button/button";
+import {Link} from "react-router-dom";
 
 class SplashNav extends React.Component{
     render(){
@@ -21,6 +23,7 @@ class SplashNav extends React.Component{
                     changeLanguage={this.props.changeLanguage}
                 />
 
+                <Button text={'Resources'} link={'/resources'} id={'splashResources'} />
 
                 <button className="splashAboutGWE">
                     <a href="https://www.theglobalwarmingexpress.org/" 

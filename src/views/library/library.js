@@ -114,6 +114,7 @@ class Library extends React.Component{
                         <TopNav
                             language={this.props.language}
                             changeLanguage={this.props.changeLanguage}
+                            page={'library'}
                         />
 
                         <Summary

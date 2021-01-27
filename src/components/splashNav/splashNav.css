@@ -9,6 +9,19 @@
     /* Animation */
     animation: slideLeft 1.5s ease-out;
 }
+.splashNav button{
+    width: 100%;
+}
+#splashResources{
+    display: flex;
+    justify-content: center;
+    min-width: 8rem;
+}
+#splashResources span{
+
+    text-align: center;
+}
+
 
 @keyframes slideLeft{
     0%{

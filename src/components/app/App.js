@@ -20,6 +20,7 @@ import './fonts.css';
 import './elements.css';
 import './animations.css';
 import {Table} from "../table";
+import {Resources} from "../../views/resources/resources";
 
 export function App(props){
 
@@ -36,36 +37,30 @@ export function App(props){
 
                 <Route exact path="/"
                     component={( props ) =>(
-
-                        <Splash {...props}
-                            language={ language }
-                            changeLanguage={ changeLanguage }
-                        />
+                        <Splash {...props} language={ language } changeLanguage={ changeLanguage } />
                    )}
                 />
 
                 <Route path="/library/"
                     component={(props) =>(
-                        <Library {...props}
-                                language={ language }
-                                changeLanguage={ changeLanguage }
-                        />
+                        <Library {...props} language={ language } changeLanguage={ changeLanguage } />
                     )}
                 />
 
                 <Route path={['/s:sessionId/p:partNo/:next','/s:sessionId/p:partNo','/s:sessionId']}
                     component={ (props) =>(
-
-                        <MaterialRouter
-                            language={language}
-                            changeLanguage={changeLanguage}
-                        />
+                        <MaterialRouter language={language} changeLanguage={changeLanguage} />
                     )}
+                />
+
+                <Route path="/resources"
+                       component={ (props) =>(
+                           <Resources language={language} changeLanguage={changeLanguage} />
+                       )}
                 />
 
                 <Route exact path="/table"
                        component={( props ) =>(
-
                            <Table/>
                        )}
                 />

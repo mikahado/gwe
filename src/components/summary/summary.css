@@ -1,71 +1,110 @@
-/* WRAPS */
-#Summary{
-    box-sizing: border-box;
-    /* Position */
-    position: relative;
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* Sizing */
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-    overflow-y: auto;
-    /* Background & Border */
-    background-color: var(--light-green);
-    border: 0.5rem solid aliceblue;
-    /* Animation */
-    animation-name: slide-left;
-    animation-duration: 1500ms;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(.54,.88,.76,.94);
+#Summary {
+  height: 100%;
+  border: 0.2rem solid aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-y: auto;
 }
+#Summary .sessionHeader {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#Summary .closeButton {
+  position: static;
+  height: fit-content;
+}
+#Summary .closeButton p {
+  margin-bottom: 0;
+}
+
+#Summary.noSummary {
+  border: none;
+}
+
+.materialList {
+  height: fit-content;
+  overflow-y: auto;
+}
+
+/*
+#Summary{
+  box-sizing: border-box;
+  //Position
+  //position: relative;
+  //Display
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  //Sizing
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  overflow-y: auto;
+  //Background & Border
+  background-color: var(--light-green);
+  border: 0.5rem solid aliceblue;
+  //Animation
+  animation-name: slide-left;
+  animation-duration: 1500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(.54,.88,.76,.94);
+}
+
+
 .materialList{
 
-    width: 100%;
+  //width: 100%;
+  //height: 100%;
 
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: baseline;
-    margin-top: 1.5rem;
-    overflow-y: auto;
+  //box-sizing: border-box;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: flex-start;
+  //align-items: baseline;
+  //margin-top: 1.5rem;
+  //overflow: auto;
 }
 
-/* HEADERS */
+//HEADERS
 #sessionLabel{
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    /* Size */
-    width: fit-content;
-    margin: 0 1rem;
-    padding: 0.5rem;
-    background-color: var(--green);
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  //Size
+  width: fit-content;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  background-color: var(--green);
 }
 
 
 
 @keyframes slide-in{
-    from {
-        right: 100vw;
-    } to {
-        right: 0;
+  from {
+    right: 100vw;
+  } to {
+      right: 0;
     }
 }
 
 
-/* MEDIA QUERIES */
+//MEDIA QUERIES
 
 @media only screen and (max-width: 600px) {
-    #Summary{
-        position: fixed;
-        height: 80%;
-        width: 80%;
-    }
+  #Summary{
+    position: fixed;
+    height: 80%;
+    width: 80%;
+  }
 }
 
 
@@ -116,3 +155,5 @@
 }
 
 */
+
+/*# sourceMappingURL=summary.css.map */

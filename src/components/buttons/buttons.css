@@ -1,0 +1,13 @@
+button{
+    width: fit-content;
+}
+button span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoomButton{
+    border-radius: 100%;
+}

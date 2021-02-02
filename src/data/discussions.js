@@ -1,6 +1,6 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import characters from './characters';
+import characters from './characters/characters';
 import contentGetters from "../utilities/contentGetters";
 
 const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
@@ -118,7 +118,7 @@ const discussions = {
                         `The animals were all instructed to take the sheet and put it over their heads and bodies. (You can do this, too)`
                     ],
                     [
-                        `Then, Joanna asked them to keep it on there while she counted to 10. You can do this, too. `
+                        `Then, Joanna asked them to keep it on there while she counted to 10. (You can do this, too). `
                     ],
                     [
                         `At the count of 10, she told the animals to take the sheet off their heads. (You too!)`
@@ -365,7 +365,7 @@ const discussions = {
                     ],
                     [
                         {speech: true, text: `“Creamy, that is the same, but opposite for me! Where I live, there is almost no sunlight in the summer!”`},
-                        ` replied Flora.`
+                        ` replied The Fluff.`
                     ],
                     [
                         {speech: true, text: `“But we are all so grateful for the sun,”`},
@@ -396,7 +396,7 @@ const discussions = {
                         `Sally, the Fluff and Creamy all looked at her like she was crazy. Only Tomàs answered, `
                     ],
                     [
-                        {speech: true, text: `“Berries!I eat berries and apples and apricots. I love a lot of kinds of fruit that grow where I live. “`}
+                        {speech: true, text: `“Berries! I eat berries and apples and apricots. I love a lot of kinds of fruit that grow where I live. “`}
                     ],
                     [
                         {speech: true, text: `“Well,”`},
@@ -1295,7 +1295,7 @@ const discussions = {
                         {speech: true, text: ` “She had to leave as soon as we met the President.” `}
                     ],
                     [
-                        {speech: true, text: `“The Then President,”`},
+                        {speech: true, text: `“President Obama,”`},
                         ` Creamy added.`
                     ],
                     [
@@ -1356,7 +1356,7 @@ const discussions = {
                         ` said Bobbi Sue.`
                     ],
                     [
-                        {speech: true, text: `“And rivers flow into the ocean, and the ocean moves its water around and round,”`},
+                        {speech: true, text: `“And rivers flow into the ocean, and the ocean moves its water around and round like a conveyor belt!”`},
                         ` Joanna added.`
                     ],
                     [

@@ -1,14 +1,11 @@
 .TopNav{
     /* Display */
-    position: relative;
-
-
+    /*position: relative;*/
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    /* Size */
-
-    /* Background & Border */
-
+    height: fit-content;
+    margin-bottom: 1rem;
 }
 
 .logoWrap{

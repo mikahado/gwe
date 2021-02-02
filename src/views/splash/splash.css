@@ -1,17 +1,42 @@
-/* Full Page Container */
-.Splash{
-    /* Position */
-    position: absolute;
-    
-    overflow: hidden;
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* Size */
-    width: 100%;
-    height: 100%;
-    
+.Splash {
+  width: 100%;
 }
 
+.splashNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Sizing */
+  margin-top: 1rem;
+  height: 100%;
+}
+.splashNav nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.splashNav .splashLogo {
+  /* Size */
+  width: 100%;
+  max-width: 12rem;
+  height: fit-content;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 1rem;
+  /* Background & Border */
+  border-radius: 2rem;
+  background-color: white;
+}
+.splashNav .splashLogo img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 575px) {
+  .Splash {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/*# sourceMappingURL=splash.css.map */

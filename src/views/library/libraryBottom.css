@@ -34,7 +34,7 @@
 
 .fluff{
     position: absolute;
-    width: 15vw;
+    width: 10rem;
     bottom: 1rem;
     left: 2vw;
 
@@ -45,7 +45,7 @@
 
 .sallyBubbleWrap.library{
     position: absolute;
-    --wrap-width: 20vw;
+    --wrap-width: 15rem;
     bottom: 1rem;
     right: 0;
 }

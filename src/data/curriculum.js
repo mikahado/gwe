@@ -1,8 +1,6 @@
 import books from './books';
 import discussions from './discussions';
 import '../views/library/library.css';
-import pageText from './pageText';
-import '../components/discuss/discuss.css';
 import videos from './videos';
 
 const curriculum = [

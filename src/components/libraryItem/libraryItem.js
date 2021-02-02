@@ -27,7 +27,7 @@ class LibraryItem extends React.Component{
     scrollTo(){
         if ( document.getElementById('Summary') ){
             const summary = document.getElementById('Summary');
-            summary.scrollIntoView( { block: 'start', behavior: 'smooth' } );
+            //summary.scrollIntoView( { block: 'start', behavior: 'smooth' } );
         }
     }
     setBook(){

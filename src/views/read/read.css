@@ -1,145 +1,89 @@
-.Read{
-    box-sizing: border-box;
-
-    height: 95%;
-    width: 95%;
-    margin: auto;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.ReaderContent{
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-height: 100%;
-}
-.ReaderPages{
-    margin-top: 1rem;
-    width: 100%;
-    height: calc(100% - 1rem);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.Read {
+  box-sizing: border-box;
+  min-height: 100%;
+  width: 100%;
 }
 
-.readerPageAndTranslation{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    /*
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-     */
-
+.ReaderContent {
+  width: 100%;
 }
 
 /* Page Image & Container */
-.pageImgFrame{
-    box-sizing: border-box;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: baseline;
-    height: 75vh;
+.pageImgFrame {
+  box-sizing: border-box;
+  height: 80vh;
+  width: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
 }
-.pageImg{
-    box-sizing: border-box;
-    border: 0.5rem solid white;
-    border-radius: 1rem;
-    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3);
-    min-width: 20vw;
-    background-color: var(--light-green);
-    height: 100%;
-    width: auto;
-}
-.pageImgFrame.zoom{
-    width: 80vw;
-    height: 80vh;
-    overflow-y: auto;
-    display: flex;
-    align-items: baseline;
-    border: 1rem solid aliceblue;
-    border-radius: 1rem;
-    box-sizing: border-box;
-
-}
-.pageImgFrame.zoom img{
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
-    overflow-y: auto;
-    border-radius: 0;
+.pageImgFrame .pageImg {
+  box-sizing: border-box;
+  width: auto;
+  height: 100%;
+  border: 0.5rem solid aliceblue;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+  min-width: 20vw;
 }
 
-
-
-/* Tall Pages */
-/*
-.ReaderContent.tallContent{
-    flex-direction: row;
+.pageImgFrame.skinnyWindow {
+  width: 80vw;
+  height: auto;
 }
-.pageImgFrame.tall{
-    height: 75vh;
-}
-.pageImgFrame.tall img{
-    max-height: 100%;
-    width: auto;
+.pageImgFrame.skinnyWindow .pageImg {
+  width: 100%;
+  height: auto;
 }
 
-/* Wide Pages */
-/*
-.pageImgFrame.wide{
-    height: 100%;
+.pageImgFrame.zoom {
+  width: 80vw;
+  height: 80vh;
+  box-sizing: border-box;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: baseline;
+  overflow-y: auto;
+  border: 0.5rem solid aliceblue;
+  border-radius: 1rem;
 }
-.pageImgFrame.wide img{
-    height: 100%;
-    width: auto;
+.pageImgFrame.zoom .pageImg {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  border: none;
 }
-
- */
-
 
 /* Translation */
-.translatedText{
-    height: 100%;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Size */
-    padding: 0.5rem;
-    background-color: var(--light-blue);
-    border-radius: 1rem;
+.translation {
+  height: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Size */
+  padding: 0.5rem;
+  background-color: var(--light-blue);
+  border-radius: 1rem;
 }
-.translatedText p{
-    width: fit-content;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-bottom: 0.2rem;
-    text-align: center;
+.translation p {
+  width: fit-content;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
 }
 
-
-
-.preLoaders{
-    position: fixed;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
+.preLoaders {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
-.preLoaders img{
-    width: 100%;
-    height: 100%;
+.preLoaders img {
+  width: 100%;
+  height: 100%;
 }
+
+/*# sourceMappingURL=read.css.map */

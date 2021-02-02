@@ -14,7 +14,7 @@ import pageText from '../../data/pageText';
 
 // Sub-Components
 import CloseButton from '../closeButton/closeButton';
-import {Button} from "../button/button";
+import {Button} from "../buttons/buttons";
 
 export function SummaryEntry ( props ){
 
@@ -46,7 +46,7 @@ export function SummaryEntry ( props ){
 
         function partLabel(){
             return (
-                <div className='partLabel label' id={'partLabel'}>
+                <div className='partLabel label col-xl' id={'partLabel'}>
                     <h3>Part #:<br/> {partNo} of {ofParts}</h3>
                     <hr/>
                     <span>{type}</span>
@@ -57,7 +57,7 @@ export function SummaryEntry ( props ){
 
             if (format === 'book'){
                 return (
-                    <div className="summaryInfoHeader label">
+                    <div className="summaryInfoHeader label col-lg">
                         <h2 className="summaryTitle">{ title }</h2>
                         <hr/>
                         <span className="summaryAuthor">{ pageText.labels.byAuthor( author, language ) }</span>
@@ -74,12 +74,26 @@ export function SummaryEntry ( props ){
         }
 
         return (
-            <div className={'summaryEntryTop'}>
-                <div className={'summaryEntryTopInfo'}>
-                    {partLabel()}
-                    <TitleAuthor />
+            <div className={'summaryEntryTop row'}>
+
+                <div className={'summaryEntryTopInfo col'}>
+
+                    <div className={'row'}>
+
+                            {partLabel()}
+                            <TitleAuthor />
+
+                    </div>
+
+                    <div className={'row'}>
+                        <div className={'col'}>
+
+                            <ExpandDetails/>
+
+                        </div>
+                    </div>
+
                 </div>
-                <ExpandDetails/>
             </div>
 
         )
@@ -129,7 +143,7 @@ export function SummaryEntry ( props ){
                 function getReaderPhoto(readerPhoto){
                     if ( readerPhoto ){
                         return (
-                            <div className="libReadByPhoto">
+                            <div className="libReadByPhoto col-lg-5">
                                 <img src={ readerPhoto } alt="Narrator"/>
                             </div>
                         )
@@ -137,16 +151,16 @@ export function SummaryEntry ( props ){
                 }
 
                 return(
-                    <div className="LibraryReadBy label">
+                    <div className="LibraryReadBy label col">
 
                         {
                             reader ?
 
-                                <div className="readByContent">
+                                <div className="readByContent row">
 
                                     { getReaderPhoto( readerPhoto ) }
 
-                                    <div className="libReadByName">
+                                    <div className="libReadByName col-lg-5">
                                         <p>{ pageText.labels.readBy[ language ] }</p>
                                         <p>{ reader }</p>
 
@@ -162,7 +176,7 @@ export function SummaryEntry ( props ){
                                 </div>
 
                                 :
-                                <div className="libReadByName">
+                                <div className="libReadByName row">
                                     <p>{ pageText.labels.narrComing[ language ] }</p>
                                 </div>
                         }
@@ -212,14 +226,39 @@ export function SummaryEntry ( props ){
 
         if (expand){
             return(
-                <div className='summaryEntryBody'>
+                <div className='summaryEntryBody row'>
+                    <div className={'col'}>
 
-                    {SummaryEntryDescription()}
-                    {summaryGraphic()}
+                        <div className={'row'}>
+                            <div className={'col'}>
+                                {SummaryEntryDescription()}
+                            </div>
+                        </div>
+                        
+                        <div className={'row'}>
+                            <div className={'col'}>
+                                {summaryGraphic()}
+                            </div>
+                        </div>
 
-                    {readBy()}
-                    {format !== 'book' && runTime ? soloRunTime() :''}
-                    <StartMaterial/>
+                        <div className={'row'}>
+                            <div className={'col'}>
+
+                                {readBy()}
+                                {format !== 'book' && runTime ? soloRunTime() :''}
+
+                            </div>
+                        </div>
+
+                        <div className={'row'}>
+                            <div className={'col'}>
+
+                                <StartMaterial/>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             )
         }
@@ -253,9 +292,11 @@ export function SummaryEntry ( props ){
     }
 
     return(
-        <div className='summaryEntry'>
-            {summaryEntryInfoHeader()}
-            {summaryEntryDetails()}
+        <div className='summaryEntry col'>
+
+                {summaryEntryInfoHeader()}
+                {summaryEntryDetails()}
+
         </div>
     )
 }
@@ -280,7 +321,11 @@ class Summary extends React.Component{
 
         return materialList.map( material =>{
             console.log( material )
-            return <SummaryEntry summary={material} language={language}/>
+            return(
+                <div className={'row'}>
+                    <SummaryEntry summary={material} language={language}/>
+                </div>
+            )
         })
     }
     getSummaryGraphic(bookLabel){
@@ -294,31 +339,49 @@ class Summary extends React.Component{
             console.log( session );
             
             return(
-                <div className="Summary controlBox" id="Summary">
+                <div className="Summary controlBox row" id="Summary">
+                    <div className={'col'}>
 
-                    <CloseButton closeCurrent={this.closeCurrent} type='summary'/>
-                    
-                    <h2 className='sessionLabel label' id={'sessionLabel'}>Session #{ session.sessionId }</h2>
+                        <div className={'sessionHeader row'}>
 
-                    <Button text={'Start Session'} iconType={'rightArrow'} link={`/s${this.props.currentSession}`}/>
+                            <div className={'col'}>
+                                <h2 className='sessionLabel label' id={'sessionLabel'}>Session #{ session.sessionId }</h2>
+                            </div>
 
-                    <div className='materialList'>
+                            <div className={'col-2'}>
+                                <CloseButton closeCurrent={this.closeCurrent} type='summary'/>
+                            </div>
 
-                        { 
-                            this.getMaterialList( 
-                                session.material, 
-                                this.props.language 
-                                ) 
-                        }
+                        </div>
+
+                        <div className={'row'}>
+                            <div className={'col'}>
+
+                                <Button text={'Start Session'} iconType={'rightArrow'} link={`/s${this.props.currentSession}`}/>
+
+                            </div>
+                        </div>
+
+                        <div className={'materialList row'}>
+                            <div className='col'>
+
+                                {
+                                    this.getMaterialList(
+                                        session.material,
+                                        this.props.language
+                                    )
+                                }
+
+                            </div>
+                        </div>
 
                     </div>
-
                 </div>
             )
         }
         else{
             return(
-                <div className={'Summary controlBox'} id={'Summary'}>
+                <div className={'Summary controlBox noSummary'} id={'Summary'}>
                     <p className={'label'}>Click A Session to begin!</p>
                 </div>
             )

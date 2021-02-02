@@ -1,0 +1,141 @@
+.typeWrap, .ageWrap, .regionWrap, .resourcesWrap {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.25rem solid aliceblue;
+  border-radius: 1rem;
+}
+
+.typeList, .ageList, .regionList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+}
+
+.resourcePageWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.resourcesWrap {
+  border: 0;
+  background-color: var(--light-green);
+  box-shadow: 0 0 2rem rgba(51, 51, 51, 0.5);
+}
+.resourcesWrap .label {
+  width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  border: 0;
+  box-shadow: 0 0 0.5rem aliceblue;
+}
+
+.regionList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.regionWrap {
+  background-color: var(--light-blue);
+}
+
+.ageList {
+  flex-direction: column;
+  align-items: center;
+}
+
+.ageWrap {
+  background-color: var(--blue);
+  border: 0;
+}
+
+.typeList {
+  flex-direction: column;
+  align-items: center;
+}
+
+.typeWrap {
+  margin: 0.5rem;
+}
+.typeWrap label {
+  margin-bottom: 0.5rem;
+}
+
+.resourceList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.resourceButton {
+  display: flex;
+  width: 15rem;
+  text-align: center;
+  justify-content: center;
+}
+.resourceButton span {
+  width: fit-content;
+}
+
+/*
+#usa{
+  .ageList{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    #learnMore{
+      width: 100%;
+
+      .typeList{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        #org{
+          width: 100%;
+
+          .resourceList{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+          }
+        }
+      }
+    }
+  }
+}
+
+ */
+#intl .ageList {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#intl .ageList #kids .typeList {
+  flex-direction: row;
+}
+#intl .ageList #learnMore .typeList {
+  align-items: flex-start;
+}
+#intl .typeList {
+  flex-direction: row;
+}
+#intl .resourceList {
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=resources2.css.map */

@@ -1,5 +1,5 @@
 // React
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 // React Components
 import {
@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 // Sub-Components
-import Splash from '../../views/splash/splash';
+import {Splash} from '../../views/splash/splash';
 import Library from '../../views/library/library';
 import {MaterialRouter} from "../../utilities/material";
 
@@ -24,7 +24,7 @@ import {Resources} from "../../views/resources/resources";
 
 export function App(props){
 
-    const [language,setLanguage] = useState('eng')
+    const [language,setLanguage] = useState('eng');
 
     function changeLanguage(){
         setLanguage(language === 'eng' ? 'spa' : 'eng')
@@ -33,37 +33,37 @@ export function App(props){
     return (
         <Router basename={process.env.PUBLIC_URL}>
 
-            <div className="App">
+            <div className="App container">
 
-                <Route exact path="/"
-                    component={( props ) =>(
-                        <Splash {...props} language={ language } changeLanguage={ changeLanguage } />
-                   )}
-                />
+                    <Route exact path="/"
+                           component={( props ) =>(
+                               <Splash {...props} language={ language } changeLanguage={ changeLanguage } />
+                           )}
+                    />
 
-                <Route path="/library/"
-                    component={(props) =>(
-                        <Library {...props} language={ language } changeLanguage={ changeLanguage } />
-                    )}
-                />
+                    <Route path="/library/"
+                           component={(props) =>(
+                               <Library {...props} language={ language } changeLanguage={ changeLanguage } />
+                           )}
+                    />
 
-                <Route path={['/s:sessionId/p:partNo/:next','/s:sessionId/p:partNo','/s:sessionId']}
-                    component={ (props) =>(
-                        <MaterialRouter language={language} changeLanguage={changeLanguage} />
-                    )}
-                />
+                    <Route path={['/s:sessionId/p:partNo/:next','/s:sessionId/p:partNo','/s:sessionId']}
+                           component={ (props) =>(
+                               <MaterialRouter language={language} changeLanguage={changeLanguage} />
+                           )}
+                    />
 
-                <Route path="/resources"
-                       component={ (props) =>(
-                           <Resources language={language} changeLanguage={changeLanguage} />
-                       )}
-                />
+                    <Route path="/resources"
+                           component={ (props) =>(
+                               <Resources language={language} changeLanguage={changeLanguage} />
+                           )}
+                    />
 
-                <Route exact path="/table"
-                       component={( props ) =>(
-                           <Table/>
-                       )}
-                />
+                    <Route exact path="/table"
+                           component={( props ) =>(
+                               <Table/>
+                           )}
+                    />
 
             </div>
 

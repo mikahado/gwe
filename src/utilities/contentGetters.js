@@ -7,9 +7,9 @@ import videos from '../data/videos';
 import headshots from '../data/headshots';
 
 import pageText from '../data/pageText';
-import lauren from '../components/discuss/images/lauren.png';
+import lauren from '../data/characters/discussionCharacters/lauren.png';
 import React from "react";
-import characters from "../data/characters";
+import characters from "../data/characters/characters";
 
 const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
 

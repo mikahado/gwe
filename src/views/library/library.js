@@ -80,52 +80,64 @@ class Library extends React.Component{
         }
     }
     closeCurrent(){
-        this.setState( { currentBook: '' });
+        this.setState( { currentSession: '' });
     }
     componentDidMount(){
     }
     render(){
         return(
-            <div id="Library">
+            <div id="Library" className={'container'}>
+                    <div className={'row libraryBody'}>
+                        <div className={'col-md-7 libraryScroll'}>
 
-                <div className={'libraryBody'}>
+                            <h1 className={'libraryTitle'}>Learning Library</h1>
 
-                    <div className='libraryScroll'>
+                                <LibraryList
+                                    changeSession={this.changeSession}
+                                    currentBook={this.props.currentBook}
+                                    language={this.props.language}
+                                />
 
-                        <LibraryList
-                            changeSession={this.changeSession}
-                            currentBook={this.props.currentBook}
-                            language={this.props.language}
-                        />
+                                <LibraryBottom
+                                    language={this.props.language}
+                                    currentBook={this.state.currentBook}
+                                />
 
-                        <LibraryBottom
-                            language={this.props.language}
-                            currentBook={this.state.currentBook}
-                        />
+                                {/*<h1 className="libraryTitle">
+                                {pageText.pageTitles.library[ this.props.language ] }
+                                </h1>*/}
 
-                        {/*<h1 className="libraryTitle">
-                            {pageText.pageTitles.library[ this.props.language ] }
-                        </h1>*/}
+                        </div>
+
+                        <div className={'col-md-5 libraryInfo'}>
+
+                            <div className={'row'}>
+                                <div className={'col'}>
+
+                                    <TopNav
+                                        language={this.props.language}
+                                        changeLanguage={this.props.changeLanguage}
+                                        page={'library'}
+                                    />
+
+                                </div>
+                            </div>
+
+
+
+                                    <Summary
+                                        currentSession={this.state.currentSession}
+                                        closeCurrent={this.closeCurrent}
+                                        language={this.props.language}
+                                    />
+
+
+
+                        </div>
 
                     </div>
 
-                    <div className={'libraryInfo'}>
-
-                        <TopNav
-                            language={this.props.language}
-                            changeLanguage={this.props.changeLanguage}
-                            page={'library'}
-                        />
-
-                        <Summary
-                            currentSession={this.state.currentSession}
-                            closeCurrent={this.props.closeCurrent}
-                            language={this.props.language}
-                        />
-
-                    </div>
-
-                </div>
+                { /*<div className={'libraryBody'}> </div>*/}
 
             </div>
         )

@@ -1,0 +1,50 @@
+
+.Splash{
+  width: 100%;
+}
+
+//SplashNav
+.splashNav{
+
+  //Display
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* Sizing */
+  margin-top: 1rem;
+  height: 100%;
+
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .splashLogo{
+
+    /* Size */
+    width: 100%;
+    max-width: 12rem;
+    height: fit-content;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+
+    /* Background & Border */
+    border-radius: 2rem;
+    background-color: hsl(0,0%,100%);
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width:575px){
+  .Splash{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

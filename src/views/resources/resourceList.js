@@ -432,7 +432,7 @@ function getRegionResources(region){
 
     //Copy resource categories
     Object.keys(regionResources).forEach( ageKey =>{
-        compiledResources.resources[ageKey] = {label: categoryLabels[ageKey], list: {}}
+        compiledResources.resources[ageKey] = {label: categoryLabels[ageKey], list: {}, id: ageKey}
     });
 
     //Sort resources into categories by type
@@ -444,7 +444,7 @@ function getRegionResources(region){
                 compiledResources.resources[ageKey].list[resource.type].list.push(resource);
             }
             else{
-                compiledResources.resources[ageKey].list[resource.type] = { label: categoryLabels[resource.type], list: [resource]}
+                compiledResources.resources[ageKey].list[resource.type] = { label: categoryLabels[resource.type], list: [resource], id: resource.type}
             }
         })
     });
@@ -486,6 +486,7 @@ function getRegionResources(region){
 
     const compiledObj = compiledResources;
     compiledObj.label = categoryLabels[region];
+    compiledObj.id = region;
     return compiledObj;
 }
 function getAllResources(){

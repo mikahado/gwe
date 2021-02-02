@@ -13,7 +13,7 @@ import Mascot from '../mascot/mascot';
 import './congrats.css';
 import pageText from '../../data/pageText';
 import Sally from '../sally/sally';
-import { Button } from '../button/button';
+import { Button } from '../buttons/buttons';
 
 class Congrats extends React.Component{
     constructor(props) {

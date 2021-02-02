@@ -2,7 +2,7 @@ import React from 'react';
 
 // Sub-Components
 import { SummaryEntry } from '../../components/summary/summary';
-import {Button} from "../../components/button/button";
+import {Button} from "../../components/buttons/buttons";
 
 // Data
 import { default as get } from '../../utilities/contentGetters';
@@ -86,10 +86,16 @@ export function NextUp( props ){
 
                 <h1 className='nextUpTitle label'>Next Up:</h1>
 
-                <SummaryEntry
-                    summary={ materialSummary }
-                    language={ props.language }
-                />
+                <div className={'row'}>
+
+                    <SummaryEntry
+                        summary={ materialSummary }
+                        language={ props.language }
+                    />
+
+                </div>
+
+
 
                 <Button
                     text='Continue'
@@ -124,8 +130,10 @@ export function NextUp( props ){
     }
 
     return(
-        <div className='nextUp controlBox'>
-            { checkStatus() }
+        <div className={'row'}>
+            <div className='nextUp controlBox col'>
+                { checkStatus() }
+            </div>
         </div>
         )
 }

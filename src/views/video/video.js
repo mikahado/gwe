@@ -2,7 +2,7 @@ import React from 'react';
 import CloseButton from '../../components/closeButton/closeButton';
 import videos from '../../data/videos';
 import './video.css';
-import {Button} from "../../components/button/button";
+import {Button} from "../../components/buttons/buttons";
 import {Redirect, useParams,useHistory} from "react-router-dom";
 import Congrats from "../../components/congrats/congrats";
 

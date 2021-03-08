@@ -4,7 +4,7 @@ const categoryLabels = {
     nm: 'New Mexico',
 
     kids: `For Kids' Action`,
-    grownups: `For Grownups Action`,
+    grownups: `For Grownups' Action`,
     learnMore: `For Learning More`,
 
     video: 'Videos',
@@ -21,7 +21,7 @@ const resources = {
         resources: {
             kids: [
                 {
-                    name: 'Greta Thurnberg TED Talk',
+                    name: 'Greta Thunberg TED Talk',
                     link: 'https://www.youtube.com/embed/H2QxFM9y0tY',
                     embedLink: `https://www.youtube.com/embed/H2QxFM9y0tY`,
                     type: 'video'

@@ -33,7 +33,7 @@ export function App(props){
     return (
         <Router basename={process.env.PUBLIC_URL}>
 
-            <div className="App container">
+            <div className="App container-fluid">
 
                     <Route exact path="/"
                            component={( props ) =>(

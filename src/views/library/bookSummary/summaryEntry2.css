@@ -1,0 +1,130 @@
+.summaryEntry {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+/*
+.summaryEntry{
+  // Sizing
+
+  box-sizing: border-box;
+  width: 100%;
+  height: fit-content;
+  padding: 0.5rem;
+  // Display
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  // Border & Background
+  border: 0.2rem solid aliceblue;
+  border-radius: 1rem;
+  background-color: var(--light-blue);
+}
+// Top
+.summaryEntryTop{
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#partLabel{
+  display: flex;
+  flex-direction: column;
+  // Size
+  margin: 0.5rem;
+  padding: 0.5rem 2rem;
+  height: fit-content;
+  background-color: var(--green);
+}
+.summaryInfoHeader{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  background-color: hsla(200,70%,100%,0.3);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.summaryTitle{
+  margin: 0.1em auto;
+  font-weight: bold;
+}
+
+.summaryEntryInfo{
+  height: fit-content;
+  width: 100%;
+}
+
+// Expanded Details
+.summaryEntryBody {
+  box-sizing: border-box;
+  // Sizing
+  idth: fit-content;
+  height: fit-content;
+  margin-bottom: 0.5rem;
+  // Display
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.summaryEntryInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+.summaryDesc{
+  margin-bottom: 1rem;
+  background-color: hsla(200,70%,100%,0.3);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+// SUMMARY GRAPHIC
+.summaryGraphic{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1em;
+  width: 90%;
+  height: fit-content;
+}
+#summaryGraphic{
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 0.25rem solid white;
+  background-color: var(--light-green);
+}
+
+// SUMMARY TEXT
+.summaryText{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20em;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+*/
+
+/*# sourceMappingURL=summaryEntry2.css.map */

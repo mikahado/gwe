@@ -1,0 +1,40 @@
+.tableContents{
+  //opacity: 0.5;
+  //Position
+  position: relative;
+  //margin: 0rem;
+  //bottom: 0;
+  //left: 0;
+  //width: 100%;
+  z-index: 5;
+
+  border: 0.5rem solid var(--primary-blue);
+  border-radius: 2rem;
+
+  color: aliceblue;
+  font-weight: bold;
+
+  //Spacing
+  padding: 0.5rem;
+
+  //Background & Border
+  background-color: var(--dark-accent);
+
+
+
+  button{
+    margin: 0.25rem;
+    width: 2.5rem;
+
+    padding: 0.25rem;
+    border-radius: 100%;
+    box-shadow: 0 0 1rem dimgray;
+    //background-color: var(--dark-accent);
+    //color: aliceblue;
+  }
+  button.current{
+    background-color: var(--primary-blue);
+  }
+
+
+}

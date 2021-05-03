@@ -1,391 +1,290 @@
 // React
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 // StyleSheets
 import './summary.css';
-/* import './summaryEntry2.css'; */
 import './summaryEntry.css'
 import './libraryReadBy.css';
 
 // Utilities
-import { default as get } from '../../utilities/contentGetters';
 import pageText from '../../data/pageText';
+
+import curriculum from "../../data/curriculum/curriculum";
 
 // Sub-Components
 import CloseButton from '../closeButton/closeButton';
 import {Button} from "../buttons/buttons";
+import books from "../../data/books/books";
 
 export function SummaryEntry ( props ){
 
-    const [expand, setExpand] = useState(0);
+    const {material, language} = props;
+    const content = material ? material.content : props.content;
 
-    const language = props.language;
+    //Language-Specific Values
+    const title = content.title.get(language);
+    const description = content.description.get(language);
+    let runTimeString;
+    if(content.runTime){
+        runTimeString = content.runTime.get(language).string.get(language);
+    }
+
+
+    //Book-Specific Values
+    let byAuthor;
+    let reader;
+    let readerName;
+    let readerPhoto;
+
+    if (content.author){
+        byAuthor = content.byAuthor.get(language);
+    }
+    if (content.reader){
+        reader = content.reader.get(language);
+        readerName = reader.name;
+        readerPhoto = reader.photo;
+    }
+
     const {
         //General Info
         contentId,
         format,
-        title,
+        subtitle,
         type,
-        description,
         graphic,
-        runTime,
-        //Session Info
-        sessionId,
-        partNo,
-        ofParts,
-        //Book Info
-        author,
-        reader,
-        readBy,
-        readerPhoto
-    } = props.summary;
+        narration,
+    } = content;
+
+    let sessionId, partNo, numParts;
+
+    if(material){
+
+        const sessionInfo = material.sessionInfo;
+
+        sessionId = sessionInfo.sessionId;
+        partNo = sessionInfo.partNo;
+        numParts = sessionInfo.ofParts;
+    }
 
     //Functions
-    function summaryEntryInfoHeader(){
-
-        function partLabel(){
-            return (
-                <div className='partLabel label col-xl' id={'partLabel'}>
-                    <h3>Part #:<br/> {partNo} of {ofParts}</h3>
-                    <hr/>
-                    <span>{type}</span>
-                </div>
-            )
-        }
-        function TitleAuthor(){
-
-            if (format === 'book'){
-                return (
-                    <div className="summaryInfoHeader label col-lg">
-                        <h2 className="summaryTitle">{ title }</h2>
-                        <hr/>
-                        <span className="summaryAuthor">{ pageText.labels.byAuthor( author, language ) }</span>
-                    </div>
-                )
-
-            } else {
-                return (
-                    <div className="summaryInfoHeader label">
-                        <h2>{ title }</h2>
-                    </div>
-                )
-            }
-        }
+    function TitleAuthor(){
 
         return (
-            <div className={'summaryEntryTop row'}>
-
-                <div className={'summaryEntryTopInfo col'}>
-
-                    <div className={'row'}>
-
-                            {partLabel()}
-                            <TitleAuthor />
-
-                    </div>
-
-                    <div className={'row'}>
-                        <div className={'col'}>
-
-                            <ExpandDetails/>
-
-                        </div>
-                    </div>
-
-                </div>
+            <div className="summaryInfoHeader label text-center">
+                <h2 className="summaryTitle">{ title }</h2>
+                {
+                    subtitle ?
+                        <p>{ subtitle }</p>
+                        :''
+                }
+                {
+                    byAuthor ?
+                        <span className="summaryAuthor">{ byAuthor }</span>
+                        :''
+                }
             </div>
-
         )
     }
-    function summaryEntryDetails(){
+    function runTime(){
 
-        function SummaryEntryDescription(){
+        if (runTimeString){
             return(
-
-                    <p className='summaryDesc label'>{ description }</p>
-
-            )
-        }
-        function summaryGraphic(){
-
-            function checkForGraphic(){
-                if ( graphic !== 'No Graphic' ){
-                    return (
-                        <img
-                            id="summaryGraphic"
-                            src={ graphic }
-                            alt="Book Cover"
-                        />
-                    )
-                }
-                else{
-                    return(
-                        <div className="mediaGraphic noGraphic">
-                            <p>Media Graphic</p>
-                        </div>
-                    )
-
-                }
-            }
-
-            return(
-                <div className="summaryGraphic" >
-                    { checkForGraphic() }
-                </div>
-            )
-
-        }
-        function readBy(){
-
-            function LibraryReadBy(){
-
-                function getReaderPhoto(readerPhoto){
-                    if ( readerPhoto ){
-                        return (
-                            <div className="libReadByPhoto col-lg-5">
-                                <img src={ readerPhoto } alt="Narrator"/>
-                            </div>
-                        )
-                    }
-                }
-
-                return(
-                    <div className="LibraryReadBy label col">
-
-                        {
-                            reader ?
-
-                                <div className="readByContent row">
-
-                                    { getReaderPhoto( readerPhoto ) }
-
-                                    <div className="libReadByName col-lg-5">
-                                        <p>{ pageText.labels.readBy[ language ] }</p>
-                                        <p>{ reader }</p>
-
-                                        <hr/>
-
-                                        <div className='runtime'>
-                                            <p>{pageText.labels.runTime[ language ]}:</p>
-                                            <p>{ runTime }</p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                :
-                                <div className="libReadByName row">
-                                    <p>{ pageText.labels.narrComing[ language ] }</p>
-                                </div>
-                        }
-                    </div>
-                )
-            }
-
-            if ( format === 'book' ){
-
-                return LibraryReadBy()
-            }
-        }
-        function soloRunTime(){
-            return (
-                <div className='runtime label'>
-                    <p>{pageText.labels.runTime[ language ]}:</p>
-                    <p>{ runTime }</p>
-                </div>
-            )
-        }
-        function StartMaterial( props ){
-
-            function getLink(){
-                return `/s${sessionId}/p${partNo}`;
-            }
-
-            function getText(){
-                switch( format ){
-                    case('book'):
-                        return 'Start Book';
-                        break;
-
-                    case('discussion'):
-                        return 'Start Discussion';
-                        break;
-
-                    case('video'):
-                        return 'Start Video';
-                        break;
-                }
-            }
-
-            return(
-                <Button text={getText()} link={getLink()} iconType={'rightArrow'}/>
-            )
-        }
-
-        if (expand){
-            return(
-                <div className='summaryEntryBody row'>
-                    <div className={'col'}>
-
-                        <div className={'row'}>
-                            <div className={'col'}>
-                                {SummaryEntryDescription()}
-                            </div>
-                        </div>
-                        
-                        <div className={'row'}>
-                            <div className={'col'}>
-                                {summaryGraphic()}
-                            </div>
-                        </div>
-
-                        <div className={'row'}>
-                            <div className={'col'}>
-
-                                {readBy()}
-                                {format !== 'book' && runTime ? soloRunTime() :''}
-
-                            </div>
-                        </div>
-
-                        <div className={'row'}>
-                            <div className={'col'}>
-
-                                <StartMaterial/>
-
-                            </div>
-                        </div>
-
-                    </div>
+                <div className='runtime col-sm text-center lightText'>
+                    <p>{pageText.labels.runTime[language]}:</p>
+                    <p>{runTimeString}</p>
                 </div>
             )
         }
     }
-    function ExpandDetails(props){
+    function readBy() {
 
-        function handleExpand(){
-            if (!expand){
-                setExpand(1);
-            } else {
-                setExpand(0);
+        if (reader) {
+            return (
+                <div className="LibraryReadBy">
+
+                    <div className="readByContent">
+
+                        <div className="libReadByName d-flex justify-content-center align-items-center row">
+
+                            <div className={'col-sm'}>
+                                <p>{pageText.labels.readBy[language]}</p>
+                                <p>{readerName}</p>
+                            </div>
+
+                            {
+                                readerPhoto ?
+                                    <div
+                                        className="libReadByPhoto medWhiteBorder"
+                                        style={{backgroundImage: `url(${readerPhoto})`}}
+                                    />
+                                    : ''
+                            }
+
+                            {runTime()}
+
+                        </div>
+                    </div>
+                </div>
+            )
+        } else if ( (content.format === 'book' || content.format ==='discussion') && !narration){
+            return (
+                <div className="libReadByName label">
+                    <p>{pageText.labels.narrComing[language]}</p>
+                </div>
+            )
+        }
+    }
+    function StartMaterial( props ){
+
+        function getLink(){
+
+            if (sessionId){
+                return `/s${sessionId}/p${partNo}`;
+            }
+            else if (format === 'book'){
+                return `/read/book/${contentId}`;
             }
         }
-        function toggleText(){
-            return (
-                !expand ?
-                    'Show Details'
-                    :
-                    'Hide Details'
-            )
+
+        function getText(){
+            switch( format ){
+                case('book'):
+                    return 'Start Book';
+
+                case('discussion'):
+                    return 'Start Discussion';
+
+                case('video'):
+                    return 'Start Video';
+                default: break;
+            }
         }
 
-        return (
-            <Button
-                text={toggleText()}
-                click={handleExpand}
-                iconType={!expand ? 'downArrow' : 'upArrow'}
-            />
-            )
-
+        return(
+            <Button text={getText()} link={getLink()} iconType={'rightArrow'}/>
+        )
     }
 
     return(
-        <div className='summaryEntry col'>
+        <div className='summaryEntry container'>
 
-                {summaryEntryInfoHeader()}
-                {summaryEntryDetails()}
+            {
+                partNo ?
+                    <div className='partLabel label medWhiteBorder roundBorder' id={'partLabel'}>
+                        <h3>Part {partNo} of {numParts}</h3>
+                        <span>{type}</span>
+                    </div>
+                    :''
+            }
 
+            <div className={'row'}>
+
+                <div className="summaryEntryGraphic col-md d-flex flex-column justify-content-center">
+                    <img
+                        id="summaryGraphic"
+                        src={ graphic }
+                        alt="Book Cover"
+                    />
+                </div>
+
+                <div className={'col'}>
+
+                    <div className='summaryEntryBody'>
+
+                        <TitleAuthor/>
+
+                        <p className='summaryDesc label text-center'>{ description }</p>
+
+                        {readBy()}
+
+                        {!reader && runTimeString ? runTime() :''}
+
+                        <div className={'d-flex flex-row w-100 justify-content-around'}>
+
+                            <StartMaterial/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
 
-class Summary extends React.Component{
-    constructor(props){
-        super(props);
-        this.closeCurrent = this.closeCurrent.bind(this);
+function Summary(props){
+
+    let session;
+    let book;
+    let sessionId;
+    let material;
+
+    function closeCurrent(){
+        props.closeCurrent();
     }
-    closeCurrent(){
-        this.props.closeCurrent();
-    }
-    scrollIn(){
-        if ( document.getElementById('Summary') ){
+
+    function handleClick(event){
+
+        if(event.target.id === 'Summary'){
+            closeCurrent();
         }
-        const summary = document.getElementById('Summary');
-        if (summary.style.display === 'block'){
-            summary.scrollIntoView({behavior: "smooth", block: "start"}); 
-        }
     }
-    getMaterialList( materialList, language ){
 
-        return materialList.map( material =>{
-            console.log( material )
-            return(
-                <div className={'row'}>
-                    <SummaryEntry summary={material} language={language}/>
-                </div>
-            )
-        })
+    if (props.currentSession){
+        session = curriculum.sessions[props.currentSession - 1];
+        sessionId = session.sessionInfo.sessionId;
+        material = session.material;
     }
-    getSummaryGraphic(bookLabel){
-        return `${process.env.PUBLIC_URL}/assets/books/${bookLabel}/pages/1.jpg`
+    else if (props.currentBook){
+        book = books[props.currentBook];
     }
-    componentDidMount(){
-    }
-    render(){
-        if (this.props.currentSession){
-            const session = get.sessionSummary( this.props.currentSession, this.props.language );
-            console.log( session );
-            
-            return(
-                <div className="Summary controlBox row" id="Summary">
-                    <div className={'col'}>
 
-                        <div className={'sessionHeader row'}>
+    if (props.currentSession || props.currentBook) {
 
-                            <div className={'col'}>
-                                <h2 className='sessionLabel label' id={'sessionLabel'}>Session #{ session.sessionId }</h2>
-                            </div>
+        return(
+            <div className="Summary controlBox" id="Summary" onClick={handleClick}>
 
-                            <div className={'col-2'}>
-                                <CloseButton closeCurrent={this.closeCurrent} type='summary'/>
-                            </div>
+                {
+                    props.currentSession ?
+                        <div className={'sessionHeader medWhiteBorder roundBorder'} onClick={''}>
+
+                            <h2 className='sessionLabel label' id={'sessionLabel'}>Session #{ sessionId }</h2>
+
+                            <Button
+                                text={'Start Session'}
+                                iconType={'rightArrow'}
+                                link={`/s${sessionId}`}
+                            />
+
+                            <CloseButton closeCurrent={closeCurrent} type='summary'/>
 
                         </div>
+                        :''
+                }
 
-                        <div className={'row'}>
-                            <div className={'col'}>
+                <div className={'materialList row'}>
+                    <div className='col'>
 
-                                <Button text={'Start Session'} iconType={'rightArrow'} link={`/s${this.props.currentSession}`}/>
-
-                            </div>
-                        </div>
-
-                        <div className={'materialList row'}>
-                            <div className='col'>
-
-                                {
-                                    this.getMaterialList(
-                                        session.material,
-                                        this.props.language
+                        {
+                            material ?
+                                material.map( material =>{
+                                    return(
+                                        <SummaryEntry
+                                            material={material}
+                                            language={props.language}
+                                        />
                                     )
-                                }
-
-                            </div>
-                        </div>
-
+                                })
+                                :
+                                <SummaryEntry
+                                    content={book}
+                                    language={props.language}
+                                />
+                        }
                     </div>
                 </div>
-            )
-        }
-        else{
-            return(
-                <div className={'Summary controlBox noSummary'} id={'Summary'}>
-                    <p className={'label'}>Click A Session to begin!</p>
-                </div>
-            )
-        }
+            </div>
+        )
+    } else {
     }
 }
 

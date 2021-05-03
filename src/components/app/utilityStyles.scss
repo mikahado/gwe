@@ -1,0 +1,30 @@
+// Text
+.lightText{
+    color: aliceblue;
+}
+
+//Border & Background
+.medWhiteBorder{
+    //border-radius: 1rem;
+    border: 0.25rem solid aliceblue;
+}
+.roundBorder{
+    border-radius: 1rem;
+}
+.circleBorder{
+    border-radius: 100%;
+}
+
+//Background color
+.darkAccent{
+    background-color: var(--dark-accent);
+}
+
+.primaryBlue{
+    background-color: var(--primary-blue);
+}
+
+//Shadow
+.darkShadow{
+    box-shadow: 0 0 1rem dimgrey;
+}

@@ -1,166 +1,28 @@
-import React, {useState,useEffect,useRef} from 'react';
-import ReactDOM from 'react-dom';
-
-// Utilities
-import { default as get } from '../../utilities/contentGetters';
+import React, {useState} from 'react';
 
 // Data
 import pageText from '../../data/pageText';
-import books from "../../data/books";
 
 // Sub-Components
-import Congrats from '../../components/congrats/congrats';
-//import Discuss from '../../components/discuss/discuss';
-import {Button, ZoomButton} from "../../components/buttons/buttons";
+import {Button} from "../../components/buttons/buttons";
 import Loading from "../../components/loading/loading";
 import Translate from "../../components/translate/translate";
+import {Audio} from './audio/audio';
+import {ReaderStart} from "./readerStart/readerStart";
+import {Book} from './book/book';
+import {Preloader} from "./preloader/preloader";
+import Congrats from "../../components/congrats/congrats";
 
 // Style Sheets
 import './read.css';
 import './readerControls.css';
 import './discuss.css';
 import './readMediaQueries.css';
+import {InfoBubble} from "../../components/infoBubble/infoBubble";
+import {PageArrow} from "./pageArrow/pageArrow";
+import {ReadClose} from "./readClose/readClose";
 
 // SUB-COMPONENTS
-function Book(props){
-
-    //PROPS
-    //Data
-    const {content,material,page,language,imgLoad} = props;
-    const {contentId} = material;
-    //Methods
-    const {mediaLoaded} = props;
-
-    //STATES
-    const [pageZoom,setPageZoom] = useState(0);
-    const [skinnyWindow,setSkinnyWindow] = useState(0);
-
-    //FUNCTIONS
-    function checkDimensions(){
-
-        const pageImgFrame = document.getElementById('pageImgFrame');
-
-        if(pageImgFrame){
-
-            const windowWidth = document.documentElement.clientWidth;
-            const windowHeight = document.documentElement.clientHeight;
-
-            const imgWidth = pageImgFrame.offsetWidth;
-            const imgHeight = pageImgFrame.offsetHeight;
-
-            const maxWidth = windowWidth * 0.85;
-            const maxHeight = windowHeight * 0.85;
-
-            if(imgWidth > maxWidth){
-                setSkinnyWindow(1)
-            }
-            else if(imgHeight > maxHeight){
-                setSkinnyWindow(0);
-            }
-
-        }
-    }
-    function handleCurrentImageLoad(){
-        checkDimensions();
-        mediaLoaded('img');
-    }
-    function handleTranslation(){
-
-        if(language !== 'eng'){
-
-            function compileTranslations(translationData){
-
-                return translations[ page ].map( phrase =>{
-                    return <p>{ phrase }</p>
-                })
-            }
-
-            const translations = books[contentId].translations;
-
-            if(translations){
-                return(
-                    <div className={'row'}>
-                        <div className={'translation col'}>
-                            {compileTranslations(translations)}
-                        </div>
-                    </div>
-
-                )
-            }
-        }
-    }
-    function zoomPage(){
-
-        if(pageZoom === 0){
-
-            const page = document.getElementById('pageImgFrame');
-            setPageZoom(1);
-            page.classList.add('zoom');
-            console.log('zoom');
-
-        }
-        else{
-
-            const page = document.getElementById('pageImgFrame');
-            page.classList.remove('zoom');
-            setPageZoom(0);
-
-
-        }
-    }
-    function handleZoom(){
-
-        if(!skinnyWindow){
-            return(
-                <ZoomButton zoomFunction={zoomPage} zoomState={pageZoom}/>
-            )
-        }
-    }
-
-    //Life-Cycle
-    useEffect( ()=> {
-
-        function handleResize() {
-            setTimeout(checkDimensions,1000);
-        }
-
-        window.addEventListener('resize', handleResize);
-    })
-
-    return(
-        <div className="readerPage col-lg-auto d-flex flex-column align-items-center">
-
-            <div className={'row d-flex flex-row align-items-center'}>
-
-                <div
-                    id={'pageImgFrame'}
-                    className={
-                        `pageImgFrame col 
-                            ${pageZoom ? 'zoom' : ''}
-                            ${skinnyWindow ? 'skinnyWindow' :''}
-                            `}
-                >
-
-                    <Loading loading={imgLoad} />
-                    <PageImage
-                        src={content[page - 1].img}
-                        className={'pageImg'}
-                        imgLoaded={handleCurrentImageLoad}
-                        page={page}
-                    />
-
-                </div>
-
-                {handleZoom()}
-
-            </div>
-
-            {handleTranslation()}
-
-        </div>
-    )
-
-}
 class Discuss extends React.Component{
 
     constructor(props){
@@ -175,7 +37,17 @@ class Discuss extends React.Component{
         this.characterGrid=this.characterGrid.bind(this);
     }
     loadsComplete(){
-        this.props.loaded('img');
+
+        if(this.state.loading){this.setState({loading: 0})}
+
+        let loadedImgObjs = document.getElementById('discWrap').querySelectorAll('img');
+        let loadedSrcArray = [];
+
+        loadedImgObjs.forEach( obj =>{
+            loadedSrcArray.push( obj.src);
+        });
+
+        this.props.loaded('img', loadedSrcArray);
     }
 
     imagesLoaded(parent){
@@ -190,7 +62,6 @@ class Discuss extends React.Component{
                 return false;
             }
         }
-        console.log('loaded');
         this.loadsComplete();
 
     }
@@ -200,33 +71,48 @@ class Discuss extends React.Component{
 
     getText(discussion,page){
 
-        const convertedText = [];
+        if(this.props.text){
 
-        // Cycle Through Each Line of Text
-        this.props.text.forEach( line =>{
+            let nativeText = this.props.text.get(this.props.language, false);
 
-            const newLine = [];
+            if(nativeText){
 
-            //Assemble Each Line of Text
-            for ( let i=0; i<line.length; i++ ){
+                const convertedText = [];
 
-                //Create Speech Bubbles
-                if ( line[i].speech ){
-                    newLine.push(
-                        <span className='discussSpeechBubble'>{ line[i].text }</span>
-                    )
-                    // Return Plain Text
-                } else {
-                    newLine.push( line[i] )
+                let line = 0;
+
+                // Cycle Through Each Line of Text
+                this.props.text.get(this.props.language).forEach( lineData =>{
+
+                    const newLine = [];
+
+                    //Assemble Each Line of Text
+                    for ( let i=0; i<lineData.length; i++ ){
+
+                        //Create Speech Bubbles
+                        if ( lineData[i].speech ){
+                            newLine.push(
+                                <span
+                                    key={i}
+                                    className='discussSpeechBubble'>
+                                    { lineData[i].text }
+                                </span>
+                            )
+                            // Return Plain Text
+                        } else {
+                            newLine.push( lineData[i] )
+                        }
+                    }
+                    if(newLine.length){
+                        convertedText.push( <p key={line}>{ newLine }</p> );
+                    }
+                    line++;
+                })
+                //Return Assembled Page Text
+                if(convertedText.length) {
+                    return <div className={'discText col-md'}>{convertedText}</div>;
                 }
             }
-            if(newLine.length){
-                convertedText.push( <p>{ newLine }</p> );
-            }
-        })
-        //Return Assembled Page Text
-        if(convertedText.length) {
-            return <div className={'discText'}>{convertedText}</div>;
         }
     }
 
@@ -235,7 +121,6 @@ class Discuss extends React.Component{
         return characterArr.map( character =>{
 
             const characterData = character;
-            console.log( characterData );
 
             return (
                 <div className={`discGridCharacter of${characterArr.length}`} >
@@ -243,6 +128,7 @@ class Discuss extends React.Component{
                         src={ characterData.img }
                         onLoad={ this.imgLoaded }
                         id={'discGridImg'}
+                        alt={`characterData.label`}
                     />
                     <p>{ characterData.label }</p>
                 </div>
@@ -253,7 +139,7 @@ class Discuss extends React.Component{
     characterGrid( characterArr ){
 
         return (
-            <div className='discGrid' ref={element =>{this.grid = element}}>
+            <div className='discGrid col-md' ref={element =>{this.grid = element}}>
                 { this.buildGrid( characterArr ) }
             </div>
         )
@@ -276,8 +162,13 @@ class Discuss extends React.Component{
             }
             else{
                 return (
-                        <div className={'discFullImgFrame'}>
-                            <img src={images[0]} className={'discFullImg'} onLoad={this.loadsComplete}/>
+                        <div className={'discFullImgFrame col-lg'}>
+                            <img
+                                src={images[0]}
+                                className={'discFullImg'}
+                                onLoad={this.loadsComplete}
+                                alt={''}
+                            />
                         </div>
                 );
             }
@@ -287,9 +178,10 @@ class Discuss extends React.Component{
         return(
             <div
                 className={
-                    `discWrap col-lg-auto d-flex flex-column justify-content-center ${
+                    `discWrap col d-flex justify-content-center ${
                         typeof this.props.images[0] === 'string' ? 'fullImg' : ''
                     }`}
+                id={'discWrap'}
             >
 
                 {this.getImages()}
@@ -300,154 +192,234 @@ class Discuss extends React.Component{
         )
     }
 }
-function ReaderStart(props) {
 
-    // Material Metadata
-    const {format,title,byAuthor,readerPhoto,reader} = props.material;
-    // Addl Props / State
-    const {language,audioPreloads,narrationState} = props;
-    // Methods
-    const {narrationControl,nextPage} = props;
+function ReaderControlBar(props){
 
-    function titleAuthor() {
-        if (format === 'book') {
-            return (
-                <div className="readerTitleAuthor label">
-                    <h1 className="readerTitle">{title}</h1>
-                    <hr/>
-                    <h2 className="readerAuthor">{byAuthor}</h2>
-                </div>
-            )
+    function NarrationControl(){
+
+        function handlePlay(){
+            props.narrationControl('play');
         }
-        else if (format) {
-            return (
-                <div className="readerTitleAuthor label">
-
-                    <h1 className="readerTitle">
-                        {title}
-                    </h1>
-
-                </div>
-            )
+        function handlePause(){
+            props.narrationControl('pause');
         }
-    }
-
-    function readBy() {
-
-        function getReaderPhoto() {
-            if (readerPhoto) {
-                return (
-                    <img
-                        id="readerPhoto"
-                        src={readerPhoto}
-                        alt={`Narrator`}
-                    />
-                )
-            }
+        function handleRestart(){
+            props.narrationControl('restart');
         }
+        function showButtons(){
 
-        if (reader) {
-            if (format === 'book') {
-                return (
-                    <div className="readerReadBy label">
-
-                        {getReaderPhoto(readerPhoto)}
-
-                        <div className="readByName">
-                            <h3>{pageText.labels.readBy[language]}</h3>
-                            <hr/>
-                            <h3>{reader}</h3>
+            function playButton(){
+                if(!props.narrationState){
+                    return(
+                        <div className={'position-relative'}>
+                            <button className="playButton" id="play" onClick={handlePlay}>
+                                <div className="playSymbol"/>
+                            </button>
+                            <InfoBubble
+                                message={'click for audio'}
+                                type={'up'}
+                                id={'playInfo'}
+                                infoOff={props.infoOff}
+                                clearAll={props.setInfoOff}
+                            />
                         </div>
+                    )
+                }
+                else{
+                    return loadingButton();
+                }
+            }
+            function pauseButton(){
+                return(
+                    <button className="pauseButton" id="pause"
+                            onClick={handlePause}
+                    >
+                        <div className="pauseSymbol"/>
+                        <div className="pauseSymbol"/>
+                    </button>
+                )
+            }
+            function replayButton(){
+                return(
+                    <button className="replayButton" id="restart" onClick={handleRestart} >
+                        <div className="stopSymbol"/>
+                    </button>
+                )
 
+            }
+            function loadingButton(){
+                return(
+                    <button className="loadingButton" id="restart" onClick={handleRestart} >
+                        <Loading class={'noBg'}/>
+                    </button>
+                )
+            }
+
+            if(props.status==='playing'){
+
+                if(props.audioBubble){
+                    setTimeout(props.hideAudioBubble, 3000);
+                }
+
+                return(
+                    <div className="narrControls position-relative">
+
+                        {!props.narrationState ? pauseButton() : loadingButton()}
+
+                        {replayButton()}
+
+                        <InfoBubble
+                            message={'Control Reader'}
+                            type={'up'}
+                            id={'playInfo'}
+                            visible={props.audioBubble}
+                        />
+
+                    </div>
+                )
+
+            }
+            else if (props.status==='pause'){
+                return (
+                    <div className="narrControls">
+                        {playButton()}
+                        {replayButton()}
+                    </div>
+                )
+            }
+            else if(props.status==='stop'){
+                return(
+                    <div className="narrControls">
+                        {playButton()}
                     </div>
                 )
             }
         }
-    }
 
-    function playNarration() {
+        if(props.content.pageData[props.page - 1].audio && props.content.narration.get(props.language, false)){
 
-        narrationControl('play');
-    }
-
-    function showButton() {
-
-        function getClick(){
-            if(audioPreloads.length){
-                return(playNarration);
-
-            }
-            else{
-                return(nextPage);
-            }
-        }
-        if (!narrationState) {
             return (
-                <Button click={getClick()} text={'Start Material'} language={props.language} iconType={'rightArrow'}/>
-            )
-        } else {
-            return (
-                <div className={'label'} id={'readerStartLoading'}>
-                    <p>Material Loading</p>
-                    <div className={'readerStartLoadingWrap'}>
-                        <Loading loading={1} circleClass={'noBG'}/>
+                <div className="NarrationControl controlBox" id="controls" >
+
+                    <div className="narrControls">
+                        {showButtons()}
                     </div>
+
                 </div>
             )
         }
     }
 
-    return (
-        <div className="ReaderStart controlBox col-md-auto d-flex flex-column flex-sm-row flex-md-column">
+    function readerProgress(){
 
-            {titleAuthor(
-                props.material.format,
-                props.material.title,
-                props.material.byAuthor)}
+        function pageCounter(){
 
-            {readBy(
-                props.material.format,
-                props.material.reader,
-                props.material.readerPhoto,
-                props.language)}
+            function inputPage(){
+                const pageInput = document.getElementById('pageInput');
 
-            {showButton()}
+                console.log(Number(pageInput.value));
 
-        </div>
-    )
-}
-export function Audio(props){
+                if (pageInput.value > 0 && pageInput.value <= props.content.endPage){
 
-    function handleAudioLoad(){
-        props.setNarrationState(0);
-        props.mediaLoaded('audio');
-    }
+                    pageInput.classList.remove('error');
+                    props.changePage(Number(pageInput.value),true);
 
-    let waitTimer;
+                } else {
 
-    function setWaiting(){
-        console.log('waiting');
-        props.setNarrationState('waiting');
-    }
-    function handleWait(){
-        console.log('setting wait timer');
-        waitTimer = setTimeout(setWaiting,3500);
-    }
-    function handleResume(){
-        clearTimeout(waitTimer);
+                    //pageInput.classList.add('error');
+                }
+            }
+
+            return(
+                <div className="pageCounter darkAccent label col-auto" id={'pageCounterWrap'}>
+
+                    <p>{`${pageText.labels.page[props.language]} ${props.page} / ${props.content.endPage}`}</p>
+
+                </div>
+            )
+        }
+
+        function pageSlider(){
+
+            function slidePage(){
+
+                const progress = document.getElementById('progressSlider');
+
+                props.changePage(Number(progress.value),true);
+            }
+
+            return(
+                <div className="progressSliderWrap label col-lg" id={'progressSliderWrap'}>
+
+                    <input type="range"
+                           min={props.content.startPage}
+                           max={props.content.endPage}
+                           value={props.page}
+                           id="progressSlider"
+                           onChange={slidePage }
+                    />
+
+                </div>
+            )
+        }
+
+        return(
+            <div className={'col-md-auto readerProgressWrap'}>
+
+                <div className="ReaderProgress controlBox row" id={'readerProgress'}>
+
+                    {pageCounter()}
+                    {pageSlider()}
+
+                </div>
+
+            </div>
+
+        )
     }
 
     return(
-        <audio
-            id={'narrator'}
-            src={`${process.env.PUBLIC_URL}/assets/${ props.material.format }/${ props.material.contentId }/audio/${ props.language }/${ props.page }.mp3`}
-            onEnded={props.nextPage}
-            onCanPlayThrough={handleAudioLoad}
-            onWaiting={handleWait}
-            onPlaying={handleResume}
-        />
-        )
+        <div className="ReaderControlBar row" id='controlBar'>
+
+            <div className="mobileTop col-auto no-gutters">
+
+                <div className={'col-sm-auto no-gutters'}>
+                    {NarrationControl()}
+                </div>
+
+                <div className={'col-auto no-gutters  justify-content-center'}>
+
+                    <Translate
+                        language={props.language}
+                        changeLanguage={props.changeLanguage}
+                    />
+
+                </div>
+
+                <div className={'mobile-close col-auto'}>
+
+                    <Button type={'close'} link={'/library'} id={'mobileClose'}/>
+
+                </div>
+
+            </div>
+
+            {readerProgress()}
+
+            <div className={'col-auto standard-close no-gutters'}>
+
+                <ReadClose
+                    sessionInfo={props.sessionInfo}
+                    language={props.language}
+                />
+
+            </div>
+
+        </div>
+
+    )
 }
+
 export function PageImage(props){
 
     function handleLoad(){
@@ -460,52 +432,63 @@ export function PageImage(props){
             src={props.src}
             id={`pageImg`}
             onLoad={handleLoad}
-            className={`${props.className}`}/>
+            className={`${props.className}`}
+            alt={''}
+        />
     )
 }
 
 export function Read(props){
 
+    //PROPS
+    const content = props.content;
+    const { startPage } = content;
+
     // STATES
-    const [page,setPage] = useState(props.material.startPage);
+    const [page,setPage] = useState(props.content.startPage);
     const [status,setStatus] = useState('stop');
     const [narrationState,setNarrationState] = useState('waiting');
-
-    // PROPS
-    const {material,content,language, imgPreloads, audioPreloads,changeLanguage} = props;
-    const {format,contentId,startPage,endPage} = material;
+    const [audioBubble,setAudioBubble] = useState(1);
 
     // Current Media Load Monitors
     const [imgLoad,setImgLoad] = useState(1);
-    const [audioLoad,setAudioLoad] = useState(audioPreloads.length ? 1 : 0);
+    const [audioLoad,setAudioLoad] = useState(props.content.preloads.audio.length ? 1 : 0);
+
+    const [cachedImgs,setCachedImgs] = useState([]);
+    const [cachedAudio,setCachedAudio] = useState([]);
+    const [preloadingImg, setPreloadingImg] = useState('');
+    const [preloadingAudio, setPreloadingAudio] = useState('');
 
     // FUNCTIONS
 
     // Page Control
     function changePage(newPage,stop){
 
-        if(stop){
-            console.log(stop);
-            // Stop Narration
-            const audio = document.getElementById('narrator');
-            if(audio){
-                audio.pause();
-            }
-            setStatus('stop');
-        }
-        // SET STATES
-        setPage(newPage);
-        setImgLoad(1);
-        setAudioLoad(1);
+        if(newPage !== page){
 
-        //MISC
-        //loadNarration(newPage);
-        clearPageInput();
+            if(stop){
+                // Stop Narration
+                const audio = document.getElementById('narrator');
+                if(audio){
+                    audio.pause();
+                }
+                setStatus('stop');
+            }
+
+            // SET STATES
+            setPage(newPage);
+            setImgLoad(1);
+            setAudioLoad(1);
+
+            //MISC
+            //loadNarration(newPage);
+            clearPageInput();
+        }
     }
     function nextPage(e,stop){
 
         //Check For Completed Book
-        if (page >= material.endPage){
+        if (page >= props.content.endPage){
             openCompleteWindow();
         }
 
@@ -517,11 +500,9 @@ export function Read(props){
     // Audio Narration
     function loadNarration( page ){
 
-        console.log(`load Narration`);
-
         const audio = document.getElementById('narrator');
 
-            audio.src = `${process.env.PUBLIC_URL}/assets/${ format }/${ contentId }/audio/${ language }/${ page }.mp3`;
+            //audio.src = props.content.pageData[page - 1]
             audio.load();
 
     }
@@ -540,6 +521,8 @@ export function Read(props){
                     if (playPromise !== undefined){
 
                         playPromise.then( ()=>{
+
+                            console.log('play');
                             if ( status !== 'playing' ){
 
                                 //setTimeout(function(){setStatus('playing')},5000)
@@ -562,26 +545,39 @@ export function Read(props){
                     loadNarration(page);
                     setStatus('stop');
                     break;
+
+                default: break;
             }
         }
     }
 
     // Media Loads
-    function mediaLoaded(type){
-
-        console.log(`media loaded - ${type}`);
-
-        const audio = document.getElementById('narrator');
+    function mediaLoaded(type,src){
 
         switch (type){
             case('img'):
                 setImgLoad(0);
 
-                if (format === 'book'){
+                if (props.content.format === 'book'){
+                    let updatedImgCache = cachedImgs;
+                    updatedImgCache.push(src);
+                    setCachedImgs(updatedImgCache);
 
+                    preload('img');
                 }
 
-                if(!audioPreloads.length){
+                if (props.content.format === 'discussion'){
+                    let updatedImgCache = cachedImgs;
+
+                    src.forEach( src =>{
+                        updatedImgCache.push( src );
+                    })
+                    setCachedImgs(updatedImgCache);
+
+                    preload('img');
+                }
+
+                if(!props.content.preloads.audio.length){
                     setNarrationState(0);
                 }
 
@@ -592,14 +588,22 @@ export function Read(props){
                 break;
 
             case('audio'):
-                console.log(`Narration Ready State - ${audio.readyState}`);
                 setAudioLoad(0);
+
+                let updatedAudioCache = cachedAudio;
+                updatedAudioCache.push(src);
+                setCachedAudio(updatedAudioCache);
+
+                preload('audio');
+
                 break;
+            default: break;
         }
 
         if (status === 'playing'){
 
             switch (type){
+
                 case('img'):
                     if(!audioLoad){
                         narrationControl('play');
@@ -607,9 +611,45 @@ export function Read(props){
                     break;
 
                 case('audio'):
+
                     if(!imgLoad){
                         narrationControl('play');
                     }
+                    break;
+                default: break;
+            }
+        }
+    }
+    function preloadCached(type,src){
+
+        let updatedCache = type === 'img' ? cachedImgs : cachedAudio;
+        let setter = type === 'img' ? setCachedImgs : setCachedAudio;
+        let currentPreloadSetter = type === 'img' ? setPreloadingImg : setPreloadingAudio;
+
+        updatedCache.push(src);
+        setter(updatedCache);
+        currentPreloadSetter('');
+        preload(type);
+    }
+    function preload(type){
+
+        const preloads = props.content.preloads[type];
+        const cached = type === 'img' ? cachedImgs : cachedAudio;
+        const setter = type === 'img' ? setPreloadingImg : setPreloadingAudio;
+
+        if (cached.length < preloads.length){
+
+            let i = 0;
+            while(i < preloads.length){
+
+                let check = type === 'img' ? preloads[i] : preloads[i].get(props.language);
+
+                if (!cached.includes(check)) {
+
+                    return setter(check);
+
+                }
+                i++;
             }
         }
     }
@@ -617,423 +657,140 @@ export function Read(props){
     //Component Handlers
     function handlePage() {
 
-        switch (format) {
+        switch (props.content.format) {
 
             case('book'):
                 return(
                     <Book
-                        material={material}
-                        content={content}
+                        pageImg={props.content.pageData[page - 1].img}
+                        content={props.content}
                         page={page}
-                        language={language}
+                        language={props.language}
                         imgLoad={imgLoad}
                         //Functions
                         mediaLoaded={mediaLoaded}
                     />
                 )
-                break;
 
             case('discussion'):
                 return (
                     <Discuss
                         status={status}
-                        images={content[page - 1].img}
-                        text={content[page - 1].text}
+                        images={props.content.pageData[page - 1].img}
+                        text={props.content.pageData[page - 1].text}
                         loaded={mediaLoaded}
+                        language={props.language}
                     />
                 )
-                break;
-        }
-    }
-    function handleStart() {
-
-        if (material.startPage === page) {
-            return <ReaderStart
-                material={material}
-                language={language}
-                audioPreloads={audioPreloads}
-                narrationControl={narrationControl}
-                nextPage={nextPage}
-            />
-
+            default: break;
         }
     }
 
     // DOM Functions
-    function showControls(){
-
-        const controls = document.getElementById('controlBar');
-
-        if(controls){
-
-            if(controls.style.opacity === '1'){
-                console.log('controls visible');
-                controls.style.opacity = 0;
-            }
-            else {
-                controls.style.opacity = 1;
-                setTimeout(function(){controls.style.opacity = 0;}, 3000);
-            }
-        }
-    }
     function clearPageInput(){
+        /*
         const pageInput = document.getElementById('pageInput');
-        pageInput.value = '';
+        pageInput.value = page;
+        pageInput.classList.remove('error');
+         */
     }
     function openCompleteWindow(){
         const congrats = document.getElementById('complete');
         congrats.style.display = 'inline-flex';
     }
-
-    //SUB-COMPONENTS
-    function ReaderControlBar(props){
-
-        function checkNarration(){
-
-            function handlePlay(){
-                narrationControl('play');
-            }
-            function handlePause(){
-                narrationControl('pause');
-            }
-            function handleRestart(){
-                narrationControl('restart');
-            }
-            function showButtons(){
-
-                function playButton(){
-                    if(!narrationState){
-                        return(
-                            <button className="playButton" id="play" onClick={handlePlay}>
-                                <div className="playSymbol"/>
-                            </button>
-                        )
-                    }
-                    else{
-                        return loadingButton();
-                    }
-                }
-                function pauseButton(){
-                    return(
-                        <button className="pauseButton" id="pause"
-                                onClick={handlePause}
-                        >
-                            <div className="pauseSymbol"/>
-                            <div className="pauseSymbol"/>
-                        </button>
-                    )
-                }
-                function replayButton(){
-                    return(
-                        <button className="replayButton" id="restart" onClick={handleRestart} >
-                            <div className="stopSymbol"/>
-                        </button>
-                    )
-
-                }
-                function loadingButton(){
-                    return(
-                        <button className="loadingButton" id="restart" onClick={handleRestart} >
-                            <Loading class={'noBg'}/>
-                        </button>
-                    )
-                }
-
-                if(status==='playing'){
-                    return(
-                        <div className="narrControls">
-                            {!narrationState ? pauseButton() : loadingButton()}
-                            {replayButton()}
-                        </div>
-                    )
-
-                }
-                else if (status==='pause'){
-                    return (
-                        <div className="narrControls">
-                            {playButton()}
-                            {replayButton()}
-                        </div>
-                    )
-                }
-                else if(status==='stop'){
-                    return(
-                        <div className="narrControls">
-                            {playButton()}
-                        </div>
-                    )
-                }
-            }
-
-            function NarrationControl(){
-
-                return(
-                    <div className="NarrationControl controlBox" id="controls" >
-
-                        <div className="narrControls">
-                            {showButtons()}
-                        </div>
-
-                    </div>
-                )
-            }
-
-            if(content[page - 1].audio){
-
-                console.log('Narrator');
-                return (
-                    <NarrationControl/>
-                )
-            }
-        }
-
-        function readerProgress(){
-
-            function pageCounter(){
-
-                function inputPage(){
-                    const pageInput = document.getElementById('pageInput');
-
-                    if (pageInput.value > 0 && pageInput.value <= endPage){
-
-                        pageInput.style.backgroundColor = "aliceBlue"
-                        changePage(Number(pageInput.value),true);
-
-                    } else {
-                        pageInput.style.backgroundColor = "hsl(0,70%,70%)"
-                    }
-                }
-
-                return(
-                    <div className="pageCounter label col-auto" id={'pageCounterWrap'}>
-
-                        <label htmlFor="pageInput">
-                            { pageText.labels.page[language] } #:
-                        </label>
-
-                        <input type="number"
-                               id="pageInput"
-                               name="pageInput"
-                               placeholder={page}
-                               onChange={inputPage}
-                        />
-
-                        <label htmlFor="pageInput" id="totalPages">
-                            /{endPage}
-                        </label>
-
-                    </div>
-                )
-            }
-
-            function pageSlider(){
-
-                function slidePage(){
-
-                    const progress = document.getElementById('progressSlider');
-
-                    changePage(Number(progress.value),true);
-                }
-
-                return(
-                    <div className="progressSliderWrap label col-lg" id={'progressSliderWrap'}>
-                        <input type="range"
-                               min={startPage}
-                               max={endPage}
-                               value={page}
-                               id="progressSlider"
-                               onChange={slidePage }
-                        />
-                    </div>
-                )
-            }
-
-            return(
-                <div className={'col-md-auto readerProgressWrap'}>
-
-                    <div className="ReaderProgress controlBox row" id={'readerProgress'}>
-
-                            {pageCounter()}
-                            {pageSlider()}
-
-                    </div>
-
-                </div>
-
-            )
-        }
-
-        return(
-                <div className="ReaderControlBar row" id='controlBar'>
-
-                    <div className="mobileTop col-auto no-gutters">
-
-                        <div className={'col-sm-auto no-gutters'}>
-                            {checkNarration()}
-                        </div>
-
-                        <div className={'col-auto no-gutters  justify-content-center'}>
-                            <Translate
-                                language={language}
-                                changeLanguage={changeLanguage}
-                                //restartPage={handleRestart}
-                            />
-                        </div>
-
-                        <div className={'mobile-close col-auto'}>
-
-                            <Button type={'close'} link={'/library'} id={'mobileClose'}/>
-
-                        </div>
-
-                    </div>
-
-                    {readerProgress()}
-
-                    <div className={'col-auto standard-close no-gutters'}>
-
-                        <Button type={'close'} link={'/library'} id={'mobileClose'}/>
-
-                    </div>
-
-            </div>
-
-        )
+    function hideAudioBubble(){
+        setAudioBubble(0);
     }
-    function pageArrow(type,className){
-
-        function nextArrow(){
-
-            function clickNext(e){
-                nextPage(e,true);
-            }
-
-            return(
-                <div className={'col-s-1'}>
-                    <button id="nextPage" onClick={ clickNext } className={className}>
-                        <div className="nextPageSymbol"/>
-                    </button>
-                </div>
-            )
-        }
-        function preArrow(){
-
-            function prevPage(){
-                if ( page > startPage ){
-                    changePage(page - 1,true);
-                }
-            }
-            function getClass(){
-
-                if (page === startPage){
-                    return 'disabled';
-                } else {
-                    return null;
-                }
-            }
-
-            return(
-                <div className={'col-s-1'}>
-                    <button id="prevPage" className={`${getClass()} ${className}`} onClick={ prevPage } >
-                        <div className="prevPageSymbol"/>
-                    </button>
-                </div>
-            )
-        }
-
-        if (type==='>'){
-            return nextArrow();
-        } else {
-            return preArrow();
-        }
-    }
-    function Preloaders(props){
-
-        return(
-            <div className={'preLoaders'}>
-
-                {imgPreloads}
-
-                {audioPreloads[page]}
-
-            </div>
-        )
-    }
-
 
     return(
-        <div className={'row'}>
+        <div className={'row no-gutters'}>
 
             <div className="Read col d-flex flex-column align-items-center justify-content-center">
 
-                <ReaderControlBar/>
+                <ReaderControlBar
+                    narrationState={narrationState}
+                    page={page}
+                    status={status}
+                    content={props.content}
+                    language={props.language}
+                    sessionInfo={props.sessionInfo}
+                    //Methods
+                    narrationControl={narrationControl}
+                    changePage={changePage}
+                    changeLanguage={props.changeLanguage}
+                    audioBubble={audioBubble}
+                    hideAudioBubble={hideAudioBubble}
+                />
 
                 <div
                     id="ReaderContent"
                     className="ReaderContent row d-flex flex-row justify-content-center align-items-center"
-                    onClick={showControls}
                 >
 
-                    {handleStart()}
+                    <ReaderStart
+                        content={props.content}
+                        language={props.language}
+                        page={page}
+                        //Methods
+                        narrationControl={narrationControl}
+                        nextPage={nextPage}
+                        setAudioBubble={setAudioBubble}
+                    />
+
                     {handlePage()}
 
                 </div>
 
-                {/*
-
-                <ReaderContent
-                    //States
-                    page={page}
-                    status={status}
-                    imgLoad={imgLoad}
-                    //Props
-                    material={material}
-                    content={content}
-                    language={language}
-                    audioPreloads={audioPreloads}
-                    //Methods
-                    narrationControl={narrationControl}
-                    nextPage={nextPage}
-                    mediaLoaded={mediaLoaded}
-                    showControls={showControls}
-                />
-                */}
-
                 <div className={'pageArrows row'}>
 
                     <div className={'col'}>
-                        {page > startPage ? pageArrow('<','default') : ''}
+
+                        <PageArrow
+                            type={'<'}
+                            className={'default'}
+                            page={page}
+                            startPage={startPage}
+                            //Methods
+                            changePage={changePage}
+                        />
+
                     </div>
 
                     <div className={'col'}>
-                        {pageArrow('>','default')}
+
+                        <PageArrow
+                            type={'>'}
+                            className={'default'}
+                            page={page}
+                            //Methods
+                            nextPage={nextPage}
+                        />
+
                     </div>
 
                 </div>
 
-                {/*
-                <div className={'mobileArrows row'}>
-                    {pageArrow('<',page,'mobile',changePage,)}
-                    <div className={'col'}/>
-                    {pageArrow('>',page,'mobile',changePage,nextPage)}
-                </div>
-                */}
-
                 <div className={'misc'}>
 
-                    <Preloaders/>
+                    <Preloader
+                        preloads={props.content.preloads}
+                        preloadingImg={preloadingImg}
+                        preloadingAudio={preloadingAudio}
+                        page={page}
+                        //Methods
+                        setCachedImgs={setCachedImgs}
+                        preloadCached={preloadCached}
+                    />
 
                     <Congrats
-                        language={language}
+                        language={props.language}
                         changePage={changePage}
-                        sessionId={material.sessionId}
-                        partNo={material.partNo}
+                        sessionInfo={props.sessionInfo}
                     />
 
                     <Audio
-                        material={material}
-                        page={page}
-                        language={language}
+                        src={props.content.pageData[page - 1].audio.get(props.language)}
+                        language={props.language}
                         nextPage={nextPage}
                         mediaLoaded={mediaLoaded}
                         setNarrationState={setNarrationState}
@@ -1046,4 +803,7 @@ export function Read(props){
         </div>
     )
 }
+
+
+
 

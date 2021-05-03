@@ -2,11 +2,16 @@
 
 :root{
     --green: hsl(120,40%,50%);
-    --blue: hsl(200,40%,50%);
+    --blue: #547aa5;
     --light-blue: hsl(200,60%,70%);
-    --light-green: hsl(120,60%,70%);
+    /*--light-green: hsl(120,60%,70%);*/
     --yellow: hsl(55, 80%, 70%);
     --red: hsl(0,60%,60%);
+
+    --primary-blue: #46ACC2;
+    --primary-green: mediumseagreen;
+    --light-green: #91C499;
+    --dark-accent: darkcyan;
 }
 
 /* BACKGROUND COLORS */

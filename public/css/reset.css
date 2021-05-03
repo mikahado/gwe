@@ -52,7 +52,3 @@ textarea {
 textarea:focus, input:focus{
   outline: none;
 }
-
-html{
-  background-color: #1f7ead;
-}

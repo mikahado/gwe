@@ -1,15 +1,14 @@
-import { curriculum } from '../data/curriculum';
+import { curriculum } from '../data/--old data--/curriculum';
 
 // Media Content
-import books from '../data/books';
-import discussions from '../data/discussions';
-import videos from '../data/videos';
-import headshots from '../data/headshots';
+import books from '../data/books/books';
+import discussions from '../data/--old data--/discussions';
+import videos from '../data/--old data--/videos';
+import headshots from '../data/--old data--/headshots';
 
 import pageText from '../data/pageText';
-import lauren from '../data/characters/discussionCharacters/lauren.png';
 import React from "react";
-import characters from "../data/characters/characters";
+import discussionCharacters from "../data/discussions/discussionCharacters/discussionCharacters";
 
 const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
 
@@ -18,14 +17,14 @@ const contentGetters = {
         switch( format ){
             case( 'book' ):
                 return books;
-                break;
 
             case( 'discussion'):
                 return discussions;
-                break;
 
             case( 'video'):
                 return videos;
+
+            default:
                 break;
         }        
     },
@@ -35,7 +34,7 @@ const contentGetters = {
             return content;
         }
 
-        if ( content[ language ] ){
+        if ( content.hasOwnProperty(language)){
             return content[ language ];
         }
 
@@ -67,7 +66,7 @@ const contentGetters = {
             switch( format ){
     
                 case( 'book'):
-                    image = `${process.env.PUBLIC_URL}/assets/book/${content.contentId}/pages/1.jpg`;
+                    image = `${process.env.PUBLIC_URL}/assets/book/${content.contentId}/pages1.jpg`;
                     break;
     
                 case( 'discussion' ):
@@ -76,6 +75,9 @@ const contentGetters = {
     
                 case( 'video' ):
                     image = content.featImg;
+                    break;
+
+                default:
                     break;
             }
     
@@ -144,12 +146,12 @@ const contentGetters = {
                         pageData.img.forEach( img =>{
 
                             if(!preloads.includes(img)){
-                                preloads.push(<img src={img}/>);
+                                preloads.push(<img src={img} alt={''}/>);
                             }
                         });
                     }
                     else{
-                        preloads.push( <img src={pageData.img}/>);
+                        preloads.push( <img src={pageData.img} alt={''}/>);
                     }
                 }
             })
@@ -171,29 +173,48 @@ const contentGetters = {
             });
             return preloads;
         },
-        getReaderPages(materialSummary,language){
+        getReaderPages(materialSummary,language,formatInput,contentIdInput){
 
             let pages = [];
 
-            if(materialSummary.format === 'book'){
+            if(materialSummary.format === 'book' || formatInput === 'book'){
 
-                for(let page=1; page<=materialSummary.endPage; page++){
+                let contentId, format, narration,endPage;
+
+                if(materialSummary){
+                    contentId = materialSummary.contentId;
+                    format = materialSummary.format;
+                    narration = materialSummary.narration;
+                    endPage = materialSummary.endPage;
+                }
+                else if(formatInput === 'book'){
+
+                    let book = books[contentIdInput];
+
+                    contentId = contentIdInput;
+                    format = formatInput;
+                    narration = book.narration;
+                    endPage = book.pages;
+                }
+
+                for(let page=1; page<=endPage; page++){
                     pages.push({
                         img: contentGetters.findByContentId.pageImg(
-                            materialSummary.contentId,
+                            contentId,
                             page
                         ),
-                        audio: materialSummary.narration !== undefined ?
+                        audio: narration !== undefined ?
                                 contentGetters.findByContentId.audioSrc(
-                                materialSummary.format,
-                                materialSummary.contentId,
+                                format,
+                                contentId,
                                 language,
                                 page
                             )
                             :'',
                         text: language === 'spa' ? contentGetters.findByContentId.translations(
-                            materialSummary.format,
-                            materialSummary.contentId,page
+                            format,
+                            contentId,
+                            page
                         ):''
                     });
                 }
@@ -241,9 +262,9 @@ const contentGetters = {
         discussionPageImgs(contentId,page){
 
             function checkForCharacterImg(img){
-                if(Object.keys(characters).includes(img)){
+                if(Object.keys(discussionCharacters).includes(img)){
 
-                    return characters[img];
+                    return discussionCharacters[img];
                 }
                 else{return false};
             }
@@ -440,12 +461,17 @@ const contentGetters = {
                 contentSummary.readBy = this.extractFromData.readBy( contentSummary.reader, language );
                 contentSummary.readerPhoto = this.extractFromData.readerPhoto( contentSummary.reader, language );
                 // Attach Page Count
-                contentSummary.pages = content.pages
+                contentSummary.pages = content.pages;
+                contentSummary.startPage = 1;
+                contentSummary.endPage = content.pages;
                 break;
 
             case('discussion'):
                 // Attach Page Count
                 contentSummary.pages = Object.keys(content.pages).length;
+                break;
+
+            default:
                 break;
         }
         return contentSummary;
@@ -483,7 +509,7 @@ const contentGetters = {
         }
 
         // Attach Book / Discussion -Specific Info
-        if(material.format === 'book' || material.format == 'discussion'){
+        if(material.format === 'book' || material.format === 'discussion'){
 
             if(!material.startPage){
                 materialSummary.startPage = 1;
@@ -513,8 +539,6 @@ const contentGetters = {
             return session.sessionId === sessionId;
         });
 
-        console.log(session);
-
         const sessionSummary = {
             sessionId: session.sessionId,
             material: session.material.map( material =>{
@@ -531,11 +555,22 @@ const contentGetters = {
         return sessionSummary;
     },
     // Misc
-    readerContent(materialSummary,language){
+    readerContent(materialSummary,language,formatInput,contentIdInput){
 
         let content = {};
 
-        content.pages = contentGetters.extractFromData.getReaderPages(materialSummary,language);
+        if(materialSummary){
+            content.pages = contentGetters.extractFromData.getReaderPages(materialSummary,language);
+        }
+        else if(formatInput === 'book'){
+            content.pages = contentGetters.extractFromData.getReaderPages(
+                '',
+                language,
+                formatInput,
+                contentIdInput
+            );
+        }
+
         content.imgPreloads = contentGetters.extractFromData.getImgPreloads(content.pages);
         content.audioPreloads = contentGetters.extractFromData.getAudioPreloads(content.pages);
 
@@ -575,5 +610,14 @@ const contentGetters = {
         })
         return icons;
     },
+    libraryBooks(){
+        const libraryBooks = [];
+
+        Object.keys(books).forEach( bookKey =>{
+            libraryBooks.push( books[bookKey]);
+        });
+
+        return libraryBooks;
+    }
 }
 export default contentGetters;

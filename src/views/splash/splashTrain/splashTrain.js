@@ -11,15 +11,15 @@ import './splashTrain.css';
 class SplashTrain extends React.Component{
     render(){
         return (
-            <div className='splashTrain'>
+            <div className='splashTrain' id={'splashTrain'}>
 
-                <img src={Train} className='trainBody'/>
-                <img src={wheel} className='trainWheel one'/>
-                <img src={wheel} className='trainWheel two'/>
-                <img src={wheel} className='trainWheel three'/>
-                <img src={wheel} className='trainWheel four'/>
-                <img src={wheel} className='trainWheel five'/>
-                <img src={wheel} className='trainWheel six'/>
+                <img src={Train} className='trainBody' alt={''}/>
+                <img src={wheel} className='trainWheel one' alt={''}/>
+                <img src={wheel} className='trainWheel two' alt={''}/>
+                <img src={wheel} className='trainWheel three' alt={''}/>
+                <img src={wheel} className='trainWheel four' alt={''}/>
+                <img src={wheel} className='trainWheel five' alt={''}/>
+                <img src={wheel} className='trainWheel six' alt={''}/>
                 <SplashBubbles/>
                 
             </div>

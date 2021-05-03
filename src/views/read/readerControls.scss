@@ -78,7 +78,7 @@
   background-color: var(--light-blue);
 }
 #pageCounterWrap{
-  background-color: var(--light-blue);
+  //background-color: var(--light-blue);
 }
 #pageInput{
   width: 3rem;
@@ -87,6 +87,9 @@
   padding: 0;
 
   text-align: center;
+}
+#pageInput.error{
+  background-color: hsl(0,70,70);
 }
 #totalPages{
   width: fit-content;
@@ -98,9 +101,10 @@ label{
   width: 90%;
   margin: 0.5rem;
   height: fit-content;
+  background-color: lightblue;
 }
 #progressSliderWrap{
-  background-color: var(--light-blue);
+  //background-color: var(--light-blue);
 }
 #progressSlider{
   width: 90%;
@@ -108,7 +112,7 @@ label{
 
   border: 5px solid white;
   border-radius: 1rem;
-  background-color: white;
+  //background-color: white;
 }
 .rightButtons{
   margin:0;
@@ -118,80 +122,7 @@ label{
 }
 
 /* Reader Start */
-.ReaderStart{
 
-  //Position
-  position: relative;
-
-  //Display
-  //display: flex;
-  //flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  // Sizing
-  height: fit-content;
-  max-width: 18rem;
-  padding: 1rem;
-  margin: 1rem;
-
-  //Background & Border
-  border-radius: 1rem;
-  background: hsl(200,30%,80%);
-  background: linear-gradient(
-                  180deg,
-                  hsl(200,70%,60%) 0%,
-                  hsl(200,70%,40%) 100%
-  );
-
-  //Text
-  text-align: center;
-
-  .readerTitleAuthor{
-    margin-bottom: 0.5rem;
-  }
-
-  .readByName{
-    margin: 0.5rem;
-  }
-
-  .readerTitleAuthor, .readerReadBy{
-    background-color: hsla(0,0%,100%,0.2);
-    padding: 0.5rem;
-    border-radius: 1rem;
-  }
-
-  hr{
-    border-color: hsla(0,0%,0%,0.2);
-    width: 60%;
-  }
-
-  #playNarration{
-    margin-top: 1rem;
-  }
-
-  #readerStartLoading{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: var(--yellow);
-    color: var(--blue);
-
-    p{
-      animation: pulse 2s infinite ease-in-out;
-      margin-right: 1rem;
-    }
-  }
-
-  .readerStartLoadingWrap{
-    padding-right: 1.5rem;
-    position: relative;
-  }
-
-}
 #readerPhoto{
   margin: 0.5rem 0 0.5rem 0;
   width: 95%;
@@ -218,13 +149,16 @@ label{
     justify-content: center;
   }
 }
+#nextPage:hover{
+
+}
 /* Next Page */
 #nextPage{
   position: relative;
-  //right: 0;
-  height: fit-content;
+  height: 4rem;
+  width: 4rem;
+  padding: 0;
   border-radius: 100%;
-  //top: 50%;
 }
 .nextPageSymbol{
   width: 0;
@@ -238,7 +172,9 @@ label{
 /* Prev Page */
 #prevPage{
   z-index: 5;
-  height: fit-content;
+  height: 4rem;
+  width: 4rem;
+  padding: 0;
   border-radius: 100%;
   //left: 0;
   //top: 50%;

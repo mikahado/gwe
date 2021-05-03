@@ -64,7 +64,8 @@
   justify-content: center;
   /* Size */
   padding: 0.5rem;
-  background-color: var(--light-blue);
+  background-color: var(--dark-accent);
+  color: aliceblue;
   border-radius: 1rem;
 }
 .translation p {
@@ -73,17 +74,6 @@
   padding-right: 0.5rem;
   margin-bottom: 0.2rem;
   text-align: center;
-}
-
-.preLoaders {
-  position: fixed;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-.preLoaders img {
-  width: 100%;
-  height: 100%;
 }
 
 /*# sourceMappingURL=read.css.map */

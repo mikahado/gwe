@@ -4,9 +4,6 @@ import React from 'react';
 import { SummaryEntry } from '../../components/summary/summary';
 import {Button} from "../../components/buttons/buttons";
 
-// Data
-import { default as get } from '../../utilities/contentGetters';
-
 // Style Sheets
 import './nextUp.css';
 import {useParams} from "react-router-dom";
@@ -22,7 +19,7 @@ export function NextUp( props ){
             <div className='nextUpBody'>
                 <h1 className={'nextUpTitle label'}>Course Complete!</h1>
                 <p className='label'>
-                    Congrats, you've complete this course!
+                    Congrats, you've completed this course!
                 </p>
 
                 <AboutGWE
@@ -30,8 +27,8 @@ export function NextUp( props ){
                 />
 
                 <Button
-                    text={'backLibrary'}
-                    link='/library'
+                    text={'Back To Session Map'}
+                    link={`/map/s-${props.material.sessionInfo.sessionId}`}
                     language={props.language}
                     iconType={'leftArrow'}
                 />
@@ -45,13 +42,12 @@ export function NextUp( props ){
             </div>
         )
     }
-
     function sessionComplete(){
         return (
             <div className='nextUpBody'>
                 <h1 className={'nextUpTitle label'}>Session Complete!</h1>
                 <p className='label'>
-                    Congrats, you've complete this session!
+                    Congrats, you've completed this session!
                 </p>
 
                 <Button
@@ -62,8 +58,8 @@ export function NextUp( props ){
                 />
 
                 <Button
-                    text={'backLibrary'}
-                    link='/library'
+                    text={'Back to Session Map'}
+                    link='/map'
                     language={props.language}
                     iconType={'leftArrow'}
                 />
@@ -78,8 +74,7 @@ export function NextUp( props ){
             </div>
         )
     }
-
-    function nextMaterial(materialSummary){
+    function nextMaterial(material){
 
         return (
             <div className='nextUpBody'>
@@ -89,24 +84,22 @@ export function NextUp( props ){
                 <div className={'row'}>
 
                     <SummaryEntry
-                        summary={ materialSummary }
+                        material={ props.material }
                         language={ props.language }
                     />
 
                 </div>
 
-
-
                 <Button
                     text='Continue'
-                    link={`/s${materialSummary.sessionId}/p${materialSummary.partNo}`}
+                    link={`/s${material.sessionInfo.sessionId}/p${material.sessionInfo.partNo}`}
                     language={ props.language }
                     iconType={'rightArrow'}
                 />
 
                 <Button
-                    text='backLibrary'
-                    link='/library'
+                    text='Back To Sessions'
+                    link={`/map/s-${material.sessionInfo.sessionId}`}
                     language={ props.language }
                     iconType={'leftArrow'}
                 />
@@ -115,7 +108,6 @@ export function NextUp( props ){
 
         )
     }
-
     function checkStatus(){
 
         if(status === 'sessionComplete'){
@@ -131,7 +123,7 @@ export function NextUp( props ){
 
     return(
         <div className={'row'}>
-            <div className='nextUp controlBox col'>
+            <div className='nextUp controlBox col roundBorder darkShadow'>
                 { checkStatus() }
             </div>
         </div>

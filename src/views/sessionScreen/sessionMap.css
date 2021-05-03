@@ -1,0 +1,62 @@
+/* Page Container */
+.sessionMap {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.sessionMap .trainCol {
+  position: relative;
+  max-width: 80vh;
+  overflow: hidden;
+}
+.sessionMap .trainWrap {
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  height: 50vh;
+  width: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.sessionMap .trainWrap .sizeTrain {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0;
+}
+.sessionMap .trainWrap .splashTrain {
+  --trainHeight: 40vh;
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 5%;
+  height: var(--trainHeight);
+  width: calc( var(--trainHeight) * 3.1238);
+  margin: 0;
+}
+.sessionMap .trainWrap .splashTrain .trainWheel {
+  animation-play-state: paused;
+}
+
+#bg {
+  position: relative;
+  bottom: 0;
+  height: 100%;
+  background-image: url("../splash/splashBGscrollCrop.jpg");
+  background-size: auto 100%;
+  background-position: 0% 0;
+  transition: background-position 3s;
+}
+
+@media only screen and (max-width: 767px) {
+  #bg {
+    background-image: none;
+  }
+}
+
+/*# sourceMappingURL=sessionMap.css.map */

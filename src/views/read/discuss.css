@@ -1,14 +1,13 @@
 .discWrap {
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: fit-content;
+  width: 100%;
 }
 
 .discWrap.fullImg {
   height: fit-content;
-  width: fit-content;
 }
 
 /* Discussion Image(s) Wrap */
@@ -43,7 +42,7 @@
   justify-content: center;
   align-items: center;
   animation: grow 1.5s infinite ease-in-out;
-  background-color: #85c2e0;
+  background-color: var(--light-blue);
   border-radius: 100%;
   box-shadow: 0 0 2rem aliceblue;
 }
@@ -69,36 +68,9 @@
     transform: scale(1.5);
   }
 }
-.discGridCharacter.of1 {
-  width: 40%;
-}
-
-.discGridCharacter.of2 {
-  width: 40%;
-}
-
-.discGridCharacter.of3 {
-  width: 30%;
-}
-
-.discGridCharacter.of4 {
-  width: 22%;
-}
-
-.discGridCharacter.of5 {
-  width: 18%;
-}
-
-.discGridCharacter.of6 {
-  width: 20%;
-}
-
-.discGridCharacter.of7 {
-  width: 14%;
-}
-
-.discGridCharacter.of8 {
-  width: 14%;
+.discGridCharacter {
+  width: 12rem;
+  height: 12rem;
 }
 
 #discGridImg {
@@ -119,6 +91,7 @@
 
 .discFullImg {
   width: 100%;
+  max-width: 50vw;
   height: auto;
   border-radius: 1rem;
 }
@@ -128,7 +101,7 @@
   max-width: 100%;
   margin: 1rem;
   padding: 1rem;
-  background-color: #1481b8;
+  background-color: var(--dark-accent);
   border-radius: 1rem;
 }
 

@@ -1,18 +1,8 @@
 // React
 import React from 'react';
 
-// React Components
-import {
-    Link
-  } from "react-router-dom";
-
-// Sub - Components
-import Mascot from '../mascot/mascot';
-
 // Style Sheet
 import './congrats.css';
-import pageText from '../../data/pageText';
-import Sally from '../sally/sally';
 import { Button } from '../buttons/buttons';
 
 class Congrats extends React.Component{
@@ -22,8 +12,10 @@ class Congrats extends React.Component{
     }
 
     readAgain(){
+
         //Set State
         this.props.changePage(1);
+
         //Remove Congrats Window
         const congrats = document.getElementById('complete');
         congrats.style.display = 'none';
@@ -38,21 +30,18 @@ class Congrats extends React.Component{
 
                         <div className="congratsOptions label">
 
-                            <Button
-                                text={ 'Continue' }
-                                link={ `/s${ this.props.sessionId }/p${ this.props.partNo}/next` }
-                                language={ this.props.language }
-                                iconType={'rightArrow'}
-                            />
+                            {
+                                this.props.sessionInfo ?
+                                    <Button
+                                        text={ 'Continue' }
+                                        link={ `/s${ this.props.sessionInfo.sessionId }/p${ this.props.sessionInfo.partNo}/next` }
+                                        language={ this.props.language }
+                                        iconType={'rightArrow'}
+                                    />
+                                    :''
+                            }
 
                             <div className={'otherOptions'}>
-
-                                <Button
-                                    text={ 'backLibrary' }
-                                    link={ '/library'}
-                                    language={this.props.language}
-                                    iconType={'leftArrow'}
-                                />
 
                                 <Button
                                     text ={ 'readAgain' }
@@ -60,6 +49,23 @@ class Congrats extends React.Component{
                                     language={ this.props.language }
                                     iconType={'leftArrow'}
                                 />
+
+                                {
+                                    this.props.sessionInfo ?
+                                        <Button
+                                            text={'Back to Sessions'}
+                                            link={ `/map/s-${this.props.sessionInfo.sessionId}`}
+                                            language={this.props.language}
+                                            iconType={'leftArrow'}
+                                        />
+                                        :
+                                        <Button
+                                            text={ 'backLibrary' }
+                                            link={ '/library'}
+                                            language={this.props.language}
+                                            iconType={'leftArrow'}
+                                        />
+                                }
 
                             </div>
 

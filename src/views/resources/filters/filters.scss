@@ -1,0 +1,33 @@
+.filters{
+  top: 1rem;
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  width: fit-content;
+  max-width: 80vw;
+
+  color: aliceblue;
+
+  padding: 1rem;
+
+  box-shadow: 0 0 1rem dimgrey;
+
+  p{
+
+  }
+
+  .category{
+    //Spacing
+    padding: 1rem;
+    margin: 0.5rem;
+
+    //Display
+    display: flex;
+    flex-wrap: wrap;
+
+    //Background & Border
+    border: 0.2rem solid hsl(120,60%,80%);
+    //background-color: var(--dark-accent);
+    border-radius: 1rem;
+
+  }
+}

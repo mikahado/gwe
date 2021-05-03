@@ -1,0 +1,63 @@
+//WRAPS */
+
+#Summary{
+
+  //Position
+  position: fixed;
+  z-index: 5;
+
+  //Display
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  //Sizing
+  //height: fit-content;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  //Spacing
+  padding: 0.5rem;
+
+  box-sizing: border-box;
+
+  // Background & Border
+  //border: 0.2rem solid aliceblue;
+  background-color: fade-out(dimgray,0.25);
+  border-radius: 0;
+
+  .sessionHeader{
+    //position: relative;
+    //width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //justify-content: space-between;
+
+    background-color: var(--primary-blue);
+    box-shadow: 0 0 1rem dimgray;
+    padding: 0.5rem;
+
+    h2{
+      width: fit-content;
+    }
+  }
+
+  .closeButton{
+    //position: static;
+    height: fit-content;
+    p{
+      margin-bottom: 0;
+    }
+  }
+}
+#Summary.noSummary{
+  border: none;
+}
+
+.materialList{
+  margin: 1rem;
+}

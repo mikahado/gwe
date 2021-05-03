@@ -1,0 +1,44 @@
+.mediaListEntry {
+  position: relative;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Size */
+  width: 13rem;
+  height: 18rem;
+  margin: 1em;
+  /* Border & Background */
+  border-radius: 1em;
+  border: 0.25rem solid aliceblue;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 1rem midnightblue;
+}
+
+.mediaListEntry:hover {
+  animation: none;
+}
+
+/* Text Box */
+#summaryMediaDets {
+  position: absolute;
+  bottom: -1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Size */
+  width: 80%;
+  height: 6rem;
+  padding: 0.25rem;
+  /* Background */
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  border: 0.25rem solid aliceblue;
+  /* Animation */
+  animation: none;
+}
+
+/*# sourceMappingURL=libraryBook.css.map */

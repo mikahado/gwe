@@ -1,0 +1,20 @@
+.sessionList{
+
+    position: relative;
+    z-index: 6;
+
+    //Sizing
+    width: 80%;
+
+    //Spacing
+    margin: auto;
+
+    //Display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //Background & Border
+    //background-color: fade-out( skyblue,0.25);
+    border-radius: 1rem;
+}

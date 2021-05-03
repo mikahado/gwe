@@ -66,16 +66,16 @@
   background-color: var(--light-blue);
 }
 
-#pageCounterWrap {
-  background-color: var(--light-blue);
-}
-
 #pageInput {
   width: 3rem;
   background-color: aliceblue;
   border-radius: 1rem;
   padding: 0;
   text-align: center;
+}
+
+#pageInput.error {
+  background-color: #e87d7d;
 }
 
 #totalPages {
@@ -90,10 +90,7 @@ label {
   width: 90%;
   margin: 0.5rem;
   height: fit-content;
-}
-
-#progressSliderWrap {
-  background-color: var(--light-blue);
+  background-color: lightblue;
 }
 
 #progressSlider {
@@ -101,7 +98,6 @@ label {
   height: 1em;
   border: 5px solid white;
   border-radius: 1rem;
-  background-color: white;
 }
 
 .rightButtons {
@@ -112,56 +108,6 @@ label {
 }
 
 /* Reader Start */
-.ReaderStart {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  max-width: 18rem;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 1rem;
-  background: #bdd1db;
-  background: linear-gradient(180deg, #52b1e0 0%, #1f7ead 100%);
-  text-align: center;
-}
-.ReaderStart .readerTitleAuthor {
-  margin-bottom: 0.5rem;
-}
-.ReaderStart .readByName {
-  margin: 0.5rem;
-}
-.ReaderStart .readerTitleAuthor, .ReaderStart .readerReadBy {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem;
-  border-radius: 1rem;
-}
-.ReaderStart hr {
-  border-color: rgba(0, 0, 0, 0.2);
-  width: 60%;
-}
-.ReaderStart #playNarration {
-  margin-top: 1rem;
-}
-.ReaderStart #readerStartLoading {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0.5rem;
-  background-color: var(--yellow);
-  color: var(--blue);
-}
-.ReaderStart #readerStartLoading p {
-  animation: pulse 2s infinite ease-in-out;
-  margin-right: 1rem;
-}
-.ReaderStart .readerStartLoadingWrap {
-  padding-right: 1.5rem;
-  position: relative;
-}
-
 #readerPhoto {
   margin: 0.5rem 0 0.5rem 0;
   width: 95%;
@@ -191,7 +137,9 @@ label {
 /* Next Page */
 #nextPage {
   position: relative;
-  height: fit-content;
+  height: 4rem;
+  width: 4rem;
+  padding: 0;
   border-radius: 100%;
 }
 
@@ -207,7 +155,9 @@ label {
 /* Prev Page */
 #prevPage {
   z-index: 5;
-  height: fit-content;
+  height: 4rem;
+  width: 4rem;
+  padding: 0;
   border-radius: 100%;
 }
 

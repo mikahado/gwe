@@ -16,7 +16,7 @@ class Translate extends React.Component{
     }
     render(){
         return(
-            <button className='translate'
+            <button className='translate' id={'translateButton'}
                 onClick={this.handleChange }>
                 { pageText.buttons.translate[ this.props.language ] }
             </button>

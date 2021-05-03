@@ -13,37 +13,37 @@ class SplashBubbles extends React.Component{
 
                 <div className="bubbleContainer one">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
 
                 <div className="bubbleContainer two">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
 
                 <div className="bubbleContainer three">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
 
                 <div className="bubbleContainer four">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
 
                 <div className="bubbleContainer five">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
 
                 <div className="bubbleContainer six">
                     <div className='bubble'>
-                        <img src={bubbles}/>
+                        <img src={bubbles} alt={''}/>
                     </div>
                 </div>
                 

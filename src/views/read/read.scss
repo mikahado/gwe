@@ -89,7 +89,8 @@
   justify-content: center;
   /* Size */
   padding: 0.5rem;
-  background-color: var(--light-blue);
+  background-color: var(--dark-accent);
+  color: aliceblue;
   border-radius: 1rem;
 
   p{
@@ -101,14 +102,4 @@
   }
 }
 
-.preLoaders{
-  position: fixed;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
 
-  img{
-    width: 100%;
-    height: 100%;
-  }
-}

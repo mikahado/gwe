@@ -1,0 +1,78 @@
+.sessionListItem {
+  position: relative;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 12rem;
+  max-height: 15rem;
+  margin: 1em;
+  /* Border & Background */
+  border-radius: 1em;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+}
+.sessionListItem img {
+  width: 100%;
+  height: auto;
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+}
+
+.mediaListEntry.wideThumb {
+  background-size: contain;
+}
+
+.mediaListEntry:hover {
+  animation: none;
+}
+
+/* Text Box */
+.sessionWrap {
+  padding: 0.25rem;
+  margin: 1rem 0;
+  background-color: var(--dark-accent);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem dimgrey;
+  /* Animation & Transition */
+  animation: none;
+  transition: opacity 0.5s;
+}
+.sessionWrap button {
+  border-radius: 100%;
+  border: 0.2rem solid aliceblue;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+.sessionWrap button.disabled {
+  background-color: lightgray;
+  color: dimgrey;
+}
+.sessionWrap .sessionGrid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+.changeSession {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  padding: 0.25rem;
+  border-radius: 100%;
+}
+
+.changeSession.forward {
+  right: -3rem;
+}
+
+.changeSession.back {
+  left: -3rem;
+}
+
+/*# sourceMappingURL=sessionListItem.css.map */

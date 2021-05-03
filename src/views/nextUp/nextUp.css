@@ -1,5 +1,5 @@
 .nextUp{
-    background-color: #6bc777;
+    background-color: var(--dark-accent);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 2rem;
 }
 .nextUpBody p{
     margin-bottom: 1rem;

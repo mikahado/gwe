@@ -8,7 +8,11 @@
     align-items: flex-end;
     /* Size */
     width: 100%;
-    height: 5rem;
+    height: 20rem;
+
+    background-image: url('./LibraryBottom.png');
+    background-position: bottom;
+    background-size: 100%;
 }
 .libraryBottomBG{
     overflow: hidden;
@@ -19,7 +23,7 @@
     width: 100%;
     height: auto;
     object-position: bottom;
-    content: url('./LibraryBottom.png');
+
 }
 
 .penguinWrap{

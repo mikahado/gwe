@@ -82,6 +82,16 @@ body.loaded .bubble{
         transform: translateX(-400%) scale(0.3);
     }
 }
+@keyframes bubbleFloatFlip{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%) scale(0.3);
+    }
+}
+
+
 @keyframes bubbleFloatUp{
     0% {
         transform: translateY(0);

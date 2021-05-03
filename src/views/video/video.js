@@ -1,13 +1,9 @@
 import React from 'react';
-import CloseButton from '../../components/closeButton/closeButton';
-import videos from '../../data/videos';
 import './video.css';
 import {Button} from "../../components/buttons/buttons";
-import {Redirect, useParams,useHistory} from "react-router-dom";
-import Congrats from "../../components/congrats/congrats";
+import {useParams,useHistory} from "react-router-dom";
 
 import YouTube from "react-youtube";
-
 
 export function Video(props){
 
@@ -18,12 +14,6 @@ export function Video(props){
 
     function endHandler(){
         history.push(`/s${params.sessionId}/p${partNo}/next`);
-    }
-
-    function videoSrc(){
-        const video = params.videoId;
-        const src = videos[ video ].src;
-        return src;
     }
 
     return(

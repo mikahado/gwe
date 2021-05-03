@@ -1,0 +1,20 @@
+.filters {
+  top: 1rem;
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  width: fit-content;
+  max-width: 80vw;
+  color: aliceblue;
+  padding: 1rem;
+  box-shadow: 0 0 1rem dimgrey;
+}
+.filters .category {
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.2rem solid #adebad;
+  border-radius: 1rem;
+}
+
+/*# sourceMappingURL=filters.css.map */

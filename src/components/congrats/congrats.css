@@ -21,7 +21,8 @@
     align-items: center;
     padding: 1rem;
     border-radius: 1rem;
-    background: hsl(120,70%,70%);
+    background: var(--dark-accent);
+    box-shadow: 0 0 1rem midnightblue;
 }
 .completeWindow .label{
     padding: 0.5rem;

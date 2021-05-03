@@ -6,8 +6,7 @@ button{
     margin: 0.5rem;
     height: fit-content;
 
-    background-color: #52AA5E;
-    background: var(--green);
+    background-color: var(--primary-green);
 
     border: 0.25rem solid white;
     border-radius: 1rem;
@@ -19,11 +18,6 @@ button{
 button:hover{
     transition: all 0.25s;
     border-color: yellow;
-    border-width: 0.35rem;
-    transform: scale(1.1);
-}
-button:hover:after{
-    transform: scale(1.1);
 }
 button:active{
     animation-name: click;
@@ -61,23 +55,22 @@ Link,a{
 .controlBox{
     /* Background & Border */
     /* background: hsla(200,50%,60%,1); */
-    border-radius: 1rem;
-    border: 0.1rem solid hsla(200,70%,60%, 0.5);
 }
 .controlBox .label{
     padding: 0.5rem;
+    margin: 0.5rem;
     /* Background & Border */
-    background-color: hsla(0,70%,0%,0.1);
+
     border-radius: 1rem;
-    border: 0.25rem solid hsla(0,0%,90%, 0.5);
-    box-sizing: border-box;
     /* Text */
     text-align: center;
     color: aliceblue;
-    font-weight: 600;
+
 }
 .controlBox .label hr{
-    border-bottom: 0.2rem solid aliceblue;
+    border-bottom: 0.1rem solid aliceblue;
+    width: 50%;
+    margin: 0.25rem auto;
 }
 
 /* CLOSE BARS */

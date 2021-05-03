@@ -1,0 +1,22 @@
+.tableContents {
+  position: relative;
+  z-index: 5;
+  border: 0.5rem solid var(--primary-blue);
+  border-radius: 2rem;
+  color: aliceblue;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: var(--dark-accent);
+}
+.tableContents button {
+  margin: 0.25rem;
+  width: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 100%;
+  box-shadow: 0 0 1rem dimgray;
+}
+.tableContents button.current {
+  background-color: var(--primary-blue);
+}
+
+/*# sourceMappingURL=sessionJump.css.map */

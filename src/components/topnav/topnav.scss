@@ -1,0 +1,75 @@
+.TopNav{
+  //Position
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  //Spacing
+  //padding-top: 1rem;
+
+  //display: flex;
+  //justify-content: flex-end;
+  align-items: center;
+  //flex-wrap: wrap;
+  height: fit-content;
+  background-color: aliceblue;
+  width: 100%;
+
+  button{
+    width: 8rem;
+
+    span{
+      .icon{
+        margin: 0 0.25rem;
+      }
+    }
+
+  }
+  .Button.current{
+    background-color: var(--primary-blue);
+    //color: var(--dark-accent);
+    //border: 0.25rem solid var(--primary-green);
+  }
+
+
+  .icon{
+    //Sizing
+    max-width: 5rem;
+    height: fit-content;
+
+    //Spacing
+    margin: 0.5rem;
+
+    display: flex;
+    align-items: center;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.TopNav.mobile{
+
+  .navButtons{
+    //Position
+    position: absolute;
+    //top: 14.5rem;
+    left: 0;
+
+    //Sizing
+    width: 100%;
+
+    //Background
+    background-color: aliceblue;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
+.navButtons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

@@ -1,6 +1,6 @@
 
 import chai from 'chai';
-import {curriculum} from "../curriculum";
+import {curriculum} from "../--old data--/curriculum";
 
 var assert = chai.assert;
 

@@ -1,53 +1,18 @@
 import React from 'react';
 
 //Style Sheet
-//import './resources.css'
 import './resources2.css';
-import {getAllResources} from "./resourceList";
+import {getFilterState} from "./resourceData";
 import {Button} from "../../components/buttons/buttons";
-import {useState} from "react";
 import TopNav from "../../components/topnav/topnav";
+import {ResourceList} from "./resourceList/resourceList";
+import {Filters} from "./filters/filters";
 
 
 
 export function Resource(props){
 
     const resource = props.resource;
-
-    const noIFrame = resource.noIframe;
-
-    function contentByType(){
-        switch(resource.type){
-            case('org'):
-            case('pub'):
-            case('article'):
-            case('info'):
-            case('people'):
-            case('bus'):
-                return(
-                    <div className={'resourceExpanded'}>
-                        <iframe src={resource.link} title={resource.name} onLoad={console.log('iframe complete')}/>
-                        <Button text={'Explore'} extLink={`${resource.link}`} iconType={'rightArrow'}/>
-                    </div>
-                )
-            break;
-
-            case('video'):
-                return(
-                    <iframe src={resource.embedLink}
-                            className={'videoIframe'}
-                            allow="accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture"
-                            allowFullScreen>
-
-            </iframe>
-                )
-        }
-    }
 
     return(
         <Button text={resource.name} extLink={resource.link} class={'resourceButton'}/>
@@ -152,36 +117,67 @@ export function RegionResources(props){
     )
 }
 
-export function Resources(props){
-
-    function resourceBody(){
-
-        const resourceList = getAllResources();
-
-        console.log(resourceList);
-
-        return resourceList.map( region =>{
-            return <RegionResources region = {region}/>
-        })
-    }
+export function ResourceCategory(props){
+    const {resourceList,heading} = props;
 
     return(
-        <div className={'resourcePageWrap'}>
-
-            <TopNav language={props.language} page={'resources'}/>
-
-            <div className={'resourcesWrap controlBox'}>
-
-                <h1 className={'label'}>Resources</h1>
-
-                <div className={'regionList'}>
-
-                    {resourceBody()}
-
-                </div>
-
+        <div className={'resourceCategory'}>
+            <h3 className={'heading'}>{heading}</h3>
+            <div className={'d-flex flex-wrap justify-content-center'}>
+                {
+                    resourceList.map( resource => {
+                        return (
+                            <Button
+                                text={resource.name}
+                                extLink={resource.link}
+                            />
+                        )
+                    })
+                }
             </div>
-
         </div>
     )
+}
+
+export class Resources extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            filters: getFilterState()
+        }
+        this.changeFilter = this.changeFilter.bind(this);
+    }
+
+    changeFilter(category,name,value){
+        const newFilterState = this.state;
+        newFilterState.filters[category][name] = value;
+        this.setState(newFilterState);
+    }
+
+    render(){
+        return(
+            <div className={'row no-gutters w-100'}>
+                <div className={'col resourcePageWrap'}>
+
+                    <TopNav
+                        language={this.props.language}
+                        changeLanguage={this.props.changeLanguage}
+                        page={'resources'}/>
+
+                    <h1>Resources</h1>
+
+                    <Filters
+                        filters={this.state.filters}
+                        changeFilter={this.changeFilter}
+                    />
+
+                    <ResourceList
+                        filters={this.state.filters}
+                    />
+
+                </div>
+            </div>
+        )
+    }
 }

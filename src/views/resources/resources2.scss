@@ -1,169 +1,58 @@
-//Placeholders
-%resourceBody{
-  margin: 0.5rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 0.25rem solid aliceblue;
-  border-radius: 1rem;
-}
-%resourcelist{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 1rem;
-  flex-wrap: wrap;
-}
-
 .resourcePageWrap{
+  position: relative;
+  width: 100%;
+  margin: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+
   flex-wrap: wrap;
 
+  h1, section h2{
+    background-color: var(--dark-accent);
+    border-radius: 1rem;
+    color: aliceblue;
+    padding: 1rem;
+    margin: 1rem;
 
-}
-
-.resourcesWrap{
-  @extend %resourceBody;
-  border: 0;
-  background-color: var(--light-green);
-  box-shadow: 0 0 2rem hsla(0,0%,20%,0.5);
-
-  .label{
-    width: 100%;
-    margin: 0.5rem 0 1rem 0;
-    border: 0;
-    box-shadow: 0 0 0.5rem aliceblue;
+    box-shadow: 0 0 1rem;
   }
-}
 
-.regionList{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @extend %resourcelist;
-  box-sizing: border-box;
-}
-
-.regionWrap{
-  @extend %resourceBody;
-  background-color: var(--light-blue);
-}
-
-.ageList{
-  @extend %resourcelist;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ageWrap{
-  @extend %resourceBody;
-  background-color: var(--blue);
-  border: 0;
-}
-
-.typeList{
-  @extend  %resourcelist;
-  flex-direction: column;
-  align-items: center;
-}
-
-.typeWrap{
-  @extend %resourceBody;
-  margin: 0.5rem;
-
-  label{
-    margin-bottom: 0.5rem;
-  }
-}
-
-.resourceList{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.resourceButton{
-  display: flex;
-  width: 15rem;
-  text-align: center;
-  justify-content: center;
-  span{
-    width: fit-content;
-  }
-}
-
-
-
-//Labels
-
-
-
-
-//USA
-/*
-#usa{
-  .ageList{
+  .resourceCategory{
+    //Display
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-
-    #learnMore{
-      width: 100%;
-
-      .typeList{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-
-        #org{
-          width: 100%;
-
-          .resourceList{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-          }
-        }
-      }
-    }
-  }
-}
-
- */
-#intl{
-  .ageList{
-    flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 
+    //Spacing
+    padding: 0.5rem;
+    margin: 0.5rem;
 
-    #kids{
-      .typeList{
-        flex-direction: row;
-      }
+    //Background & Border
+    background-color: var(--dark-accent);
+    border-radius: 1rem;
+
+    //Text
+    color: aliceblue;
+
+    button{
+      width: 17rem;
+      height: 5rem;
     }
-    #learnMore{
-      .typeList{
-        align-items: flex-start;
-      }
-    }
+  }
+/*
+  section h2{
+    font-size: 1.25rem;
+    font-weight: bold;
+    //border: 0.25rem solid var(--dark-accent);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--dark-accent);
+    background-color: var(--light-blue);
   }
 
-  .typeList{
-    flex-direction: row;
-  }
-  .resourceList{
-    flex-direction: column;
-  }
+ */
+
 }
-
-

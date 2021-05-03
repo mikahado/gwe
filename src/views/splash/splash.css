@@ -1,5 +1,68 @@
 .Splash {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+}
+.Splash .TopNav {
+  position: relative;
   width: 100%;
+}
+.Splash .splashBody {
+  height: 100%;
+  overflow-y: hidden;
+  bottom: 0;
+}
+.Splash .splashBody .menuWrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  justify-content: center;
+}
+.Splash .splashGraphics {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+}
+.Splash .splashGraphics .trainCol {
+  position: relative;
+  max-width: 80vh;
+  overflow: hidden;
+}
+.Splash .splashGraphics .trainCol .trainWrap {
+  right: 0;
+  left: auto;
+  bottom: 0;
+  height: 100%;
+  width: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.Splash .splashGraphics .trainCol .splashTrain {
+  --trainHeight: 40vh;
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 5%;
+  height: var(--trainHeight);
+  width: calc( var(--trainHeight) * 3.1238);
+  margin: 0;
+}
+.Splash .menu {
+  background-color: var(--primary-blue);
+  border-radius: 1rem;
+  padding: 1rem;
+  position: absolute;
+  z-index: 3;
+}
+.Splash .menu img {
+  background-color: white;
+  border-radius: 3rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .splashNav {
@@ -32,10 +95,9 @@
   height: auto;
 }
 
-@media only screen and (max-width: 575px) {
-  .Splash {
-    display: flex;
-    flex-direction: column-reverse;
+@media only screen and (max-height: 500px) {
+  .Splash .menuWrap {
+    justify-content: flex-end !important;
   }
 }
 

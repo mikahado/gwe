@@ -1,0 +1,12 @@
+.sessionList {
+  position: relative;
+  z-index: 6;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+/*# sourceMappingURL=sessionList.css.map */

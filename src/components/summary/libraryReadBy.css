@@ -1,34 +1,42 @@
+p{margin-bottom: 0}
+
 .LibraryReadBy{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
-    padding: 1rem;
 
     border-radius: 1rem;
-    background-color: hsla(0,0%,0%,0.1);
     color: white;
-    box-shadow: 0 0 1rem;
+
 }
 .LibraryReadBy p{
     line-height: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .readByContent{
-    display: inline-flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
 }
 
 .libReadByPhoto{
-    width: 100%;
+    width: 10em;
+    height: 10em;
+    margin: 1rem;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    border-radius: 100%;
+    background-color: var(--primary-green);
 }
 .libReadByPhoto img{
-    width: 90%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
     border: 0.2rem solid aliceblue;
 
@@ -37,4 +45,5 @@
 }
 .libReadByName{
     text-align: center;
+    background-color: transparent;
 }

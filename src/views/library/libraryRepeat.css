@@ -10,6 +10,7 @@
     background-image: url('./LibraryTile.png');
     background-position: bottom;
     background-repeat: repeat-y;
+    //background-attachment: fixed;
     background-size: 100%;
     padding-bottom: 0rem;
 }
@@ -22,14 +23,19 @@
 }
 /* Medium Screens & Small Screen Landscape */
 @media only screen and (max-width: 950px){
+    /*
     .libraryRepeat{
         padding-bottom: 7rem;
         
     }
+
+     */
 }
 /* Small Screen Portrait */
 @media only screen and (max-width: 600px){
+    /*
     .libraryRepeat{
         background-image: url('./LibraryTilePortrait.png');
     }
+     */
 }

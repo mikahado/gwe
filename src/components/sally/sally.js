@@ -31,12 +31,12 @@ class Sally extends React.Component{
                 </div>
                 
                 <div className='sally'>
-                    <img src={SallyRightArm} id='sallyRightArm'/>
-                    <img src={SallyLeftArm} id='sallyLeftArm'/>
-                    <img src={SallyRightFoot} id='sallyRightFoot'/>
-                    <img src={SallyLeftFoot} id='sallyLeftFoot'/>
-                    <img src={SallyTail} id='sallyTail'/>
-                    <img src={SallyBody} id='sallyBody'/>           
+                    <img src={SallyRightArm} id='sallyRightArm' alt={''}/>
+                    <img src={SallyLeftArm} id='sallyLeftArm'alt={''}/>
+                    <img src={SallyRightFoot} id='sallyRightFoot'alt={''}/>
+                    <img src={SallyLeftFoot} id='sallyLeftFoot'alt={''}/>
+                    <img src={SallyTail} id='sallyTail'alt={''}/>
+                    <img src={SallyBody} id='sallyBody'alt={''}/>
                 </div>
 
             </div>

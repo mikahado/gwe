@@ -1,0 +1,11 @@
+.LibraryList {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(135, 206, 235, 0.75);
+  border-radius: 1rem;
+}
+
+/*# sourceMappingURL=libraryList.css.map */

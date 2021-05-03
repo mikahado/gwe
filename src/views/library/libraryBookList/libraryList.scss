@@ -1,0 +1,14 @@
+.LibraryList{
+    //Sizing
+    margin: 1rem;
+
+    //Display
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    //Background & Border
+    background-color: fade-out( skyblue,0.25);
+    border-radius: 1rem;
+}

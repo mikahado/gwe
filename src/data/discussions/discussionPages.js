@@ -1534,7 +1534,7 @@ const discussionPages = {
                 ],
                 [
                     {speech: true, text: `“Fine, yes and yes.”`},
-                    ` answered Zolo. `,
+                    ` answered Zingo. `,
                     {speech: true, text: ` “I now have 30 more grandchildren, a bigger house, yes, I heard that you made it to the White House and, thanks to this fellow,”`},
                     ` he pointed to the door, `,
                     {speech: true, text: ` “I found out where you were!”`},

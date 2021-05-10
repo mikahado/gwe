@@ -13,6 +13,7 @@ export function ResourceList(props){
                 <h2>For Kid's Action</h2>
 
                 {
+                  filteredResources.kids.length ?
                     filteredResources.kids.map( categoryObj =>{
 
                         return(
@@ -23,12 +24,15 @@ export function ResourceList(props){
                             />
                         )
                     })
+                    :
+                    <p className={'resourceError'}>No resources from this section match your filters. Check more boxes above to see more results</p>
                 }
             </section>
 
             <section className={'d-flex flex-column align-items-center '}>
                 <h2>To Learn More</h2>
                 {
+                  filteredResources.learnMore.length ?
                     filteredResources.learnMore.map( categoryObj =>{
 
                         return(
@@ -39,6 +43,8 @@ export function ResourceList(props){
                             />
                         )
                     })
+                    :
+                    <p className={'resourceError'}>No resources from this section match your filters. Check more boxes above to see more results</p>
                 }
             </section>
         </div>

@@ -7,6 +7,7 @@ import {Button} from "../../components/buttons/buttons";
 import TopNav from "../../components/topnav/topnav";
 import {ResourceList} from "./resourceList/resourceList";
 import {Filters} from "./filters/filters";
+import {ResourceMessage} from "./resourceMessage/resourceMessage";
 
 
 
@@ -120,19 +121,24 @@ export function RegionResources(props){
 export function ResourceCategory(props){
     const {resourceList,heading} = props;
 
+    console.log(resourceList);
+
     return(
         <div className={'resourceCategory'}>
             <h3 className={'heading'}>{heading}</h3>
             <div className={'d-flex flex-wrap justify-content-center'}>
                 {
-                    resourceList.map( resource => {
-                        return (
-                            <Button
-                                text={resource.name}
-                                extLink={resource.link}
-                            />
-                        )
-                    })
+                    resourceList.length ?
+                        resourceList.map( resource => {
+                            return (
+                                <Button
+                                    text={resource.name}
+                                    extLink={resource.link}
+                                />
+                            )
+                        })
+                    :
+                    <p>No resources match your filters. Check more boxes above to see more results</p>
                 }
             </div>
         </div>
@@ -147,6 +153,8 @@ export class Resources extends React.Component{
             filters: getFilterState()
         }
         this.changeFilter = this.changeFilter.bind(this);
+        this.showAll=this.showAll.bind(this);
+        this.hideAll=this.hideAll.bind(this);
     }
 
     changeFilter(category,name,value){
@@ -154,8 +162,27 @@ export class Resources extends React.Component{
         newFilterState.filters[category][name] = value;
         this.setState(newFilterState);
     }
+    showAll(){
+        const allFilters = this.state.filters;
+        Object.keys(allFilters).forEach( categoryKey =>{
+            Object.keys(allFilters[categoryKey]).forEach( filterKey =>{
+                allFilters[categoryKey][filterKey] = true;
+            })
+        });
+        this.setState({filters: allFilters});
+    }
+    hideAll(){
+        const allFilters = this.state.filters;
+        Object.keys(allFilters).forEach( categoryKey =>{
+            Object.keys(allFilters[categoryKey]).forEach( filterKey =>{
+                allFilters[categoryKey][filterKey] = false;
+            })
+        });
+        this.setState({filters: allFilters});
+    }
 
     render(){
+
         return(
             <div className={'row no-gutters w-100'}>
                 <div className={'col resourcePageWrap'}>
@@ -170,6 +197,12 @@ export class Resources extends React.Component{
                     <Filters
                         filters={this.state.filters}
                         changeFilter={this.changeFilter}
+                        showAll={this.showAll}
+                        hideAll={this.hideAll}
+                    />
+
+                    <ResourceMessage
+                      filters={this.state.filters}
                     />
 
                     <ResourceList

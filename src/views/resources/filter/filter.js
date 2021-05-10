@@ -15,7 +15,7 @@ export function Filter(props){
                 <input
                     type={'checkbox'}
                     onChange={handleChange}
-                    defaultChecked={true}
+                    checked={props.checked}
                 />
                 {categoryLabels[props.name]}
             </label>

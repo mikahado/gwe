@@ -8,11 +8,7 @@ export function Filters(props){
     return(
         <div className={'container filters d-flex flex-column justify-content-center align-items-center'}>
             <div className={'row'}>
-                <div className={'col d-flex justify-content-center'}>
-
-                    <h2>Filters</h2>
-
-                </div>
+                <div className={'col d-flex justify-content-center'}/>
             </div>
 
             <div className={'row d-flex justify-content-center'}>
@@ -29,6 +25,7 @@ export function Filters(props){
                                         changeFilter={props.changeFilter}
                                         name={typeKey}
                                         key={`${typeKey} Filter`}
+                                        checked={props.filters.types[typeKey]}
                                     />
                                 )
                             })
@@ -47,13 +44,21 @@ export function Filters(props){
                                     changeFilter={props.changeFilter}
                                     name={typeKey}
                                     key={`${typeKey} Filter`}
+                                    checked={props.filters.regions[typeKey]}
                                 />
                             )
                         })
                     }
                 </div>
-
             </div>
+
+          <div>
+            <button onClick={props.showAll}>Show All</button>
+            <button onClick={props.hideAll}>Hide All</button>
+          </div>
+
+
+
         </div>
     )
 }

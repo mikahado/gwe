@@ -56,3 +56,13 @@
  */
 
 }
+
+.resourceError{
+  background-color: var(--red);
+  color: aliceblue;
+
+  border-radius: 1rem;
+
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}

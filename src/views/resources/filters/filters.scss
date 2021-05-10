@@ -1,6 +1,6 @@
 .filters{
   top: 1rem;
-  background-color: var(--primary-green);
+  background-color: hsl(120,60%,80%);
   border-radius: 1rem;
   width: fit-content;
   max-width: 80vw;
@@ -25,7 +25,7 @@
     flex-wrap: wrap;
 
     //Background & Border
-    border: 0.2rem solid hsl(120,60%,80%);
+    background-color: var(--primary-green);
     //background-color: var(--dark-accent);
     border-radius: 1rem;
 

@@ -19,7 +19,7 @@ export function Video(props){
     return(
         <div className='videoWrap'>
 
-            <Button type={'close'} link={'/library'}/>
+            <Button type={'close'} link={`/map/s-${params.sessionId}`}/>
 
             <YouTube
                 videoId={'XPXeCcqsMBg'}
@@ -27,7 +27,6 @@ export function Video(props){
                 containerClassName={'videoFrame'}
                 onEnd={endHandler}
             />
-
 
             {/*}
 

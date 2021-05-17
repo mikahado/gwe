@@ -4,7 +4,7 @@
   border: 0rem solid aliceblue;
   border-radius: 1rem;
   box-shadow: 0 0 1rem midnightblue;
-  margin-bottom: 2rem;
+  margin: 2rem;
   background-color: var(--primary-blue);
   max-width: 55rem;
 }

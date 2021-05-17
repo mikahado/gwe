@@ -16,8 +16,6 @@ export function ResourceMessage(props){
       })
     })
 
-    console.log( allFilters );
-
     return `${allFilters ? 'Currently showing all resources.' : 'Check more boxes above to see more resources.'} Uncheck boxes above to narrow your search.`;
   }
 

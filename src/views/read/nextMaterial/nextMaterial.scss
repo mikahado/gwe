@@ -1,0 +1,17 @@
+.nextMaterial{
+    background-color: var(--dark-accent);
+    color: aliceblue;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sessionInfo{
+        background-color: var(--primary-blue);
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+    }
+}

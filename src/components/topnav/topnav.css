@@ -1,7 +1,7 @@
 .TopNav {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 15;
   align-items: center;
   height: fit-content;
   background-color: aliceblue;
@@ -31,6 +31,7 @@
 .TopNav.mobile .navButtons {
   position: absolute;
   left: 0;
+  z-index: 10;
   width: 100%;
   background-color: aliceblue;
   border-bottom-left-radius: 1rem;

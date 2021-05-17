@@ -213,7 +213,6 @@ function testReadBookMaterial(material){
                 if (language !== 'spa'){
 
                     let button = document.getElementById('translateButton');
-                    console.log(button);
 
                     act(() => {
 
@@ -267,7 +266,6 @@ function testReadBookMaterial(material){
                 if (language !== 'spa'){
 
                     let button = document.getElementById('translateButton');
-                    console.log(button);
 
                     act(() => {
 

@@ -2,7 +2,7 @@
   //Position
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 15;
 
   //Spacing
   //padding-top: 1rem;
@@ -57,6 +57,7 @@
     position: absolute;
     //top: 14.5rem;
     left: 0;
+    z-index: 10;
 
     //Sizing
     width: 100%;

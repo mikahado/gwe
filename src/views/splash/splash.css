@@ -1,9 +1,9 @@
 .Splash {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
 }
 .Splash .TopNav {
@@ -58,11 +58,19 @@
   position: absolute;
   z-index: 3;
 }
+.Splash .menu button {
+  width: 15rem;
+}
 .Splash .menu img {
   background-color: white;
   border-radius: 3rem;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+.Splash .menu .info {
+  border: 0.15rem solid aliceblue;
+  border-radius: 100%;
+  margin: 0 0 0 0.5rem;
 }
 
 .splashNav {

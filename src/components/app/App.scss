@@ -5,14 +5,16 @@
 .App {
 
   //Display
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: flex-start;
 
   //Sizing
   box-sizing: border-box;
   width: 100%;
+  height: fit-content;
   min-height: 100vh;
 
   font-weight: 400;

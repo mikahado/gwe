@@ -8,6 +8,8 @@
   //width: 100%;
   z-index: 5;
 
+  width: fit-content;
+
   border: 0.5rem solid var(--primary-blue);
   border-radius: 2rem;
 
@@ -16,6 +18,7 @@
 
   //Spacing
   padding: 0.5rem;
+  margin: auto;
 
   //Background & Border
   background-color: var(--dark-accent);
@@ -28,13 +31,26 @@
 
     padding: 0.25rem;
     border-radius: 100%;
-    box-shadow: 0 0 1rem dimgray;
+    //box-shadow: 0 0 1rem midnightblue;
     //background-color: var(--dark-accent);
     //color: aliceblue;
   }
   button.current{
     background-color: var(--primary-blue);
   }
+
+    .materialWrap{
+      background-color: var(--light-green);
+      border-radius: 2rem;
+      padding: 0.1rem;
+      margin: 0.5rem 0;
+        //box-shadow: 0 0 1rem midnightblue;
+        //border: 0.2rem solid aliceblue;
+
+        button{
+            box-shadow: none;
+        }
+    }
 
 
 }

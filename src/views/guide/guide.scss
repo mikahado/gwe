@@ -1,0 +1,34 @@
+.guide{
+
+  section{
+    // Spacing
+    margin: 1rem 0;
+    padding: 1rem;
+
+    // Background & Border
+    background-color: var(--dark-accent);
+    border-radius: 1rem;
+
+    //Text
+    color: aliceblue;
+
+    text-align: center;
+
+    p{
+      margin-bottom: 1rem;
+    }
+
+    li{
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    a{
+      color: var(--dark-accent);
+      font-weight: bold;
+      background-color: var(--light-green);
+      padding: 0.25rem;
+      border-radius: 1rem;
+    }
+  }
+}

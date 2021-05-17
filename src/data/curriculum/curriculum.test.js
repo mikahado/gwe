@@ -46,8 +46,6 @@ function testMaterial(material){
 
         it('has a content property', ()=>{
 
-            console.log(material.content);
-
             expect(material.hasOwnProperty('content')).toBe(true);
         });
 
@@ -62,8 +60,6 @@ function testReadContent(content){
     describe('Read content', ()=>{
 
         it('has a pageData array property', ()=>{
-
-            console.log(content.pageData);
 
             expect(Array.isArray(content.pageData)).toBe(true);
         });

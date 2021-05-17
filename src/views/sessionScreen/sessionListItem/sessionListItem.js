@@ -11,19 +11,16 @@ class SessionListItem extends React.Component{
         this.setBook = this.setBook.bind(this);
     }
     setBook(){
-        this.props.changeSession(this.props.sessionId);
+
+        this.props.changeSession(this.props.currentMaterial);
+
     }
     render() {
 
         const image = new Image();
         image.src = this.props.image;
 
-        console.log('width' + image.naturalWidth);
-        console.log('height' + image.naturalHeight);
-
         let wideThumb = image.naturalWidth > image.naturalHeight;
-
-        console.log(wideThumb);
 
         return (
             <div id={'sessionWrap'}
@@ -35,11 +32,11 @@ class SessionListItem extends React.Component{
 
                         <h2 className='mediaTitle'>Session #{this.props.sessionId}</h2>
 
-                        <div className={'d-flex'}>
+                        <div className={'d-flex sessionActions'}>
 
                             <Button
                                 iconType={'rightArrow'}
-                                link={`/s${this.props.sessionId}`}
+                                link={`/s${ this.props.currentMaterial[0] }/p${ this.props.currentMaterial[1] }`}
                             />
 
                             <Button
@@ -51,14 +48,14 @@ class SessionListItem extends React.Component{
 
                     </div>
 
-                    <div
+                    <button
                         className={`sessionListItem ${wideThumb ? 'wideThumb' : ''}`}
                         onClick={this.setBook}
 
                         id={'mediaEntry'}
                     >
-                        <img src={this.props.image}/>
-                    </div>
+                        <img src={this.props.image} alt={'Session Graphic'}/>
+                    </button>
 
                 </div>
 

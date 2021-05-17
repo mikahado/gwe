@@ -4,7 +4,6 @@ import React from 'react';
 import './resources2.css';
 import {getFilterState} from "./resourceData";
 import {Button} from "../../components/buttons/buttons";
-import TopNav from "../../components/topnav/topnav";
 import {ResourceList} from "./resourceList/resourceList";
 import {Filters} from "./filters/filters";
 import {ResourceMessage} from "./resourceMessage/resourceMessage";
@@ -121,8 +120,6 @@ export function RegionResources(props){
 export function ResourceCategory(props){
     const {resourceList,heading} = props;
 
-    console.log(resourceList);
-
     return(
         <div className={'resourceCategory'}>
             <h3 className={'heading'}>{heading}</h3>
@@ -186,11 +183,6 @@ export class Resources extends React.Component{
         return(
             <div className={'row no-gutters w-100'}>
                 <div className={'col resourcePageWrap'}>
-
-                    <TopNav
-                        language={this.props.language}
-                        changeLanguage={this.props.changeLanguage}
-                        page={'resources'}/>
 
                     <h1>Resources</h1>
 

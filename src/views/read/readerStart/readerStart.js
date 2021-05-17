@@ -12,7 +12,7 @@ export function ReaderStart(props) {
     const title = content.title.get(props.language);
     const subtitle = content.subtitle;
 
-    let byAuthor, reader, readerName, readerPhoto;
+    let byAuthor, reader, readerName, readerPhoto,runTime;
     if (content.byAuthor){
         byAuthor = content.byAuthor.get(props.language);
     }
@@ -20,6 +20,21 @@ export function ReaderStart(props) {
         reader = content.reader.get(props.language);
         readerName = reader.name;
         readerPhoto = reader.photo;
+    }
+    if (content.narration){
+        if(content.runTime){
+            if (content.runTime.get(props.language)){
+                runTime = content.runTime.get(props.language).string.get(props.language);
+            }
+        }
+    }
+
+    let sessionInfo, materialId, partNo, ofParts;
+    if (props.sessionInfo){
+        sessionInfo = props.sessionInfo;
+        materialId = sessionInfo.materialId;
+        partNo = sessionInfo.partNo;
+        ofParts = sessionInfo.ofParts;
     }
 
     function playNarration() {
@@ -79,6 +94,15 @@ export function ReaderStart(props) {
         return (
             <div className="ReaderStart lightText col-md-auto d-flex flex-column">
 
+                { sessionInfo ?
+                    <div className={'sessionInfo'}>
+                        <h1>Session {materialId}</h1>
+                        <p>Part {partNo} of {ofParts}</p>
+                    </div>
+
+                    :''
+                }
+
                 <h1 className={'lightText'}>{title}</h1>
 
                 {
@@ -112,6 +136,12 @@ export function ReaderStart(props) {
 
                         </div>
                     :''
+                }
+                {
+                    runTime ?
+                        <p className={'mt-1'}>Run-time: {runTime}</p>
+                        :
+                        ''
                 }
 
                 {showButton()}

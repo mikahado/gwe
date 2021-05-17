@@ -6,21 +6,21 @@ import pageText from '../../data/pageText';
 // Sub-Components
 import {Button} from "../../components/buttons/buttons";
 import Loading from "../../components/loading/loading";
-import Translate from "../../components/translate/translate";
 import {Audio} from './audio/audio';
 import {ReaderStart} from "./readerStart/readerStart";
 import {Book} from './book/book';
 import {Preloader} from "./preloader/preloader";
 import Congrats from "../../components/congrats/congrats";
+import {InfoBubble} from "../../components/infoBubble/infoBubble";
+import {PageArrow} from "./pageArrow/pageArrow";
+import {ReadClose} from "./readClose/readClose";
+import {NextMaterial} from "./nextMaterial/nextMaterial";
 
 // Style Sheets
 import './read.css';
 import './readerControls.css';
 import './discuss.css';
 import './readMediaQueries.css';
-import {InfoBubble} from "../../components/infoBubble/infoBubble";
-import {PageArrow} from "./pageArrow/pageArrow";
-import {ReadClose} from "./readClose/readClose";
 
 // SUB-COMPONENTS
 class Discuss extends React.Component{
@@ -176,19 +176,22 @@ class Discuss extends React.Component{
     }
     render(){
         return(
-            <div
-                className={
-                    `discWrap col d-flex justify-content-center ${
-                        typeof this.props.images[0] === 'string' ? 'fullImg' : ''
-                    }`}
-                id={'discWrap'}
-            >
+            <div className={'container-fluid'}>
+                <div className={'row'}>
+                    <div
+                        className={
+                            `discWrap col d-flex flex-column flex-md-row justify-content-center ${
+                                typeof this.props.images[0] === 'string' ? 'fullImg' : ''
+                            }`}
+                        id={'discWrap'}
+                    >
 
-                {this.getImages()}
-                {this.getText()}
+                        {this.getImages()}
+                        {this.getText()}
 
+                    </div>
+                </div>
             </div>
-
         )
     }
 }
@@ -314,10 +317,10 @@ function ReaderControlBar(props){
 
         function pageCounter(){
 
+            /*
+
             function inputPage(){
                 const pageInput = document.getElementById('pageInput');
-
-                console.log(Number(pageInput.value));
 
                 if (pageInput.value > 0 && pageInput.value <= props.content.endPage){
 
@@ -329,6 +332,8 @@ function ReaderControlBar(props){
                     //pageInput.classList.add('error');
                 }
             }
+
+             */
 
             return(
                 <div className="pageCounter darkAccent label col-auto" id={'pageCounterWrap'}>
@@ -387,6 +392,8 @@ function ReaderControlBar(props){
                     {NarrationControl()}
                 </div>
 
+                {/*}
+
                 <div className={'col-auto no-gutters  justify-content-center'}>
 
                     <Translate
@@ -395,6 +402,8 @@ function ReaderControlBar(props){
                     />
 
                 </div>
+
+                {*/}
 
                 <div className={'mobile-close col-auto'}>
 
@@ -445,7 +454,7 @@ export function Read(props){
     const { startPage } = content;
 
     // STATES
-    const [page,setPage] = useState(props.content.startPage);
+    const [page,setPage] = useState(content.bookMark || props.content.startPage);
     const [status,setStatus] = useState('stop');
     const [narrationState,setNarrationState] = useState('waiting');
     const [audioBubble,setAudioBubble] = useState(1);
@@ -479,6 +488,12 @@ export function Read(props){
             setPage(newPage);
             setImgLoad(1);
             setAudioLoad(1);
+
+            console.log(newPage, content.bookMark);
+
+            if (!content.bookMark || newPage > content.bookMark){
+                content.bookMark = newPage;
+            }
 
             //MISC
             //loadNarration(newPage);
@@ -522,7 +537,6 @@ export function Read(props){
 
                         playPromise.then( ()=>{
 
-                            console.log('play');
                             if ( status !== 'playing' ){
 
                                 //setTimeout(function(){setStatus('playing')},5000)
@@ -729,6 +743,7 @@ export function Read(props){
 
                     <ReaderStart
                         content={props.content}
+                        sessionInfo={props.sessionInfo}
                         language={props.language}
                         page={page}
                         //Methods
@@ -757,6 +772,12 @@ export function Read(props){
                     </div>
 
                     <div className={'col'}>
+                        <NextMaterial
+                            sessionInfo={props.sessionInfo}
+                        />
+                    </div>
+
+                    <div className={'col'}>
 
                         <PageArrow
                             type={'>'}
@@ -768,6 +789,12 @@ export function Read(props){
 
                     </div>
 
+                </div>
+
+                <div className={'row'}>
+                    <div className={'col'}>
+
+                    </div>
                 </div>
 
                 <div className={'misc'}>

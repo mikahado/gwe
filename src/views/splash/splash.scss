@@ -2,10 +2,10 @@
 .Splash{
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
 
   //overflow-y: hidden;
@@ -78,8 +78,6 @@
     }
   }
 
-
-
   .menu{
     background-color: var(--primary-blue);
     //border: 0.5rem solid var(--primary-blue);
@@ -92,11 +90,21 @@
     //top: 2rem;
     //right: 2rem;
 
+    button{
+      width: 15rem;
+    }
+
     img{
       background-color: white;
       border-radius: 3rem;
       padding: 1rem;
       margin-bottom: 1rem;
+    }
+
+    .info{
+      border: 0.15rem solid aliceblue;
+      border-radius: 100%;
+      margin: 0 0 0 0.5rem;
     }
   }
 }

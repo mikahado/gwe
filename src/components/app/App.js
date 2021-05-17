@@ -3,8 +3,7 @@ import React,{useState} from 'react';
 
 // React Components
 import {
-    HashRouter as Router,
-    Route,
+    Route, useParams, useLocation
 } from "react-router-dom";
 
 // Sub-Components
@@ -12,6 +11,7 @@ import {Splash} from '../../views/splash/splash';
 import Library from '../../views/library/library';
 import SessionMap from "../../views/sessionScreen/sessionMap";
 import {materialRouter} from "../../utilities/material";
+import {AboutGWE} from "../../views/aboutGWE/aboutGWE";
 
 import books from "../../data/books/books";
 
@@ -25,77 +25,144 @@ import {Resources} from "../../views/resources/resources";
 import {Read} from "../../views/read/read";
 
 import '../../data/curriculum/curriculum';
+import {Guide} from "../../views/guide/guide";
+import TopNav from "../topnav/topnav";
 
 export function App(props){
 
     const [language,setLanguage] = useState('eng');
+    const [page,setPage] = useState('');
 
     function changeLanguage(){
         setLanguage(language === 'eng' ? 'spa' : 'eng');
     }
 
-    return (
-        <Router basename={process.env.PUBLIC_URL}>
+    let location = useLocation();
+    console.log(location);
 
+    let {sessionId} = useParams();
+    console.log(sessionId);
+
+    return (
             <div className="App container-fluid">
 
-                <Route exact path="/"
-                       component={( props ) =>(
-                           <Splash {...props} language={ language } changeLanguage={changeLanguage} />
-                       )}
-                />
+                <div className={'row w-100 m-0'}>
+                    <div className={'col no-gutters p-0'}>
+                        <TopNav
+                            language={language}
+                            changeLanguage={changeLanguage}
+                            page={page}
+                        />
+                    </div>
+                </div>
 
-                <Route path={['/map/s-:sessionId',"/map/"]}
-                       component={(props) =>(
-                           <SessionMap {...props} language={ language } changeLanguage={changeLanguage} />
-                       )}
-                />
+                <div className={'row w-100 h-100 m-0'}>
+                    <div className={'col no-gutters p-0 h-100'}>
 
-                <Route path="/library/"
-                       component={(props) =>(
-                           <Library {...props} language={ language } changeLanguage={changeLanguage} />
-                       )}
-                />
+                            <Route path={'/guide'}
+                                   render={ ( { match } ) =>{
+                                       setPage('guide');
+                                       return(
+                                           <Guide
+                                               language={language}
+                                               changeLanguage={changeLanguage}
+                                           />
+                                   )
+                               }}
+                            />
 
-                <Route path={[
-                    '/s:sessionId/p:partNo/:next',
-                    '/s:sessionId/p:partNo',
-                    '/s:sessionId'
-                ]}
-                       render={ ( { match }) =>{
+                            <Route path={['/map/s-:sessionId/p-:partNo',"/map/"]}
+                                   render={ ( { match } ) =>{
+                                       setPage('sessions');
+                                       return(
+                                           <SessionMap
+                                               language={ language }
+                                               changeLanguage={changeLanguage}
+                                           />
+                                       )
+                                   }}
+                            />
 
-                           return materialRouter(match.params,language,changeLanguage)
-                       } }
-                />
+                            <Route path="/library/"
+                                   render={ ( { match } ) =>{
+                                       setPage('library');
+                                       return(
+                                           <Library
+                                               language={ language }
+                                               changeLanguage={changeLanguage}
+                                           />
+                                       )
+                                   }}
+                            />
 
-                <Route path={'/read/book/:contentId'}
-                       render={ ( { match }) =>{
+                            <Route path={[
+                                '/s:sessionId/p:partNo/:next',
+                                '/s:sessionId/p:partNo',
+                                '/s:sessionId'
+                            ]}
+                                   render={ ( { match }) =>{
+                                       setPage('');
+                                       return materialRouter(match.params,language,changeLanguage)
+                                   } }
+                            />
 
-                           const content = books[match.params.contentId]
+                            <Route path={'/read/book/:contentId'}
+                                   render={ ( { match }) =>{
+                                       setPage('');
+                                       const content = books[match.params.contentId]
 
-                           return(
-                               <Read
-                                   content={content}
-                                   language={language}
-                                   changeLanguage={changeLanguage}
-                                   imgPreloads={content.imgPreloads}
-                                   audioPreloads={content.audioPreloads}
-                               />
-                           )
-                       }}
-                />
+                                       return(
+                                           <Read
+                                               content={content}
+                                               language={language}
+                                               changeLanguage={changeLanguage}
+                                               imgPreloads={content.imgPreloads}
+                                               audioPreloads={content.audioPreloads}
+                                               key={match.params.contentId}
+                                           />
+                                       )
+                                   }}
+                            />
 
-                <Route path="/resources"
-                       component={ (props) =>(
-                           <Resources
-                               language={language}
-                               changeLanguage={changeLanguage}
-                           />
-                       )}
-                />
+                            <Route path="/resources"
+                                   render={ ( { match } ) =>{
+                                       setPage('resources');
+                                       return(
+                                           <Resources
+                                               language={language}
+                                               changeLanguage={changeLanguage}
+                                           />
+                                       )
+                                   }}
+                            />
+
+                            <Route path='/aboutGWE'
+                                   render={ ( { match } ) => {
+                                       setPage('aboutGWE');
+                                       return (
+                                           <AboutGWE
+                                               language={language}
+                                               changeLanguage={changeLanguage}
+                                           />
+                                       )
+                                   }}
+                            />
+
+                            <Route exact path="/"
+                                   render={ ( { match } ) => {
+                                       setPage('splash');
+                                       return (
+                                           <Splash
+                                               language={language}
+                                               changeLanguage={changeLanguage}
+                                           />
+                                       )
+                                   }}
+                            />
+
+                    </div>
+                </div>
 
             </div>
-
-        </Router>
     )
 }

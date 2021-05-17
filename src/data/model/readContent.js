@@ -21,6 +21,7 @@ export class ReadContent extends Content{
 
         // Calculated Data
         this.startPage = 1;
+        //this.bookMark = 1;
         this.endPage = endPage;
     }
 }

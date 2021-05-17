@@ -9,7 +9,6 @@ import {Button} from "../../components/buttons/buttons";
 //Style Sheet
 import './splash.css';
 import './splashGraphics.css';
-import TopNav from "../../components/topnav/topnav";
 
 function SplashGraphics(){
     return(
@@ -42,42 +41,37 @@ export function Splash(props){
     }
 
     return(
-        <div className={'row no-gutters'}>
+        <div className={'Splash d-grid position-relative w-100'}>
 
-                <div className={'Splash col d-grid position-relative'}>
+            <div className={'splashBody position-relative'}>
 
-                    <TopNav
-                        language={props.language}
-                        changeLanguage={props.changeLanguage}
-                        page={'splash'}
-                    />
+                <div className={'menuWrap d-flex'}>
 
-                    <div className={'splashBody position-relative'}>
+                    <div className={'menu d-flex flex-column align-items-center'}>
 
-                        <div className={'menuWrap d-flex'}>
-
-                            <div className={'menu d-flex flex-column align-items-center'}>
-
-                                <div className="splashLogo">
-                                    <img src={ getLogo() } alt={''}/>
-                                </div>
-
-                                <Button
-                                    text={'Jump Onboard'}
-                                    link={'/map'}
-                                    iconType={'rightArrow'}
-                                />
-
-                            </div>
-
+                        <div className="splashLogo">
+                            <img src={ getLogo() } alt={''}/>
                         </div>
 
-                        <SplashGraphics/>
+                        <Button
+                            text={'Jump Onboard'}
+                            link={'/map'}
+                            iconType={'rightArrow'}
+                        />
+
+                        <Button
+                            text={"Teacher's Guide"}
+                            link={'/guide'}
+                            iconType={'info'}
+                        />
 
                     </div>
 
                 </div>
-        </div>
 
+                <SplashGraphics/>
+
+            </div>
+        </div>
     )
 }

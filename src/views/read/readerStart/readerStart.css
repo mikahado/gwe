@@ -54,5 +54,15 @@
   padding-right: 1.5rem;
   position: relative;
 }
+.ReaderStart .sessionInfo {
+  background-color: var(--primary-blue);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  border: 0.25rem solid aliceblue;
+}
+.ReaderStart .sessionInfo h1 {
+  margin: 0;
+}
 
 /*# sourceMappingURL=readerStart.css.map */

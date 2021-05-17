@@ -168,10 +168,13 @@ export function SummaryEntry ( props ){
     return(
         <div className='summaryEntry container'>
 
+            <CloseButton closeCurrent={props.closeCurrent} type='summary'/>
+
             {
                 partNo ?
                     <div className='partLabel label medWhiteBorder roundBorder' id={'partLabel'}>
-                        <h3>Part {partNo} of {numParts}</h3>
+                        <p>Session #{material.sessionInfo.materialId}</p>
+                        <p>Part {partNo} of {numParts}</p>
                         <span>{type}</span>
                     </div>
                     :''
@@ -234,11 +237,14 @@ function Summary(props){
         sessionId = session.sessionInfo.sessionId;
         material = session.material;
     }
+    else if (props.currentMaterial){
+        material = curriculum.sessions[ props.currentMaterial[0] - 1 ].material[ props.currentMaterial[1] - 1 ]
+    }
     else if (props.currentBook){
         book = books[props.currentBook];
     }
 
-    if (props.currentSession || props.currentBook) {
+    if (props.currentMaterial || props.currentBook) {
 
         return(
             <div className="Summary controlBox" id="Summary" onClick={handleClick}>
@@ -266,18 +272,16 @@ function Summary(props){
 
                         {
                             material ?
-                                material.map( material =>{
-                                    return(
-                                        <SummaryEntry
-                                            material={material}
-                                            language={props.language}
-                                        />
-                                    )
-                                })
+                                <SummaryEntry
+                                    material={material}
+                                    language={props.language}
+                                    closeCurrent={closeCurrent}
+                                />
                                 :
                                 <SummaryEntry
                                     content={book}
                                     language={props.language}
+                                    closeCurrent={closeCurrent}
                                 />
                         }
                     </div>

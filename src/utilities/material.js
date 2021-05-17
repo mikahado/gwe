@@ -37,12 +37,14 @@ export function materialRouter(params,language,changeLanguage) {
             case('discussion'):
 
                 return (
-                    <Read
-                        content={material.content}
-                        sessionInfo={material.sessionInfo}
-                        language={language}
-                        changeLanguage={changeLanguage}
-                    />
+
+                        <Read
+                            content={material.content}
+                            sessionInfo={material.sessionInfo}
+                            language={language}
+                            changeLanguage={changeLanguage}
+                            key={`${sessionId}-${partNo}`}
+                        />
                 )
 
             case('video'):

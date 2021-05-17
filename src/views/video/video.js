@@ -19,7 +19,7 @@ export function Video(props){
     return(
         <div className='videoWrap'>
 
-            <Button type={'close'} link={`/map/s-${params.sessionId}`}/>
+            <Button type={'close'} link={`/map/s-${params.sessionId}/p-${partNo}`}/>
 
             <YouTube
                 videoId={'XPXeCcqsMBg'}

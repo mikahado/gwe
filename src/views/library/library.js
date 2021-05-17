@@ -3,7 +3,6 @@ import React from 'react';
 
 // Sub-Components
 import Summary from "../../components/summary/summary";
-import TopNav from '../../components/topnav/topnav';
 import Sally from "../../components/sally/sally";
 import LibraryBookList from "./libraryBookList/libraryBookList";
 
@@ -96,12 +95,6 @@ class Library extends React.Component{
                 }
 
                 <div className={'col'}>
-
-                    <TopNav
-                        language={this.props.language}
-                        changeLanguage={this.props.changeLanguage}
-                        page={'library'}
-                    />
 
                     <div className={'Library'}>
 

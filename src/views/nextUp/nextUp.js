@@ -28,7 +28,7 @@ export function NextUp( props ){
 
                 <Button
                     text={'Back To Session Map'}
-                    link={`/map/s-${props.material.sessionInfo.sessionId}`}
+                    link={`/map/s-${props.material.sessionInfo.sessionId}/p-${props.material.sessionInfo.partNo}`}
                     language={props.language}
                     iconType={'leftArrow'}
                 />
@@ -99,7 +99,7 @@ export function NextUp( props ){
 
                 <Button
                     text='Back To Sessions'
-                    link={`/map/s-${material.sessionInfo.sessionId}`}
+                    link={`/map/s-${material.sessionInfo.sessionId}/p-${material.sessionInfo.partNo}`}
                     language={ props.language }
                     iconType={'leftArrow'}
                 />

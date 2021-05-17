@@ -12,6 +12,7 @@ export class Material{
         }
         if (altStartPage){
             this.content.startPage = altStartPage;
+            //this.content.bookMark = altStartPage;
         }
         if (altEndPage){
             this.content.endPage = altEndPage;

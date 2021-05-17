@@ -54,7 +54,7 @@ class Congrats extends React.Component{
                                     this.props.sessionInfo ?
                                         <Button
                                             text={'Back to Sessions'}
-                                            link={ `/map/s-${this.props.sessionInfo.sessionId}`}
+                                            link={ `/map/s-${this.props.sessionInfo.sessionId}/p-${this.props.sessionInfo.partNo}`}
                                             language={this.props.language}
                                             iconType={'leftArrow'}
                                         />

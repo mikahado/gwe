@@ -1,11 +1,13 @@
 .tableContents {
   position: relative;
   z-index: 5;
+  width: fit-content;
   border: 0.5rem solid var(--primary-blue);
   border-radius: 2rem;
   color: aliceblue;
   font-weight: bold;
   padding: 0.5rem;
+  margin: auto;
   background-color: var(--dark-accent);
 }
 .tableContents button {
@@ -13,10 +15,18 @@
   width: 2.5rem;
   padding: 0.25rem;
   border-radius: 100%;
-  box-shadow: 0 0 1rem dimgray;
 }
 .tableContents button.current {
   background-color: var(--primary-blue);
+}
+.tableContents .materialWrap {
+  background-color: var(--light-green);
+  border-radius: 2rem;
+  padding: 0.1rem;
+  margin: 0.5rem 0;
+}
+.tableContents .materialWrap button {
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=sessionJump.css.map */

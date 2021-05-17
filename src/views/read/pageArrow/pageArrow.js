@@ -45,6 +45,7 @@ export function PageArrow(props){
                     message={'Next Page'}
                     id={'nextPageInfo'}
                     visible={bubble1}
+                    type={'up'}
                 />
             </div>
         )
@@ -82,6 +83,7 @@ export function PageArrow(props){
                             message={'Previous Page'}
                             id={'nextPageInfo'}
                             visible={bubble2}
+                            type={'up'}
                         />
                         :''
                 }

@@ -10,6 +10,7 @@ import './topnav.css';
 
 //Icon
 import icon from './GWEicon.png';
+import {Link} from "react-router-dom";
 
 export function NavButton(props){
     return(
@@ -33,11 +34,13 @@ function TopNav (props){
 
     function checkMobile(){
         let short = window.matchMedia(`(max-height: 500px)`).matches;
-        let skinny = window.matchMedia(`(max-width: 900px)`).matches;
+        let skinny = window.matchMedia(`(max-width: 1000px)`).matches;
 
         if(short || skinny){
             setMobile(true);
             //setExpand(0);
+        } else {
+            setMobile(false);
         }
     }
 
@@ -50,9 +53,6 @@ function TopNav (props){
         checkMobile();
 
         window.addEventListener('resize', handleResize);
-
-        //mobile = window.matchMedia(`(max-height: 500px)`|| `(max-height: 500px)`).matches;
-        //console.log(`Mobile: ${mobile}`);
     });
 
     function toggleMenu(){
@@ -76,8 +76,8 @@ function TopNav (props){
         >
 
             <div className={'d-flex align-items-center'}>
-                <div className={'icon d-none d-sm-block'}>
-                    <img src={icon} alt={'The Global Warming Express Logo'}/>
+                <div className={'icon'}>
+                    <Link to={'/'}><img src={icon} alt={'The Global Warming Express Logo'}/></Link>
                 </div>
 
                 <Translate
@@ -106,9 +106,9 @@ function TopNav (props){
                             <div className="navButtons d-flex flex-column flex-md-row">
 
                                 <NavButton
-                                    text={'Home'}
-                                    link={'/'}
-                                    linkPage={'splash'}
+                                    text={'Guide'}
+                                    link={'/guide'}
+                                    linkPage={'guide'}
                                     page={props.page}
                                 />
 
@@ -135,7 +135,7 @@ function TopNav (props){
 
                                 <NavButton
                                     text={'About GWE'}
-                                    extLink="https://www.theglobalwarmingexpress.org/"
+                                    link={'/aboutGWE'}
                                     linkPage={'aboutGWE'}
                                     page={props.page}
                                 />

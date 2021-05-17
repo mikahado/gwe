@@ -1,15 +1,15 @@
 /* Page Container */
 .sessionMap{
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 0;
 
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
 
   .trainCol{
     position: relative;
-    max-width: 80vh;
+    max-width: 124vh;
     overflow: hidden;
   }
 
@@ -20,7 +20,7 @@
     bottom: 0;
 
     height: 50vh;
-    width: 100vh;
+    width: 100%;
     //width: fit-content;
     //width: -moz-fit-content;
 

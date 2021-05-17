@@ -13,7 +13,6 @@ export function Audio(props){
         props.setNarrationState('waiting');
     }
     function handleWait(){
-        console.log('waiting');
         waitTimer = setTimeout(setWaiting,3500);
     }
     function handleResume(){

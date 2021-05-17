@@ -17,7 +17,6 @@ export function ZoomBook(props){
     }
 
     function showBubble(){
-        console.log('show bubble');
         setBubble(1);
     }
 

@@ -4,7 +4,6 @@ import {useParams} from "react-router-dom";
 
 // Sub-Components
 import Summary from "../../components/summary/summary";
-import TopNav from '../../components/topnav/topnav';
 import SessionListItem from "./sessionListItem/sessionListItem";
 import SplashTrain from "../splash/splashTrain/splashTrain";
 import {SessionJump} from "./sessionJump/sessionJump";
@@ -23,8 +22,9 @@ import curriculum from "../../data/curriculum/curriculum";
 function SessionMap(props){
 
     const sessionRoute = parseInt(useParams().sessionId);
+    const partNoRoute = parseInt(useParams().partNo);
 
-    const [currentSession, setCurrentSession] = useState(sessionRoute ? sessionRoute : 1);
+    const [currentSession, setCurrentSession] = useState([sessionRoute || 1, partNoRoute || 1 ] );
     const [sessionSummary, setSessionSummary] = useState('');
     const [mobile,setMobile] = useState(false);
 
@@ -54,6 +54,11 @@ function SessionMap(props){
         bg.style.backgroundPosition = getBgPosition(session);
     }
     function moveTrain(newSession){
+
+        let session = curriculum.sessions[ newSession[0] - 1 ];
+        let material = session.material[ newSession[1] - 1 ];
+
+        let percent = material.sessionInfo.curricPercent;
 
         function animateTrain(state){
 
@@ -124,18 +129,18 @@ function SessionMap(props){
         }
 
         function changeSession(){
-            setCurrentSession( newSession );
+            setCurrentSession( [newSession[0],newSession[1]] );
         }
 
         function startMovement(){
 
             startWheels();
-            moveBG(newSession);
+            moveBG(percent);
             startTrain();
             fadeSession('out');
         }
         function stopMovement(){
-            changeSession();
+            //changeSession();
             stopWheels();
             stopTrain();
             fadeSession('in');
@@ -144,14 +149,22 @@ function SessionMap(props){
 
         if(!mobile){
             startMovement();
+            setTimeout(changeSession, 1500)
             setTimeout(stopMovement, 3000);
         } else{
             changeSession();
         }
     }
     function nextSession(){
-        if (currentSession < curriculum.sessions.length){
-            moveTrain(currentSession + 1);
+        if (currentSession[0] < curriculum.sessions.length){
+
+            if (currentSession[1] < material.sessionInfo.ofParts ){
+
+                moveTrain([ currentSession[0], currentSession[1] + 1 ])
+
+            } else {
+                moveTrain([ currentSession[0] + 1, 1 ]);
+            }
         }
     }
     function backSession(){
@@ -169,12 +182,9 @@ function SessionMap(props){
         checkMobile();
 
         window.addEventListener('resize', handleResize);
-
-        console.log(mobile);
     });
 
-    const session = curriculum.sessions[currentSession - 1];
-    let sessionInfo = session.sessionInfo;
+    const material = curriculum.sessions[currentSession[0] - 1].material[currentSession[1] - 1];
 
     return(
         <div className={`sessionMap container-fluid ${currentSession ? 'scrollLock' : ''}`}>
@@ -182,24 +192,12 @@ function SessionMap(props){
             {
                 sessionSummary ?
                     <Summary
-                        currentSession={sessionSummary}
+                        currentMaterial={sessionSummary}
                         closeCurrent={closeSummary}
                         language={props.language}
                     />
                     :''
             }
-
-            <div className={'row no-gutters'}>
-                <div className={'col'}>
-
-                    <TopNav
-                        language={props.language}
-                        changeLanguage={props.changeLanguage}
-                        page={'sessions'}
-                    />
-
-                </div>
-            </div>
 
             <div
                 id='bg'
@@ -216,11 +214,12 @@ function SessionMap(props){
 
                 </div>
 
-                <div className={'col d-flex align-items-center justify-content-center'}>
+                <div className={'col col-md-auto d-flex align-items-center justify-content-center'}>
 
                     <SessionListItem
-                        sessionId={sessionInfo.sessionId}
-                        image={sessionInfo.graphic}
+                        sessionId={material.sessionInfo.materialId}
+                        currentMaterial={ currentSession }
+                        image={material.content.graphic}
                         changeSession={setSessionSummary}
                         currentSession={currentSession}
                         nextSession={nextSession}

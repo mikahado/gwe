@@ -13,7 +13,7 @@
   margin-bottom: 1rem;
   text-align: left;
 }
-.guide section a {
+.guide section .textLink {
   color: var(--dark-accent);
   font-weight: bold;
   background-color: var(--light-green);

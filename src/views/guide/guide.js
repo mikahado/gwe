@@ -2,6 +2,7 @@ import React from 'react';
 import './guide.css';
 
 import guide from './GWE Curriculum .pdf';
+import {Button} from "../../components/buttons/buttons";
 
 export function Guide(props){
 
@@ -75,7 +76,7 @@ export function Guide(props){
                     <section>
                         <p>All of the materials we use lend themselves to students’ imaginations. While you present the GWE Online Curriculum APP, it’s best to take your time. Intersperse your teaching with activities, both indoors and outdoors, games, play and creative outlets, such as song, dance, puppet shows, plays, drawing, painting, murals and movies. We have found that any facts may be taught by means of Creative Drama. Creative Drama grounds the material in the students’ kinesthetic awareness by being experienced through their bodies.</p>
 
-                        <p>For ideas about indoor and outdoor experiences and experiments, take a look at the <a href={ guide } target={"_blank"} rel={'noopener  noreferrer'}>GWE After School Curriculum</a>, also on the website.</p>
+                        <p>For ideas about indoor and outdoor experiences and experiments, take a look at the <a href={ guide } target={"_blank"} rel={'noopener  noreferrer'} className={'textLink'}>GWE After School Curriculum</a>, also on the website.</p>
                     </section>
 
                     <section>
@@ -89,10 +90,17 @@ export function Guide(props){
                         <p>Kids love real books!</p>
                         <p>Hard copies of Common Ground and the Sunlight Series books are available through Scholastic Books.</p>
                         <p>The Global Warming Express can be found on many online distributor websites.</p>
-                        <p>We love questions and comments! For either, simply write to <a href={"mailto:someone@yoursite.com"} target={'_blank'} rel={'noopener  noreferrer'}>info@theglobalwarmingexpress.org</a>.</p>
+                        <p>We love questions and comments! For either, simply write to <a href={"mailto:someone@yoursite.com"} target={'_blank'} rel={'noopener  noreferrer'} className={'textLink'}>info@theglobalwarmingexpress.org</a>.</p>
                         <p>We promise to get back to you!</p>
                         <p><strong>If you are interested in bringing the Global Warming Express outdoor after-school program to you school, write to us at the same address.</strong></p>
                         <p>Thank you for jumping on board <strong>The Global Warming Express!</strong></p>
+
+                        <Button
+                            text={'Jump Onboard'}
+                            link={'/map'}
+                            iconType={'rightArrow'}
+                        />
+
                     </section>
 
                 </div>

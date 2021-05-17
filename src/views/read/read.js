@@ -176,20 +176,18 @@ class Discuss extends React.Component{
     }
     render(){
         return(
-            <div className={'container-fluid'}>
-                <div className={'row'}>
-                    <div
-                        className={
-                            `discWrap col d-flex flex-column flex-md-row justify-content-center ${
-                                typeof this.props.images[0] === 'string' ? 'fullImg' : ''
-                            }`}
-                        id={'discWrap'}
-                    >
+            <div className={'row no-gutters'}>
+                <div
+                    className={
+                        `discWrap col d-flex flex-column flex-md-row justify-content-center ${
+                            typeof this.props.images[0] === 'string' ? 'fullImg' : ''
+                        }`}
+                    id={'discWrap'}
+                >
 
-                        {this.getImages()}
-                        {this.getText()}
+                    {this.getImages()}
+                    {this.getText()}
 
-                    </div>
                 </div>
             </div>
         )

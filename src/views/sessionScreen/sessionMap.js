@@ -213,6 +213,7 @@ function SessionMap(props){
                 style={ sessionRoute ? {backgroundPosition: getBgPosition(sessionRoute)} : {}}
             >
 
+
                 <div className={'trainCol col d-none d-md-flex'}>
 
                     <div className={'trainWrap'}>

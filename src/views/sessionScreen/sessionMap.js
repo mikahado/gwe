@@ -165,6 +165,8 @@ function SessionMap(props){
             } else {
                 moveTrain([ currentSession[0] + 1, 1 ]);
             }
+        } else if (currentSession[0] === curriculum.sessions.length && currentSession[1] < curriculum.sessions[curriculum.sessions.length - 1].material.length ){
+            moveTrain( [ currentSession[0], currentSession[1] + 1 ])
         }
     }
     function backSession(){

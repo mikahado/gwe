@@ -722,9 +722,13 @@ export function Read(props){
 
             <div className="Read col d-flex flex-column align-items-center justify-content-center">
 
-                <div className={'materialHeader'}>
-                    <h1>Session {props.sessionInfo.sessionId}, part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts}: "{content.title.get(props.language)}"</h1>
-                </div>
+                {
+                    props.sessionInfo ?
+                        <div className={'materialHeader'}>
+                            <h1>Session {props.sessionInfo.sessionId}, part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts}: "{content.title.get(props.language)}"</h1>
+                        </div>
+                        :''
+                }
 
                 <ReaderControlBar
                     narrationState={narrationState}
@@ -797,9 +801,13 @@ export function Read(props){
                     </div>
 
                     <div className={'col'}>
-                        <NextMaterial
-                            sessionInfo={props.sessionInfo}
-                        />
+                        {
+                            props.sessionInfo ?
+                                <NextMaterial
+                                    sessionInfo={props.sessionInfo}
+                                />
+                                :''
+                        }
                     </div>
 
                     <div className={'col d-flex d-lg-none'}>

@@ -62,7 +62,6 @@ export function Splash(props){
                         <Button
                             text={"Teacher's Guide"}
                             link={'/guide'}
-                            iconType={'info'}
                         />
 
                     </div>

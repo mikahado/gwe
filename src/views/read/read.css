@@ -8,6 +8,14 @@
   width: 100%;
 }
 
+.materialHeader {
+  padding: 0.25rem 1rem;
+  margin-top: 1rem;
+  background-color: var(--dark-accent);
+  border-radius: 1rem;
+  color: aliceblue;
+}
+
 /* Page Image & Container */
 .pageImgFrame {
   box-sizing: border-box;

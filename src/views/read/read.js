@@ -681,6 +681,7 @@ export function Read(props){
                         imgLoad={imgLoad}
                         //Functions
                         mediaLoaded={mediaLoaded}
+                        nextPage={nextPage}
                     />
                 )
 
@@ -714,10 +715,16 @@ export function Read(props){
         setAudioBubble(0);
     }
 
+
+
     return(
         <div className={'row no-gutters'}>
 
             <div className="Read col d-flex flex-column align-items-center justify-content-center">
+
+                <div className={'materialHeader'}>
+                    <h1>Session {props.sessionInfo.sessionId}, part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts}: "{content.title.get(props.language)}"</h1>
+                </div>
 
                 <ReaderControlBar
                     narrationState={narrationState}
@@ -738,6 +745,16 @@ export function Read(props){
                     id="ReaderContent"
                     className="ReaderContent row d-flex flex-row justify-content-center align-items-center"
                 >
+                    <div className={'col d-none d-lg-flex justify-content-end'}>
+                        <PageArrow
+                            type={'<'}
+                            className={'default'}
+                            page={page}
+                            startPage={startPage}
+                            //Methods
+                            changePage={changePage}
+                        />
+                    </div>
 
                     <ReaderStart
                         content={props.content}
@@ -752,11 +769,21 @@ export function Read(props){
 
                     {handlePage()}
 
+                    <div className={'col d-none d-lg-block'}>
+                        <PageArrow
+                            type={'>'}
+                            className={'default'}
+                            page={page}
+                            //Methods
+                            nextPage={nextPage}
+                        />
+                    </div>
+
                 </div>
 
                 <div className={'pageArrows row'}>
 
-                    <div className={'col'}>
+                    <div className={'col d-flex d-lg-none'}>
 
                         <PageArrow
                             type={'<'}
@@ -775,7 +802,7 @@ export function Read(props){
                         />
                     </div>
 
-                    <div className={'col'}>
+                    <div className={'col d-flex d-lg-none'}>
 
                         <PageArrow
                             type={'>'}
@@ -819,6 +846,9 @@ export function Read(props){
                         nextPage={nextPage}
                         mediaLoaded={mediaLoaded}
                         setNarrationState={setNarrationState}
+                        page={page}
+                        startPage={content.startPage}
+                        narrationControl={narrationControl}
                     />
 
                 </div>

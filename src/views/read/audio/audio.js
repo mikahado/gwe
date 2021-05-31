@@ -7,6 +7,14 @@ export function Audio(props){
         props.mediaLoaded('audio',props.src);
     }
 
+    function handleEnd(){
+        if (props.page !== props.startPage){
+            props.nextPage();
+        } else {
+            props.narrationControl('stop');
+        }
+    }
+
     let waitTimer;
 
     function setWaiting(){
@@ -23,7 +31,7 @@ export function Audio(props){
         <audio
             id={'narrator'}
             src={props.src}
-            onEnded={props.nextPage}
+            onEnded={ handleEnd }
             onCanPlayThrough={handleAudioLoad}
             onWaiting={handleWait}
             onPlaying={handleResume}

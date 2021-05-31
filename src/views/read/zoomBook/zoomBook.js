@@ -29,7 +29,7 @@ export function ZoomBook(props){
     if(props.visible){
 
         return(
-            <div className={'position-relative'}>
+            <div className={'zoomWrap'}>
 
                 <InfoBubble
                     message={'Page Zoom'}

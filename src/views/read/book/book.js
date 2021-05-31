@@ -119,11 +119,15 @@ export function Book(props){
 
                 </div>
 
-                <ZoomBook
-                    visible={!skinnyWindow}
-                    zoomFunction={zoomPage}
-                    zoomState={pageZoom}
-                />
+                {
+                    props.page !== props.content.startPage ?
+                        <ZoomBook
+                            visible={!skinnyWindow}
+                            zoomFunction={zoomPage}
+                            zoomState={pageZoom}
+                        />
+                        :''
+                }
 
             </div>
 

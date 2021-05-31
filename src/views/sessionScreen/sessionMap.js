@@ -168,8 +168,14 @@ function SessionMap(props){
         }
     }
     function backSession(){
-        if (currentSession > 1){
-            moveTrain(currentSession - 1);
+        if (currentSession[0] > 1){
+
+            if (currentSession[1] > 1 ){
+                moveTrain( [ currentSession[0], currentSession[1] - 1 ] );
+            }
+            else {
+                moveTrain( [currentSession[0] - 1, 1 ] );
+            }
         }
     }
 

@@ -11,3 +11,9 @@ button span{
 .zoomButton{
     border-radius: 100%;
 }
+
+.zoomWrap{
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+}

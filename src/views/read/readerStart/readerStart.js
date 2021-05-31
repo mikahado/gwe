@@ -37,6 +37,9 @@ export function ReaderStart(props) {
         ofParts = sessionInfo.ofParts;
     }
 
+    function playIntro(){
+        props.narrationControl('play');
+    }
     function playNarration() {
 
         props.narrationControl('play');
@@ -46,7 +49,8 @@ export function ReaderStart(props) {
         function getClick(){
             if(props.content.preloads.audio.length){
                 //props.setAudioBubble(1);
-                return(playNarration);
+                props.nextPage();
+                playNarration();
             }
             else{
                 return(props.nextPage);
@@ -60,7 +64,7 @@ export function ReaderStart(props) {
                     <div className={'position-relative'}>
 
                         <Button
-                            click={getClick()}
+                            click={getClick}
                             text={'Read To Me'}
                             language={props.language}
                             iconType={'rightArrow'}
@@ -93,15 +97,6 @@ export function ReaderStart(props) {
 
         return (
             <div className="ReaderStart lightText col-md-auto d-flex flex-column">
-
-                { sessionInfo ?
-                    <div className={'sessionInfo'}>
-                        <h1>Session {materialId}</h1>
-                        <p>Part {partNo} of {ofParts}</p>
-                    </div>
-
-                    :''
-                }
 
                 <h1 className={'lightText'}>{title}</h1>
 
@@ -145,6 +140,12 @@ export function ReaderStart(props) {
                 }
 
                 {showButton()}
+
+                {
+                    reader ?
+                        <Button text={'About This Reader'} click={playIntro}/>
+                        :''
+                }
 
             </div>
         )

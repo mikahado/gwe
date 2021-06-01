@@ -731,7 +731,7 @@ export function Read(props){
                 {
                     props.sessionInfo ?
                         <div className={'materialHeader'}>
-                            <h1><b>Session {props.sessionInfo.sessionId}</b> - Part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts} : <u>{content.title.get(props.language)} (<i>{content.subtitle}</i>)</u></h1>
+                            <h1><b>Session {props.sessionInfo.sessionId}</b> - Part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts} : <u>{content.title.get(props.language)}</u></h1>
                         </div>
                         :''
                 }

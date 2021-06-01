@@ -176,7 +176,7 @@ class Discuss extends React.Component{
     }
     render(){
         return(
-            <div className={'row no-gutters'}>
+            <div className={'col no-gutters'}>
                 <div
                     className={
                         `discWrap col d-flex flex-column flex-md-row justify-content-center ${
@@ -709,17 +709,9 @@ export function Read(props){
 
 
     return(
-        <div className={'row no-gutters'}>
 
-            <div className="Read col d-flex flex-column align-items-center justify-content-center">
 
-                {
-                    props.sessionInfo ?
-                        <div className={'materialHeader'}>
-                            <h1>Session {props.sessionInfo.sessionId}, part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts}: "{content.title.get(props.language)}"</h1>
-                        </div>
-                        :''
-                }
+            <div className="Read m-0 p-0 d-flex flex-column align-items-center justify-content-center">
 
                 <ReaderControlBar
                     narrationState={narrationState}
@@ -736,11 +728,19 @@ export function Read(props){
                     hideAudioBubble={hideAudioBubble}
                 />
 
+                {
+                    props.sessionInfo ?
+                        <div className={'materialHeader'}>
+                            <h1><b>Session {props.sessionInfo.sessionId}</b> - Part {props.sessionInfo.partNo} of {props.sessionInfo.ofParts} : <u>{content.title.get(props.language)} (<i>{content.subtitle}</i>)</u></h1>
+                        </div>
+                        :''
+                }
+
                 <div
                     id="ReaderContent"
-                    className="ReaderContent row d-flex flex-row justify-content-center align-items-center"
+                    className="ReaderContent justify-content-center align-items-center no-gutters"
                 >
-                    <div className={'col d-none d-lg-flex justify-content-end'}>
+                    <div className={'d-none d-lg-flex justify-content-end'}>
                         <PageArrow
                             type={'<'}
                             className={'default'}
@@ -751,21 +751,25 @@ export function Read(props){
                         />
                     </div>
 
-                    <ReaderStart
-                        content={props.content}
-                        sessionInfo={props.sessionInfo}
-                        language={props.language}
-                        page={page}
-                        //Methods
-                        narrationControl={narrationControl}
-                        nextPage={nextPage}
-                        setAudioBubble={setAudioBubble}
-                        //narrationState={narrationState}
-                    />
+                    <div className={'d-flex flex-column flex-lg-row align-items-center justify-content-around'}>
 
-                    {handlePage()}
+                        <ReaderStart
+                            content={props.content}
+                            sessionInfo={props.sessionInfo}
+                            language={props.language}
+                            page={page}
+                            //Methods
+                            narrationControl={narrationControl}
+                            nextPage={nextPage}
+                            setAudioBubble={setAudioBubble}
+                            //narrationState={narrationState}
+                        />
 
-                    <div className={'col d-none d-lg-block'}>
+                        {handlePage()}
+
+                    </div>
+
+                    <div className={'d-none d-lg-block'}>
                         <PageArrow
                             type={'>'}
                             className={'default'}
@@ -822,40 +826,42 @@ export function Read(props){
                     </div>
                 </div>
 
-                <div className={'misc'}>
+                <div className={'misc row'}>
+                    <div className={'col'}>
 
-                    <Preloader
-                        preloads={props.content.preloads}
-                        preloadingImg={preloadingImg}
-                        preloadingAudio={preloadingAudio}
-                        page={page}
-                        //Methods
-                        setCachedImgs={setCachedImgs}
-                        preloadCached={preloadCached}
-                    />
+                        <Preloader
+                            preloads={props.content.preloads}
+                            preloadingImg={preloadingImg}
+                            preloadingAudio={preloadingAudio}
+                            page={page}
+                            //Methods
+                            setCachedImgs={setCachedImgs}
+                            preloadCached={preloadCached}
+                        />
 
-                    <Congrats
-                        language={props.language}
-                        changePage={changePage}
-                        sessionInfo={props.sessionInfo}
-                    />
+                        <Congrats
+                            language={props.language}
+                            changePage={changePage}
+                            sessionInfo={props.sessionInfo}
+                        />
 
-                    <Audio
-                        src={props.content.pageData[page - 1].audio.get(props.language)}
-                        language={props.language}
-                        nextPage={nextPage}
-                        mediaLoaded={mediaLoaded}
-                        setNarrationState={setNarrationState}
-                        page={page}
-                        startPage={content.startPage}
-                        narrationControl={narrationControl}
-                    />
+                        <Audio
+                            src={props.content.pageData[page - 1].audio.get(props.language)}
+                            language={props.language}
+                            nextPage={nextPage}
+                            mediaLoaded={mediaLoaded}
+                            setNarrationState={setNarrationState}
+                            page={page}
+                            startPage={content.startPage}
+                            narrationControl={narrationControl}
+                        />
 
+                    </div>
                 </div>
 
             </div>
 
-        </div>
+
     )
 }
 

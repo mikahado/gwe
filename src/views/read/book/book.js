@@ -54,8 +54,8 @@ export function Book(props){
             const translations = props.content.pageData[props.page - 1].translation.get(props.language);
 
             return(
-                <div className={'row'}>
-                    <div className={'translation col'} id={'translation'}>
+                <div className={''}>
+                    <div className={'translation'} id={'translation'}>
                         {
                             translations ?
                             compileTranslations(translations)
@@ -95,9 +95,9 @@ export function Book(props){
     })
 
     return(
-        <div className="readerPage col-lg-auto d-flex flex-column align-items-center">
+        <div className="readerPage col-lg-auto d-flex flex-column align-items-center p-0">
 
-            <div className={'row d-flex flex-row align-items-center'}>
+            <div className={'d-flex flex-row align-items-center'}>
 
                 <div
                     id={'pageImgFrame'}

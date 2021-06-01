@@ -29,14 +29,6 @@ export function ReaderStart(props) {
         }
     }
 
-    let sessionInfo, materialId, partNo, ofParts;
-    if (props.sessionInfo){
-        sessionInfo = props.sessionInfo;
-        materialId = sessionInfo.materialId;
-        partNo = sessionInfo.partNo;
-        ofParts = sessionInfo.ofParts;
-    }
-
     function playIntro(){
         props.narrationControl('play');
     }

@@ -126,7 +126,7 @@ label {
 }
 /* Page Arrows */
 .pageArrows {
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 2rem;
 }
 .pageArrows .col {

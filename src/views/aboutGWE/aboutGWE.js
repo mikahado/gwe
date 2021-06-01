@@ -18,12 +18,12 @@ export function AboutGWE(props){
 
               <section>
                   <h3>How Did The GWE begin?</h3>
-                  <p>A nine-year-old girl, Marina Weber-Stevens, founded the GWE after she learned about climate change and endangered species in third grade. Marina wrote a book called The Global Warming Express to send to President Obama, and she enlisted the help of her classmate, Joanna Whysner, to illustrate it. The book made it to President Obama and is now read by kids nationwide! </p>
+                  <p>A nine-year-old girl, Marina Weber-Stevens, founded the GWE after she learned about climate change and endangered species in third grade. Marina wrote a book called <u>The Global Warming Express</u> to send to President Obama, and she enlisted the help of her classmate, Joanna Whysner, to illustrate it. The book made it to President Obama and is now read by kids nationwide! </p>
               </section>
 
               <section>
                   <h3>What Does The GWE Do Today?</h3>
-                  <p>Our programming is designed to inspire kids with wonder and knowledge, as well as the facility to achieve any goal they define and strive towards. Students in each program meet with GWE Mentors weekly, to learn science, climate science, resilient solutions, public speaking, letter writing, performing arts, visual arts and civic engagement. They set and accomplish advocacy, activism, resilience and outreach goals for their homes, schools, communities, state and beyond. The GWE kids regularly contribute to city, county and state-level legislative meetings.Their initiatives have helped to create and improve public policy and practices in resilience in New Mexico. </p>
+                  <p>Our programming is designed to inspire kids with wonder and knowledge, as well as the facility to achieve any goal they define and strive towards. Students in each program meet with GWE Mentors weekly, to learn science, climate science, resilient solutions, public speaking, letter writing, performing arts, visual arts and civic engagement. They set and accomplish advocacy, activism, resilience and outreach goals for their homes, schools, communities, state and beyond. The GWE kids regularly contribute to city, county and state-level legislative meetings. Their initiatives have helped to create and improve public policy and practices in resilience in New Mexico. </p>
               </section>
 
               <section>

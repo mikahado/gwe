@@ -14,7 +14,7 @@ class Congrats extends React.Component{
     readAgain(){
 
         //Set State
-        this.props.changePage(1);
+        this.props.changePage(1,true);
 
         //Remove Congrats Window
         const congrats = document.getElementById('complete');

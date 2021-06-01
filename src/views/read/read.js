@@ -290,11 +290,14 @@ function ReaderControlBar(props){
                 )
             }
             else if(props.status==='stop'){
-                return(
-                    <div className="narrControls">
-                        {playButton()}
-                    </div>
-                )
+                if (props.page !== props.content.startPage){
+                    return(
+                        <div className="narrControls">
+                            {playButton()}
+                        </div>
+                    )
+                }
+
             }
         }
 

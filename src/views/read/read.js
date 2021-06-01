@@ -210,6 +210,7 @@ function ReaderControlBar(props){
         function showButtons(){
 
             function playButton(){
+                console.log(props.narrationState);
                 if(!props.narrationState){
                     return(
                         <div className={'position-relative'}>
@@ -389,19 +390,6 @@ function ReaderControlBar(props){
                 <div className={'col-sm-auto no-gutters'}>
                     {NarrationControl()}
                 </div>
-
-                {/*}
-
-                <div className={'col-auto no-gutters  justify-content-center'}>
-
-                    <Translate
-                        language={props.language}
-                        changeLanguage={props.changeLanguage}
-                    />
-
-                </div>
-
-                {*/}
 
                 <div className={'mobile-close col-auto'}>
 
@@ -769,6 +757,7 @@ export function Read(props){
                         narrationControl={narrationControl}
                         nextPage={nextPage}
                         setAudioBubble={setAudioBubble}
+                        //narrationState={narrationState}
                     />
 
                     {handlePage()}

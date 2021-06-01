@@ -36,6 +36,7 @@ export function Audio(props){
             onCanPlayThrough={handleAudioLoad}
             onWaiting={handleWait}
             onPlaying={handleResume}
+            preload={"auto"}
         />
     )
 }

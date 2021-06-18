@@ -8,6 +8,7 @@ import {ExperimentVideo} from "./experimentVideo";
 import {ReadClose} from "../read/readClose/readClose";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import {Lightbox} from "./lightbox/lightbox";
+import {NextMaterial} from "../read/nextMaterial/nextMaterial";
 
 let parse = require('html-react-parser');
 
@@ -177,7 +178,10 @@ export function Experiment(props) {
             }
             {
               props.sessionInfo ?
-                <Button text={'Next Material'} iconType={'rightArrow'} link={`/s${props.sessionInfo.sessionId}/p${props.sessionInfo.partNo}/next`}/>
+                <div className={'d-flex flex-column align-items-center'}>
+                  <Button text={'Next Material'} iconType={'rightArrow'} link={`/s${props.sessionInfo.sessionId}/p${props.sessionInfo.partNo}/next`}/>
+                  <NextMaterial sessionInfo={props.sessionInfo}/>
+                </div>
                 :''
             }
           </div>

@@ -1,171 +1,147 @@
 import discussionCharacters from "../data/discussions/discussionCharacters/discussionCharacters";
 import discussionPages from "../data/discussions/discussionPages";
-import {MultiLingual} from "../data/model/multiLingual";
+import { MultiLingual } from "../data/model/multiLingual";
 import pageText from "../data/pageText";
 import translationsSpa from "../data/books/translationsSpa";
 
 const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
 
+export function assembleBookPages(contentId, endPage) {
+  const contentPages = [];
 
-export function assembleBookPages(contentId,endPage){
-
-    const contentPages = [];
-
-    for (let page = 1; page <= endPage; page++){
-
-        contentPages.push({
-            img: `${process.env.PUBLIC_URL}/assets/book/${contentId}/pages/${page}.jpg`,
-            audio: new MultiLingual(
-                `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/eng/${page}.mp3`,
-                `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/spa/${page}.mp3`
-            ),
-            translation: new MultiLingual(
-                null,
-                translationsSpa[contentId] ? translationsSpa[contentId][page] : null
-            ),
-            text: null
-        })
-    }
-    return contentPages;
+  for (let page = 1; page <= endPage; page++) {
+    contentPages.push({
+      img: `${process.env.PUBLIC_URL}/assets/book/${contentId}/pages/${page}.jpg`,
+      audio: new MultiLingual(
+        `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/eng/${page}.mp3`,
+        `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/spa/${page}.mp3`
+      ),
+      translation: new MultiLingual(
+        null,
+        translationsSpa[contentId] ? translationsSpa[contentId][page] : null
+      ),
+      text: null,
+    });
+  }
+  return contentPages;
 }
 
-export function assembleDiscussionPages(contentId){
+export function assembleDiscussionPages(contentId) {
+  let pagesData = discussionPages[contentId];
+  let special = `${process.env.PUBLIC_URL}/assets/discussion/${contentId}/special.png`;
 
-    let pagesData = discussionPages[contentId];
-    let special = `${process.env.PUBLIC_URL}/assets/discussion/${contentId}/special.png`;
-
-    function checkForCharacterImg(img){
-
-        if(Object.keys(discussionCharacters).includes(img)){
-            return discussionCharacters[img];
-        }
-        else{return false};
+  function checkForCharacterImg(img) {
+    if (Object.keys(discussionCharacters).includes(img)) {
+      return discussionCharacters[img];
+    } else {
+      return false;
     }
-    function processPageImgData(pageImgData){
-
-        if (!pageImgData.length){
-            pageImgData = noGraphic;
-        }
-
-        const convertedImages = [];
-
-        if(Array.isArray(pageImgData)){
-
-            pageImgData.forEach( image =>{
-
-                if (image === 'SPECIAL'){
-                    convertedImages.push(special);
-                }
-                else if (checkForCharacterImg(image)){
-                    convertedImages.push(checkForCharacterImg(image) );
-                }
-                else{
-                    convertedImages.push(image);
-                }
-            });
-        }
-        else {
-            if (checkForCharacterImg(pageImgData)){
-                convertedImages.push(checkForCharacterImg(pageImgData) );
-            }
-            else{
-                convertedImages.push( pageImgData );
-            }
-        }
-
-        return convertedImages;
-    }
-    function processPageTextData(pageTextData){
-
-        const assembledPageText = new MultiLingual(
-            pageTextData,
-            [pageText.messages.spanishComing],
-        )
-        return assembledPageText;
+  }
+  function processPageImgData(pageImgData) {
+    if (!pageImgData.length) {
+      pageImgData = noGraphic;
     }
 
-    let contentPages = [];
+    const convertedImages = [];
 
-    // Assemble Cover Page Data
+    if (Array.isArray(pageImgData)) {
+      pageImgData.forEach((image) => {
+        if (image === "SPECIAL") {
+          convertedImages.push(special);
+        } else if (checkForCharacterImg(image)) {
+          convertedImages.push(checkForCharacterImg(image));
+        } else {
+          convertedImages.push(image);
+        }
+      });
+    } else {
+      if (checkForCharacterImg(pageImgData)) {
+        convertedImages.push(checkForCharacterImg(pageImgData));
+      } else {
+        convertedImages.push(pageImgData);
+      }
+    }
+
+    return convertedImages;
+  }
+  function processPageTextData(pageTextData) {
+    const assembledPageText = new MultiLingual(pageTextData, [
+      pageText.messages.spanishComing,
+    ]);
+    return assembledPageText;
+  }
+
+  let contentPages = [];
+
+  // Assemble Cover Page Data
+  contentPages.push({
+    img: [special],
+    audio: new MultiLingual(
+      `${process.env.PUBLIC_URL}/assets/discussion/emptyAudio.mp3`
+    ),
+    text: null,
+  });
+
+  // Assemble Additional Page Data
+  for (let page = 2; page <= Object.keys(pagesData).length; page++) {
+    let pageData = pagesData[page];
+
     contentPages.push({
-        img: [special],
-        audio: new MultiLingual(
-            `${process.env.PUBLIC_URL}/assets/discussion/emptyAudio.mp3`
-        ),
-        text: null
+      img: processPageImgData(pageData.images),
+      text: processPageTextData(pageData.text),
+      audio: new MultiLingual(
+        `${process.env.PUBLIC_URL}/assets/discussion/${contentId}/audio/eng/${page}.mp3`
+      ),
     });
+  }
 
-    // Assemble Additional Page Data
-    for (let page=2; page <= Object.keys(pagesData).length; page++){
-
-        let pageData = pagesData[page];
-
-        contentPages.push({
-            img: processPageImgData(pageData.images),
-            text: processPageTextData(pageData.text),
-            audio: new MultiLingual(
-                `${process.env.PUBLIC_URL}/assets/discussion/${ contentId }/audio/eng/${ page }.mp3`
-            )
-        })
-    }
-
-    return contentPages;
+  return contentPages;
 }
 
 export function assembleBookPreloads(pageData, format) {
+  const preloads = [];
 
-    const preloads = [];
+  for (let i = 0; i < pageData.length; i++) {
+    let preload;
 
-    for (let i = 0; i < pageData.length; i++) {
-
-        let preload;
-
-        if (format === 'img') {
-            preload = pageData[i].img;
-
-        } else if (format === 'audio') {
-            preload = pageData[i].audio;
-        }
-
-        preloads.push(preload);
+    if (format === "img") {
+      preload = pageData[i].img;
+    } else if (format === "audio") {
+      preload = pageData[i].audio;
     }
 
-    return preloads;
+    preloads.push(preload);
+  }
 
+  return preloads;
 }
 
 export function assembleDiscussionPreloads(pageData, format) {
+  function checkUniquePreload(string, preloadsArray) {
+    return !preloadsArray.includes(string);
+  }
 
-    function checkUniquePreload(string, preloadsArray){
-        return !preloadsArray.includes(string);
-    }
+  const preloads = [];
 
-    const preloads = [];
+  for (let i = 0; i < pageData.length; i++) {
+    if (format === "img") {
+      pageData[i].img.forEach((imgData) => {
+        let image;
 
-    for (let i = 0; i < pageData.length; i++) {
-
-        if (format === 'img') {
-
-            pageData[i].img.forEach( imgData =>{
-
-                let image;
-
-                if( typeof imgData === 'string'){
-                    image = imgData;
-                } else if (imgData.hasOwnProperty('img')){
-                    image = imgData.img;
-                }
-
-                if ( checkUniquePreload( image, preloads )){
-                    preloads.push(image);
-                }
-            });
-
-        } else if (format === 'audio') {
-            preloads.push(pageData[i].audio);
+        if (typeof imgData === "string") {
+          image = imgData;
+        } else if (imgData.hasOwnProperty("img")) {
+          image = imgData.img;
         }
+
+        if (checkUniquePreload(image, preloads)) {
+          preloads.push(image);
+        }
+      });
+    } else if (format === "audio") {
+      preloads.push(pageData[i].audio);
     }
+  }
 
-    return preloads;
-
+  return preloads;
 }

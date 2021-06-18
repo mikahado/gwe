@@ -1,17 +1,17 @@
-.closeButton{
-    position: absolute;
-    z-index: 5;
-    right: 0.5rem;
-    top: 0rem;
-    /* Size */
-    padding: 0rem 0.6rem 0.5rem 0.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    /* Background & Border */
-    background: hsla(0,50%,70%);
-    border-color: hsla(0,50%,60%);
+.closeButton {
+  position: absolute;
+  z-index: 5;
+  right: 0.5rem;
+  top: 0rem;
+  /* Size */
+  padding: 0rem 0.6rem 0.5rem 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  /* Background & Border */
+  background: hsla(0, 50%, 70%);
+  border-color: hsla(0, 50%, 60%);
 }
-.closeButton p{
-    font-size: 2rem;
-    line-height: 1;
+.closeButton p {
+  font-size: 2rem;
+  line-height: 1;
 }

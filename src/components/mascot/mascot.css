@@ -1,27 +1,26 @@
 /* Container */
-.Mascot{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin: 2rem;
+.Mascot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2rem;
 }
 
 /* Image Container & Image */
-.mascotCharacter{
-    width: 15em;
-    height: fit-content;
+.mascotCharacter {
+  width: 15em;
+  height: fit-content;
 }
-.mascotCharacter img{
-    width: 100%;
-    height: auto;
+.mascotCharacter img {
+  width: 100%;
+  height: auto;
 }
 
 /* Speech Bubble */
-.speechBubble{
-    left: 0%;
-    width: 10em;
-    background-color: white;
+.speechBubble {
+  left: 0%;
+  width: 10em;
+  background-color: white;
 }
-

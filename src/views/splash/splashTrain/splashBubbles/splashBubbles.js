@@ -1,54 +1,52 @@
-import React from 'react';
+import React from "react";
 
 // Style Sheet
-import './splashBubbles.css';
+import "./splashBubbles.css";
 
 // Images
-import bubbles from './bubbles.png';
+import bubbles from "./bubbles.png";
 
-class SplashBubbles extends React.Component{
-    render(){
-        return(
-            <div className="splashBubbles paused">
+class SplashBubbles extends React.Component {
+  render() {
+    return (
+      <div className="splashBubbles paused">
+        <div className="bubbleContainer one">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer one">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
+        <div className="bubbleContainer two">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer two">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
+        <div className="bubbleContainer three">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer three">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
+        <div className="bubbleContainer four">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer four">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
+        <div className="bubbleContainer five">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer five">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
+        <div className="bubbleContainer six">
+          <div className="bubble">
+            <img src={bubbles} alt={""} />
+          </div>
+        </div>
 
-                <div className="bubbleContainer six">
-                    <div className='bubble'>
-                        <img src={bubbles} alt={''}/>
-                    </div>
-                </div>
-                
-
-                {/*}
+        {/*}
 
                 <div className="bubbleContainer two">
                     <img className="bubble" src={bubbles}/>
@@ -72,9 +70,8 @@ class SplashBubbles extends React.Component{
 
 
         {*/}
-
-            </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 export default SplashBubbles;

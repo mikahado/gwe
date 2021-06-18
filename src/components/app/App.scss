@@ -3,7 +3,6 @@
 @import "utilityStyles";
 
 .App {
-
   //Display
   display: grid;
   grid-template-rows: auto 1fr;
@@ -27,7 +26,7 @@
   background-color: var(--primary-blue);
 }
 
-@media only screen and (max-height: 500px){
+@media only screen and (max-height: 500px) {
   /*
   .App{
     height: 60%;
@@ -37,4 +36,3 @@
 
    */
 }
-

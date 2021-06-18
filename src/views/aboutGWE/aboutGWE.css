@@ -17,7 +17,8 @@
   justify-content: center;
   margin: 1rem 0;
 }
-.aboutGWE section h2, .aboutGWE section h3 {
+.aboutGWE section h2,
+.aboutGWE section h3 {
   font-weight: bold;
 }
 .aboutGWE section p {

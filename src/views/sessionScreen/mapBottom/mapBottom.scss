@@ -1,82 +1,77 @@
 /* WRAP */
-.mapBottom{
-    position: relative;
-    /* Position & Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    /* Size */
-    width: 100%;
-    height: 20rem;
+.mapBottom {
+  position: relative;
+  /* Position & Display */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* Size */
+  width: 100%;
+  height: 20rem;
 
-    //background-image: url('LibraryBottom.png');
-    background-position: bottom;
-    background-size: 100%;
+  //background-image: url('LibraryBottom.png');
+  background-position: bottom;
+  background-size: 100%;
 }
-.libraryBottomBG{
-    overflow: hidden;
-    width: 100%;
-    height: fit-content;
+.libraryBottomBG {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
 }
-#libraryBottom{
-    width: 100%;
-    height: auto;
-    object-position: bottom;
-
-}
-
-.penguinWrap{
-    position: absolute;
-    width: 30%;
-    height: fit-content;
-}
-.penguinWrap img{
-    width: 100%;
-    height: auto;
+#libraryBottom {
+  width: 100%;
+  height: auto;
+  object-position: bottom;
 }
 
-.fluff{
-    position: absolute;
-    width: 10rem;
-    bottom: 1rem;
-    left: 2vw;
-
+.penguinWrap {
+  position: absolute;
+  width: 30%;
+  height: fit-content;
 }
-.fluff img{
-    width: 100%;
-}
-
-.sallyBubbleWrap.library{
-    position: absolute;
-    --wrap-width: 15rem;
-    bottom: 1rem;
-    right: 0;
+.penguinWrap img {
+  width: 100%;
+  height: auto;
 }
 
-@media only screen and (max-width: 900px){
-    .fluff{
-        display: none;
-    }
-    .sallyBubbleWrap.library {
-
-        left: 1rem;
-    }
+.fluff {
+  position: absolute;
+  width: 10rem;
+  bottom: 1rem;
+  left: 2vw;
+}
+.fluff img {
+  width: 100%;
 }
 
+.sallyBubbleWrap.library {
+  position: absolute;
+  --wrap-width: 15rem;
+  bottom: 1rem;
+  right: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .fluff {
+    display: none;
+  }
+  .sallyBubbleWrap.library {
+    left: 1rem;
+  }
+}
 
 /* SMALL SCREENS */
 /* Portrait */
-@media only screen and (max-width: 600px){
-
-    .fluff{
-        display: none;
-    }
-    .sallyBubbleWrap.library {
-        --wrap-width: 70vw;
-        right: 0;
-    }
-    /*
+@media only screen and (max-width: 600px) {
+  .fluff {
+    display: none;
+  }
+  .sallyBubbleWrap.library {
+    --wrap-width: 70vw;
+    right: 0;
+  }
+  /*
     #libraryBottom{
         content: url('./LibraryBottomPortrait.png');
     }

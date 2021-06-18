@@ -1,14 +1,21 @@
 /* Page Container */
 .sessionMap {
-  height: 100%;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   padding: 0;
   display: grid;
   grid-template-rows: 1fr auto;
 }
+.sessionMap .mapRowGrid {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
 .sessionMap .trainCol {
   position: relative;
-  max-width: 124vh;
+  height: 100%;
+  width: 100%;
+  max-width: max(59rem, 60vh);
   overflow: hidden;
 }
 .sessionMap .trainWrap {
@@ -16,10 +23,11 @@
   right: 0;
   left: auto;
   bottom: 0;
-  height: 50vh;
+  height: 50%;
   width: 100%;
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 .sessionMap .trainWrap .sizeTrain {
   position: relative;
@@ -30,13 +38,14 @@
   opacity: 0;
 }
 .sessionMap .trainWrap .splashTrain {
-  --trainHeight: 40vh;
   position: absolute;
   right: 0;
   left: auto;
   bottom: 5%;
   height: var(--trainHeight);
-  width: calc( var(--trainHeight) * 3.1238);
+  min-height: 20rem;
+  width: calc(var(--trainHeight) * 3.12);
+  min-width: 60rem;
   margin: 0;
 }
 .sessionMap .trainWrap .splashTrain .trainWheel {
@@ -46,11 +55,13 @@
 #bg {
   position: relative;
   bottom: 0;
-  height: 100%;
+  min-height: max(75vh, 30rem);
   background-image: url("../splash/splashBGscrollCrop.jpg");
   background-size: auto 100%;
   background-position: 0% 0;
   transition: background-position 3s;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 @media only screen and (max-width: 767px) {

@@ -7,19 +7,20 @@
   align-items: center;
   flex-wrap: wrap;
   /*
-    section h2{
-      font-size: 1.25rem;
-      font-weight: bold;
-      //border: 0.25rem solid var(--dark-accent);
-      padding: 1rem;
-      border-radius: 1rem;
-      color: var(--dark-accent);
-      background-color: var(--light-blue);
-    }
+   section h2{
+     font-size: 1.25rem;
+     font-weight: bold;
+     //border: 0.25rem solid var(--dark-accent);
+     padding: 1rem;
+     border-radius: 1rem;
+     color: var(--dark-accent);
+     background-color: var(--light-blue);
+   }
 
-   */
+  */
 }
-.resourcePageWrap h1, .resourcePageWrap section h2 {
+.resourcePageWrap h1,
+.resourcePageWrap section h2 {
   background-color: var(--dark-accent);
   border-radius: 1rem;
   color: aliceblue;

@@ -1,18 +1,15 @@
-.tableContents{
+.tableContents {
   //opacity: 0.5;
   //Position
   position: relative;
   //margin: 0rem;
   //bottom: 0;
   //left: 0;
-  //width: 100%;
   z-index: 5;
 
   width: fit-content;
 
-  border: 0.5rem solid var(--primary-blue);
-  border-radius: 2rem;
-
+  border-top: 0.5rem solid var(--primary-blue);
   color: aliceblue;
   font-weight: bold;
 
@@ -23,34 +20,42 @@
   //Background & Border
   background-color: var(--dark-accent);
 
-
-
-  button{
+  button {
     margin: 0.25rem;
-    width: 2.5rem;
+    width: 3rem;
 
     padding: 0.25rem;
-    border-radius: 100%;
+    border-radius: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      svg{
+          width: 2rem;
+          height: 2rem;
+      }
     //box-shadow: 0 0 1rem midnightblue;
     //background-color: var(--dark-accent);
     //color: aliceblue;
   }
-  button.current{
+  button.current {
     background-color: var(--primary-blue);
   }
 
-    .materialWrap{
-      background-color: var(--light-green);
-      border-radius: 2rem;
-      padding: 0.1rem;
-      margin: 0.5rem 0;
-        //box-shadow: 0 0 1rem midnightblue;
-        //border: 0.2rem solid aliceblue;
+  .materialWrap {
+    background-color: var(--light-green);
+    border-radius: 1rem;
+    padding: 0.2rem;
+    margin: 0.5rem 0;
 
-        button{
-            box-shadow: none;
-        }
+      display: flex;
+    //box-shadow: 0 0 1rem midnightblue;
+    //border: 0.2rem solid aliceblue;
+
+    button {
+      box-shadow: none;
     }
-
-
+  }
 }

@@ -234,7 +234,10 @@ label {
 
 /* CONTROL BUTTONS */
 /* Active Buttons */
-.playButton, .pauseButton, .replayButton, .loadingButton {
+.playButton,
+.pauseButton,
+.replayButton,
+.loadingButton {
   width: 3rem;
   height: 3rem;
   display: inline-flex;
@@ -271,7 +274,9 @@ label {
 }
 
 /* Disabled Buttons */
-.playButton.disabled, .pauseButton.disabled, .replayButton.disabled {
+.playButton.disabled,
+.pauseButton.disabled,
+.replayButton.disabled {
   background: #cccccc;
   border-color: #b3b3b3;
   box-shadow: none;

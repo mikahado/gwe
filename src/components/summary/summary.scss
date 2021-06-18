@@ -1,7 +1,6 @@
 //WRAPS */
 
-#Summary{
-
+#Summary {
   //Position
   position: fixed;
   z-index: 10;
@@ -25,10 +24,10 @@
 
   // Background & Border
   //border: 0.2rem solid aliceblue;
-  background-color: fade-out(dimgray,0.25);
+  background-color: fade-out(dimgray, 0.25);
   border-radius: 0;
 
-  .sessionHeader{
+  .sessionHeader {
     //position: relative;
     //width: 100%;
     display: flex;
@@ -42,23 +41,23 @@
     box-shadow: 0 0 1rem midnightblue;
     padding: 0.5rem;
 
-    h2{
+    h2 {
       width: fit-content;
     }
   }
 
-  .closeButton{
+  .closeButton {
     //position: static;
     height: fit-content;
-    p{
+    p {
       margin-bottom: 0;
     }
   }
 }
-#Summary.noSummary{
+#Summary.noSummary {
   border: none;
 }
 
-.materialList{
+.materialList {
   margin: 1rem;
 }

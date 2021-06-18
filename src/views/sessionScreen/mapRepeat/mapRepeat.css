@@ -1,29 +1,28 @@
-.mapRepeat{
-    padding-top: 3rem;
-    width: 100%;
-    height: 100%;
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Background */
-    /* background-image: url('./LibraryTile.png'); */
-    background-position: bottom;
-    background-repeat: repeat-y;
-    //background-attachment: fixed;
-    background-size: 100%;
-    padding-bottom: 0rem;
+.mapRepeat {
+  padding-top: 3rem;
+  width: 100%;
+  height: 100%;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Background */
+  /* background-image: url('./LibraryTile.png'); */
+  background-position: bottom;
+  background-repeat: repeat-y;
+  //background-attachment: fixed;
+  background-size: 100%;
+  padding-bottom: 0rem;
 }
-
 
 @keyframes slowGrowPulse {
-    50%{
-        transform: scale(1.2);
-    }
+  50% {
+    transform: scale(1.2);
+  }
 }
 /* Medium Screens & Small Screen Landscape */
-@media only screen and (max-width: 950px){
-    /*
+@media only screen and (max-width: 950px) {
+  /*
     .libraryRepeat{
         padding-bottom: 7rem;
         
@@ -32,8 +31,8 @@
      */
 }
 /* Small Screen Portrait */
-@media only screen and (max-width: 600px){
-    /*
+@media only screen and (max-width: 600px) {
+  /*
     .libraryRepeat{
         background-image: url('./LibraryTilePortrait.png');
     }

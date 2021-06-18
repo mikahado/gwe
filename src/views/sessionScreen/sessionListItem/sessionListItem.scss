@@ -1,116 +1,118 @@
-.sessionListItem{
-    //Position
-    position: relative;
-
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    //Sizing
-    width: 12rem;
-    height: fit-content;
-
-    //Spacing
-    margin: 1em;
-    padding: 0;
-
-    /* Border & Background */
-    border-radius: 1em;
-    //border: 0.25rem solid aliceblue;
-    background: transparent;
+#sessionWrap{
+    z-index: 2;
+    transition: opacity 0.25s;
+    //min-height: 15rem;
+    height: 100%;
+    width: 20rem;
+}
+.sessionItem {
+    background-color: transparent;
+    //box-shadow: 0 0 1rem dimgrey;
     border: 0;
+    padding: 1rem;
 
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    //background-color: aliceblue;
+    height: 100%;
+    margin: 0;
 
-    overflow-y: hidden;
+    //display: grid;
+    //grid-template-rows: auto 1fr auto;
 
-    img{
-        width: 100%;
-        height: auto;
-        background-color: var(--primary-green);
-        border-radius: 1rem;
+    button {
+        border-radius: 100%;
+        border: 0.2rem solid aliceblue;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
     }
-
-    //box-shadow: 0 0 1rem var(--light-blue);
-
-}
-
-
-.mediaListEntry.wideThumb{
-    background-size: contain;
-    //background-position: center;
-    //background-color: white;
-}
-
-.mediaListEntry:hover{
-    animation: none;
-}
-
-/* Text Box */
-.sessionWrap{
-
-    //Sizing
-    //height: 90%;
-    //width: 15rem;
-
-    //Spacing
-    padding: 0.25rem;
-    //margin: 1rem 0;
-    margin: 3rem;
-
-    //Background & Border
-    background-color: var(--dark-accent);
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem dimgrey;
-
-    /* Animation & Transition */
-    animation: none;
-    transition: opacity 0.5s;
-
-
-    button.disabled{
+    button.disabled {
         background-color: lightgray;
         color: dimgrey;
     }
+}
+.sessionTitle {
+    margin: 0.25rem;
+    background-color: var(--primary-green);
+    border-radius: 1rem;
+    border: 0.25rem solid aliceblue;
+    padding: 0.5rem 1rem;
 
-    .sessionActions{
-        button{
-            border-radius: 100%;
-            border: 0.2rem solid aliceblue;
-            width: 3rem;
-            height: 3rem;
-            padding: 0;
+    ul{
+        list-style-type: circle;
+    }
+}
+.sessionGraphic {
+  //Position
+  position: relative;
+
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  //Sizing
+    //max-height: 12rem;
+    height: fit-content;
+    width: 15rem;
+
+  //Spacing
+  margin: auto;
+  padding: 0;
+
+  /* Border & Background */
+  border-radius: 1em;
+  //border: 0.25rem solid aliceblue;
+  //background: var(--dark-accent);
+  //border: 0;
+
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  //background-color: aliceblue;
+
+  overflow-y: hidden;
+
+  img {
+    width: 100%;
+      height: auto;
+    background-color: var(--dark-accent);
+      border: 0.25rem solid aliceblue;
+    border-radius: 1rem;
+  }
+
+    .experiment{
+        background-color: var(--dark-accent);
+        width: 100%;
+        padding: 1rem;
+
+        svg{
+            width: 4rem;
+            height: 4rem;
         }
     }
 
-    .sessionGrid{
-        //Display
-        display: grid;
-        grid-template-rows: auto 1fr;
-
-        //Sizing
-        height: 100%;
-        width: 100%;
-
-
-    }
+  //box-shadow: 0 0 1rem var(--light-blue);
+}
+.materialTitle{
+    width: fit-content;
+    max-width: 12rem;
+    background-color: var(--primary-green);
+    border-radius: 1rem;
+    border: 0.25rem solid aliceblue;
+    margin: 0.25rem auto 0 auto;
+    padding: 0.5rem 1rem;
 }
 
-.changeSession{
-    height: 2.5rem;
-    width: 2.5rem;
-    position: absolute;
-    padding: 0.25rem;
-    border-radius: 100%;
+.changeSession {
+  height: 3.5rem;
+  width: 3.5rem;
+  position: absolute;
+  padding: 0.25rem;
+  border-radius: 100%;
 }
-.changeSession.forward{
-    right: -3rem;
+.changeSession.forward {
+  right: 0;
 }
-.changeSession.back{
-    left: -3rem;
+.changeSession.back {
+  left: 0;
 }

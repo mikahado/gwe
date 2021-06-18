@@ -1,6 +1,5 @@
 /* Containers */
-.ReaderControlBar{
-
+.ReaderControlBar {
   box-sizing: border-box;
   top: 0;
   z-index: 2;
@@ -11,54 +10,49 @@
   height: fit-content;
   width: 95vw;
 
-
   transition: opacity 0.5s;
 
-  .standard-close{
+  .standard-close {
     padding: 0;
 
-    .closeButton{
+    .closeButton {
       position: relative;
 
-      p{
+      p {
         line-height: 1rem;
         margin-bottom: 0;
       }
-
     }
   }
-
-
 }
-#controlBar{
+#controlBar {
   //opacity: 0;
 }
-#controlBar:hover{
+#controlBar:hover {
   opacity: 1;
 }
 
-
-.mobileTop{
+.mobileTop {
   display: flex;
   align-items: center;
   padding: 0;
 
-  .mobile-close{
+  .mobile-close {
     display: none;
   }
 }
-.transNarrCont{
+.transNarrCont {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
 /* READER PROGRESS BAR */
-.readerProgressWrap{
+.readerProgressWrap {
   //width: 100%;
   flex: 1;
 }
-.ReaderProgress{
+.ReaderProgress {
   /* Display */
   display: inline-flex;
   justify-content: center;
@@ -69,7 +63,7 @@
   margin: 0.5rem 0.5rem 0 0;
   background-color: transparent;
 }
-.pageCounter{
+.pageCounter {
   display: inline-flex;
   width: fit-content;
   padding: 0.5rem;
@@ -77,10 +71,10 @@
   padding-right: 1rem;
   background-color: var(--light-blue);
 }
-#pageCounterWrap{
+#pageCounterWrap {
   //background-color: var(--light-blue);
 }
-#pageInput{
+#pageInput {
   width: 3rem;
   background-color: aliceblue;
   border-radius: 1rem;
@@ -88,25 +82,25 @@
 
   text-align: center;
 }
-#pageInput.error{
-  background-color: hsl(0,70,70);
+#pageInput.error {
+  background-color: hsl(0, 70, 70);
 }
-#totalPages{
+#totalPages {
   width: fit-content;
 }
-label{
+label {
   width: 5rem;
 }
-.progressSliderWrap{
+.progressSliderWrap {
   width: 90%;
   margin: 0.5rem;
   height: fit-content;
   background-color: lightblue;
 }
-#progressSliderWrap{
+#progressSliderWrap {
   //background-color: var(--light-blue);
 }
-#progressSlider{
+#progressSlider {
   width: 90%;
   height: 1em;
 
@@ -114,8 +108,8 @@ label{
   border-radius: 1rem;
   //background-color: white;
 }
-.rightButtons{
-  margin:0;
+.rightButtons {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -123,44 +117,47 @@ label{
 
 /* Reader Start */
 
-#readerPhoto{
+#readerPhoto {
   margin: 0.5rem 0 0.5rem 0;
   width: 95%;
   height: auto;
   border-radius: 100%;
-  border: 0.2em solid hsl(200,70%,70%);
-  background: hsl(128,35%,45%);
-  background:linear-gradient(180deg, hsl(128,45%,60%) 0%, hsl(128,25%,45%) 100%);
+  border: 0.2em solid hsl(200, 70%, 70%);
+  background: hsl(128, 35%, 45%);
+  background: linear-gradient(
+    180deg,
+    hsl(128, 45%, 60%) 0%,
+    hsl(128, 25%, 45%) 100%
+  );
   box-shadow: none;
 }
 @keyframes pulse {
-  50%{
+  50% {
     transform: scale(0.9);
   }
 }
 
 /* Page Arrows */
-.pageArrows{
+.pageArrows {
   max-width: 100%;
   margin-bottom: 2rem;
 
-  .col{
+  .col {
     display: flex;
     justify-content: center;
   }
 }
-#nextPage:hover{
-
+#nextPage:hover {
 }
 /* Next Page */
-#nextPage{
+#nextPage {
   position: relative;
   height: 4rem;
   width: 4rem;
   padding: 0;
   border-radius: 100%;
 }
-.nextPageSymbol{
+.nextPageSymbol {
   width: 0;
   height: 0;
   margin: 0 0 0 0.4rem;
@@ -170,7 +167,7 @@ label{
   border-left: 2em solid white;
 }
 /* Prev Page */
-#prevPage{
+#prevPage {
   z-index: 5;
   height: 4rem;
   width: 4rem;
@@ -179,7 +176,7 @@ label{
   //left: 0;
   //top: 50%;
 }
-.prevPageSymbol{
+.prevPageSymbol {
   width: 0;
   height: 0;
   margin: 0 0.4rem 0 0;
@@ -188,47 +185,48 @@ label{
   border-bottom: 1em solid transparent;
   border-right: 2em solid white;
 }
-#prevPage.disabled{
-  background: hsl(200,0%,80%);
-  background: linear-gradient(180deg,
-          hsl(200,0%,80%) 0%,
-          hsl(200,0%,50%) 100%);
-  border-color:  hsl(200,0%,70%);
+#prevPage.disabled {
+  background: hsl(200, 0%, 80%);
+  background: linear-gradient(
+    180deg,
+    hsl(200, 0%, 80%) 0%,
+    hsl(200, 0%, 50%) 100%
+  );
+  border-color: hsl(200, 0%, 70%);
   box-shadow: none;
 }
-#prevPage.disabled .prevPageSymbol{
+#prevPage.disabled .prevPageSymbol {
   border-right-color: dimgray;
 }
-.mobileArrows{
+.mobileArrows {
   display: none;
 }
 
 /* Misc Buttons */
-.readTranslate{
+.readTranslate {
   position: static;
   padding: 0.5rem;
 }
-.close.reader{
+.close.reader {
   position: static;
   margin: 0.5rem;
 }
-#standardClose{
+#standardClose {
   position: relative;
 }
-#mobileClose{
+#mobileClose {
   display: none;
 }
-.showControls{
+.showControls {
   position: relative;
   top: 2rem;
 }
-
 
 /* ------------------*/
 /* NARRATION CONTROL */
 
 /*  Container  */
-.NarrationControl{
+.NarrationControl {
   position: relative;
   /* Display */
   display: flex;
@@ -241,7 +239,7 @@ label{
 }
 
 /* Button Container */
-.narrControls{
+.narrControls {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -251,7 +249,10 @@ label{
 /* CONTROL BUTTONS */
 
 /* Active Buttons */
-.playButton, .pauseButton, .replayButton, .loadingButton{
+.playButton,
+.pauseButton,
+.replayButton,
+.loadingButton {
   width: 3rem;
   height: 3rem;
   display: inline-flex;
@@ -261,18 +262,18 @@ label{
   box-shadow: 0 0 0.5rem;
   border-radius: 1.5rem;
 }
-.playButton{
+.playButton {
   padding: 0.4rem 0.4rem 0.4rem 0.6rem;
 }
-.pauseButton{
+.pauseButton {
   padding: 0.4rem 0.6rem 0.4rem 0.6rem;
   background-color: var(--yellow);
 }
-.replayButton{
+.replayButton {
   padding: 0.5rem;
   background-color: var(--red);
 }
-.loadingButton{
+.loadingButton {
   height: 4rem;
   width: 4rem;
   position: relative;
@@ -283,9 +284,11 @@ label{
   background-color: var(--yellow);
 }
 /* Disabled Buttons */
-.playButton.disabled, .pauseButton.disabled, .replayButton.disabled{
-  background: hsl(200,0%,80%);
-  border-color:  hsl(200,0%,70%);
+.playButton.disabled,
+.pauseButton.disabled,
+.replayButton.disabled {
+  background: hsl(200, 0%, 80%);
+  border-color: hsl(200, 0%, 70%);
   box-shadow: none;
 }
 
@@ -293,7 +296,7 @@ label{
 
 /* Play Button Symbol */
 /* Active */
-.playSymbol{
+.playSymbol {
   width: 0;
   height: 0;
   margin: 0;
@@ -303,13 +306,13 @@ label{
   border-left: 1em solid white;
 }
 /* Disabled */
-.playButton.disabled .playSymbol{
+.playButton.disabled .playSymbol {
   border-left-color: dimgray;
 }
 
 /* Pause Button Symbol */
 /* Active */
-.pauseSymbol{
+.pauseSymbol {
   background-color: white;
   width: 0.3em;
   height: 1em;
@@ -317,24 +320,24 @@ label{
   margin: 0.1rem;
 }
 /* Disabled */
-.pauseButton.disabled .pauseSymbol{
+.pauseButton.disabled .pauseSymbol {
   background-color: dimgray;
 }
 
 /* Replay Symbol */
 /* Active */
-.stopSymbol{
+.stopSymbol {
   background-color: white;
   width: 1rem;
   height: 1rem;
 }
-.replaySymbolBar{
+.replaySymbolBar {
   background-color: white;
   width: 0.3em;
   height: 1em;
   margin: 0rem;
 }
-.replaySymbolTriangle{
+.replaySymbolTriangle {
   width: 0;
   height: 0;
   margin: 0;
@@ -343,11 +346,9 @@ label{
   border-right: 1em solid white;
 }
 /* Disabled */
-.replayButton.disabled .replaySymbolBar{
+.replayButton.disabled .replaySymbolBar {
   background-color: dimgray;
 }
-.replayButton.disabled .replaySymbolTriangle{
+.replayButton.disabled .replaySymbolTriangle {
   border-right-color: dimgray;
 }
-
-

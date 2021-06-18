@@ -1,244 +1,250 @@
 /* Wrap */
-.sallyBubbleWrap{
-    --wrap-width: 20rem;
-    --wrap-height: var(--wrap-width);
+.sallyBubbleWrap {
+  --wrap-width: 20rem;
+  --wrap-height: var(--wrap-width);
 
-    --sallyHeight: calc( var(--wrap-height) - 5rem);
-    --sallyWidth: var(--sallyHeight);
+  --sallyHeight: calc(var(--wrap-height) - 5rem);
+  --sallyWidth: var(--sallyHeight);
 
+  position: absolute;
 
-
-    position: absolute;
-
-    width: var(--wrap-width);
-    height: var(--wrap-height);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  width: var(--wrap-width);
+  height: var(--wrap-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
-.sally{
+.sally {
+  display: flex;
+  justify-content: center;
 
+  position: absolute;
+  width: var(--sallyWidth);
+  height: var(--sallyHeight);
 
-
-    display: flex;
-    justify-content: center;
-
-
-    position: absolute;
-    width: var(--sallyWidth);
-    height: var(--sallyHeight);
-
-    bottom: 0;
-    animation: hop 1.25s linear 3;
-
+  bottom: 0;
+  animation: hop 1.25s linear 3;
 }
 
 /* Speech Bubble */
-.sallyBubbleWrap .speechBubble{
-
-    position: absolute;
-    top:0;
-    max-width: 100%;
-    animation: bubbleHop 1.25s linear 3;
+.sallyBubbleWrap .speechBubble {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  animation: bubbleHop 1.25s linear 3;
 }
 
 /* Images */
-#sallyBody{
+#sallyBody {
+  position: absolute;
+  z-index: 10;
 
-    position: absolute;
-    z-index: 10;
-
-    width: calc( var(--sallyWidth) * 0.65);
-    bottom: 14%;
-    left: 11%;
-
+  width: calc(var(--sallyWidth) * 0.65);
+  bottom: 14%;
+  left: 11%;
 }
-#sallyRightArm{
-
-
-    position: absolute;
-    top: 35%;
-    left: 0;
-    width: calc( var(--sallyHeight) * 0.3);
-    animation: hopRightArm 1.25s 3 linear;
+#sallyRightArm {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: calc(var(--sallyHeight) * 0.3);
+  animation: hopRightArm 1.25s 3 linear;
 }
-#sallyLeftArm{
-
-
-    position: absolute;
-    top: 39%;
-    left: 33%;
-    width: calc( var(--sallyHeight) * 0.26);
-    animation: hopLeftArm 1.25s 3 linear;
+#sallyLeftArm {
+  position: absolute;
+  top: 39%;
+  left: 33%;
+  width: calc(var(--sallyHeight) * 0.26);
+  animation: hopLeftArm 1.25s 3 linear;
 }
-#sallyTail{
-
-    position: absolute;
-    bottom: 20%;
-    right: 1%;
-    width: calc( var(--sallyWidth) * 0.30);
-    transform: rotate(-10deg);
+#sallyTail {
+  position: absolute;
+  bottom: 20%;
+  right: 1%;
+  width: calc(var(--sallyWidth) * 0.3);
+  transform: rotate(-10deg);
 }
-#sallyLeftFoot{
-
-    position: absolute;
-    bottom: 2%;
-    right: 42%;
-    width: calc( var(--sallyHeight) * 0.20);
-    animation: hopLeftFoot 1.25s 3 linear;
+#sallyLeftFoot {
+  position: absolute;
+  bottom: 2%;
+  right: 42%;
+  width: calc(var(--sallyHeight) * 0.2);
+  animation: hopLeftFoot 1.25s 3 linear;
 }
-#sallyRightFoot{
-
-    position: absolute;
-    bottom: 0%;
-    left: 22%;
-    animation: hopRightFoot 1.25s 3 linear;
-    width: calc( var(--sallyHeight) * 0.20);
+#sallyRightFoot {
+  position: absolute;
+  bottom: 0%;
+  left: 22%;
+  animation: hopRightFoot 1.25s 3 linear;
+  width: calc(var(--sallyHeight) * 0.2);
 }
 
 /* Hover */
-.sallyBubbleWrap:hover .sally{
-    animation: hopFaster 0.5s ease-out 3;
+.sallyBubbleWrap:hover .sally {
+  animation: hopFaster 0.5s ease-out 3;
 }
-.sallyBubbleWrap:hover #sallyLeftArm{
-    animation: hopLeftArmFast 0.5s ease-out 3;
+.sallyBubbleWrap:hover #sallyLeftArm {
+  animation: hopLeftArmFast 0.5s ease-out 3;
 }
-.sallyBubbleWrap:hover #sallyRightArm{
-    animation: hopRightArmFast 0.5s ease-out 3;
+.sallyBubbleWrap:hover #sallyRightArm {
+  animation: hopRightArmFast 0.5s ease-out 3;
 }
-.sallyBubbleWrap:hover #sallyLeftFoot{
-    animation: hopLeftFootFast 0.5s ease-out 3;
+.sallyBubbleWrap:hover #sallyLeftFoot {
+  animation: hopLeftFootFast 0.5s ease-out 3;
 }
-.sallyBubbleWrap:hover #sallyRightFoot{
-    animation: hopRightFootFast 0.5s ease-out 3;
+.sallyBubbleWrap:hover #sallyRightFoot {
+  animation: hopRightFootFast 0.5s ease-out 3;
 }
-.sallyBubbleWrap:hover .speechBubble{
-    animation: bubbleHopFast 0.5s ease-out 3;
+.sallyBubbleWrap:hover .speechBubble {
+  animation: bubbleHopFast 0.5s ease-out 3;
 }
 
 /* ANIMATIONS */
 
 /* Default */
 @keyframes hop {
-    0% {
-        transform: translate(0);
-        transform: scale(1.1,1);
-    }
-    5%{
-        transform: translate(0,-15%);
-    }
-    15%{
-        transform: translate(0,-20%) scale(1,1.2);
-    }
-    25%{
-        transform: translate(0) scale(1,1);
-    }
-    30%{
-        transform: scale(1.1, 1);
-    }
-    100%{
-        transform: translate(0,2.5%) scale(1.1,0.95);
-    }
+  0% {
+    transform: translate(0);
+    transform: scale(1.1, 1);
+  }
+  5% {
+    transform: translate(0, -15%);
+  }
+  15% {
+    transform: translate(0, -20%) scale(1, 1.2);
+  }
+  25% {
+    transform: translate(0) scale(1, 1);
+  }
+  30% {
+    transform: scale(1.1, 1);
+  }
+  100% {
+    transform: translate(0, 2.5%) scale(1.1, 0.95);
+  }
 }
 @keyframes hopLeftArm {
-    5%{
-        transform: rotate(0deg) translate(0%,0);
-    }
-    15%{
-        transform: rotate(-40deg) translate(0,-15%);
-    }
-    25%,100%{
-        transform: rotate(0deg) translate(0%,10%);
-    }
+  5% {
+    transform: rotate(0deg) translate(0%, 0);
+  }
+  15% {
+    transform: rotate(-40deg) translate(0, -15%);
+  }
+  25%,
+  100% {
+    transform: rotate(0deg) translate(0%, 10%);
+  }
 }
 @keyframes hopRightArm {
-    5%{
-        transform: rotate(-30deg) translate(0%,-20%);
-    }
-    15%{
-        transform: rotate(40deg) translate(0);
-    }
-    25%,100%{
-        transform: rotate(10deg) translate(0,15%);
-    }
+  5% {
+    transform: rotate(-30deg) translate(0%, -20%);
+  }
+  15% {
+    transform: rotate(40deg) translate(0);
+  }
+  25%,
+  100% {
+    transform: rotate(10deg) translate(0, 15%);
+  }
 }
 @keyframes hopLeftFoot {
-    15%{
-        transform: rotate(30deg) translate(-10%,-30%);
-    }
-    25%,100%{
-        transform: rotate(0) translate(0);
-    }
+  15% {
+    transform: rotate(30deg) translate(-10%, -30%);
+  }
+  25%,
+  100% {
+    transform: rotate(0) translate(0);
+  }
 }
 @keyframes hopRightFoot {
-    15%{
-        transform: rotate(30deg) translate(-10%,-30%);
-    }
-    25%,100%{
-        transform: rotate(0) translate(0);
-    }
+  15% {
+    transform: rotate(30deg) translate(-10%, -30%);
+  }
+  25%,
+  100% {
+    transform: rotate(0) translate(0);
+  }
 }
-@keyframes tailWag{
-    20%{
-        border-color: black;
-        transform: rotate(-20deg) translate(-10%,-17%);
-    }
+@keyframes tailWag {
+  20% {
+    border-color: black;
+    transform: rotate(-20deg) translate(-10%, -17%);
+  }
 }
 @keyframes bubbleHop {
-    0%,100%{
-        transform: translateY(0);
-    }
-    15%{
-        transform: translateY(-15%);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-15%);
+  }
 }
 /* Hover */
 @keyframes hopFaster {
-    0%,20%,80%,100%{
-        transform: translate(0) scale(1);
-    }
-    50%{
-        transform: translate(0,-20%) scale(1,1.2);
-    }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translate(0) scale(1);
+  }
+  50% {
+    transform: translate(0, -20%) scale(1, 1.2);
+  }
 }
 @keyframes hopLeftArmFast {
-    50%{
-        transform: rotate(-40deg) translate(0,-15%);
-    }
-    0%,20%,80%,100%{
-        transform: rotate(0deg) translate(0%,10%);
-    }
+  50% {
+    transform: rotate(-40deg) translate(0, -15%);
+  }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: rotate(0deg) translate(0%, 10%);
+  }
 }
 @keyframes hopRightArmFast {
-    50%{
-        transform: rotate(40deg) translate(0);
-    }
-    0%,20%,80%,100%{
-        transform: rotate(10deg) translate(0,15%);
-    }
+  50% {
+    transform: rotate(40deg) translate(0);
+  }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: rotate(10deg) translate(0, 15%);
+  }
 }
 @keyframes hopLeftFootFast {
-    50%{
-        transform: rotate(30deg) translate(-10%,-30%);
-    }
-    0%,20%,80%,100%{
-        transform: rotate(0) translate(0);
-    }
+  50% {
+    transform: rotate(30deg) translate(-10%, -30%);
+  }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: rotate(0) translate(0);
+  }
 }
 @keyframes hopRightFootFast {
-    50%{
-        transform: rotate(30deg) translate(-10%,-30%);
-    }
-    0%,20%,80%,100%{
-        transform: rotate(0) translate(0);
-    }
+  50% {
+    transform: rotate(30deg) translate(-10%, -30%);
+  }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: rotate(0) translate(0);
+  }
 }
 @keyframes bubbleHopFast {
-    0%,20%,80%,100%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-15%);
-    }
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
 }

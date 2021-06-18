@@ -1,4 +1,4 @@
-.filter{
+.filter {
   //Sizing
   width: 12rem;
 
@@ -10,16 +10,16 @@
   color: black;
 
   //Background & Border
-  background-color: hsl(120,60%,80%);
+  background-color: hsl(120, 60%, 80%);
   border-radius: 1rem;
 
-  label{
+  label {
     //Display
     display: flex;
     align-items: center;
     width: fit-content;
 
-    input{
+    input {
       margin: 0.5rem;
     }
   }

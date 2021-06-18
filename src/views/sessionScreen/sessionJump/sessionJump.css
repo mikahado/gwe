@@ -2,8 +2,7 @@
   position: relative;
   z-index: 5;
   width: fit-content;
-  border: 0.5rem solid var(--primary-blue);
-  border-radius: 2rem;
+  border-top: 0.5rem solid var(--primary-blue);
   color: aliceblue;
   font-weight: bold;
   padding: 0.5rem;
@@ -12,18 +11,27 @@
 }
 .tableContents button {
   margin: 0.25rem;
-  width: 2.5rem;
+  width: 3rem;
   padding: 0.25rem;
-  border-radius: 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tableContents button svg {
+  width: 2rem;
+  height: 2rem;
 }
 .tableContents button.current {
   background-color: var(--primary-blue);
 }
 .tableContents .materialWrap {
   background-color: var(--light-green);
-  border-radius: 2rem;
-  padding: 0.1rem;
+  border-radius: 1rem;
+  padding: 0.2rem;
   margin: 0.5rem 0;
+  display: flex;
 }
 .tableContents .materialWrap button {
   box-shadow: none;

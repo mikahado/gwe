@@ -1,95 +1,165 @@
-import {Curriculum} from "../model/Curriculum.js";
-import {Session} from "../model/Session.js";
-import {Material} from "../model/Material.js";
+import { Curriculum } from "../model/Curriculum.js";
+import { Session } from "../model/Session.js";
+import { Material } from "../model/Material.js";
 import books from "../books/books.js";
 import discussions from "../discussions/discussions";
-import {MultiLingual} from "../model/multiLingual";
+import { MultiLingual } from "../model/multiLingual";
 import videos from "../videos/videos";
+import {experiments} from "../experiments/experiments";
 
-const sessions = {
+const sessionArray= [
+  new Session([new Material(books.commonGround)]),
 
-    session1: new Session([
-        new Material(books.commonGround)
-    ]),
+  new Session([new Material(videos.gweBackstory)]),
 
-    session2: new Session([
-        new Material(videos.gweBackstory)
-    ]),
+  new Session([
+    new Material(books.globalWarmingExpress, null, "Part 1 of 3", 1, 52),
+  ]),
 
-    session3: new Session([
-        new Material(
-            books.globalWarmingExpress,
-            null,
-            'Part 1 of 3',
-            1,
-            52
-        )
-    ]),
+  new Session([
+    new Material(discussions.greenhouseDiscuss),
+    new Material(experiments.blanketExp)
+  ]),
 
-    session4: new Session([
-        new Material(
-            discussions.greenhouseDiscuss
-        )
-    ]),
+  new Session([
+    new Material(books.myLight)
+  ]),
 
-    session5: new Session([
-        new Material(books.myLight),
-        new Material(discussions.myLightDiscuss)
-    ]),
+  new Session([
+    new Material(discussions.myLightDiscuss),
+  ]),
 
-    session6: new Session([
-        new Material(
-            books.globalWarmingExpress,
-            null,
-            'Part 2 of 3',
-            53,
-            95,
-            new MultiLingual(
-                "Join Marina, Joanna, and their animal friends as they continue their adventure to save the animal's homes."
-            )
-        )
-    ]),
+  new Session([
+    new Material(experiments.evapExp)
+  ]),
 
-    session7: new Session([
-        new Material(books.livingSunlight),
-        new Material(discussions.livingSunlightDiscuss)
-    ]),
+  new Session([
+    new Material(experiments.cloudExp)
+  ]),
 
-    session8: new Session([
-        new Material(books.buriedSunlight),
-        new Material(discussions.buriedSunlightDiscuss)
-    ]),
+  new Session([
+    new Material(experiments.pinwheelExp)
+  ]),
 
-    session9: new Session([
-        new Material(
-            books.globalWarmingExpress,
-            null,
-            'Part 3 of 3',
-            96,
-            127,
-            new MultiLingual(
-                'Join Marina, Joanna, and their animal friends on the final leg of their brave journey.'
-            )
-        )
-    ]),
+  new Session([
+    new Material(
+      books.globalWarmingExpress,
+      null,
+      "Part 2 of 3",
+      53,
+      95,
+      new MultiLingual(
+        "Join Marina, Joanna, and their animal friends as they continue their adventure to save the animal's homes."
+      )
+    ),
+  ]),
 
-    session10: new Session([
-        new Material(books.riversOfSunlight),
-        new Material(discussions.riversOfSunlightDiscuss)
-    ]),
+  new Session([
+    new Material(books.livingSunlight)
+  ]),
 
-    session11: new Session([
-        new Material(books.commonGround),
-        new Material(discussions.commonGroundDiscuss)
-    ])
-};
+  new Session([
+    new Material(discussions.livingSunlightDiscuss)
+  ]),
 
+  new Session([
+    new Material(experiments.heartbeatExp)
+  ]),
+
+  new Session([
+    new Material(experiments.breathHoldExp)
+  ]),
+
+  new Session([
+    new Material(experiments.countBreathExp)
+  ]),
+
+  new Session([
+    new Material(experiments.photoSynthDramaExp)
+  ]),
+
+  new Session([
+    new Material(books.buriedSunlight)
+  ]),
+
+  new Session([
+    new Material(discussions.buriedSunlightDiscuss),
+  ]),
+
+  new Session([
+    new Material(experiments.squashPlantsExp)
+  ]),
+
+  new Session([
+    new Material(experiments.carGreenhouseExp)
+  ]),
+
+  new Session([
+    new Material(experiments.pizzaBoxExp)
+  ]),
+
+  new Session([
+    new Material(
+      books.globalWarmingExpress,
+      null,
+      "Part 3 of 3",
+      96,
+      127,
+      new MultiLingual(
+        "Join Marina, Joanna, and their animal friends on the final leg of their brave journey."
+      )
+    ),
+  ]),
+
+  new Session([
+    new Material(books.riversOfSunlight),
+  ]),
+
+  new Session([
+    new Material(discussions.riversOfSunlightDiscuss),
+  ]),
+
+  new Session([
+    new Material(experiments.golfBallExp)
+  ]),
+
+  new Session([
+    new Material(experiments.waterCycleDramaExp)
+  ]),
+
+  new Session([
+    new Material(experiments.waterMathExp)
+  ]),
+
+  new Session([
+    new Material(experiments.waterReqExp)
+  ]),
+
+  new Session([
+    new Material(experiments.dirtyWaterExp)
+  ]),
+
+  new Session([
+    new Material(experiments.conveyorBeltExp)
+  ]),
+
+  new Session([
+    new Material(books.commonGround)
+  ]),
+
+  new Session([
+    new Material(discussions.commonGroundDiscuss)
+  ])
+];
+
+/*
 const sessionArray = [];
 
-Object.keys(sessions).forEach( sessionKey =>{
+Object.keys(sessions).forEach((sessionKey) => {
+  sessionArray.push(sessions[sessionKey]);
+});
 
-    sessionArray.push(sessions[sessionKey]);
-})
+ */
 
 const curriculum = new Curriculum(sessionArray);
 

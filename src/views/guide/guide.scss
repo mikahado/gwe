@@ -1,6 +1,5 @@
-.guide{
-
-  section{
+.guide {
+  section {
     // Spacing
     margin: 1rem 0;
     padding: 1rem;
@@ -12,18 +11,21 @@
     //Text
     color: aliceblue;
 
-    text-align: center;
-
-    p{
-      margin-bottom: 1rem;
+    h1 {
+      text-align: center;
     }
 
-    li{
+    p {
       margin-bottom: 1rem;
       text-align: left;
     }
 
-    .textLink{
+    li {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .textLink {
       color: var(--dark-accent);
       font-weight: bold;
       background-color: var(--light-green);

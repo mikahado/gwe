@@ -1,12 +1,12 @@
-import books from '../books/books';
+import books from "../books/books";
 
 const MediaList = [
-    books.commonGround,
-    books.globalWarmingExpress,
-    books.myLight,
-    books.livingSunlight,
-    books.buriedSunlight,
-    books.riversOfSunlight
-]
+  books.commonGround,
+  books.globalWarmingExpress,
+  books.myLight,
+  books.livingSunlight,
+  books.buriedSunlight,
+  books.riversOfSunlight,
+];
 
 export { MediaList };

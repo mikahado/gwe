@@ -1,5 +1,4 @@
-
-.Splash{
+.Splash {
   position: relative;
   width: 100vw;
   height: 100%;
@@ -12,18 +11,18 @@
 
   //background-color: var(--dark-accent);
 
-  .TopNav{
+  .TopNav {
     position: relative;
     //top: 0;
     width: 100%;
   }
 
-  .splashBody{
+  .splashBody {
     height: 100%;
     overflow-y: hidden;
     bottom: 0;
 
-    .menuWrap{
+    .menuWrap {
       position: relative;
       height: 100%;
       width: 100%;
@@ -32,20 +31,19 @@
     }
   }
 
-  .splashGraphics{
+  .splashGraphics {
     position: absolute;
     height: 100%;
     bottom: 0;
     //border: 1rem solid aliceblue;
     //border-radius: 1rem;
 
-    .trainCol{
-
+    .trainCol {
       position: relative;
       max-width: 124vh;
       overflow: hidden;
 
-      .trainWrap{
+      .trainWrap {
         //position: absolute;
         right: 0;
         left: auto;
@@ -58,8 +56,7 @@
         margin: 0;
       }
 
-      .splashTrain{
-
+      .splashTrain {
         --trainHeight: 40vh;
 
         //Position
@@ -70,7 +67,7 @@
 
         //Sizing
         height: var(--trainHeight);
-        width: calc( var(--trainHeight) * 3.1238);
+        width: calc(var(--trainHeight) * 3.1238);
 
         //Spacing
         margin: 0;
@@ -78,7 +75,7 @@
     }
   }
 
-  .menu{
+  .menu {
     background-color: var(--primary-blue);
     //border: 0.5rem solid var(--primary-blue);
     border-radius: 1rem;
@@ -90,18 +87,18 @@
     //top: 2rem;
     //right: 2rem;
 
-    button{
+    button {
       width: 15rem;
     }
 
-    img{
+    img {
       background-color: white;
       border-radius: 3rem;
       padding: 1rem;
       margin-bottom: 1rem;
     }
 
-    .info{
+    .info {
       border: 0.15rem solid aliceblue;
       border-radius: 100%;
       margin: 0 0 0 0.5rem;
@@ -110,8 +107,7 @@
 }
 
 //SplashNav
-.splashNav{
-
+.splashNav {
   //Display
   display: flex;
   flex-direction: column;
@@ -122,14 +118,13 @@
   margin-top: 1rem;
   height: 100%;
 
-  nav{
+  nav {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .splashLogo{
-
+  .splashLogo {
     /* Size */
     width: 100%;
     max-width: 12rem;
@@ -139,9 +134,9 @@
 
     /* Background & Border */
     border-radius: 2rem;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(0, 0%, 100%);
 
-    img{
+    img {
       width: 100%;
       height: auto;
     }
@@ -149,8 +144,8 @@
 }
 
 @media only screen and (max-height: 500px) {
-  .Splash{
-    .menuWrap{
+  .Splash {
+    .menuWrap {
       justify-content: flex-end !important;
     }
   }

@@ -15,11 +15,11 @@
 }
 @media only screen and (max-width: 600px) {
   /*
-  .ReaderContent{
-      align-items: flex-end;
-  }
+    .ReaderContent{
+        align-items: flex-end;
+    }
 
-   */
+     */
   .ReaderPages {
     width: 95%;
   }
@@ -72,12 +72,14 @@
     display: none;
   }
 
-  .ReaderContent, .ReaderPages {
+  .ReaderContent,
+.ReaderPages {
     flex-direction: column;
     align-items: center;
   }
 
-  .ReaderContent #nextPage.default, .ReaderContent #prevPage.default {
+  .ReaderContent #nextPage.default,
+.ReaderContent #prevPage.default {
     /* display: none; */
   }
 
@@ -115,18 +117,18 @@
 
   #nextPage {
     /*position: fixed;
-    bottom: 0;
+        bottom: 0;
 
-     */
+         */
   }
 
   /* Prev Page */
   #prevPage {
     /*
-    position: fixed;
-    bottom: 0;
+        position: fixed;
+        bottom: 0;
 
-     */
+         */
   }
 }
 

@@ -1,81 +1,99 @@
-.sessionListItem {
-  position: relative;
-  /* Display */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 12rem;
-  height: fit-content;
-  margin: 1em;
-  padding: 0;
-  /* Border & Background */
-  border-radius: 1em;
-  background: transparent;
+#sessionWrap {
+  z-index: 2;
+  transition: opacity 0.25s;
+  height: 100%;
+  width: 20rem;
+}
+
+.sessionItem {
+  background-color: transparent;
   border: 0;
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow-y: hidden;
+  padding: 1rem;
+  height: 100%;
+  margin: 0;
 }
-.sessionListItem img {
-  width: 100%;
-  height: auto;
-  background-color: var(--primary-green);
-  border-radius: 1rem;
-}
-
-.mediaListEntry.wideThumb {
-  background-size: contain;
-}
-
-.mediaListEntry:hover {
-  animation: none;
-}
-
-/* Text Box */
-.sessionWrap {
-  padding: 0.25rem;
-  margin: 3rem;
-  background-color: var(--dark-accent);
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem dimgrey;
-  /* Animation & Transition */
-  animation: none;
-  transition: opacity 0.5s;
-}
-.sessionWrap button.disabled {
-  background-color: lightgray;
-  color: dimgrey;
-}
-.sessionWrap .sessionActions button {
+.sessionItem button {
   border-radius: 100%;
   border: 0.2rem solid aliceblue;
   width: 3rem;
   height: 3rem;
   padding: 0;
 }
-.sessionWrap .sessionGrid {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100%;
+.sessionItem button.disabled {
+  background-color: lightgray;
+  color: dimgrey;
+}
+
+.sessionTitle {
+  margin: 0.25rem;
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  border: 0.25rem solid aliceblue;
+  padding: 0.5rem 1rem;
+}
+.sessionTitle ul {
+  list-style-type: circle;
+}
+
+.sessionGraphic {
+  position: relative;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: 15rem;
+  margin: auto;
+  padding: 0;
+  /* Border & Background */
+  border-radius: 1em;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+}
+.sessionGraphic img {
   width: 100%;
+  height: auto;
+  background-color: var(--dark-accent);
+  border: 0.25rem solid aliceblue;
+  border-radius: 1rem;
+}
+.sessionGraphic .experiment {
+  background-color: var(--dark-accent);
+  width: 100%;
+  padding: 1rem;
+}
+.sessionGraphic .experiment svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.materialTitle {
+  width: fit-content;
+  max-width: 12rem;
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  border: 0.25rem solid aliceblue;
+  margin: 0.25rem auto 0 auto;
+  padding: 0.5rem 1rem;
 }
 
 .changeSession {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   position: absolute;
   padding: 0.25rem;
   border-radius: 100%;
 }
 
 .changeSession.forward {
-  right: -3rem;
+  right: 0;
 }
 
 .changeSession.back {
-  left: -3rem;
+  left: 0;
 }
 
 /*# sourceMappingURL=sessionListItem.css.map */

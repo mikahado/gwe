@@ -1,19 +1,19 @@
-button{
-    width: fit-content;
+button {
+  width: fit-content;
 }
-button span{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.zoomButton{
-    border-radius: 100%;
+button span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.zoomWrap{
-    position: absolute;
-    top: 1rem;
-    right: -4rem;
+.zoomButton {
+  border-radius: 100%;
+}
+
+.zoomWrap {
+  position: absolute;
+  top: 1rem;
+  right: -4rem;
 }

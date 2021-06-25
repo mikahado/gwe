@@ -102,7 +102,7 @@ export function ResourceCategory(props) {
   return (
     <div className={"resourceCategory"}>
       <h3 className={"heading"}>{heading}</h3>
-      <div className={"d-flex flex-wrap justify-content-center"}>
+      <div className={"d-flex flex-wrap justify-content-center align-items-center"}>
         {resourceList.length ? (
           resourceList.map((resource) => {
             return <Button text={resource.name} extLink={resource.link} />;
@@ -122,7 +122,7 @@ export class Resources extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilters: false,
+      showFilters: true,
       filters: getFilterState(),
     };
     this.changeFilter = this.changeFilter.bind(this);
@@ -159,30 +159,45 @@ export class Resources extends React.Component {
 
   render() {
     return (
-      <div className={"resourcePageWrap"}>
+      <div className={"resourcePageWrap container-fluid"}>
+        <div className={'row'}>
+          <div className={'col'}>
             <h1 className={'pageTitle'}>Resources</h1>
-
-        <ResourceMessage filters={this.state.filters} toggleFilters={this.toggleFilters}
-        showFilters={this.state.showFilters}
-        />
-
-        {
-          this.state.showFilters ?
-            <Filters
-              filters={this.state.filters}
-              changeFilter={this.changeFilter}
-              showAll={this.showAll}
-              hideAll={this.hideAll}
-              hideFilters={this.toggleFilters}
-            />
-            :null
-        }
-
-          <div className={'pageBody'}>
-
-            <ResourceList filters={this.state.filters} />
-
           </div>
+        </div>
+
+        <div className={'row'}>
+
+          <div className={'col-md col-lg-auto'}>
+            <div className={'filterColumn d-flex flex-column align-items-center'}>
+              <ResourceMessage
+                filters={this.state.filters}
+                toggleFilters={this.toggleFilters}
+                showFilters={this.state.showFilters}
+              />
+
+              {
+                this.state.showFilters ?
+                  <Filters
+                    filters={this.state.filters}
+                    changeFilter={this.changeFilter}
+                    showAll={this.showAll}
+                    hideAll={this.hideAll}
+                    hideFilters={this.toggleFilters}
+                  />
+                  :null
+              }
+            </div>
+          </div>
+
+          <div className={'col-md'}>
+            <div className={'pageBody p-md-2'}>
+
+              <ResourceList filters={this.state.filters} />
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -24,7 +24,7 @@ export function Guide(props) {
       </div>
       <div className={"row"}>
 
-        <div className={'col-auto guideSections d-flex flex-column align-items-center'}>
+        <div className={'col-md-auto guideSections d-flex flex-column align-items-center'}>
             <h2 className={'pageTitle'}>Sections</h2>
             {
               guideText.map(section => {
@@ -42,8 +42,8 @@ export function Guide(props) {
             }
         </div>
 
-        <div className={"col"}>
-          <div className={'pageBody'}>
+        <div className={"col-md"}>
+          <div className={'pageBody p-2'}>
             {
               guideText.map( section =>{
                 return(

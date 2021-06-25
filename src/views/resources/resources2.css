@@ -4,42 +4,42 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem;
-  /*
-   section h2{
-     font-size: 1.25rem;
-     font-weight: bold;
-     //border: 0.25rem solid var(--dark-accent);
-     padding: 1rem;
-     border-radius: 1rem;
-     color: var(--dark-accent);
-     background-color: var(--light-blue);
-   }
-
-  */
 }
-.resourcePageWrap .resourceCategory {
+
+.resourceCategory {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  margin: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
   border-radius: 1rem;
   width: 100%;
   color: aliceblue;
 }
-.resourcePageWrap .resourceCategory button {
-  width: 17rem;
-  height: 5rem;
+.resourceCategory button {
+  width: 15rem;
+  height: fit-content;
 }
-.resourcePageWrap .resourceCategory .heading {
+.resourceCategory .heading {
   background-color: var(--primary-blue);
   padding: 0.5rem 2rem;
   border-radius: 1rem;
   text-align: center;
 }
 
+.filterColumn {
+  height: fit-content;
+}
+
+@media only screen and (min-width: 768px) {
+  .filterColumn {
+    position: sticky;
+    top: 0;
+    max-height: calc(100vh);
+    overflow-y: auto;
+  }
+}
 .resourceError {
   background-color: darkgray;
   color: aliceblue;

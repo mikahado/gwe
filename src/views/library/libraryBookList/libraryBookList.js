@@ -42,7 +42,7 @@ class LibraryBookList extends React.Component {
 
   render() {
     return (
-      <div id="libraryList" className={'pageBody LibraryList'}>
+      <div id="libraryList" className={'pageBody LibraryList  p-md-2'}>
         <h2 id={'books'} className={'sectionHeader'}>Books</h2>
 
         <div id="libraryList" className="d-flex flex-wrap justify-content-center align-items-baseline">

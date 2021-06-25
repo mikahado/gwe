@@ -1,4 +1,9 @@
 .resourceMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
   background-color: var(--yellow);
   border-radius: 1rem;
 

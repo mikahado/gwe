@@ -7,15 +7,17 @@
     .guideSections{
         height: fit-content;
         padding: 1rem;
-        max-height: 100vw;
-        position: sticky;
-        top: 1rem;
         background-color: rgba(135, 206, 235, 1);
         border-radius: 1rem;
+      margin-bottom: 1rem;
 
         button{
             //width: 100%;
         }
+
+      .pageTitle{
+        margin: 0 0 1rem 0;
+      }
     }
 
   section {
@@ -50,5 +52,14 @@
 .sectionButton{
     padding: 0.5rem 1rem;
     margin: 0.25rem;
-    width: 100%;
+    width: 15rem;
+}
+
+@media only screen and (min-width: 768px){
+  .guideSections{
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
 }

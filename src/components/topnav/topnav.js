@@ -67,7 +67,7 @@ function TopNav(props) {
       id="topNav"
     >
       <div className={"d-flex align-items-center"}>
-        <div className={"icon"}>
+        <div className={"d-none d-md-flex icon"}>
           <Link to={"/"}>
             <img src={icon} alt={"The Global Warming Express Logo"} />
           </Link>

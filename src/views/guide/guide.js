@@ -4,6 +4,7 @@ import {guideText} from "./guideText";
 import { Button } from "../../components/buttons/buttons";
 
 export function Guide(props) {
+
   function sectionLinkClickHandler(e){
     let string = e.target.id.slice(7);
     console.log(string);
@@ -25,12 +26,11 @@ export function Guide(props) {
               guideText.map(section => {
                 return (
                   section.heading ?
-                    <Button
+                    <button
                       id={`Link - ${section.heading}`}
-                      click={sectionLinkClickHandler}
-                      class={'sectionButton'}
-                      text={section.heading}
-                    />
+                      onClick={sectionLinkClickHandler}
+                      className={'sectionButton'}
+                    >{section.heading}</button>
                     : null
                 )
               })

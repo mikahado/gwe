@@ -1,24 +1,16 @@
 .resourcePageWrap {
   position: relative;
-  width: 100%;
-  margin: 0;
-
+    //background-color: var(--dark-accent);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   flex-wrap: wrap;
-
-  h1,
-  section h2 {
-    background-color: var(--dark-accent);
-    border-radius: 1rem;
-    color: aliceblue;
     padding: 1rem;
-    margin: 1rem;
 
-    box-shadow: 0 0 1rem;
-  }
+    //background-color: rgba(135, 206, 235, 1);
+
+
 
   .resourceCategory {
     //Display
@@ -32,8 +24,9 @@
     margin: 0.5rem;
 
     //Background & Border
-    background-color: var(--dark-accent);
+    //background-color: var(--primary-blue);
     border-radius: 1rem;
+      width: 100%;
 
     //Text
     color: aliceblue;
@@ -42,6 +35,12 @@
       width: 17rem;
       height: 5rem;
     }
+      .heading{
+          background-color: var(--primary-blue);
+          padding: 0.5rem 2rem;
+          border-radius: 1rem;
+          text-align: center;
+      }
   }
   /*
   section h2{
@@ -58,7 +57,7 @@
 }
 
 .resourceError {
-  background-color: var(--red);
+  background-color: darkgray;
   color: aliceblue;
 
   border-radius: 1rem;

@@ -28,6 +28,7 @@ import "./colors.css";
 import "./fonts.css";
 import "./elements.css";
 import "./animations.css";
+import discussions from "../../data/discussions/discussions";
 
 
 
@@ -78,11 +79,19 @@ export function App(props) {
           />
 
           <Route
-            path="/library/"
+            path={[
+              "/library/section=:sectionId",
+              "/library/",
+            ]}
             render={({ match }) => {
               setPage("library");
+              console.log(match.params);
               return (
-                <Library language={language} changeLanguage={changeLanguage} />
+                <Library
+                  language={language}
+                  changeLanguage={changeLanguage}
+                  sectionId={match.params.sectionId}
+                />
               );
             }}
           />
@@ -107,6 +116,30 @@ export function App(props) {
             render={({ match }) => {
               setPage("");
               const content = books[match.params.contentId];
+              const page = match.params.page;
+
+              return (
+                <Read
+                  content={content}
+                  language={language}
+                  startPage={page}
+                  changeLanguage={changeLanguage}
+                  imgPreloads={content.imgPreloads}
+                  audioPreloads={content.audioPreloads}
+                  key={match.params.contentId}
+                />
+              );
+            }}
+          />
+
+          <Route
+            path={[
+              "/read/discussion/:contentId/page=:page",
+              "/read/discussion/:contentId"
+            ]}
+            render={({ match }) => {
+              setPage("");
+              const content = discussions[match.params.contentId];
               const page = match.params.page;
 
               return (

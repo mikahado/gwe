@@ -1,7 +1,9 @@
 /* APP GLOBAL */
 
 @import "utilityStyles";
-
+* {
+    overflow-anchor: none;
+}
 .App {
   //Display
   display: grid;

@@ -6,9 +6,11 @@ export function MaterialHeader(props){
     return(
       <div className={"materialHeader"}>
         <h1>
-          <b>Session {props.sessionInfo.sessionId}</b> - Part{" "}
-          {props.sessionInfo.partNo} of {props.sessionInfo.ofParts} :{" "}
-          <u>{props.content.title.get(props.language)}</u>
+          <b>Session {props.sessionInfo.sessionId}</b>{
+          props.partLabel !== 'hide'
+            ? `- Part ${props.sessionInfo.partNo} of ${props.sessionInfo.ofParts} `
+            : null
+        } : <u>{props.content.title.get(props.language)}</u>
         </h1>
       </div>
     )

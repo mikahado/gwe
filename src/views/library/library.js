@@ -46,12 +46,6 @@ class Library extends React.Component {
     this.changeBook = this.changeBook.bind(this);
     this.closeCurrent = this.closeCurrent.bind(this);
   }
-  scrollToSummary() {
-    if (document.getElementById("Summary")) {
-      const summary = document.getElementById("Summary");
-      summary.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }
   changeBook(contentId) {
     this.setState({ currentBook: contentId });
     /*
@@ -69,7 +63,7 @@ class Library extends React.Component {
   closeCurrent() {
     this.setState({ currentBook: "" });
   }
-  componentDidMount() {}
+
   render() {
     return (
       <div
@@ -91,12 +85,13 @@ class Library extends React.Component {
         <div className={"col"}>
           <div className={"Library"}>
             <div className={"libraryRepeat"}>
-              <h1 className={"libraryTitle"}>Learning Library</h1>
+              <h1 className={"pageTitle"}>Learning Library</h1>
 
               <LibraryBookList
                 changeBook={this.changeBook}
                 currentBook={this.props.currentBook}
                 language={this.props.language}
+                sectionId={this.props.sectionId}
               />
             </div>
 

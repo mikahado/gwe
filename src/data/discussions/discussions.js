@@ -41,4 +41,10 @@ const discussions = {
   ),
 };
 
+export const discussionsArray = [];
+
+for (let key in discussions){
+  discussionsArray.push(discussions[key]);
+}
+
 export default discussions;

@@ -32,7 +32,7 @@ export const experiments = {
       [
         'Describe how the air around the Earth, called the “atmosphere”, gives the earth a sheet to keep it warm.',
         'Measure the air temperature in your room.  Write it on the white board.',
-        'At the same time, cover a child with the bedsheet (or have children cover themselves with sheets) and measure the temperature under the sheet after a few minutes.  Write the bedsheet and room temperatures on the white board.',
+        'At the same time, cover a child with the bedsheet (or have children cover themselves with sheets) and measure the temperature under the sheet after a few minutes.  Write the bedsheet temperature next to the room temperature.',
         'Explain how if there was no atmosphere, the Earth wouldn’t be warm enough for us to live on.',
         'Now, add the blanket to the sheet over the child and measure the temperature after a few minutes.',
         'Explain that now the atmosphere, the air, is filled with too many bad gases, pollution from factories and cars (and yes, cow burps!) and it’s like having a sheet and a blanket.  It’s getting too warm!  How do we remove a blanket?  That’s what we are trying to solve.'
@@ -62,14 +62,13 @@ export const experiments = {
     ),
     new MultiLingual(
       [
-        'Before experiment:  with children’s input define evaporation.',
-        'Describe the following experiment and have children write down what it looks like at the beginning.  Make a drawing of it.  Guess what it will look like at the end.',
+        'Before experiment:  with children’s input define evaporation. Write children’s definition of evaporation on white board',
+        'Describe the following experiment and have children write down what it looks like at the beginning.  Make a drawing of it.  Guess what it will look like at the end and write it down or draw it.',
         'Mix 1 teaspoon of salt with ½ cup warm water.',
         'Pour a tiny bit into a pie plate (clear glass is preferable) so that it just covers the bottom with a thin layer.',  'Place in the sunshine, preferably outside.  If it is windy, weigh with rock or wait for a less windy day.',
         'Check every half hour.',
         'What does it look like after two hours or so?  The water should be gone, but there should be a dusty layer of salt.  Why?  The sun evaporated the water, but left the salt behind.',
-        'Advanced option:  include a dish with the same amount of fresh water as an experimental control.',
-        'What does it look like after two hours or so?  In the salt water pan, the water should be gone, but there should be a dusty layer of salt.  Why?  The sun evaporated the water, but left the salt behind.  What does the fresh water pan look like?'
+        'Advanced option:  include a dish with the same amount of fresh water, preferably distilled water, as an experimental control and have the children predict, draw what will happen. Place next to the salted water outside and observe every time you observe the salted water. If your water is especially hard and you don’t have distilled water, skip this part of the experiment because the minerals in hard water will leave a dust as well.',
       ]
     ),
     '',
@@ -146,7 +145,7 @@ export const experiments = {
     ],
     new MultiLingual(
       [
-        'Pinwheels are facsimiles of turbines. Once children have made them, they can try them out in “wind” by blowing on them or running while holding them, outside, or creating a “turbine field” outside the classroom.',
+        'Pinwheels are like little turbines. Once children have made them, they can try them out in “wind” by blowing on them or running while holding them, outside, or creating a “turbine field” outside the classroom.',
         'Then, you can have them place them under running water to simulate a turbine in a hydroelectric dam.',
         'For detailed instructions on building the pinwheels, click the "Open PDF" button below'
       ]
@@ -162,7 +161,7 @@ export const experiments = {
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/7.jpg`,
         new MultiLingual(
-          'The seventh two-page spread describes and shows wind turbines. The eleventh two-page spread describes and shows the turbines pushed by the steam made by heating water at coal-burning power plants.'
+          'The seventh two-page spread describes and shows wind turbines.'
         )
       ),
       new ExperimentExcerpt(
@@ -263,15 +262,18 @@ export const experiments = {
     '',
     [
       new ExperimentExcerpt(
-        `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/11.jpg`,
+        `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/10.jpg`,
         new MultiLingual(
-          '<u>Living Sunlight</u>, on the eleventh (including title page) two-page spread, talks about how animals get their energy from the plants they eat.  Everything you do takes energy from food, even resting!'
+          '<u>Living Sunlight</u>, on the tenth (including title page) two-page spread, talks about how animals get their energy from the plants they eat.  Everything you do takes energy from food, even resting!'
         )
       ),
       new ExperimentExcerpt(
-        `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`,
+        [
+          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/11.jpg`,
+          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`
+        ],
         new MultiLingual(
-          'The twelfth two-page spread explains that your body uses oxygen to turn those plant sugars into the energy you use to move.'
+          'The eleventh and twelfth two-page spread explains that your body uses oxygen to turn those plant sugars into the energy you use to move.'
         )
       )
     ]
@@ -320,7 +322,7 @@ export const experiments = {
           'The plant can say what she needs (soil, sun, water/rain, CO2, chlorophyll which makes the plant green)',
           'What does the plant make with all these pieces:',
           [
-            'glucose, that is, sugar (more plant which means growth), and',
+            'glucose, that is, sugar (more plant which means growth and yummy food for us), and',
             'oxygen (O2)'
           ]
         ]
@@ -329,15 +331,15 @@ export const experiments = {
     '',
     [
       new ExperimentExcerpt(
-        `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/7.jpg`,
+        `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/6.jpg`,
         new MultiLingual(
-          '<u>Living Sunlight</u>, on the seventh, eighth, and ninth (including title page) two-page spreads pictures and describes photosynthesis.',
+          '<u>Living Sunlight</u>, on the sixth, seventh, and eighth (including title page) two-page spreads pictures and describes photosynthesis.',
         )
       ),
       new ExperimentExcerpt(
         [
-          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/8.jpg`,
-          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/9.jpg`
+          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/7.jpg`,
+          `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/8.jpg`
         ]
       )
     ]
@@ -363,8 +365,8 @@ export const experiments = {
     new MultiLingual(
       [
         'Have the children try this in groups of 2-4.',
-        'Give the children organic material with the instruction to make a clump of plant (compost) material.',
-        'What happens if the clump is covered by more and more compost?',
+        'Give the children organic material (leaves, orange and apple peels, etc.) with the instruction to make a clump of plant (compost) material.',
+        'What happens if the clump is covered by the weight of more and more compost?',
         'Give each group a brick. Have children gently press the brick on the clump of plant material. Take turns pressing as hard as they can for five minutes.',
         'Remove brick.  What does the plant material look like now?',
         'Discuss:  How hard and for how long would you have to press the plant material to make coal, oil, or gas?'
@@ -396,27 +398,28 @@ export const experiments = {
     ),
     new MultiLingual(
       [
-        'Procedure (this will take at least an hour and more data is gathered if able to be done for six hours):',
+        'Timeframe: the entire class! It is best to set up this experiment at the beginning of your class and check at the end of your class. If you can run this experiment all day, then check at regular intervals, such as every half-hour or hour throughout your day.',
         'Discuss whether any of the children have ever heard of or seen a greenhouse.  Have them describe it for the other children. Guide them to describe what is happening in a greenhouse (and by extension what is happening on Earth with its atmosphere) to make it warm.',
-        'A greenhouse is a house with glass walls and ceiling.  The glass lets most of the sunshine in, but when the sunshine tries to get out, some of it gets trapped.  This makes the inside of a greenhouse hotter than outside. The same thing happens with a car that has been left out in the sun for a few hours.  Because the windows let the sun in, but trap the sun, the inside of the car will be hotter than outside.',
+        'A greenhouse is a house with glass walls and ceiling.  The glass lets most of the sunshine in. Some of the sunshine is absorbed by the plants and soil and some is reflected by the plants and soil back toward the glass. When the sunshine tries to get out through the glass, some of it gets reflected back toward the soil again, trapping it and its heat.  This makes the inside of a greenhouse hotter than outside. The same thing happens with a car that has been left out in the sun for a few hours.  Because the windows let the sun in, but trap the sun, the inside of the car will be hotter than outside.',
         'Use a thermometer to test this out:',
         'If your family has a car, have the owner park car in sun in the morning, preferably away from any shade.',
         'Place thermometer inside car, taped to the headrest of the driver\'s seat.',
         'Place another thermometer taped to a stick next to the car',
         'Optional: place an ice cube in a cup (or a chocolate bar in its wrapper, or a piece of cheese on a plate, or cut, fresh flowers) near each thermometer',
         'Write down the time and the temperature reading of both thermometers on a piece of paper',
-        'Over the course of a few hours, visit the car once per hour and write down the temperature reading of both thermometers next to the time of day.  (If you put an ice cube near the thermometers, note what happened to it when you read the temperature and write that down, too.)',
-        'This is like our Earth.  The air around the Earth, called the atmosphere, lets the sunshine in and when the sunshine tries to get out, some of it gets trapped.  That makes the earth just warm enough.  When the atmosphere gets too many of the types of gases that trap sunshine, it gets too warm.  Gases that make the earth too warm are carbon dioxide (CO2) and methane (CH4).  Our car and factory exhaust, called pollution, are made of these gases.\n'
+        'Over the course of a few hours, visit the car once per half-hour or hour and write down the temperature reading of both thermometers next to the time of day.  (If you put an ice cube near the thermometers, note what happened to it when you read the temperature and write that down, too.)',
+        'This is like our Earth. The air around the Earth, called the atmosphere, lets the sunshine in. Some of that sunshine is absorbed by the Earth and some is reflected back toward the atmosphere. When the reflected sunshine tries to get out of the atmosphere, some of it gets trapped by being reflected back to the Earth by the atmosphere. That makes the earth just warm enough. When the atmosphere gets too many of the types of gases that trap sunshine, it gets too warm. Gases that make the earth too warm are carbon dioxide (CO2) and methane (CH4). Our car and factory exhaust, called pollution, are made of these gases.'
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/13.jpg`,
       new MultiLingual(
-        'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A green house does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).'
+        'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A greenhouse does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).'
       )
     )
   ),
+  //-------------------------------------------------------
   pizzaBoxExp: new Experiment(
     'pizzaBoxExp',
     new MultiLingual(
@@ -447,10 +450,11 @@ export const experiments = {
       )
     ]
   ),
+  //-------------------------------------------------------
   golfBallExp: new Experiment(
     'golfBallExp',
     new MultiLingual(
-      'Golf Ball Experiment'
+      'Earth\'s Water Experiment'
     ),
     new MultiLingual(
       'Learn about the earth\'s salt water and fresh water'
@@ -469,7 +473,7 @@ export const experiments = {
         'To help the children to understand this better (and show the approximate ratio of earth to water to freshwater), do the following activities:',
         [
           'Have a standard globe (about 12 inches diameter)',
-          'Have several golf balls and several blue (preferably) marbles and several tiny beads (the size of tiny seeds and small seeds can be used as a substitute)',
+          'Have several golf balls and several blue marbles and several tiny beads (the size of tiny seeds and small seeds can be used as a substitute)',
           [
             'Golf ball represents available water (mostly salty water in oceans)',
             'Blue marble represents fresh water (mostly locked in ice at the poles)',
@@ -486,6 +490,7 @@ export const experiments = {
       )
     )
   ),
+  //-------------------------------------------------------
   waterCycleDramaExp: new Experiment(
     'waterCycleDramaExp',
     new MultiLingual(
@@ -508,15 +513,15 @@ export const experiments = {
       [
         'Discuss and act out the water cycle--see description above',
         [
-          'Act out water cycle (need sunlight, water as ocean, water vapor, clouds, rain)',
+          'Act out water cycle (sunlight, water as ocean, water vapor, clouds, rain)',
           [
             'Sun: yellow hat (can be a yellow piece of paper or a drawing of sun):  lifts water from the salty sea through evaporation',
             'Ocean water:  blue ribbon (or waves drawn on a piece of paper)',
-            'Water vapor:  white/silver ribbon (or white tissue paper or regular paper cut in strips leaving 2 inches at one end to hold):  Evaporated sea water (or any water) turns into water vapor, a gas which floats up into the sky',
-            'Cloud: chef’s hat (can be a white piece of paper or a drawing of clouds):  when water vapor floats up into the sky, it cools around specks of dust to make clouds.',
-            'Rain: blue hat (can be a blue piece of paper or a drawing of water drops):  when enough water vapor cools around specks of dust in the clouds, it makes water droplets which fall to the Earth as rain (or snow if cold).',
+            'Water vapor:  white/silver ribbon (or white tissue paper or regular paper cut in strips leaving 2 inches at one end to hold).  Evaporated sea water (or any water) turns into water vapor, a gas which floats up into the sky',
+            'Cloud: chef’s hat (can be a white piece of paper or a drawing of clouds).  When water vapor floats up into the sky, it cools around specks of dust to make clouds.',
+            'Rain: blue hat (can be a blue piece of paper or a drawing of water drops).  When enough water vapor cools around specks of dust in the clouds, it makes water droplets which fall to the Earth as rain (or snow if cold).',
           ],
-          'Teacher draw water cycle with help from children--children can draw, too!'
+          'Teachers draw water cycle with help from children--children can draw, too!'
         ]
 
       ]
@@ -524,22 +529,23 @@ export const experiments = {
     '',
     [
       new ExperimentExcerpt(
-        `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/4.jpg`,
+        `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/4.jpg`,
         new MultiLingual("<u>Rivers of Sunlight</u>'s description of the water cycle - starts on the fourth (including title page) two-page spread of <u>Rivers of Sunlight</u> and goes to the seventh two-page spread")
       ),
       new ExperimentExcerpt(
         [
-          `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/5.jpg`,
-          `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/6.jpg`
+          `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/5.jpg`,
+          `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/6.jpg`
         ]
       ),
       new ExperimentExcerpt(
         [
-          `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/7.jpg`,
+          `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/7.jpg`,
         ]
       )
     ]
   ),
+  //-------------------------------------------------------
   waterMathExp: new Experiment(
     'waterMathExp',
     new MultiLingual(
@@ -567,6 +573,7 @@ export const experiments = {
       ]
     )
   ),
+  //-------------------------------------------------------
   waterReqExp: new Experiment(
     'waterReqExp',
     new MultiLingual(
@@ -601,6 +608,7 @@ export const experiments = {
       ]
     )
   ),
+  //-------------------------------------------------------
   dirtyWaterExp: new Experiment(
     'dirtyWaterExp',
     new MultiLingual(
@@ -646,6 +654,7 @@ export const experiments = {
       ]
     )
   ),
+  //-------------------------------------------------------
   conveyorBeltExp: new Experiment(
     'conveyorBeltExp',
     new MultiLingual(
@@ -668,6 +677,7 @@ export const experiments = {
     ),
     new MultiLingual(
       [
+        'Timeframe: this experiment requires freezing water into ice cubes. Advanced preparation required.',
         'Fill four ice cubes in an ice cube tray with water (or four dixie cups halfway with water)',
         'Make water blue with ten-twenty drops of blue food dye',
         'Freeze overnight',
@@ -676,7 +686,7 @@ export const experiments = {
         'Make hot water red with ten-twenty drops of red food dye',
         'Place blue ice cubes in clear gallon container filled with room temperature water',
         'Place shampoo container (without lid) filled with hot red water on its side in clear gallon container filled with room temperature water',
-        'Watch and draw what happens ',
+        'Once your children see all the pieces, have them guess and/or draw what they think will happen when you put them in the same container. Then, have the children watch what happens and draw it.',
         'When the water at the equator heats up it creates currents that travel on the surface of the oceans.  When the water gets cold at the North and South poles, it creates currents that travel on the floors of the oceans.  This is one of the ways that the sun moves water around the earth.'
       ]
     ),

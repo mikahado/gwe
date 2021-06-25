@@ -103,15 +103,17 @@ function SessionMap(props) {
     function fadeSession(state) {
       const session = document.getElementById("sessionWrap");
 
-      switch (state) {
-        case "out":
-          session.style.opacity = "0";
-          break;
-        case "in":
-          session.style.opacity = "1";
-          break;
-        default:
-          break;
+      if(session){
+        switch (state) {
+          case "out":
+            session.style.opacity = "0";
+            break;
+          case "in":
+            session.style.opacity = "1";
+            break;
+          default:
+            break;
+        }
       }
     }
 

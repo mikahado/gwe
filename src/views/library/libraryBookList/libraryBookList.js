@@ -10,6 +10,8 @@ import { experimentsArray} from "../../../data/experiments/experiments";
 // Sub - Components
 import LibraryBook from "../libraryBook/libraryBook";
 import LibraryExperiment from "../libraryExperiment/libraryExperiment";
+import discussions, {discussionsArray} from "../../../data/discussions/discussions";
+import LibraryDiscussion from "../libraryDiscussion/libraryDiscussion";
 
 class LibraryBookList extends React.Component {
   getLibraryList() {
@@ -26,21 +28,49 @@ class LibraryBookList extends React.Component {
       );
     });
   }
+  componentDidMount() {
+    console.log()
+    if (this.props.sectionId){
+      console.log(this.props.sectionId)
+      let element = document.getElementById(this.props.sectionId);
+      if(element){
+        element.scrollIntoView();
+      }
+    }
+  }
+
 
   render() {
     return (
-      <div id="libraryList" className={'LibraryList'}>
-        <h2 className={'libSectionHeader'}>Books</h2>
+      <div id="libraryList" className={'pageBody LibraryList'}>
+        <h2 id={'books'} className={'sectionHeader'}>Books</h2>
 
         <div id="libraryList" className="d-flex flex-wrap justify-content-center align-items-baseline">
           {this.getLibraryList()}
         </div>
 
-        <h2 className={'libSectionHeader'}>Experiments</h2>
+        <h2 className={'sectionHeader'} id={'discussion'}>Discussions</h2>
+        <div className="d-flex flex-wrap justify-content-center align-items-baseline">
+          {
+            discussionsArray.map( discussion =>{
+              return(
+                <LibraryDiscussion
+                  contentId={discussion.contentId}
+                  //key={content.label}
+                  image={discussion.graphic}
+                  changeBook={this.props.changeBook}
+                  title={get.extractFromData.title(discussion.title, this.props.language)}
+                  author={discussion.author}
+                />
+              )
+            })
+          }
+        </div>
+
+        <h2 className={'sectionHeader'} id={'experiments'}>Experiments</h2>
         <div className="d-flex flex-wrap justify-content-center align-items-baseline">
           {
             experimentsArray.map( experiment =>{
-              console.log(experiment)
               return(
                 <LibraryExperiment
                   title={experiment.title.get(this.props.language)}
@@ -49,8 +79,8 @@ class LibraryBookList extends React.Component {
               )
             })
           }
-        </div>
 
+        </div>
       </div>
     );
   }

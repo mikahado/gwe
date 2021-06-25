@@ -367,7 +367,7 @@ function ReaderControlBar(props) {
       {readerProgress()}
 
       <div className={"col-auto standard-close no-gutters"}>
-        <ReadClose sessionInfo={props.sessionInfo} language={props.language} />
+        <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={props.content.format}/>
       </div>
     </div>
   );

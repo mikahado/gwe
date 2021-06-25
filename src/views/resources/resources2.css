@@ -1,11 +1,10 @@
 .resourcePageWrap {
   position: relative;
-  width: 100%;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  padding: 1rem;
   /*
    section h2{
      font-size: 1.25rem;
@@ -19,15 +18,6 @@
 
   */
 }
-.resourcePageWrap h1,
-.resourcePageWrap section h2 {
-  background-color: var(--dark-accent);
-  border-radius: 1rem;
-  color: aliceblue;
-  padding: 1rem;
-  margin: 1rem;
-  box-shadow: 0 0 1rem;
-}
 .resourcePageWrap .resourceCategory {
   display: flex;
   flex-direction: column;
@@ -35,17 +25,23 @@
   align-items: center;
   padding: 0.5rem;
   margin: 0.5rem;
-  background-color: var(--dark-accent);
   border-radius: 1rem;
+  width: 100%;
   color: aliceblue;
 }
 .resourcePageWrap .resourceCategory button {
   width: 17rem;
   height: 5rem;
 }
+.resourcePageWrap .resourceCategory .heading {
+  background-color: var(--primary-blue);
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
 
 .resourceError {
-  background-color: var(--red);
+  background-color: darkgray;
   color: aliceblue;
   border-radius: 1rem;
   padding: 0.5rem 1rem;

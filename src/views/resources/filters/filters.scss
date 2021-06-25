@@ -1,9 +1,6 @@
 .filters {
-  top: 1rem;
   background-color: hsl(120, 60%, 80%);
   border-radius: 1rem;
-  width: fit-content;
-  max-width: 80vw;
 
   color: aliceblue;
 
@@ -18,6 +15,8 @@
     //Spacing
     padding: 1rem;
     margin: 0.5rem;
+
+      width: 100%;
 
     //Display
     display: flex;

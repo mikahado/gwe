@@ -6,7 +6,7 @@ export function ReadClose(props) {
     if (props.sessionInfo) {
       return `/map/s-${props.sessionInfo.sessionId}/p-${props.sessionInfo.partNo}`;
     } else {
-      return "/library";
+      return `/library${props.librarySection ? `/section=${props.librarySection}` : '' }`;
     }
   }
 

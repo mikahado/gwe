@@ -1,9 +1,17 @@
-.guide section {
-  margin: 1rem 0;
+.guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.guide .guideSections {
+  height: fit-content;
   padding: 1rem;
-  background-color: var(--dark-accent);
+  max-height: 100vw;
+  position: sticky;
+  top: 1rem;
+  background-color: skyblue;
   border-radius: 1rem;
-  color: aliceblue;
 }
 .guide section h1 {
   text-align: center;
@@ -15,13 +23,22 @@
 .guide section li {
   margin-bottom: 1rem;
   text-align: left;
+  list-style-type: disc;
+  list-style-position: inside;
 }
-.guide section .textLink {
-  color: var(--dark-accent);
+
+.textLink {
+  color: aliceblue;
   font-weight: bold;
-  background-color: var(--light-green);
+  background-color: var(--primary-green);
   padding: 0.25rem;
   border-radius: 1rem;
+}
+
+.sectionButton {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=guide.css.map */

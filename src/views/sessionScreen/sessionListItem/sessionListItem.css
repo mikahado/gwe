@@ -66,8 +66,7 @@
   padding: 1rem;
 }
 .sessionGraphic .experiment svg {
-  width: 4rem;
-  height: 4rem;
+  height: 12rem;
 }
 
 .materialTitle {

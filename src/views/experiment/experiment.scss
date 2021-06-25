@@ -1,4 +1,5 @@
 .experimentWrap{
+    overflow-anchor: none;
     ul{
         //list-style-position: inside;
         padding-left: 1rem;
@@ -18,6 +19,7 @@
     }
     h1{margin: 1rem;}
     section{
+        overflow-anchor: none;
         background-color: var(--dark-accent);
         border-radius: 1rem;
         //margin: 1rem;
@@ -34,6 +36,7 @@
         margin-bottom: 1rem;
     }
     .body{
+        overflow-anchor: none;
         section{
             margin-bottom: 1rem;
         }
@@ -58,6 +61,7 @@
 
     }
     .instructions{
+        overflow-anchor: none;
         a{
             background-color: var(--primary-green);
             padding: 0.25rem;

@@ -8,28 +8,28 @@ export function ResourceList(props) {
   return (
     <div className={"position-relative"}>
       <section className={"d-flex flex-column align-items-center "}>
-        <h2>For Kid's Action</h2>
+        <h2 className={'sectionHeader'}>For Kid's Action</h2>
 
-        {filteredResources.kids.length ? (
-          filteredResources.kids.map((categoryObj) => {
-            return (
-              <ResourceCategory
-                heading={categoryObj.heading}
-                resourceList={categoryObj.list}
-                key={`Kids ${categoryObj.heading} Resource Category`}
-              />
-            );
-          })
-        ) : (
-          <p className={"resourceError"}>
-            No resources from this section match your filters. Check more boxes
-            above to see more results
-          </p>
-        )}
+          {filteredResources.kids.length ? (
+            filteredResources.kids.map((categoryObj) => {
+              return (
+                <ResourceCategory
+                  heading={categoryObj.heading}
+                  resourceList={categoryObj.list}
+                  key={`Kids ${categoryObj.heading} Resource Category`}
+                />
+              );
+            })
+          ) : (
+            <p className={"resourceError"}>
+              No resources from this section match your filters. Select more categories to see more results.
+            </p>
+          )}
+
       </section>
 
       <section className={"d-flex flex-column align-items-center "}>
-        <h2>To Learn More</h2>
+        <h2 className={'sectionHeader'}>To Learn More</h2>
         {filteredResources.learnMore.length ? (
           filteredResources.learnMore.map((categoryObj) => {
             return (
@@ -42,8 +42,7 @@ export function ResourceList(props) {
           })
         ) : (
           <p className={"resourceError"}>
-            No resources from this section match your filters. Check more boxes
-            above to see more results
+            No resources from this section match your filters. Select more categories to see more results.
           </p>
         )}
       </section>

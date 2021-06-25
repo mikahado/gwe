@@ -122,17 +122,21 @@ export class Resources extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showFilters: false,
       filters: getFilterState(),
     };
     this.changeFilter = this.changeFilter.bind(this);
+    this.toggleFilters = this.toggleFilters.bind(this);
     this.showAll = this.showAll.bind(this);
     this.hideAll = this.hideAll.bind(this);
   }
-
   changeFilter(category, name, value) {
     const newFilterState = this.state;
     newFilterState.filters[category][name] = value;
     this.setState(newFilterState);
+  }
+  toggleFilters() {
+    this.setState({showFilters: !this.state.showFilters})
   }
   showAll() {
     const allFilters = this.state.filters;
@@ -155,21 +159,30 @@ export class Resources extends React.Component {
 
   render() {
     return (
-      <div className={"row no-gutters w-100"}>
-        <div className={"col resourcePageWrap"}>
-          <h1>Resources</h1>
+      <div className={"resourcePageWrap"}>
+            <h1 className={'pageTitle'}>Resources</h1>
 
-          <Filters
-            filters={this.state.filters}
-            changeFilter={this.changeFilter}
-            showAll={this.showAll}
-            hideAll={this.hideAll}
-          />
+        <ResourceMessage filters={this.state.filters} toggleFilters={this.toggleFilters}
+        showFilters={this.state.showFilters}
+        />
 
-          <ResourceMessage filters={this.state.filters} />
+        {
+          this.state.showFilters ?
+            <Filters
+              filters={this.state.filters}
+              changeFilter={this.changeFilter}
+              showAll={this.showAll}
+              hideAll={this.hideAll}
+              hideFilters={this.toggleFilters}
+            />
+            :null
+        }
 
-          <ResourceList filters={this.state.filters} />
-        </div>
+          <div className={'pageBody'}>
+
+            <ResourceList filters={this.state.filters} />
+
+          </div>
       </div>
     );
   }

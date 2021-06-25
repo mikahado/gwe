@@ -30,28 +30,8 @@
   scrollbar-color: var(--green) var(--light-blue);
 }
 
-/* Page Title */
-.libraryTitle {
-  /* Size */
-  width: fit-content;
-  padding: 1rem;
-  margin-top: 1rem;
-  /* Border & Background */
-  border-radius: 1rem;
-  background: var(--primary-blue);
-  box-shadow: 0 0 1rem midnightblue;
-  /* Text */
-  text-align: center;
-  color: aliceblue;
-}
-.libSectionHeader{
-    background-color: var(--dark-accent);
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    color: aliceblue;
-    margin: 1rem;
-    width: 100%;
-}
+
+
 
 @media only screen and (max-width: 767px) {
   #Library {

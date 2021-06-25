@@ -27,6 +27,10 @@
   box-shadow: 0 0 1rem dimgrey;
 }
 
+* {
+  overflow-anchor: none;
+}
+
 .App {
   display: grid;
   grid-template-rows: auto 1fr;

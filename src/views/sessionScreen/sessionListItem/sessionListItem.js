@@ -5,6 +5,7 @@ import "./sessionListItem.css";
 import { Button } from "../../../components/buttons/buttons";
 import curriculum from "../../../data/curriculum/curriculum";
 import { Link } from "react-router-dom";
+import {sessionIcons} from "../sessionJump/sessionJump";
 
 export function expIcon(){
   return(
@@ -53,7 +54,7 @@ class SessionListItem extends React.Component {
               {
                 this.props.format === 'experiment' ?
                   <div className={'experiment'}>
-                    {expIcon()}
+                    {sessionIcons.experiment}
 
                   </div>
                   :

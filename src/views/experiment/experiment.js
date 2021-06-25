@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import {Button} from "../../components/buttons/buttons";
 
@@ -110,6 +110,9 @@ export function Experiment(props) {
     setLightboxSrc('');
   }
 
+  useEffect( ()=>{
+    window.scrollTo(0,0)
+  })
   return(
     <div className={'experimentWrap container-fluid'}>
 
@@ -118,9 +121,9 @@ export function Experiment(props) {
 
           <Lightbox imgSrc={lightboxSrc} closeLightbox={closeLightbox}/>
 
-          <MaterialHeader sessionInfo={props.sessionInfo} content={content} language={props.language} title={content.title.get(props.language)}/>
+          <MaterialHeader sessionInfo={props.sessionInfo} content={content} partLabel={'hide'} language={props.language} title={content.title.get(props.language)}/>
 
-          <ReadClose sessionInfo={props.sessionInfo} language={props.language}/>
+          <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'experiments'}/>
         </div>
 
       </div>
@@ -188,7 +191,7 @@ export function Experiment(props) {
         </div>
 
       </div>
-    </div>
 
+    </div>
   ) ;
 }

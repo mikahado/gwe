@@ -1,5 +1,4 @@
 import guide from './GWE Curriculum .pdf';
-import {Button} from '../../components/buttons/buttons';
 import React from 'react';
 
 export const guideText = [
@@ -176,7 +175,7 @@ export const guideText = [
         distributor websites.</p>,
       <p>We love questions and comments! For either, simply write to:</p>,
         <p><a
-          href={'mailto:someone@yoursite.com'}
+          href={'mailto:info@theglobalwarmingexpress.org'}
           target={'_blank'}
           rel={'noopener  noreferrer'}
           className={'textLink'}

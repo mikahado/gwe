@@ -1,12 +1,7 @@
 import React from "react";
 import "./guide.css";
 import {guideText} from "./guideText";
-import {Link} from "react-router-dom";
-
-import guide from "./GWE Curriculum .pdf";
 import { Button } from "../../components/buttons/buttons";
-
-let parse = require('html-react-parser');
 
 export function Guide(props) {
   function sectionLinkClickHandler(e){
@@ -32,7 +27,7 @@ export function Guide(props) {
                   section.heading ?
                     <Button
                       id={`Link - ${section.heading}`}
-                      onClick={sectionLinkClickHandler}
+                      click={sectionLinkClickHandler}
                       class={'sectionButton'}
                       text={section.heading}
                     />

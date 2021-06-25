@@ -4,7 +4,6 @@ import {sessionIcons} from "../../sessionScreen/sessionJump/sessionJump";
 //Style Sheet
 import "./libraryExperiment.css";
 import { Link } from "react-router-dom";
-import {expIcon} from "../../sessionScreen/sessionListItem/sessionListItem";
 
 function LibraryExperiment(props){
   return (

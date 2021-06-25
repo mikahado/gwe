@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 import "./resourceMessage.css";
 import {Button} from "../../../components/buttons/buttons";

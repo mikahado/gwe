@@ -11,6 +11,7 @@ import "./topnav.css";
 //Icon
 import icon from "./GWEicon.png";
 import { Link } from "react-router-dom";
+import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 
 export function NavButton(props) {
   return (
@@ -93,6 +94,16 @@ function TopNav(props) {
 
           {expand || !mobile ? (
             <div className="navButtons d-flex flex-column flex-md-row">
+              {
+                mobile ?
+                  <NavButton
+                    text={"Home"}
+                    link={"/"}
+                    linkPage={"splash"}
+                    page={props.page}
+                  />
+                  : null
+              }
               <NavButton
                 text={"Guide"}
                 link={"/guide"}

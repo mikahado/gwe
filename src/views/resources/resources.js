@@ -122,7 +122,7 @@ export class Resources extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilters: true,
+      showFilters: false,
       filters: getFilterState(),
     };
     this.changeFilter = this.changeFilter.bind(this);

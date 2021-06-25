@@ -141,7 +141,7 @@ export function Experiment(props) {
             :''
         }
 
-        <div className={'col body d-flex flex-column align-items-center'}>
+        <div className={'col-lg body d-flex flex-column align-items-center'}>
 
           {
             content.excerpts ?

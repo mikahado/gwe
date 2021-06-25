@@ -10,7 +10,7 @@ import { experimentsArray} from "../../../data/experiments/experiments";
 // Sub - Components
 import LibraryBook from "../libraryBook/libraryBook";
 import LibraryExperiment from "../libraryExperiment/libraryExperiment";
-import discussions, {discussionsArray} from "../../../data/discussions/discussions";
+import {discussionsArray} from "../../../data/discussions/discussions";
 import LibraryDiscussion from "../libraryDiscussion/libraryDiscussion";
 
 class LibraryBookList extends React.Component {

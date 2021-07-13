@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { InfoBubble } from "../../../components/infoBubble/infoBubble";
 import { Button } from "../../../components/buttons/buttons";
+import pageText from "../../../data/pageText";
 
 export function PageArrow(props) {
   const [bubble1, setBubble1] = useState(1);
@@ -38,7 +39,7 @@ export function PageArrow(props) {
         />
 
         <InfoBubble
-          message={"Next Page"}
+          message={pageText.labels.readLabels.nextPage.get(props.language)}
           id={"nextPageInfo"}
           visible={bubble1}
           type={"up"}
@@ -72,7 +73,7 @@ export function PageArrow(props) {
 
         {props.page > props.startPage ? (
           <InfoBubble
-            message={"Previous Page"}
+            message={pageText.labels.readLabels.prevPage.get(props.language)}
             id={"nextPageInfo"}
             visible={bubble2}
             type={"up"}

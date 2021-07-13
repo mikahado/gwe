@@ -6,6 +6,9 @@ import Summary from "../../components/summary/summary";
 import Sally from "../../components/sally/sally";
 import LibraryBookList from "./libraryBookList/libraryBookList";
 
+//Data
+import pageText from "../../data/pageText";
+
 // Style Sheet
 import "./library.css";
 import "./libraryRepeat.css";
@@ -85,7 +88,7 @@ class Library extends React.Component {
         <div className={"col"}>
           <div className={"Library"}>
             <div className={"libraryRepeat"}>
-              <h1 className={"pageTitle"}>Learning Library</h1>
+              <h1 className={"pageTitle"}>{pageText.pageTitles.library.get(this.props.language)}</h1>
 
               <LibraryBookList
                 changeBook={this.changeBook}

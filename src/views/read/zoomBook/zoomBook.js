@@ -1,6 +1,7 @@
+import React, { useState } from "react";
 import { InfoBubble } from "../../../components/infoBubble/infoBubble";
 import { Button } from "../../../components/buttons/buttons";
-import React, { useState } from "react";
+import pageText from "../../../data/pageText";
 
 export function ZoomBook(props) {
   const [bubble, setBubble] = useState(1);
@@ -26,7 +27,7 @@ export function ZoomBook(props) {
   if (props.visible) {
     return (
       <div className={"zoomWrap"}>
-        <InfoBubble message={"Page Zoom"} id={"zoomInfo"} visible={bubble} />
+        <InfoBubble message={pageText.labels.readLabels.pageZoom.get(props.language)} id={"zoomInfo"} visible={bubble} />
 
         <Button
           id={"zoomButton"}

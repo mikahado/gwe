@@ -12,6 +12,9 @@ import LibraryBook from "../libraryBook/libraryBook";
 import LibraryExperiment from "../libraryExperiment/libraryExperiment";
 import {discussionsArray} from "../../../data/discussions/discussions";
 import LibraryDiscussion from "../libraryDiscussion/libraryDiscussion";
+import pageText from "../../../data/pageText";
+
+let typeLabels = pageText.labels.materialTypes;
 
 class LibraryBookList extends React.Component {
   getLibraryList() {
@@ -43,13 +46,13 @@ class LibraryBookList extends React.Component {
   render() {
     return (
       <div id="libraryList" className={'pageBody LibraryList  p-md-2'}>
-        <h2 id={'books'} className={'sectionHeader'}>Books</h2>
+        <h2 id={'books'} className={'sectionHeader'}>{typeLabels.books.get(this.props.language)}</h2>
 
         <div id="libraryList" className="d-flex flex-wrap justify-content-center align-items-baseline">
           {this.getLibraryList()}
         </div>
 
-        <h2 className={'sectionHeader'} id={'discussion'}>Discussions</h2>
+        <h2 className={'sectionHeader'} id={'discussion'}>{pageText.labels.materialTypes.discussions.get(this.props.language)}</h2>
         <div className="d-flex flex-wrap justify-content-center align-items-baseline">
           {
             discussionsArray.map( discussion =>{
@@ -59,7 +62,7 @@ class LibraryBookList extends React.Component {
                   //key={content.label}
                   image={discussion.graphic}
                   changeBook={this.props.changeBook}
-                  title={get.extractFromData.title(discussion.title, this.props.language)}
+                  title={discussion.title.get(this.props.language)}
                   author={discussion.author}
                 />
               )
@@ -67,7 +70,7 @@ class LibraryBookList extends React.Component {
           }
         </div>
 
-        <h2 className={'sectionHeader'} id={'experiments'}>Experiments</h2>
+        <h2 className={'sectionHeader'} id={'experiments'}>{typeLabels.experiments.get(this.props.language)}</h2>
         <div className="d-flex flex-wrap justify-content-center align-items-baseline">
           {
             experimentsArray.map( experiment =>{

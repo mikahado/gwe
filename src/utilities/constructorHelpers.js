@@ -9,6 +9,8 @@ const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
 export function assembleBookPages(contentId, endPage) {
   const contentPages = [];
 
+  console.log(translationsSpa[contentId]);
+
   for (let page = 1; page <= endPage; page++) {
     contentPages.push({
       img: `${process.env.PUBLIC_URL}/assets/book/${contentId}/pages/${page}.jpg`,

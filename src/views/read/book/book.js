@@ -5,6 +5,8 @@ import { ZoomBook } from "../zoomBook/zoomBook";
 
 import pageText from "../../../data/pageText";
 
+let parse = require('html-react-parser');
+
 export function Book(props) {
   //STATES
   const [pageZoom, setPageZoom] = useState(0);
@@ -39,7 +41,7 @@ export function Book(props) {
     if (props.language !== "eng") {
       function compileTranslations(translationData) {
         return translations.map((phrase) => {
-          return <p>{phrase}</p>;
+          return <p>{parse(phrase)}</p>;
         });
       }
 

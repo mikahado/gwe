@@ -54,7 +54,7 @@ export function ReaderStart(props) {
           <div className={"position-relative"}>
             <Button
               click={getClick}
-              text={"Read To Me"}
+              text={pageText.buttons.read.readToMe.get(props.language)}
               language={props.language}
               iconType={"rightArrow"}
             />
@@ -100,7 +100,7 @@ export function ReaderStart(props) {
         )}
         {runTime ? <p className={"mt-1"}>Run-time: {runTime}</p> : ""}
         {showButton()}
-        {reader ? <Button text={"About This Reader"} click={playIntro} /> : ""}
+        {reader ? <Button text={pageText.buttons.read.aboutThisReader.get(props.language)} click={playIntro} /> : ""}
       </div>
     );
   } else {

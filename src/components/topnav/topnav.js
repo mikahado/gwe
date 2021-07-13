@@ -8,10 +8,14 @@ import { Button } from "../buttons/buttons";
 // Style Sheet
 import "./topnav.css";
 
+//Data
+import pageText from "../../data/pageText";
+
 //Icon
 import icon from "./GWEicon.png";
 import { Link } from "react-router-dom";
-import NavbarCollapse from "react-bootstrap/NavbarCollapse";
+
+let navText = pageText.buttons.nav;
 
 export function NavButton(props) {
   return (
@@ -84,7 +88,7 @@ function TopNav(props) {
         <div className={"position-relative"}>
           {mobile ? (
             <Button
-              text={"Menu"}
+              text={navText.menu.get(props.language)}
               iconType={!expand ? "downArrow" : "upArrow"}
               click={toggleMenu}
             />
@@ -97,7 +101,7 @@ function TopNav(props) {
               {
                 mobile ?
                   <NavButton
-                    text={"Home"}
+                    text={navText.home.get(props.language)}
                     link={"/"}
                     linkPage={"splash"}
                     page={props.page}
@@ -105,35 +109,35 @@ function TopNav(props) {
                   : null
               }
               <NavButton
-                text={"Guide"}
+                text={navText.guide.get(props.language)}
                 link={"/guide"}
                 linkPage={"guide"}
                 page={props.page}
               />
 
               <NavButton
-                text={"Sessions"}
+                text={navText.sesssions.get(props.language)}
                 link={"/map"}
                 linkPage={"sessions"}
                 page={props.page}
               />
 
               <NavButton
-                text={"Library"}
+                text={navText.library.get(props.language)}
                 link={"/library"}
                 linkPage={"library"}
                 page={props.page}
               />
 
               <NavButton
-                text={"Resources"}
+                text={navText.resources.get(props.language)}
                 link={"/resources"}
                 linkPage={"resources"}
                 page={props.page}
               />
 
               <NavButton
-                text={"About GWE"}
+                text={navText.aboutGWE.get(props.language)}
                 link={"/aboutGWE"}
                 linkPage={"aboutGWE"}
                 page={props.page}

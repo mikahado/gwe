@@ -5,7 +5,7 @@ const translationsSpa = {
       `EL AGUA, TIERRA, Y AIRE QUE COMPARTIMOS`,
 
       `MOLLY BANG
-                `,
+`,
     ],
     2: [
       `
@@ -1274,6 +1274,450 @@ const translationsSpa = {
             `,
     ],
   },
+
+  globalWarmingExpress: {
+    1: [
+      `El Tren del
+Calentamiento
+Global`,
+      `Escrito por Marina Weber`,
+      `Ilustrado por Joanna Whysner`,
+      `Prólogo por el Senador de los Estados Unidos Tom Udall`
+    ],
+    2: [
+      `Para nuestra maestra de tercer grado, Barbara McCarthy, quien nos inició
+en este viaje.`
+    ],
+    3: [
+      `Contenido`,
+      `Prólogo`,
+      `Reconocimientos`,
+      `Personajes`,
+      `Mapa`,
+      `Introducción`,
+      `The Fluff`,
+      `Creamy`,
+      `El Tren Mágico`,
+      `Nuevo México`,
+      `Incendio`,
+      `El Efecto Invernadero`,
+      `Flora`,
+      `Edgar`,
+      `El Momento Crítico`,
+      `Las Arenas Petrolíferas`,
+      `Lady Athabasca`,
+      `La Costa del Golfo`,
+      `Acorn Creek`,
+      `La Ciudad de Nueva York`,
+      `La Tormenta`,
+      `La Casa Blanca`
+    ],
+    4: [
+      `Prólogo`,
+
+      `Mi padre solía decir que cada generación tiene un encuentro con la tierra. Se nos confía la tierra. Ese es nuestro legado de quienes nos preceden. Es nuestra obligación hacia los que nos siguen. Somos mayordomos de este planeta, y de todos sus hábitats y tesoros naturales.`,
+        `Hace cinco años, Marina Weber me contactó. Me dijo que estaba escribiendo un libro sobre el calentamiento global, y me pidió ayuda. Marina puede haber sido muy joven, tenía solo nueve años, pero ella estaba decidida. Y cumplió con su palabra. Ella escribió su libro, y qué libro tan memorable ha resultado ser.`,
+        `Marina y su talentosa amiga, Joanna Whysner, quien a proveído maravillosas ilustraciones, han creado una fábula moderna. Al hacerlo, están haciendo sonar la alarma sobre el reto muy real del cambio climático.`,
+        `En su historia, dos niñas viajan a Washington D.C., en un tren mágico. Su misión: decirle al mundo que debemos cambiar. Su lección: Podemos cambiar si todos trabajamos juntos.`
+    ],
+    5: [
+      `En cada paso de su travesía, conocen a algunos de los animales que han sido lastimados o dejado huérfanos, o ambas cosas, debido al cambio climático. Ven el daño a nuestro aire, nuestra agua, y nuestra tierra. Desde incendios forestales y la sequía en Nuevo México, hasta un huracán en Nueva York, el mensaje es claro. El planeta se está calentando. La Tierra está en peligro. Todos debemos hacer algo sobre esto.`,
+        `Como explica Marina, no podemos seguir sofocando al planeta con gases de invernadero. Nuestro mundo se está sobrecalentando. Si no hacemos todos nuestra parte, “la Tierra no puede destaparse de sus cobijas”.`,
+`Marina y Joanna y sus amigos animales-- incluyendo a un pingüino exiliado llamado The Fluff, una perica estudiosa llamada Inoah, un cachorro de oso negro llamado Tomás, y un canario ángel guardián llamado Croissant—siguen adelante. Su viaje a través de nuestra nación es en un tren impulsado por la esperanza. Y su súplica a todos nosotros es esta: También tenemos que continuar. Tampoco podemos darnos por vencidos.`,
+  `<i>El Tren del Calentamiento Global</i> es una llamada de atención sobre el gran reto del cambio climático—y una que espero que todos escuchemos.`,
+    ],
+    6: [
+      `Gracias Marina, por una extraordinaria historia de aventuras, y por recordarnos, como lo hizo mi padre en su época, que tenemos que cuidar nuestro planeta. Tenemos que protegerlo para tu generación, y para las generaciones que vienen.`,
+      `--Tom Udall, Senador de los Estados Unidos para Nuevo México`,,
+    ],
+    7: [
+      `Reconocimientos`,
+      `Nos gustaría dar las gracias a muchas personas quienes han ayudado a hacer este libro realidad.`,
+      `A nuestros padres, quienes apoyaron la idea de escribir e ilustrar un libro; a Amy Bianco, por tanta ayuda con la ciencia; a Maggie Blanchard, por el diseño; al Senador Tom Udall, por escribir el prólogo; y al congresista Ben Ray Lujan, por escucharnos y creer en nosotras.`,
+      `También queremos agradecer a todos los que son parte del movimiento de Global Warming Express (El Tren del Calentamiento Global), la Mesa Directiva, La Junta de Asesores, los internos, los voluntarios, los maravillosos donadores, Dr. Leslie Lakind, el alcalde Javier Gonzales, el exalcalde David Coss, el congresista Peter Ives, y a todos los niños GWE en todos lados. Gracias por unirse a nuestra causa y hacer la diferencia.`,
+`--Marina y Joanna`,
+    ],
+    8: [`Personajes`,
+      `La autora Marina Weber nació en Seattle y ahora vive en Santa Fe, Nuevo México, en donde ella asiste a Desert Academy. Marina ha sido una activista apasionada desde que tenía seis años. Marina se representa a sí misma en la historia. Ella cree en corregir errores y en ayudar a los demás a ser escuchados, vistos, y ayudados. También es valiente y decidida cuando se trata de completar su misión. En su viaje, Marina aprende una gran lección sobre el poder limitado de los adultos y su propio poder emergente; y aprende que no todas las travesías—de hecho casi ninguna—se mueven en línea recta u obtienen el resultado esperado. Marina llega a creer en el poder de la travesía misma, y en el poder de los que la emprenden.`,
+    ],
+    9: [`La ilustradora Joanna Whysner también asiste a Desert Academy. Se mudó a Santa Fe de Sleepy Hollow, Nueva York, cuando tenía ocho años. Joanna ha sido una artista seria desde muy pequeña, y ha ganado muchos premios por su arte. En la historia, Joanna crea su mundo en papel, en línea, color y forma. Su sentido de travesura y de humor le ayuda a convertir cada dibujo en una crónica. Sin embargo, el sentido de diversión de Joanna es retado por las terribles, y reales, imágenes que observa en el tren. La travesía la motiva a ver más allá de la superficie de sus imágenes, y a encontrar el valor para representar lo que es alarmante tanto como lo que es agradable. Ella llega a darse cuenta de que la verdad se tiene que decir, pero que puede ser aceptada e inclusive acogida.`,
+      `The Fluff es un pingüino emperador de Antártida. The Fluff es un tipo práctico y decidido, que se da cuenta que algo anda mal en su mundo y que necesita ayuda para corregirlo.`,
+      `Croissant es un canario que vuela para el Tren Panadero. El mantiene informados a los padres de las niñas sobre su paradero con notas amarillas. Lo`,
+    ],
+    10 : [`podrás ver en ilustraciones a lo largo del libro.`,
+      `Creamy es una foca arpa nacida en Groenlandia y criada en el Zoológico de San Diego. Ella tiene una mentalidad positiva y es compasiva hacia los demás, pero es desafiada por todos los problemas con los que se encuentra en esta travesía.`,
+      `Inoah es una perica del Amazonas que es mascota de Joanna. Gracias a Inoah, todos los animales y las niñas aprenden lo que necesiten saber sobre las causas y efectos del calentamiento global.`,
+    ],
+    11: [
+      `Tomás Ascensión Leyba Gonzales es un oso negro cuya familia ha vivido en las mismas montañas de Nuevo México durante generaciones. Él y su amiga, Sally, una Salamandra de Las Montañas Jemez, son rescatados por las niñas y traídos a bordo del tren.`,
+      `Flora es una osa polar del oeste de la Bahía Hudson quien se dirige por tierra al Parque Nacional Glacier. Flora es una osita fuerte, pero ella aprende que para poder salir adelante, necesita ser flexible y optimista.`,
+    ],
+    12: [
+      `Edgar es una cabra montés que vive en el Parque Nacional Glacier. La pérdida de los glaciales y de su prado alpino lo han dejado sin ningún lugar a donde ir, así que decide unirse a la travesía.`,
+      `Lauren es una caribú del bosque boreal que vive en Alberta, Canadá. Ella está desesperada por escapar del paisaje lunar en el cual se ha convertido su hogar con la extracción de arenas petrolíferas que está sucediendo, y encontrar un lugar seguro para vivir.`,
+      `Lady Athabasca es una grulla blanca que pasa los veranos en sus ancestrales criaderos en el Parque Nacional Wood Buffalo. Amablemente ofrece acompañar a las niñas y a sus amigos a la Costa del Golfo de Texas para aprender sobre el derrame petrolero de Deepwater Horizon.`
+    ],
+    13: [
+      `En el golfo conocen a Zolo, un patito joyuyo muy platicador que perdió a su familia durante el derrame petrolero de Deepwater Horizon.`,
+`Bobbie Sue Sunfish es un pez luna verde de Acorn Fork Creek en Kentucky. A Bobbi Sue no le importa para nada el calentamiento global, pero cuando se da cuenta que los esfuerzos para evitarlo también limpiarían el agua, decide subir a bordo.`,
+`Zingo es una rata café que vive en las alcantarillas de la ciudad de Nueva York. Él es un viejo hippie en peligro de volverse completamente indiferente hasta que conoce a Marina y a Joanna. Con un brillo militante en sus ojos, les enseña a las niñas sobre el poder del activismo político.`,
+    ],
+    14: [
+      ``
+    ],
+    15: [
+      `Introducción`,
+      `Hola, mi nombre es Marina, y estoy aquí para hablarles sobre el calentamiento global. Estoy en secundaria en Desert Academy en Santa Fe, Nuevo México. He estado interesada en el calentamiento global desde tercero de primaria, cuando aprendí que el calentamiento global está arruinando los hábitats de los animales de la selva tropical. El calentamiento global es muy importante para mí, porque quiero que mis hijos, nietos, y bisnietos tengan vidas felices sin tenerse que preocupar por el medio ambiente.`,
+        `Nuestra Tierra se está calentando principalmente debido a los gases que bombeamos a la atmósfera cuando quemamos combustibles fósiles para conducir nuestros autos, calentar nuestras casas, usar nuestros electrodomésticos, y fabricar cosas. Necesitamos`,
+    ],
+    16: [
+      `pensar sobre lo que le estamos haciendo a la Tierra porque está cambiando rápido! Ahora tenemos tiempo limitado para disminuir la velocidad del calentamiento global. Continúa leyendo y verás lo que quiero decir.`,
+`Le escribía al presidente Obama sobre el cambio climático, y siempre me contestaba. Al menos, creí que me contestaba, hasta que un día me di cuenta de que todas las respuestas que había recibido de él eran básicamente iguales.`,
+
+
+
+`Esto es lo que decía una de ellas:`
+    ],
+    17: [
+      `LA CASA BLANCA`,
+      `WASHINGTON`,
+      `8 de Abril, 2010`,
+      `Querida Estudiante:`,
+`Gracias por tu amable nota. Tus palabras consideradas se unen a un coro de millones de americanos quienes están ansiosos de dirigir a nuestra nación hacia un mejor mañana.`,
+  `Cada día, soy inspirado por los mensajes alentadores de esperanza y determinación que he recibido de estudiantes de todo el país. América necesita jóvenes como tú que están estudiando duro en la escuela, sirviendo a su comunidad, y soñando grandes sueños. Nuestro país confronta grandes retos, pero los superaremos si trabajamos juntos.`,
+  `El futuro de América será determinado por nuestra voluntad de apoyarnos unos a otros y avanzar como un pueblo y una nación. Con tu ayuda, construiremos sobre lo que ya hemos logrado y pondremos una nueva base para progreso real y duradero.`,
+  `Sinceramente,`,
+  `(Barack Obama signature)`,
+    ],
+    18: [
+      `El año pasado aprendí que esto es lo que llaman una carta modelo. Probablemente un compañero de trabajo del presidente leyó mis cartas y me contestó. A pesar de que yo escribía mis cartas al presidente a mano, obviamente él no las leía. ¡Así que decidí que escribiría un libro sobre el calentamiento global y se lo traería al presidente!`, ,
+
+  `Esta es mi buena amiga Joanna. Ella es una increíble artista, así que le pregunte, “Joanna, me preguntaba si - y puedes decir que no- ¿harías algunos dibujos para ilustrar mi libro?`,
+    ],
+    19: [
+      	`“Necesito mostrar cómo los hábitats de los animales están siendo destruidos, para que los adultos puedan entender que tenemos que hacer algo sobre el calentamiento global. El Dr. James Hansen, un famoso científico del clima, me dijo que los animales están trabajando duro para adaptarse al cambio climático, pero creo que necesitan nuestra ayuda. ¿Me ayudas?”`,
+
+	`A Joanna le encantó la idea del libro, y dijo, “¡Llamémoslo El Tren del Calentamiento Global e invitemos a otras personas a subir a bordo!”`,
+
+	`Así que ahora les voy a contar sobre El Tren del Calentamiento Global y nuestro viaje a ver al presidente en Washington D.C.`,
+
+  `La historia comienza en la Antártida…`,
+    ],
+    20: [''],
+    21: [
+      `The Fluff`,
+
+`Una tarde tibia y soleada de primavera, en el cementerio de pingüinos en la costa de Queen Maud Land, Antártida, un pequeño pingüino emperador llamado The Fluff lloraba por su madre. Ella había muerto tras haberse tragado un pedazo de plástico que flotaba en el océano.`,
+
+
+
+`Después del funeral, los miembros de su colonia le ofrecieron el pésame y se retiraron, dejándolo solo, sentado en una roca y mirando hacia el mar. El recordaba haberse sentado en esta misma roca cuando era mucho más pequeño, un día frio y soleado de primavera cuando habían enterrado a su abuelo. Ahora la roca se encontraba bajo el agua, y el sol se sentía caliente en su espalda.`,
+    ],
+    22: [
+      	`“¿Por qué está el agua tan alta y el sol tan caliente?”, se preguntaba.`,
+
+  `Se quitó su gorro y se rascó la cabeza con su aleta.`,
+
+	`“Si esto continúa,” pensó, “pronto no quedará cementerio.”`,
+
+
+
+	`The Fluff era muy inteligente y siempre había sido de gran ayuda a su colonia. Cuando otro pingüino tenía un problema, The Fluff siempre tenía una solución, pero él no podía entender que le estaba sucediendo a su tierra. Ahora, por primera vez en su vida, se sentía un poco temeroso.`,
+],
+    23: [
+      `“¡A pesar de que odio tenerme que ir,” pensó, “por el bien de la colonia, tengo que encontrar la respuesta a esto!”`,
+
+	`Su padre había sido capitán marino pingüino quien había naufragado en alta mar cuando The Fluff era muy pequeño. Todo lo que The Fluff tenía para recordarlo era su pequeño bote salvavidas. The Fluff miro hacia el mar, sintiéndose solo en el mundo. “Necesito encontrar a mi amiga Creamy.” pensó, “¿Pero, cómo puedo llegar a ella?`,
+    ],
+    24: [
+      `¡Zas! Se le prendió un foco en la cabeza. “¡El bote salvavidas anaranjado de mi papá!” pensó. “¡Puedo usar eso!”`,
+
+`The Fluff se empujó al mar Weddell cuando el sol se ponía.`,
+
+`El remaba todo el día y flotaba en la corriente de noche, soñando sobre su encuentro con Creamy. Al despertar una mañana, vio tierra. Después él se enteraría de que estaba en el Golfo de California.`,
+    ],
+    25: [],
+    26: [
+      `Entonces, The Fluff, quien había vivido toda su vida en agua fría y hielo, de pronto sintió una cálida brisa del sur y olió el delicioso aroma de camarón. Al acercarse a la costa, él sabía que estaba muy lejos de casa, pero mucho más cerca de su querida Creamy. Hambriento, preocupado, y de pronto sintiéndose muy acalorado, The Fluff amarró su bote y fue en busca de aire acondicionado y una ducha fría.`,
+
+        `Acostado en su cama de hotel esa noche, se preguntó cómo encontraría a su amiga. Hasta donde él sabía, ella aún estaba en el zoológico de San Diego.`,
+    ],
+    27: [
+      `The Fluff cayó en un profundo sueño, lleno de molestos sueños. Imágenes de su madre y de su padre iban y venían mientras que él daba vueltas en la cama. En todas las fotos de su hogar, el océano subía y subía. A medianoche, The Fluff despertó sobresaltado. Se sentó y se dio cuenta de que necesitaba más que a su vieja amiga. Necesitaba ayuda de muchos otros para él y para su mundo.`,
+
+        `El necesitaba ayuda de aquellos en quien jamás había confiado, o siquiera conocido antes.`,
+    ],
+    28: [
+      `Creamy`,
+
+      `La siguiente mañana Creamy despertó en su cueva de plástico con el sonido de golpes y estruendos. Había surgido un alboroto justo afuera de su recinto. Los empleados del zoológico corrían de un lado para otro, gritando sobre un pingüino que parecía se había escapado.`
+    ],
+    29: [
+
+      `Creamy escuchaba a medida que el alboroto se acercaba. Un joven pingüino casi del mismo tamaño de Creamy se aproximaba hacia el recinto de focas en donde vivía Creamy. Mientras el abría la puerta con su pico y entraba apresurado, se acercó a Creamy y preguntó, “¿En dónde me puedo esconder?” Ella se apresuró con el nuevo pingüino hacia unas rocas artificiales cercanas. Ella le dijo, “Soy Creamy”.`,
+
+`The Fluff se le quedó viendo azorado. “¡Por fin te encontré!” le dijo. “¿Te acuerdas de mí? Te visité en el zoológico cuando tenía seis años mientras viajaba con mi padre, el capitán marino. Te dije que algún día volvería para liberarte.”`,
+    ],
+    30: [
+      `“¡Te recuerdo!” exclamó muy fuerte Creamy. “¡Tenías plumas esponjosas por todos lados!”`,
+,
+`“Sí, por eso me llamó mi padre The Fluff.” Luego dijo, “¿Me puedes ayudar? Necesito ayuda. Mi tierra necesita ayuda. ¡Tú necesitas ayuda!”`,
+,
+`Creamy era una foca arpa. Como todas las focas arpa, Creamy había sido dejada en el hielo al nacer en el este de Groenlandia cuando tenía solo doce días de nacida. Aun no estaba lista para nadar cuando, debido al calentamiento global, el hielo en el que se encontraba se derritió demasiado temprano. Ella se hubiera ahogado de no ser por dos amables biólogos de vida silvestre que la encontraron y rescataron. La mandaron al zoológico de San Diego, California, y de ahí en adelante jamás volvería a ver a sus padres.`,
+    ],
+    31: [
+      `Desde entonces, Creamy se había estado preguntando qué le estaba sucediendo al planeta. Ella siempre había sido muy amable, y siempre trataba de ayudar a quienes lo necesitaban. A Creamy se le ocurrió la idea de preguntarles a los otros animales del zoológico si sabían algo sobre lo que le estaba pasando al planeta. De esta manera, aprendió mucho sobre el medio ambiente.`,
+
+        `Ahora The Fluff la había encontrado, y tenían mucho de qué hablar. Platicaron hasta muy noche. Se dieron cuenta de que ambos ahora se encontraban solos. Se necesitaban. Y necesitaban encontrar una manera de ayudar al mundo a no cambiar tan rápidamente.`,
+
+        `Decidieron que necesitaban algún tipo de transporte humano para salir del zoológico.`,
+
+	`“He escuchado que hay un viejo tren del zoológico que no se ha usado en más de treinta años, pero tal vez funcione,” dijo Creamy. “Siempre se nos dijo que tenía algo especial, pero nadie recuerda qué es.”`,
+    ],
+    32: [
+      `“Genial,” dijo The Fluff. “¡Vamos!”`
+    ],
+    33: [
+      `El Tren Mágico`,
+
+      `Esa noche era el solsticio de verano, el día más largo del año. Al caer la noche y cuando todos los animales del zoológico se fueron callando, los dos amigos salieron a escondidas del recinto de las focas. Al acercarse al cobertizo en donde el tren abandonado había estado sin usarse por tantos años, escucharon ruidos extraños, como metal rechinando. Creamy miró a The Fluff, sus ojos brillando con emoción.`,
+
+	`“Algo maravilloso va a pasar,” ella susurró. “¡Lo siento!”`,
+
+	`Asomándose por las ventanas sucias del cobertizo, ellos vieron al tren sacudirse y temblar. Vieron décadas de polvo y óxido caer de su cuerpo hasta que la vieja máquina de vapor parecía brillar. Entonces el cobertizo mismo comenzó a sacudirse y temblar. ¡The Fluff y Creamy también temblaban y se sacudían al mirar al tren crecer al doble ante sus ojos! Hermosas burbujas de colores y mariposas aleteando llenaban el cobertizo, y con un crash! Las puertas grandes se abrieron repentinamente y el tren se movió en la noche bajo la luz de la luna, deteniéndose enfrente de`,
+],
+    34: [
+      `los dos amigos.`,
+
+        `La puerta del primer vagón se abrió, y antes de que el supiera lo que estaba pasando, The Fluff sintió a Creamy empujarlo y subirlo al tren. Creamy iba detrás de él, aplaudiendo sus aletas.`,
+
+	`“¡Aquí vamos!” ella reía.`,
+
+  `Con sus narices pegadas en la gran ventana, veían como el tren avanzaba bajo la luz de la luna pasando las jaulas de los animales, por la ciudad durmiente, y hacia el océano. Justo cuando pensaban que iban a entrar al mar, el tren giró bruscamente hacia la derecha y se dirigió hacia el norte por la costa.`,
+],
+    35: [
+      	`“¡Wow!” The Fluff se dijo a sí mismo. “Me pregunto a donde vamos.”`,
+
+	`Exhaustos de tanta emoción, ambos se echaron en los cómodos asientos y miraron por la ventana a los paisajes que iban pasando.`,
+
+  `Después de rato, a The Fluff se le ocurrió algo. “¿Que combustible usa este tren? preguntó. “No veo nada de humo.”`,
+
+`“¡Mira!” contestó Creamy, apuntando por la ventana.`,
+
+  `Burbujas y mariposas habían llenado el aire alrededor del tren. La imagen de las hermosas burbujas y mariposas en la brillante luz de la luna los hizo a ambos sentir muy felices y con esperanza.  Y al sentirse así, parecía que el tren viajaba a una velocidad más alta.`,
+
+	`“¿Por qué aceleramos?” preguntó The Fluff. Entonces tuvo una idea inspirada. “¡Oh, espera un momento! ¡Tal vez cuando tenemos pensamientos felices y positivos, el tren se acelera!”`,
+    ],
+    36: [
+      	`“Entonces, si estamos tristes o negativos... ¿el tren irá más despacio?” se preguntó Creamy.`,
+
+	`“Intentémoslo,” dijo The Fluff. “Piensa en algo muy triste. Piensa en—“`,
+
+`“—nuestros padres,” dijo Creamy.`,
+
+  `Se miraron con lágrimas en los ojos. Entonces otra sacudida los hizo mirar por la ventana de nuevo. El tren iba muy despacio. Se miraron el uno al otro, sus ojos grandes al comprender.`,
+
+	`“Yo creo,” murmuró Creamy, “que es mejor que pensemos positivamente.”`,
+    ],
+    37: [
+      	`“Creo que tienes razón Creamy,” dijo The Fluff.`,
+
+	`“¡Podemos hacerlo!” él gritó.`,
+
+	`“¡Sí, sí podemos!” gritó Creamy.`,
+
+  `Entonces ambos exclamaron, “¡Vamos, hermoso tren, hagámoslo!”`,
+
+	`Y una vez más, el tren estaba rodeado de millones de burbujas y mariposas. Avanzó adelante en la noche, y casi parecía volar!`,
+    ],
+    38: [
+      `Nuevo México`,
+      `La siguiente mañana, Creamy amaneció justo a tiempo para ver un letrero que decía, “Bienvenido a Nuevo México.”`,
+      `“¿Me pregunto por qué el tren nos trajo aquí?” dijo Creamy. “Tendremos que esperar para saberlo,” contestó The Fluff.`,
+      `Ya pasaba de la medianoche cuando llegaron a una vieja reja de madera en un muro de adobe.`,
+      `“No nos bajemos todavía,” dijo The Fluff. “Presiento que ellos vendrán a nosotros, quienquiera que sean.”`,
+    ],
+    39: [
+      `,entro de la casa, Marina despertó a su amiga Joanna. “Creo que hay algo afuera,” susurró.`, `“Aaaaaa … léjame en paz” bostezó Joanna.`,
+      `“¡Joanna!” Marina la tumbó de la cama.`,
+      `“¡Okey, okey!” dijo Joanna al pararse. “¿Despierto a mis padres?”`,
+      `“Pues…,” dijo Marina, mirando por la ventana. “No creo que sea necesario, pero creo que será mejor vestirnos.” puso su dedo en sus labios.`,
+      `“¡Squak!”`,
+      `“Oh no,” dijo Joanna. “Despertamos a Inoah. Ella nunca se queda callada.”`,
+      `“Tal vez debamos traerla,” sugirió Marina.`,
+      `Joanna retiró silenciosamente la manta que cubría la jaula de la perica.`,
+      `“¡No irse sin mí! ¡No irse sin mí!” gritaba la perica.`,
+      `“Shhhh!” dijo Joanna al abrir la puerta de la jaula de Inoah. La perica caminó cuidadosamente por su brazo hasta sentarse en su hombro.`,
+      `Las niñas abrieron la puerta de enfrente silenciosamente, solo para encontrar a un pingüino parado al lado de un tren que brillaba en la noche.`,
+      `“¿Quién eres?” el pingüino y las niñas preguntaron al mismo tiempo. Pero antes de que alguno pudiera contestar, el tren comenzó a moverse.`,
+    ],
+    40: [`“¡Vengan!” gritó The Fluff al brincar dentro de la puerta abierta. “¡Las necesitamos! ¡El tren las encontró porque pueden ayudar!”`,
+      `“¿Qué?” gritó Joanna.`,
+      `El tren se iba. “¡Corre!” gritó Marina. “¡Vamos!”`,
+      `Pero antes de que se dieran cuenta, estaban siendo jaladas a bordo. “¡Estoy siendo jalada por…aletas!” dijo Joanna. Y de pronto estaban dentro del tren en marcha.`,
+      `Creamy y The Fluff les contaron a las niñas como habían escapado del zoológico porque querían ayudar a otros animales, pero que no sabían hacia donde se dirigía el tren.`,
+    ],
+    41: [`“¡Hacia el Este! ¡Hacia el Este!” interrumpió Inoah.`,
+      `“Esperen un momento… ¡Tal vez estaban destinados a recogernos!” exclamó Marina. “Joanna y yo queremos conocer al presidente de los Estados Unidos para decirle que el calentamiento global está perjudicando a los animales, y que se tiene que resolver inmediatamente.”`,
+      `“Que hace el presidente?” preguntó The Fluff.`,
+      `“El controla a los Estados Unidos,” contestó Marina.`,
+      `“Bueno, entonces vayamos juntos,” dijo Creamy. “¡Nosotros también queremos hacer un cambio!”`,
+    ],
+    42: [`Incendio`,
+      `Dentro del tren, hilos de humo flotaban en el aire.`,
+      `“¿Qué es ese olor?” preguntó The Fluff.`,
+      `“Oh,” dijo Marina, “es humo de un incendio forestal. Siempre hemos tenido incendios en el verano, pero en años recientes, han habido más. Joanna, huele como si tu papa estuviera cocinando el desayuno!”`,
+      `Joanna sonrió. “Es porque el calentamiento global está causando terribles sequías en esta área,” dijo, seria de nuevo. “Nuevo México ha estado en sequía durante años.”`,
+      `El tren traqueteo hacia dentro del Bosque Nacional Santa Fe.`,
+      `“¡Oh cielos!” dijo Creamy. “¿Esto es lo que es un incendio?”`,
+      `Afuera de la ventana, el sol de la mañana había desaparecido, y el cielo era gris. Surgían llamas arriba de ellos, rozando la montaña cubierta de árboles. Las niñas y sus nuevos amigos miraban con horror.`,
+      `“Creo,” dijo The Fluff en voz baja, “que como el tren es mágico, no se nos puede lastimar. ¡Al menos eso espero!”`,
+    ],
+    43: [
+
+    ],
+    44: [`En eso, vieron a un cachorro de oso negro acurrucado bajo un árbol. La corona del árbol se estaba quemando.`,
+      `El tren se detuvo tan repentinamente que una puerta se abrió de pronto. El grupo corrió a recoger al cachorrito, quien parecía estar durmiendo.`,
+      `“Carguémoslo, metámoslo al tren, y vámonos de aquí,” dijo The Fluff.`,
+      `Las dos niñas cargaron cuidadosamente al osito. Apenas podían ver al tren a pesar de que se encontraba a solo unos pies de distancia. Creamy no podía dejar de toser. En cuanto se treparon al tren, este salió disparado. Las puertas se cerraron mientras que entraba humo a chorros al vagón, junto con algunas de las burbujas del tren.`,
+      `Cuando Joanna acomodaba cuidadosamente al osito en un asiento, observó algo en sus patas.`,
+      `“Está agarrando algo,” dijo.`,
+      `“¡Pero sus patas—están quemadas!” exclamó Marina.`,
+    ],
+    45: [`Las niñas se miraron angustiadas. En silencio, The Fluff apuntó a las burbujas. Estaban flotando hacia el oso dormido—y cayendo en sus patas con un destello.`,
+      `“Es increíble,” dijo Marina. “¡Sus patas están sanando!”`,
+      `El tren ya se encontraba lejos del incendio forestal cuando el oso despertó.`,
+      `“¿Quiénes son?” dijo. “¿Y qué estoy haciendo aquí?”`,
+      `“Tu estabas…Nosotros somos...,” comenzó Creamy, pero se detuvo cuando una pequeña salamandra brincó al suelo. Era tan pequeña que nadie la había notado en la pata lastimada del oso.`,
+      `“Esta es Sally. Ella es una Salamandra de las Montañas de Jemez,” dijo el cachorro de oso. “Y mi nombre” agregó con orgullo, “es Tomás Ascensión Leyba Gonzales—pero me pueden llamar simplemente Tomás.”`,
+    ],
+    46: [
+      `“¡Yo soy especial!” chilló la pequeña salamandra mientras que The Fluff la recogía torpemente. “¡Yo estoy en peligro de ex-tin-ción!”`,
+      `“Sí, mijita, eres especial,” dijo Tomás cariñosamente a la salamandra.`,
+      `“Mijita,” graznó Inoah. “Traducción: ¡dulce niña!”`,
+      `Tomás sonrió y explicó que él había perdido a sus padres en un gran incendio el verano anterior. La misma área se había quemado varios años antes, y los árboles no habían tenido tiempo para recuperarse.`,
+      `“Ahora los árboles probablemente nunca volverán a crecer,” dijo Tomás tristemente. “Sally y yo vamos a tener que encontrar otro lugar en donde vivir.”`,
+      `“¡Oh, que terrible!” exclamó Creamy.`,
+      `“¿Por qué no vienen con nosotros?,” dijo Marina. “Vamos a Washington D.C., a decirle al presidente que necesita hacer algo sobre el calentamiento global. Al menos creo que ahí es a donde nos dirigimos. ¡Este tren parece tener sus propias ideas!”`,
+      `“¿Un presidente?” preguntó Tomás. “¿Qué es eso? Y, este, mientras me explicas, ¿me pueden encontrar algo de comida? ¡Muero de hambre!”`,
+    ],
+    47: [`El Efecto Invernadero`,
+      `Mientras comían, Creamy le pidió a Marina que explicara esta cosa llamada calentamiento global de la cual tanto había escuchado.`,
+      `“El clima de la Tierra ha cambiado en los últimos veinte años más o menos,” dijo Marina.`,
+      `“¿Pero por qué tan rápido?” preguntó Creamy.`,
+    ],
+    48: [
+      `“En parte por lo que han hecho los humanos,” dijo Marina, “como hacer fábricas y carros. Durante el último siglo más o menos, los humanos han estado usando máquinas para casi todo. Han estado quemando algo llamado combustibles fósiles—principalmente carbón, petróleo, y gas natural.”`,
+      `“¿Quemando? ¿A propósito?” preguntó Creamy.`,
+      `“Sí,” dijo Joanna. “Quemamos combustibles fósiles para generar electricidad para fábricas, y para calentar y enfriar casas y edificios. También los usamos como combustible para tractores, camiones, trenes, aviones, y carros. Ahora, nuestro estilo de vida entero funciona con combustibles fósiles.”`,
+      `“¿Es por eso que a veces se ensucian tanto el aire y el agua?” preguntó Tomas.`,
+    ],
+    49: [
+      `“Sí,” dijo Marina, “pero eso no es todo. Este quemar--de los combustibles fósiles—está cambiando a la atmósfera entera.”`,
+      `“¿Perdón?” preguntó Creamy.`,
+      `“La atmósfera es el aire—lo que está a nuestro alrededor,” explicó Joanna. “Hace que la vida en la Tierra sea posible al retener el calor del sol. Sin ella, nuestro planeta sería una roca fría y vacía, o una ceniza quemada, como otros planetas.”`,
+      `“¿Planetas?” preguntó The Fluff.`,
+      `“Pues, sí, te explico más sobre eso después,” dijo Joanna.`,
+      `Los animales se quedaron callados y se veían confundidos.`,
+      `Inoah rompió el silencio: “Hay gases en la atmósfera—dióxido de carbono, vapor de agua, metano, óxido nitroso, y otros—`,
+    ],
+    50: [`que atrapan la luz del sol para que no se emita de nuevo al espacio. Esto es como la luz solar en un invernadero de vidrio que hace que las plantas estén tibias aun en invierno, por eso se le llama el efecto invernadero.”`,
+      `“¿Un invernadero?” preguntó Creamy. “En dónde está?”`,
+      `De pronto se escuchó un sonido como de rasgado proviniendo de la pared, y una pantalla como en las que se muestran películas se desenrolló con un snap! Comenzó a mostrarles imágenes que se movían como un video, pero se dieron cuenta que era real. La pantalla parecía estar mostrándoles mágicamente lo que sucedía afuera del tren, pero con más detalle.`,
+      `“¡Wow!” dijeron Marina y Joanna al mismo tiempo.`,
+      `“¡Así es como se deben ver los gases de invernadero!” dijo Marina.`,
+      `“Para un químico,” agregó Joanna.`,
+      `La pantalla brillaba con colores. Capas de rojo, gris, y amarillo mostaza fluían de una a otra.`,
+      `“Usualmente no podemos ver el dióxido de carbono,” explicó Marina mientras apuntaba a la pantalla.`,
+      `“Las plantas absorben dióxido de carbono para crecer. Así es como hacen su comida,” dijo Joanna.`,
+      `“Entonces es bueno?” Creamy miraba de una niña a la otra.`,
+      `“Sí, es bueno,” contestó Marina. “El problema es que hemos estado produciendo demasiado CO2.”`,
+      `“CO2: significa dióxido de carbono,” interrumpió Inoah.`,
+      `“Las plantas no lo pueden absorber todo,” continuo Marina. “Así que ahora, el CO2 sobrante y los otros gases de invernadero, están atorados en la atmósfera de la Tierra y están atrapando demasiado calor.”`,
+      `“¡Fuchi!” dijeron Creamy y The Fluff juntos mientras miraban los gases girando en la pantalla.`,
+      `“¿Cómo nos deshacemos de ellos?” preguntó Tomás.`,
+      `Inoah intervino de nuevo: “Hay muchos métodos de almacenamiento`,
+    ],
+    51: [`de carbono—“`,
+      `“En otra ocasión, Inoah,” dijo Joanna firmemente. “Solo digamos que primero que nada es mucho mejor evitar producir demasiado.”`,
+      `“Mi amigo Flynn me dijo que el efecto invernadero es así,” dijo Marina. “Imaginen que están en la cama tapados con todas sus cobijas, y entonces les da demasiado calor, así que se destapan. ¿Se siente mejor, ¿verdad? Pues así es la Tierra, pero la Tierra no se puede destapar, así que solo se acalora cada vez más. ¡Eso es el calentamiento global, y no es bueno!”`,
+    ],
+    52: [
+      `Flora`,
+      `Joanna se levantó temprano la siguiente mañana. Aun en sus pijamas, con Inoah en su hombro, encontró el refrigerador y se sirvió jugo.`,
+      `Luego se acomodó en una cómoda silla en el vagón de observación, para ver al sol salir por encima de unas espectaculares montañas cubiertas de nieve. Un letrero pasó volando. Decía, “Bienvenido al Parque Nacional Glacier.”`,
+    ],
+    53: [`Mientras que el tren se aceleraba por el paisaje nevado, Joanna vio a una gran bola de nieve comenzar a bajar rodando de un cerro, causando un desprendimiento de rocas mínimo. Ella miró mientras que la bola de nieve gigante rodaba sobre las vías y se detuvo. El tren se detuvo con un movimiento repentino, y Joanna escuchó golpes y gemidos del vagón para dormir.`,
+      `Luego escucho a The Fluff quejarse: “¡Au!”`,
+      `Las niñas y los animales salieron cayéndose del tren para ver a la misteriosa bola de nieve que se quitó rodando de las vías—¡Y se paró! “¡Es una pequeña osa polar! Exclamó Joanna. “¡Qué linda!”`,
+      `“¿Qué es un oso polar?” preguntó The Fluff.`,
+      `“Un animal muy peligroso,” contestó Creamy, mientras se escondía detrás de Marina.`,
+      `“¡Hola!” dijo Marina a la nueva visitante. “¿Te puedo ayudar?”`,
+      `“Pues, no estoy segura. Soy Flora. ¿Eh, puedo unirme a ustedes?” preguntó. “Ya no tengo familia.” Bajó su cabeza. “¡Y tengo mucha hambre!”`,
+      `“¡Cielos!” dijo The Fluff. “¡Claro que puedes! A ninguno de nosotros nos queda familia—bueno, excepto a las humanas.”`,
+      `Ahora le tocó asustarse a Flora. “¿Humanas?” exclamó. “¿Aquí?”`,
+      `“Está bien,” dijo The Fluff. “Están aquí para ayudarnos.”`,
+      `“¡Espera un momento!” dijo Creamy. “Yo soy una foca, y eso es un oso polar.”`,
+      `“Sí,” dijo Flora. “Me criaron para comer focas, pero—“`,
+      `The Fluff la interrumpio. “¡Bueno, estoy seguro de que podemos acordar algo, pero en este momento, el tren se va a ir!”`,
+      `Los comenzaban a rodear burbujas y mariposas, las cuales eran la forma silenciosa del tren de echar a andar su motor de nuevo.`,
+      `Una vez que estaban todos a bordo, Flora preguntó, “¿Entonces quiénes son estas humanas?”`,
+    ],
+    54: [`“Esas seriamos nosotras.” Marina y Joanna se acercaron de sus asientos hacia la osa polar.`,
+      `“¡Oh, pequeñas humanas!” exclamó Flora. “¡Qué lindas!”`,
+      `“Si, pues…yo soy Marina, y esta es Joanna.”`,
+      `“De cualquier modo, tengo mucha hambre,” dijo Flora. “¿Alguien tiene algo que comer? No he comido en” -- pausó para pensar—“¡dos meses!”`,
+      `“¡Guau!” dijo Tomás. “Eso es mucho tiempo.”`,
+      `“Los osos polares cazan focas a través del hielo durante el invierno y la primavera,” entrometió Inoah. “Cuando el hielo se derrite, tienen que esperar en la tierra hasta que el agua se congele de nuevo y puedan volver a comer.”`,
+      `Creamy tembló tan solo de pensarlo.`,
+    ],
+    55: [`Flora se le quedaba viendo a Inoah. “¿Qué es eso?” preguntó.`,
+      `“Esta es Inoah. Ella es un perico,” dijo Joanna. “Ella sabe todo de todo, hasta de osos polares.”`,
+      `“¡No me digas!” dijo Flora sarcásticamente. “Bueno, mis padres me dijeron que el hielo se ha estado derritiendo más y más temprano en años recientes, reduciendo nuestro tiempo para alimentarnos cada vez más. ¡Morimos de hambre!”`,
+      `“Ven,” dijo Marina. “Te mostraremos el vagón para comer. Puedes pedir lo que quieras, y aparecerá.”`,
+      `“Oh, que padre,” dijo Flora mientras se dirigía hacia la puerta.`,
+      `Unos minutos después, con su boca llena de bayas, Flora murmuró, “Bo bine del boeste de la Bahia Budson.”`,
+      `“¿Perdón?” dijo Sally.`,
+    ],
+    56: [`Flora tragó su bocado. “Yo vine del oeste de la Bahía Hudson. He estado nadando y caminando por el agua durante meses, buscando hielo porque la primavera pasada el hielo se deshizo temprano. Mis padres estaban nadando, y yo quedé atrapada sola en un pedazo de hielo de mar que se había quebrado de la capa principal. ¡Me dio tanto miedo! Mis padres se veían cada vez más pequeños mientras me alejaba mucho la corriente. Sucedió tan pronto. Estaba demasiado lejos para nadar de regreso. ¡No sabía que hacer!”`,
+      `Flora explicó un poco más: “Yo vivo—bueno, vivía—en un iglú. Estaba muy bonito. Mi papá tenía un negocio local, y mi mamá administraba una escuela preescolar para cachorros de oso polar. Yo tenía muchos amigos. Pero bueno, yo creí que si tan solo podía seguir flotando, eventualmente llegaría a tierra, pero me preocupaba que se derritiera antes mi pedazo de hielo. Yo`,
+    ],
+    57: [`esperé durante dos puestas y dos salidas de sol, luego decidí saltar y nadar hasta encontrar tierra. Vine por un largo rio y luego a esta tierra. ¡He estado caminando y caminando por estas montañas nevadas hasta que me caí y rodé hasta llegar a ustedes!”`,
+      `“Guau. ¡Qué historia!” dijo Creamy. Sus ojos estaban llenos de lágrimas. “¡Siento tanto que hayas tenido que pasar por todo eso!”`,
+      `Se paró y titubeó por un momento, y luego le dio un gran abrazo a Flora.`,
+    ],
+    58: [
+      `El tren había estado subiendo empinadamente mientras Flora hablaba. Al fin, se detuvo en un enorme y rasposo pedazo de hielo. Todo al rededor había nieve profunda y congelada. Creamy y The Fluff prácticamente volaron del tren, cayéndose uno sobre el otro en su prisa por salir.`,
+      `“¡Salgamos a la nieve!” gritaron.`,
+    ],
+    59: [`Flora les siguió, dirigiéndose al hielo. Marina, Joanna, e Inoah siguieron, todas temblando. De pronto Flora vio algo. En una saliente rocosa arriba de sus cabezas, se encontraba un imponente y grande animal blanco con cuernos picudos, mirándolos.`,
+      `“Hola. Soy Edgar.” Saltó de bajada con facilidad para llegar a ellos. “Soy una cabra montés. ¿Y ustedes son…?” los miró curioso.`,
+      `Los animales y las niñas dieron un paso atrás. Rápidamente, The Fluff los presentó.`,
+      `“Es bueno ver hielo de nuevo,” sonrió Flora.`,
+    ],
+    60: [
+      `“Este hielo es nieve que se derrite y se vuelve a congelar cada año y luego es comprimida,” Edgar dijo con una voz grave y rasposa. “Todo junto baja lentamente por la montaña, con nieve nueva añadida en la superficie y agua derritiéndose por abajo. Científicos vienen aquí cada verano y lo miden porque está encogiendo.”`,
+      `“Igual que los témpanos en mi bahía,” dijo Flora`,
+      `“Los científicos predicen que todos los glaciales de aquí del Parque Nacional Glacier desaparecerán en los próximos diez o veinte años,” anunció Inoah.`,
+      `Edgar meneó su cabeza lentamente. “Entonces se secarán los arroyos de verano,” dijo.`,
+      `Lágrimas empezaron a caer de los grandes ojos negros de Creamy mientras escuchaba.`,
+    ],
+    61: [`La voz de Edgar era triste mientras continuaba hablando: “Los animales y las plantas de aquí están acostumbrados a vivir en ciertas partes de la montaña. Al volverse más calientes los veranos, todos nos seguimos yendo más alto a donde está más fresco. Se llama migración, pero no hay ningún otro lugar para nosotros a donde emigrar. Ya vivimos en la punta de la montaña, arriba de la línea de los árboles. Ahora los árboles están creciendo aquí arriba, así que hacen sombra que no permite que el pasto tenga la luz que necesita, y se muere. Pronto no quedará nada de comer para nosotros.”`,
+      `“¿Y entonces qué vas a hacer?” preguntó Tomás.`,
+      `“Podrías venir con nosotros,” dijo Marina.`,
+      `“Eh…eso es muy amable de tu parte,” dijo Edgar, “pero yo he vivido aquí toda mi vida.”`,
+      `“Se cómo te sientes,” dijo Tomás. “Yo también tuve que dejar mi montaña. Tenemos que adaptarnos.”`,
+      `Edgar miró hacia su pradera suspirando, y hubo un silencio.`,
+      `“Ahora todos estamos viajando juntos porque necesitamos ayuda,” explicó The Fluff. No podemos volver a casa hasta obtener ayuda para salvar a nuestras tierras.”`,
+      `“Y a nosotros mismos,” agrego Flora.`,
+      `“Entiendo lo que dices,” dijo Edgar. “Odio irme, pero…alguien tiene que saber de nuestros problemas.”`,
+      `“Nosotros vamos a ver al presidente de los Estados Unidos,” dijo Marina. “¡Él nos ayudará!”`,
+      `“¿Qué es un presidente?” preguntó Edgar.`,
+      `Joanna sonrió. “Te lo explicaremos en el camino. ¡Vamos! Subámonos al tren. ¡Mientras más pronto nos vayamos, más pronto obtendremos ayuda!”`,
+      `“¡Ayuda! ¡Ayuda! ¡Ayuda!” graznó Inoah mientras todos caminaban hacia la puerta abierta del tren.`,
+
+
+  }
 };
 
 export default translationsSpa;

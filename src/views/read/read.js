@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {useHistory, useLocation, withRouter} from 'react-router-dom';
 
 // Data
 import pageText from "../../data/pageText";
@@ -255,7 +256,7 @@ function ReaderControlBar(props) {
             {replayButton()}
 
             <InfoBubble
-              message={"Control Reader"}
+              message={pageText.labels.readLabels.controlReader.get(props.language)}
               type={"up"}
               id={"playInfo"}
               visible={props.audioBubble}
@@ -313,7 +314,7 @@ function ReaderControlBar(props) {
           className="pageCounter darkAccent label col-auto"
           id={"pageCounterWrap"}
         >
-          <p>{`${pageText.labels.page[props.language]} ${props.page} / ${
+          <p>{`${pageText.labels.readLabels.page.get(props.language)} ${props.page} / ${
             props.content.endPage
           }`}</p>
         </div>
@@ -393,6 +394,9 @@ export function PageImage(props) {
 export function Read(props) {
   let params = useParams();
 
+  let history = useHistory();
+  let location = useLocation();
+
   //PROPS
   const content = props.content;
   const { startPage } = content;
@@ -434,6 +438,13 @@ export function Read(props) {
       setAudioLoad(1);
 
       content.bookMark = newPage === content.endPage ? 1 : newPage;
+
+      let path = location.pathname;
+      let pageString = path.indexOf('/page=');
+      if (pageString !== -1){
+        path = path.slice(0, pageString);
+      }
+      history.push(path + `/page=` + newPage);
 
       /*
             if (!content.bookMark || newPage > content.bookMark){

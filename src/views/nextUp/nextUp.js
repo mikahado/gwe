@@ -4,6 +4,8 @@ import React from "react";
 //import { SummaryEntry } from "../../components/summary/summary";
 import { Button } from "../../components/buttons/buttons";
 
+import pageText from "../../data/pageText";
+
 // Style Sheets
 import "./nextUp.css";
 import { useParams } from "react-router-dom";
@@ -17,20 +19,20 @@ export function NextUp(props) {
   function courseComplete() {
     return (
       <div className="nextUpBody">
-        <h1 className={"nextUpTitle label"}>Course Complete!</h1>
-        <p className="label">Congrats, you've completed this course!</p>
+        <h1 className={"nextUpTitle label"}>{pageText.messages.courseComplete.get(props.language)}</h1>
+        <p className="label">{pageText.messages.courseComplete.get(props.language)}</p>
 
         <AboutGWE language={props.language} />
 
         <Button
-          text={"Back To Session Map"}
+          text={pageText.buttons.completions.backSessions.get(props.language)}
           link={`/map/s-${props.material.sessionInfo.sessionId}/p-${props.material.sessionInfo.partNo}`}
           language={props.language}
           iconType={"leftArrow"}
         />
 
         <Button
-          text={"Repeat This Session"}
+          text={pageText.buttons.completions.repeatSession}
           link={`/s${params.sessionId}`}
           language={props.language}
           iconType={"leftArrow"}
@@ -52,25 +54,25 @@ export function NextUp(props) {
 
     return (
       <div className="nextUpBody">
-        <h1 className={"nextUpTitle label"}>Session Complete!</h1>
-        <p className="label">Congrats, you've completed this session!</p>
+        <h1 className={"nextUpTitle label"}>{pageText.messages.sessionComplete.get(props.language)}</h1>
+        <p className="label">{pageText.messages.sessionCongrats.get(props.language)}</p>
 
         <Button
-          text={"Continue to Next Session"}
+          text={pageText.buttons.completions.continueSession.get(props.language)}
           link={`/s${parseInt(params.sessionId) + 1}`}
           language={props.language}
           iconType={"rightArrow"}
         />
 
         <Button
-          text={"Back to Session Map"}
+          text={pageText.buttons.completions.backSessions.get(props.language)}
           link="/map"
           language={props.language}
           iconType={"leftArrow"}
         />
 
         <Button
-          text={"Repeat This Session"}
+          text={pageText.buttons.completions.repeatSession.get(props.language)}
           click={repeatSession}
           language={props.language}
           iconType={"leftArrow"}

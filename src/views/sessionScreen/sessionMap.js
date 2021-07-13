@@ -236,7 +236,7 @@ function SessionMap(props) {
             <SessionListItem
               sessionId={material.sessionInfo.materialId}
               title={material.content.title.get(props.language)}
-              subtitle={material.content.subtitle ? material.content.subtitle : null}
+              subtitle={material.content.subtitle ? material.content.subtitle.get(props.language) : null}
               format={material.content.format}
               currentMaterial={currentSession}
               image={material.content.graphic}
@@ -245,6 +245,7 @@ function SessionMap(props) {
               nextSession={nextSession}
               backSession={backSession}
               moveTrain={moveTrain}
+              language={props.language}
             />
           </div>
 

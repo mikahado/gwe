@@ -1,7 +1,7 @@
 import React from "react";
 import "./guide.css";
 import {guideText} from "./guideText";
-import { Button } from "../../components/buttons/buttons";
+import {Button} from "../../components/buttons/buttons";
 
 export function Guide(props) {
 

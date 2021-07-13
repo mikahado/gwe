@@ -9,7 +9,8 @@ export class MultiLingual {
     if (this[language]) {
       return this[language];
     } else if (returnEnglish !== false) {
-      return this.eng;
+      //return this.eng;
+      return '* ML *'
     }
   }
 }

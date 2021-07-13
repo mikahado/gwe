@@ -6,6 +6,7 @@ import curriculum from "../../../data/curriculum/curriculum";
 
 // Style Sheet
 import "./sessionJump.css";
+import pageText from "../../../data/pageText";
 
 export const sessionIcons = {
   book: (
@@ -91,7 +92,7 @@ export function SessionJump(props) {
         "tableContents d-flex flex-column align-items-center"
       }
     >
-      <p className={"mr-2"}>Jump To Session:</p>
+      <p className={"mr-2"}>{pageText.labels.jumpToSession.get(props.language)}:</p>
 
       <div className="sessionButtonsList d-flex flex-row flex-md-row justify-content-center align-items-center w-100 flex-wrap">
 

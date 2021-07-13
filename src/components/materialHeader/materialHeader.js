@@ -1,14 +1,16 @@
 import React from 'react';
 
+import pageText from "../../data/pageText";
+
 export function MaterialHeader(props){
 
   if(props.sessionInfo){
     return(
       <div className={"materialHeader"}>
         <h1>
-          <b>Session {props.sessionInfo.sessionId}</b>{
+          <b>{pageText.labels.sessionInfo.sessionNo(props.sessionInfo.sessionId,props.language)}</b>{
           props.partLabel !== 'hide'
-            ? `- Part ${props.sessionInfo.partNo} of ${props.sessionInfo.ofParts} `
+            ? `- ${pageText.labels.sessionInfo.partOf(props.sessionInfo.partNo,props.sessionInfo.ofParts, props.language)}`
             : null
         } : <u>{props.content.title.get(props.language)}</u>
         </h1>

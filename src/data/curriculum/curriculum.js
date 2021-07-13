@@ -6,6 +6,7 @@ import discussions from "../discussions/discussions";
 import { MultiLingual } from "../model/multiLingual";
 import videos from "../videos/videos";
 import {experiments} from "../experiments/experiments";
+import pageText from "../pageText";
 
 const sessionArray= [
   new Session([new Material(books.commonGround)]),
@@ -13,7 +14,16 @@ const sessionArray= [
   new Session([new Material(videos.gweBackstory)]),
 
   new Session([
-    new Material(books.globalWarmingExpress, null, "Part 1 of 3", 1, 52),
+    new Material(
+      books.globalWarmingExpress,
+      null,
+      new MultiLingual(
+        pageText.labels.sessionInfo.partOf(1,3,'eng'),
+        pageText.labels.sessionInfo.partOf(1,3,'spa'),
+      ),
+      1,
+      52
+    ),
   ]),
 
   new Session([
@@ -45,7 +55,10 @@ const sessionArray= [
     new Material(
       books.globalWarmingExpress,
       null,
-      "Part 2 of 3",
+      new MultiLingual(
+        pageText.labels.sessionInfo.partOf(2,3,'eng'),
+        pageText.labels.sessionInfo.partOf(2,3,'spa'),
+      ),
       53,
       95,
       new MultiLingual(
@@ -102,7 +115,10 @@ const sessionArray= [
     new Material(
       books.globalWarmingExpress,
       null,
-      "Part 3 of 3",
+      new MultiLingual(
+        pageText.labels.sessionInfo.partOf(3,3,'eng'),
+        pageText.labels.sessionInfo.partOf(3,3,'spa'),
+      ),
       96,
       127,
       new MultiLingual(

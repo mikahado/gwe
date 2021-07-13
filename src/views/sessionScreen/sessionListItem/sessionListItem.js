@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+//Sub-Components
+import { Button } from "../../../components/buttons/buttons";
+
+//Data
+import curriculum from "../../../data/curriculum/curriculum";
+import {sessionIcons} from "../sessionJump/sessionJump";
+import pageText from "../../../data/pageText";
 
 //Style Sheet
 import "./sessionListItem.css";
-import { Button } from "../../../components/buttons/buttons";
-import curriculum from "../../../data/curriculum/curriculum";
-import { Link } from "react-router-dom";
-import {sessionIcons} from "../sessionJump/sessionJump";
 
 export function expIcon(){
   return(
@@ -47,7 +52,7 @@ class SessionListItem extends React.Component {
         >
           <button className={"sessionItem"}>
             <div className={"d-flex flex-column justify-content-center align-items-center sessionTitle"}>
-              <h2 className="">Session #{this.props.sessionId}</h2>
+              <h2 className="">{pageText.labels.sessionInfo.sessionNo(this.props.sessionId,this.props.language)}</h2>
             </div>
 
             <div id={"mediaEntry"} className={`sessionGraphic ${wideThumb ? "wideThumb" : ""}`}>

@@ -21,7 +21,7 @@ class Translate extends React.Component {
         id={"translateButton"}
         onClick={this.handleChange}
       >
-        {pageText.buttons.translate[this.props.language]}
+        {pageText.buttons.language.translate.get(this.props.language)}
       </button>
     );
   }

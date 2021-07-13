@@ -1,3 +1,5 @@
+import {MultiLingual} from "./model/multiLingual";
+
 const pageText = {
   speechBubbles: {
     splash: {
@@ -18,6 +20,10 @@ const pageText = {
       ],
     },
     library: {
+      coolBooks: new MultiLingual(
+        'Look how many cool books we can choose from!',
+        '¡Tantas buenas opciones para elegir!'
+      ),
       eng: [
         "Look how many cool books we can choose from!",
         `Which book should we read today?`,
@@ -47,80 +53,225 @@ const pageText = {
     },
   },
   buttons: {
-    translate: {
-      eng: "En Español",
-      spa: "Click for English",
+    nav: {
+      //Navigation
+      menu: new MultiLingual(
+        'Menu',
+      ),
+      home: new MultiLingual(
+        "Home",
+        "Inicio",
+      ),
+      guide: new MultiLingual(
+        'Guide'
+      ),
+      sesssions: new MultiLingual(
+        'Sessions'
+      ),
+      library: new MultiLingual(
+        'Library',
+        'Biblioteca'
+      ),
+      resources: new MultiLingual(
+        'Resources'
+      ),
+      aboutGWE: new MultiLingual(
+        "About GWE",
+        "Sobre GWE",
+      ),
     },
-    home: {
-      eng: "Home",
-      spa: "Inicio",
+    language: {
+      // Language
+      translate: new MultiLingual(
+        "En Español",
+        "Click for English"
+      ),
     },
-    aboutGWE: {
-      eng: "About GWE",
-      spa: "Sobre GWE",
+    landing: {
+      // Landing Page
+      jumpOnboard: new MultiLingual(
+        "Jump Onboard",
+        "Comienza a Aprender",
+      ),
+      teachGuide: new MultiLingual(
+        `Teacher's Guide`
+      ),
+      startReading: new MultiLingual(
+        "Start Reading",
+        "Comienza a Leer",
+      ),
     },
-    startLearning: {
-      eng: "Jump Onboard",
-      spa: "Comienza a Aprender",
+    read: {
+      // Read Controls
+      readToMe: new MultiLingual(
+        'Read To Me'
+      ),
+      aboutThisReader: new MultiLingual(
+        'About This Reader'
+      ),
+      nextMaterial: new MultiLingual(
+        'Next Material'
+      ),
+      playNarration: new MultiLingual(
+        "Play Narration",
+        "Escuchar Narración",
+      ),
     },
-    startReading: {
-      eng: "Start Reading",
-      spa: "Comienza a Leer",
-    },
-    readAgain: {
-      eng: "Read it again",
-      spa: "Lee de Nuevo",
-    },
-    backLibrary: {
-      eng: "Back to Library",
-      spa: "De Nuevo a la Biblioteca",
-    },
-    playNarration: {
-      eng: "Play Narration",
-      spa: "Escuchar Narración",
-    },
+    completions: {
+      continue: new MultiLingual(
+        'Continue'
+      ),
+      continueSession: new MultiLingual(
+        'Continue to Next Session'
+      ),
+      readAgain: new MultiLingual(
+        "Read it again",
+        "Lee de Nuevo",
+      ),
+      repeatSession: new MultiLingual(
+        'Repeat Session'
+      ),
+      backSessions: new MultiLingual(
+        'Back to Sessions'
+      ),
+      backLibrary: new MultiLingual(
+        "Back to Library",
+        "De Nuevo a la Biblioteca",
+      ),
+    }
   },
   labels: {
+    materialTypes: {
+      books: new MultiLingual(
+        'Books'
+      ),
+      discussions: new MultiLingual(
+        'Discussions'
+      ),
+      experiments: new MultiLingual(
+        'Experiments'
+      )
+    },
+    readLabels: {
+      // Read View Labels
+      page: new MultiLingual(
+        "Page",
+        "Página",
+      ),
+      nextPage: new MultiLingual(
+        'Next Page',
+      ),
+      prevPage: new MultiLingual(
+        'Previous Page'
+      ),
+      controlReader: new MultiLingual(
+        'Control Reader'
+      ),
+      pageZoom: new MultiLingual(
+        'Page Zoom'
+      ),
+      narration: new MultiLingual(
+        "Narration",
+        "Narración",
+      ),
+      runTime: new MultiLingual(
+        "Run Time",
+        "Duración",
+      ),
+    },
+    sessionInfo: {
+      sessionNo(sessionNo, language) {
+        switch(language){
+          //case ('spa'): return `*ML* #${sessionNo}`
+          default: return `Sesssion #${sessionNo}`;
+        }
+      },
+      partOf(partNo, numParts, language) {
+        switch (language){
+          //case ('spa'): return `*ML* ${partNo} X ${numParts}`;
+          default: return `Part ${partNo} of ${numParts}`;
+        }
+      },
+    },
+    resources: {
+      kidsAction: new MultiLingual(
+        `For Kid's Action`
+      ),
+      learnMore: new MultiLingual(
+        `To Learn More`
+      ),
+      videos: new MultiLingual(
+        `Videos`
+      ),
+      articles: new MultiLingual(
+        'Articles',
+      ),
+      orgs: new MultiLingual(
+        'Organizations'
+      ),
+      pubs: new MultiLingual(
+        'Publications'
+      ),
+      info: new MultiLingual(
+        'Information'
+      ),
+      people: new MultiLingual(
+        'People'
+      ),
+      bus: new MultiLingual(
+        'Businesses'
+      ),
+    },
+
+    // Reader Start
+    readBy: new MultiLingual(
+      "Read by",
+      "Leído por",
+    ),
     byAuthor(author, language) {
       return language === "eng" ? `By ${author}` : `Por ${author}`;
     },
-    readBy: {
-      eng: "Read by",
-      spa: "Leído por",
-    },
-    narration: {
-      eng: "Narration",
-      spa: "Narración",
-    },
-    page: {
-      eng: "Page",
-      spa: "Página",
-    },
-    narrComing: {
-      eng: "Narration Coming Soon",
-      spa: "Narración Próximamente",
-    },
-    runTime: {
-      eng: "Run Time",
-      spa: "Duración",
-    },
+
+    // Sessions View Labels
+    jumpToSession: new MultiLingual(
+      'Jump To Session'
+    ),
   },
   pageTitles: {
-    library: {
-      eng: "Learning Library",
-      spa: "Biblioteca Educativa",
-    },
+    library: new MultiLingual(
+      "Learning Library",
+      "Biblioteca Educativa",
+    ),
   },
   messages: {
-    congrats: {
-      eng: "Congrats, you finished this book!",
-      spa: "¡Felicidades, terminaste el libro!",
-    },
-    readAgain: {
-      eng: "Read it again?",
-      spa: "¿Leerlo de nuevo?",
-    },
-    spanishComing: `Próximamente Traducción en Español`,
+    materialComplete: new MultiLingual(
+      'Congrats, you’ve completed this material!'
+    ),
+    sessionComplete: new MultiLingual(
+      'Session Complete!'
+    ),
+    sessionCongrats: new MultiLingual(
+      "Congrats, you've compeleted this session!"
+    ),
+    courseComplete: new MultiLingual(
+      `Course Complete!`
+    ),
+    courseCongrats: new MultiLingual(
+      `Congrats, you've completed this course!`
+    ),
+    bookComplete: new MultiLingual(
+      "Congrats, you finished this book!",
+      "¡Felicidades, terminaste el libro!",
+    ),
+    readAgain: new MultiLingual(
+      "Read it again?",
+      "¿Leerlo de nuevo?",
+    ),
+    narrComing: new MultiLingual(
+      "Narration Coming Soon",
+      "Narración Próximamente",
+    ),
+    spanishComing: `Próximamente Traducción en Español`
   },
 };
 

@@ -9,6 +9,7 @@ import { Button } from "../../components/buttons/buttons";
 //Style Sheet
 import "./splash.css";
 import "./splashGraphics.css";
+import pageText from "../../data/pageText";
 
 function SplashGraphics() {
   return (
@@ -41,12 +42,12 @@ export function Splash(props) {
             </div>
 
             <Button
-              text={"Jump Onboard"}
+              text={pageText.buttons.landing.jumpOnboard.get(props.language)}
               link={"/map"}
               iconType={"rightArrow"}
             />
 
-            <Button text={"Teacher's Guide"} link={"/guide"} />
+            <Button text={pageText.buttons.landing.teachGuide.get(props.language)} link={"/guide"} />
           </div>
         </div>
 

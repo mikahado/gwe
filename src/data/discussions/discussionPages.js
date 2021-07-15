@@ -1,7 +1,7 @@
 import parse from "html-react-parser";
 
 const greenhouse = `${process.env.PUBLIC_URL}/assets/discussion/greenhouse.jpg`;
-const greenhouseTable = `${process.env.PUBLIC_URL}/assets/discussion/greenhouseTable.png`;
+//const greenhouseTable = `${process.env.PUBLIC_URL}/assets/discussion/greenhouseTable.png`;
 
 const discussionPages = {
   greenhouseDiscuss: {
@@ -32,7 +32,7 @@ const discussionPages = {
         [
           {
             speech: true,
-            text: `“Yes, the fire story was scary. But at the time it was happening, I was not really scared because I was in Tomàs’ paw,“`,
+            text: `“Yes, the fire story was scary. But at the time it was happening, I was not really scared because I was in Tomás’ paw,“`,
           },
           ` Sally replied.`,
         ],
@@ -64,7 +64,7 @@ const discussionPages = {
             speech: true,
             text: `“I still don’t understand what a Greenhouse is,”`,
           },
-          ` said Tomàs.`,
+          ` said Tomás.`,
         ],
         [
           { speech: true, text: `“Is it a house that is green?"` },
@@ -113,7 +113,7 @@ const discussionPages = {
         ],
         [{ speech: true, text: `“Here’s an example,”` }, ` said Joanna. `],
         [
-          `She got out some sheets and blankets and passed one of each around to each animal. Sally shared with Tomàs, because she was so small. (You can do this at home, too)`,
+          `She got out some sheets and blankets and passed one of each around to each animal. Sally shared with Tomás, because she was so small. (You can do this at home, too)`,
         ],
         [
           `The animals were all instructed to take the sheet and put it over their heads and bodies. (You can do this, too)`,
@@ -128,7 +128,7 @@ const discussionPages = {
           { speech: true, text: `“How did that feel?”` },
           ` she asked. `,
           { speech: true, text: `“VERY stuffy,”` },
-          ` said the Fluff, putting his hat back on.`,
+          ` said The Fluff, putting his hat back on.`,
         ],
         [
           { speech: true, text: `“Allright, let’s try the blankets!”` },
@@ -177,7 +177,7 @@ const discussionPages = {
           { speech: true, text: `“But with too much burning of things...”` },
           ` said Sally.`,
         ],
-        [{ speech: true, text: `“Like forest fires,”` }, ` said Tomàs.`],
+        [{ speech: true, text: `“Like forest fires,”` }, ` said Tomás.`],
         [{ speech: true, text: `“And factories,“` }, ` said Joanna.`],
         [
           {
@@ -216,11 +216,11 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Makes for a too-hot earth,”` },
-          ` said Tomàs.`,
+          ` said Tomás.`,
         ],
         [
           { speech: true, text: `“The earth does not have arms,”` },
-          ` said the Fluff, thoughtfully, `,
+          ` said The Fluff, thoughtfully, `,
           {
             speech: true,
             text: ` “So there’s no way that it can take the blanket off.” `,
@@ -239,14 +239,53 @@ const discussionPages = {
             text: `“CARBON DIOXIDE, METHANE, NITROUS OXIDE and WATER VAPOR !“`,
           },
           ` Inoah answered, importantly, `,
-          { speech: true, text: ` “Screen please!“` },
+          { speech: true, text: ` "Screen please!“` },
           `  Instantly, the screen came down and on it were these words:`,
         ],
       ],
     },
     7: {
-      images: [greenhouseTable],
-      text: [[]],
+      images: [],
+      text: [[`<table>
+        <thead>
+        <th>Greenhouse Gas</th>
+        <th>Major Sources</th>
+        </thead>
+        <tr>
+          <td>Carbon Dioxide</td>
+          <td>
+            <ul>
+              <li>Fossil fuel combustion</li>
+              <li>Deforestation</li>
+              <li>Cement production</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Methane</td>
+          <td>
+            <ul>
+              <li>Fossil fuel production</li>
+              <li>Agriculture</li>
+              <li>Landfills</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Nitrous Oxide</td>
+          <td>
+            <ul>
+              <li>Fertilizer application</li>
+              <li>Fossil fuel and biomass combustion</li>
+              <li>Industrial processes</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Water Vapor</td>
+          <td>Evaporation</td>
+        </tr>
+      </table>`]],
     },
     8: {
       images: ["joanna", "creamy", "marina", "theFluff", "sally"],
@@ -278,7 +317,7 @@ const discussionPages = {
             speech: true,
             text: `“Maybe they don’t know that what they are doing is so harmful,” `,
           },
-          ` the Fluff suggested. `,
+          ` The Fluff suggested. `,
         ],
         [
           { speech: true, text: `“I know! I know!”` },
@@ -309,7 +348,7 @@ const discussionPages = {
       text: [
         [
           { speech: true, text: `“Marina and Joanna?”` },
-          ` the Fluff asked thoughtfully, as they finished reading My Light, `,
+          ` The Fluff asked thoughtfully, as they finished reading My Light, `,
           {
             speech: true,
             text: ` “Is the sun actually burning? It looks like a big fire.”`,
@@ -336,7 +375,7 @@ const discussionPages = {
             speech: true,
             text: `“So, with the sun bringing us so much light through…”`,
           },
-          ` the Fluff started to say.`,
+          ` The Fluff started to say.`,
         ],
         [
           { speech: true, text: `“PHOTONS!“` },
@@ -391,7 +430,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“But we are all so grateful for the sun,”` },
-          ` replied Tomàs. `,
+          ` replied Tomás. `,
           {
             speech: true,
             text: `“Where Sally and I live, it is high up and very sunny, so there are times where there seems to be too much sun.”`,
@@ -407,7 +446,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Speaking of eating,”` },
-          ` said Tomàs, `,
+          ` said Tomás, `,
           {
             speech: true,
             text: ` ”Is there something to eat? I am really hungry!” `,
@@ -422,7 +461,7 @@ const discussionPages = {
           `While everyone had breakfast, Marina asked the animals what plants they ate. `,
         ],
         [
-          `Sally, the Fluff and Creamy all looked at her like she was crazy. Only Tomàs answered, `,
+          `Sally, The Fluff and Creamy all looked at her like she was crazy. Only Tomás answered, `,
         ],
         [
           {
@@ -452,7 +491,7 @@ const discussionPages = {
             speech: true,
             text: `“It says in the book, that the sun warms the air to make it rise. This makes rain and wind happen,“`,
           },
-          ` said the Fluff, looking up from a page. `,
+          ` said The Fluff, looking up from a page. `,
           { speech: true, text: ` ”The sun does a LOT of work!” ` },
         ],
         [
@@ -504,7 +543,7 @@ const discussionPages = {
             speech: true,
             text: `“So, because people needed engines and machines, they needed to burn fossil fuels?”`,
           },
-          ` asked the Fluff. `,
+          ` asked The Fluff. `,
         ],
         [
           {
@@ -582,7 +621,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“That is being more Mindful?”` },
-          ` asked the Fluff. `,
+          ` asked The Fluff. `,
         ],
         [
           { speech: true, text: `“That is being more Mindful.”` },
@@ -627,7 +666,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“The sun works really hard,“` },
-          ` said the Fluff. `,
+          ` said The Fluff. `,
           { speech: true, text: ` “But plants work just as hard!” ` },
         ],
         [
@@ -663,7 +702,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Wait...Marina?”` },
-          ` asked the Fluff. `,
+          ` asked The Fluff. `,
           {
             speech: true,
             text: ` “We don’t have many big plants in the Antarctic, where I live, but before I left, we started to have a lot of green algae. Does algae work as hard as plants to make energy from the sun?” `,
@@ -789,7 +828,7 @@ const discussionPages = {
             speech: true,
             text: `“That is what I hope all humans can do, Creamy,”`,
           },
-          ` said the Fluff, `,
+          ` said The Fluff, `,
           { speech: true, text: ` “Since we really are all connected.” ` },
         ],
       ],
@@ -807,7 +846,7 @@ const discussionPages = {
           `At the end of the reading, Marina was surprised to see Joanna whispering to the animals. Suddenly, they all jumped on top of each other in a Big Heap.`,
         ],
         [
-          `Zolo and Sally were on the top, while Flora and Tomàs were waaay at the bottom. Inoah and the Fluff were stuck somewhere in the middle. Everyone was giggling and laughing. (If you have ever heard a parrot laugh, you would be laughing, too!) `,
+          `Zolo and Sally were on the top, while Flora and Tomás were waaay at the bottom. Inoah and The Fluff were stuck somewhere in the middle. Everyone was giggling and laughing. (If you have ever heard a parrot laugh, you would be laughing, too!) `,
         ],
       ],
     },
@@ -819,7 +858,7 @@ const discussionPages = {
           ` Marina said, smiling.`,
         ],
         [
-          `With a great rumble Flora stood up, knocking everyone over, but Tomàs, who was already lying next to her on the floor.`,
+          `With a great rumble Flora stood up, knocking everyone over, but Tomás, who was already lying next to her on the floor.`,
         ],
         [{ speech: true, text: `“We were getting squashed!”` }, ` Flora said.`],
         [
@@ -881,7 +920,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“You don’t? Then why do you do them?”` },
-          ` the Fluff asked.`,
+          ` The Fluff asked.`,
         ],
         [
           {
@@ -975,7 +1014,7 @@ const discussionPages = {
       text: [
         [{ speech: true, text: `“What’s dee-sen-did?”` }, ` asked Zolo.`],
         [
-          { speech: true, text: `“It means that birds are your ancestors,”` },
+          { speech: true, text: `“It means that dinosaurs are your ancestors,”` },
           ` said Joanna. `,
         ],
         [
@@ -1007,7 +1046,7 @@ const discussionPages = {
           ` Joanna exclaimed. `,
         ],
         [
-          `Sally jumped on to Tomàs’ paw and tried to look super scary. Everyone laughed. `,
+          `Sally jumped on to Tomás’ paw and tried to look super scary. Everyone laughed. `,
         ],
       ],
     },
@@ -1027,7 +1066,7 @@ const discussionPages = {
             speech: true,
             text: `“Can you explain that part again? I didn’t quite get it,”`,
           },
-          ` said the Fluff.  `,
+          ` said The Fluff.  `,
         ],
         [
           `Marina replied, `,
@@ -1076,7 +1115,7 @@ const discussionPages = {
           },
         ],
         [{ speech: true, text: `“Fossil fuels!”` }, ` shouted Sally. `],
-        [{ speech: true, text: `“Ancient sunlight,“` }, ` said the Fluff.`],
+        [{ speech: true, text: `“Ancient sunlight,“` }, ` said The Fluff.`],
         [
           { speech: true, text: `“And then, Humans came!”` },
           ` finished Marina.`,
@@ -1133,7 +1172,7 @@ const discussionPages = {
             speech: true,
             text: `“In the book it says that this all happened so fast that we penguins and other animals don’t know how to keep up,”`,
           },
-          ` added the Fluff. `,
+          ` added The Fluff. `,
           {
             speech: true,
             text: ` “It seems like humans are asking the earth to ev, ev -what’s that word again?”`,
@@ -1145,7 +1184,7 @@ const discussionPages = {
             speech: true,
             text: `“Right! Humans seem to be asking the Earth to evolve Way too quickly,”`,
           },
-          ` the Fluff finished. `,
+          ` The Fluff finished. `,
         ],
         [
           {
@@ -1200,7 +1239,7 @@ const discussionPages = {
       text: [
         [
           { speech: true, text: `“And too much flooding, like where I live,”` },
-          ` said the Fluff. `,
+          ` said The Fluff. `,
         ],
         [
           {
@@ -1210,7 +1249,7 @@ const discussionPages = {
           ` added Edgar.`,
         ],
         [{ speech: true, text: `“With too many droughts,”` }, ` said Sally. `],
-        [{ speech: true, text: `“And fires,”` }, ` said Tomàs.`],
+        [{ speech: true, text: `“And fires,”` }, ` said Tomás.`],
         [
           `All the animals collapsed in a heap, just as they had started out their morning. But this time they looked gloomy and sad. After a few minutes, Creamy looked around. `,
         ],
@@ -1235,7 +1274,7 @@ const discussionPages = {
             speech: true,
             text: `“Well, as the book says, The Choice is Ours,”`,
           },
-          ` said the Fluff, `,
+          ` said The Fluff, `,
           {
             speech: true,
             text: ` “and we are helping humans to make the Right Choice.” `,
@@ -1337,7 +1376,7 @@ const discussionPages = {
             speech: true,
             text: `“Yes, but the ocean seems huge and very deep to me,”`,
           },
-          ` replied the Fluff. `,
+          ` replied The Fluff. `,
           {
             speech: true,
             text: ` “I have to dive in it to find food and I had to float, in my dad’s lifeboat, on the ocean currents, to find Creamy. To me, the ocean seems gigantic!”`,
@@ -1359,14 +1398,14 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Joanna,”` },
-          ` Tomàs, said shyly, `,
+          ` Tomás, said shyly, `,
           {
             speech: true,
             text: ` “I don’t think I really know what the ocean is.”`,
           },
         ],
         [{ speech: true, text: `“Me, neither!”` }, ` Sally said.`],
-        [`All the swimming animals gazed at Tomàs and Sally with curiosity. `],
+        [`All the swimming animals gazed at Tomás and Sally with curiosity. `],
       ],
     },
     4: {
@@ -1377,12 +1416,12 @@ const discussionPages = {
           ` said Marina, `,
           {
             speech: true,
-            text: ` “as it shows in the book, and as we can see from our globe, the ocean is really, really big, as the Fluff says. But if you were Lady Athabasca, and you...wait. Where is Lady Athabasca, anyway?”`,
+            text: ` “as it shows in the book, and as we can see from our globe, the ocean is really, really big, as The Fluff says. But if you were Lady Athabasca, and you...wait. Where is Lady Athabasca, anyway?”`,
           },
         ],
         [
           { speech: true, text: `“Oh!”` },
-          ` the Fluff replied. `,
+          ` The Fluff replied. `,
           {
             speech: true,
             text: ` “She had to leave as soon as we met the President.” `,
@@ -1394,7 +1433,7 @@ const discussionPages = {
             speech: true,
             text: `“Lady A. is very important to her flock, so she had to go back home,”`,
           },
-          ` explained the Fluff.`,
+          ` explained The Fluff.`,
         ],
         [
           { speech: true, text: `“Well, Lady Athabasca can fly high,”` },
@@ -1421,7 +1460,7 @@ const discussionPages = {
             speech: true,
             text: `“So the book is about the ocean that we all love,”`,
           },
-          " added the Fluff. He looked at Tomàs and Sally. ",
+          " added The Fluff. He looked at Tomás and Sally. ",
           {
             speech: true,
             text: ` “Well, you would love it, Tomas and Sally, if you saw it properly. You saw it in a huge hurricane, near New York.”`,
@@ -1430,7 +1469,7 @@ const discussionPages = {
         [{ speech: true, text: `“That was Super Scary!”` }, ` cried Sally. `],
         [
           { speech: true, text: `“But the ocean can be very friendly,”` },
-          ` the Fluff explained. `,
+          ` The Fluff explained. `,
         ],
         [
           { speech: true, text: `“And helpful,”` },
@@ -1486,7 +1525,7 @@ const discussionPages = {
         [
           {
             speech: true,
-            text: `“Tomàs and Sally and Edgar and Lauren and Bobbi Sue, just as you see rivers in the earth where you live, the sun’s warmth makes water vapor move like a river in the sky,”`,
+            text: `“Tomás and Sally and Edgar and Lauren and Bobbi Sue, just as you see rivers in the earth where you live, the sun’s warmth makes water vapor move like a river in the sky,”`,
           },
           ` said Marina.`,
         ],
@@ -1532,7 +1571,7 @@ const discussionPages = {
             speech: true,
             text: `“And that river of water vapor in the sky helps the rivers in the ocean?”`,
           },
-          ` asked the Fluff. `,
+          ` asked The Fluff. `,
         ],
         [
           {
@@ -1575,7 +1614,7 @@ const discussionPages = {
             speech: true,
             text: `“Humans need to be careful about how they use the water on the earth. There is not a lot of extra water any more. The aquifers where I live are almost empty,”`,
           },
-          ` warned Tomàs.`,
+          ` warned Tomás.`,
         ],
         [
           {
@@ -1586,7 +1625,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Yes,”` },
-          ` replied Tomàs, seriously, `,
+          ` replied Tomás, seriously, `,
           {
             speech: true,
             text: ` “where I live, there can be not enough rain water and then sometimes, when it rains too hard and too much, it will cause floods. So we need to take care of our water and the earth that holds it.” `,
@@ -1606,7 +1645,7 @@ const discussionPages = {
             speech: true,
             text: `“And humans need to be careful how they use the water in the ocean. Remember how my Mom died?”`,
           },
-          ` asked the Fluff. All the animals looked at him, sadly. Creamy hugged his shoulders with her flipper.`,
+          ` asked The Fluff. All the animals looked at him, sadly. Creamy hugged his shoulders with her flipper.`,
         ],
         [
           `The Fluff wiped away a tear. `,
@@ -1639,7 +1678,7 @@ const discussionPages = {
           `  She smiled and looked around. `,
         ],
         [
-          `All of the animals’ faces looked happier. Creamy tickled the Fluff in his tummy and the Fluff tickled Creamy. Before long, everyone was giggling and running around.`,
+          `All of the animals’ faces looked happier. Creamy tickled The Fluff in his tummy and The Fluff tickled Creamy. Before long, everyone was giggling and running around.`,
         ],
       ],
     },
@@ -1653,7 +1692,7 @@ const discussionPages = {
           },
         ],
         [
-          `She ran out the train car door and over to the pool car. Everyone followed, even those who don’t like to swim. Tomàs carried Sally in one paw and Bobbi Sue’s bowl in the other. Only Inoah refused to leave. She watched them all depart and tucked her head under her left wing, repeating to herself, `,
+          `She ran out the train car door and over to the pool car. Everyone followed, even those who don’t like to swim. Tomás carried Sally in one paw and Bobbi Sue’s bowl in the other. Only Inoah refused to leave. She watched them all depart and tucked her head under her left wing, repeating to herself, `,
           {
             speech: true,
             text: `”Parrots don’t swim! Parrots don’t swim! Parrots don’t ...”`,
@@ -1690,7 +1729,7 @@ const discussionPages = {
             speech: true,
             text: `“It doesn’t seem as though humans have an answer,”`,
           },
-          ` added the Fluff, as he stood up, holding his chin in his flipper, thoughtfully, `,
+          ` added The Fluff, as he stood up, holding his chin in his flipper, thoughtfully, `,
           {
             speech: true,
             text: ` “The Then President might have been able to help, but he is not there anymore.” `,
@@ -1802,7 +1841,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“That we had the responsibility,”` },
-          ` said the Fluff, solemnly. `,
+          ` said The Fluff, solemnly. `,
         ],
         [
           {
@@ -1849,12 +1888,12 @@ const discussionPages = {
             speech: true,
             text: `“You mean, instead of them helping us, we will help them?”`,
           },
-          ` asked Tomàs. `,
+          ` asked Tomás. `,
         ],
         [
           {
             speech: true,
-            text: `“EXACTLY, Tomàs! This may not be the time to seek answers from the humans,”`,
+            text: `“EXACTLY, Tomás! This may not be the time to seek answers from the humans,”`,
           },
           ` he looked at Joanna and Marina, `,
           {
@@ -1911,7 +1950,7 @@ const discussionPages = {
         [{ speech: true, text: `“Earth, rivers!“` }, ` said Sally.`],
         [
           { speech: true, text: `“Trees and plants full of food,”` },
-          ` added Tomàs.`,
+          ` added Tomás.`,
         ],
       ],
     },
@@ -1936,7 +1975,7 @@ const discussionPages = {
         ],
         [
           { speech: true, text: `“Oceans and silverfish and yummy krill!”` },
-          ` added the Fluff. `,
+          ` added The Fluff. `,
         ],
         [
           { speech: true, text: `“Oceans and fish and crabs!”` },
@@ -2057,7 +2096,7 @@ const discussionPages = {
             speech: true,
             text: `“If they got quiet enough and still enough to be able to study our worlds...”`,
           },
-          ` the Fluff continued.`,
+          ` The Fluff continued.`,
         ],
         [
           { speech: true, text: `“Then we would learn so much!”` },

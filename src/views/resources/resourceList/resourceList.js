@@ -1,9 +1,11 @@
 import React from "react";
 import { ResourceCategory } from "../resources";
-import { filterResources } from "../resourceData";
+import { sortAllResources} from "../resourceData";
 
 export function ResourceList(props) {
-  const filteredResources = filterResources(props.filters);
+  //const filteredResources = filterResources(props.filters);
+
+  const filteredResources = sortAllResources();
 
   return (
     <div className={"position-relative"}>
@@ -30,8 +32,8 @@ export function ResourceList(props) {
 
       <section className={"d-flex flex-column align-items-center "}>
         <h2 className={'sectionHeader'}>To Learn More</h2>
-        {filteredResources.learnMore.length ? (
-          filteredResources.learnMore.map((categoryObj) => {
+        {filteredResources.other.length ? (
+          filteredResources.other.map((categoryObj) => {
             return (
               <ResourceCategory
                 heading={categoryObj.heading}

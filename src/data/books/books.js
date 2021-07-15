@@ -22,9 +22,9 @@ const books = {
       "El Expreso del Calentamiento Global"
     ),
     null,
-    127,
-    new MultiLingual(false, false),
-    null,
+    126,
+    new MultiLingual(true, false),
+    new MultiLingual(readers.marinaWeber, false),
     "Marina Weber"
   ),
 

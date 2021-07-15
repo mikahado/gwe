@@ -56,7 +56,7 @@ class Congrats extends React.Component {
                 />
               ) : (
                 <Button
-                  text={pageText.buttons.completions.backSessions.get(this.props.language)}
+                  text={pageText.buttons.completions.backLibrary.get(this.props.language)}
                   link={"/library"}
                   language={this.props.language}
                   iconType={"leftArrow"}

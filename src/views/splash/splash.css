@@ -72,6 +72,16 @@
   border-radius: 100%;
   margin: 0 0 0 0.5rem;
 }
+.Splash .menu .langs {
+  background-color: aliceblue;
+  border-radius: 1rem;
+}
+.Splash .menu .langs button {
+  width: fit-content;
+}
+.Splash .menu .langs .current {
+  background-color: var(--primary-blue);
+}
 
 .splashNav {
   display: flex;

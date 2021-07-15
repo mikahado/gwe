@@ -3,6 +3,8 @@ import React from "react";
 import "./table.css";
 
 export function Table(props) {
+
+
   return (
     <table>
       <thead>

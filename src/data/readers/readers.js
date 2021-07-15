@@ -14,6 +14,7 @@ const readers = {
   sukiWampler: new Reader("Suki Wampler", sukiWamplerImg),
   marcelaSalmon: new Reader("Marcela Salmon", marcelaSalmonImg),
   mollyBang: new Reader("Molly Bang", mollyBangImg),
+  marinaWeber: new Reader('Marina Weber', null)
 };
 
 export default readers;

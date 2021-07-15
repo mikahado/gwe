@@ -2,11 +2,11 @@ import React from "react";
 
 //Style Sheet
 import "./resources2.css";
-import { getFilterState } from "./resourceData";
+import {getFilterState } from "./resourceData";
 import { Button } from "../../components/buttons/buttons";
 import { ResourceList } from "./resourceList/resourceList";
-import { Filters } from "./filters/filters";
-import { ResourceMessage } from "./resourceMessage/resourceMessage";
+//import { Filters } from "./filters/filters";
+//import { ResourceMessage } from "./resourceMessage/resourceMessage";
 
 export function Resource(props) {
   const resource = props.resource;
@@ -102,10 +102,10 @@ export function ResourceCategory(props) {
   return (
     <div className={"resourceCategory"}>
       <h3 className={"heading"}>{heading}</h3>
-      <div className={"d-flex flex-wrap justify-content-center align-items-center"}>
+      <div className={"d-flex flex-column flex-wrap justify-content-center align-items-start w-100 p-3"}>
         {resourceList.length ? (
           resourceList.map((resource) => {
-            return <Button text={resource.name} extLink={resource.link} />;
+            return <a target={"_blank"} href={resource.link} rel={"noopener noreferrer"}>{resource.name}</a>;
           })
         ) : (
           <p>
@@ -158,6 +158,7 @@ export class Resources extends React.Component {
   }
 
   render() {
+
     return (
       <div className={"resourcePageWrap container-fluid"}>
         <div className={'row'}>
@@ -167,7 +168,7 @@ export class Resources extends React.Component {
         </div>
 
         <div className={'row'}>
-
+          {/*
           <div className={'col-md col-lg-auto'}>
             <div className={'filterColumn d-flex flex-column align-items-center'}>
               <ResourceMessage
@@ -189,8 +190,9 @@ export class Resources extends React.Component {
               }
             </div>
           </div>
+          */}
 
-          <div className={'col-md'}>
+          <div className={'col'}>
             <div className={'pageBody p-md-2'}>
 
               <ResourceList filters={this.state.filters} />

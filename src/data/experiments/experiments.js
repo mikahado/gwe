@@ -15,6 +15,8 @@ export const experiments = {
     'blanketExp',
     new MultiLingual(
       'Blanket Drama / Experiment',
+      '',
+      'Expérience de couverture'
     ),
     new MultiLingual(
       "Learn what happens when the earth is covered in greenhouse gases."
@@ -26,7 +28,14 @@ export const experiments = {
         '1 heavier blanket',
         'OR: 1 sheet & 1 blanket per student',
         'At least 2 thermometers for measuring room temperature'
-      ]
+      ],
+      '',
+      [
+        `1 drap (ou couverture légère)`,
+        `1 couverture plus lourde`,
+        `OU: 1 drap & 1 couverture par élève`,
+        `Au moins 2 thermomètres pour mesurer la température ambiante`,
+]
     ),
     new MultiLingual(
       [
@@ -36,6 +45,17 @@ export const experiments = {
         'Explain how if there was no atmosphere, the Earth wouldn’t be warm enough for us to live on.',
         'Now, add the blanket to the sheet over the child and measure the temperature after a few minutes.',
         'Explain that now the atmosphere, the air, is filled with too many bad gases, pollution from factories and cars (and yes, cow burps!) and it’s like having a sheet and a blanket.  It’s getting too warm!  How do we remove a blanket?  That’s what we are trying to solve.'
+      ],
+      '',
+      [
+        `Décrivez comment l'air autour de la Terre, appelé 'atmosphère', donne à la Terre une couche pour la garder au chaud.`,
+        `Mesurez la température de l'air dans votre pièce. Écrivez-le au tableau blanc.`,
+        `Couvrez un enfant avec le drap (ou demandez aux enfants de se couvrir avec des draps) et mesurez la température sous le drap après quelques minutes.`,
+        `Écrivez la température du drap à côté de la température de la pièce.`,
+        `Expliquez comment s'il n'y avait pas d'atmosphère, la Terre ne serait pas assez chaude pour que nous puissions vivre.`,
+        `Maintenant, ajoutez la couverture au drap sur un enfant et mesurez la température après quelques minutes.`,
+        `Expliquez que maintenant l'atmosphère, l'air, est remplie de trop de mauvais gaz, de la pollution des usines et des voitures (et oui, des rots de vache !) et c'est comme avoir`, `un drap et une couverture. Il fait trop chaud !`,
+        `Comment retirer une couverture? C'est ce que nous essayons de résoudre.`,
       ]
     )
   ),
@@ -43,8 +63,10 @@ export const experiments = {
   evapExp: new Experiment(
     'evapExp',
     new MultiLingual(
-      'Evaporation Experiment'
-    ),
+      'Evaporation Experiment',
+      '',
+      `Expérience d'évaporation`
+),
     new MultiLingual(
       "See what the sun's rays do to the Earth's water"
     ),
@@ -58,6 +80,15 @@ export const experiments = {
         'Spoon',
         'Shallow dish or pie plate',
         'sunshine'
+      ],
+      '',
+      [
+        `L'eau`,
+        `Le sel`,
+        `Une cuillère à mesurer`,
+        `Une tasse à mesurer`,
+        `Une cuillère Plat creux ou assiette à tarte`,
+        `De l'ensoleillement`,
       ]
     ),
     new MultiLingual(
@@ -69,13 +100,33 @@ export const experiments = {
         'Check every half hour.',
         'What does it look like after two hours or so?  The water should be gone, but there should be a dusty layer of salt.  Why?  The sun evaporated the water, but left the salt behind.',
         'Advanced option:  include a dish with the same amount of fresh water, preferably distilled water, as an experimental control and have the children predict, draw what will happen. Place next to the salted water outside and observe every time you observe the salted water. If your water is especially hard and you don’t have distilled water, skip this part of the experiment because the minerals in hard water will leave a dust as well.',
-      ]
+      ],
+      '',
+      [
+        `Avant l'expérience: `,
+        ` Avec la contribution des enfants, définissez l'évaporation.`,
+        ` Écrivez la définition de l'évaporation pour les enfants sur un tableau blanc`,
+        ` Décrivez l'expérience suivante et demandez aux enfants d'écrire à quoi elle ressemble au début.`,
+        ` Faites-en un dessin.`,
+        ` Devinez à quoi cela ressemblera à la fin et écrivez-le ou dessinez-le.`,
+        ` Mélanger 1 cuillère à café de sel avec ½ tasse d'eau tiède.`,
+        ` Versez un tout petit peu dans une assiette à tarte (le verre clair est préférable) de manière à ce qu'il recouvre juste le fond d'une fine couche.`,
+        ` Placer au soleil, de préférence à l'extérieur. S'il y a du vent, pesez avec de la pierre ou attendez un jour moins venteux.`,
+        ` Vérifiez toutes les demi-heures. A quoi cela ressemble-t-il au bout de deux heures environ ? L'eau devrait avoir disparu, mais il devrait y avoir une couche poudreuse de sel. Pourquoi? Le soleil a évaporé l'eau, mais a laissé le sel derrière lui.`,
+        ` Option avancée:`,
+        [
+          `Mettez un plat avec la même quantité d'eau douce, de préférence de l'eau distillée, comme témoin expérimental et faire prédire et dessiner par les enfants ce qui va se passer.`,
+          `Placez à côté de l'eau salée à l'extérieur et observez chaque fois que vous observez l'eau salée. (Si l'eau est particulièrement dure et que vous n'avez pas d'eau distillée, omettez cette partie de l'expérience car les minéraux contenus dans l'eau dure laisseront également une couche poudreuse.)`,
+        ]
+]
     ),
     '',
     new ExperimentExcerpt(
       myLight3,
       new MultiLingual(
-        'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of evaporation.'
+        'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of evaporation.',
+        '',
+        `Dans le livre, <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit : ''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.'' Ceci est une image simplifiée et une description de l'évaporation. `
       )
     )
   ),
@@ -83,7 +134,9 @@ export const experiments = {
   cloudExp: new Experiment(
     'cloudExp',
     new MultiLingual(
-      'Cloud Experiment'
+      'Cloud Experiment',
+      '',
+      `Expérience d'un nuage`
     ),
     new MultiLingual(
       'Learn how clouds are formed'
@@ -96,19 +149,31 @@ export const experiments = {
         'some way to make water hot',
         'ice',
         'matches'
+      ],
+      '',
+      [
+        `un pot de 360 ml. avec couvercle`,
+        `de l'eau`,
+        `un moyen de faire de l'eau chaude`,
+        `de la glace`,
+        `des allumettes`,
       ]
     ),
     new MultiLingual(
       [
         'This experiment will help the children understand the process of making clouds in a little more detail.',
         'By GWE Mentor Beverly Williams, also known as The Brainiac Baroness--how clouds are made'
-      ]
+      ],
+      '',
+      ['Regardez le vidéo - (c\'est en anglais).']
     ),
-    "https://www.youtube.com/embed/wBW6q41gB_M",
+    "https://www.youtube.com/embed/wBW6q41gB_M?hl=en&amp;cc_lang_pref=en&amp;cc_load_policy=1&amp;cc=1",
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/myLight/pages/3.jpg`,
       new MultiLingual(
-        'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of cloud formation.'
+        'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of cloud formation.',
+        '',
+        `Dans <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit: <i>''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.''</i> Il s'agit d'une image et d'une description simplifiées de la formation des nuages.`
       )
     )
   ),
@@ -116,7 +181,7 @@ export const experiments = {
   pinwheelExp: new Experiment(
     'pinwheelExp',
     new MultiLingual(
-      'Pinwheel Experiment'
+      'Expérience de moulinet'
     ),
     new MultiLingual(
       'Build a miniature turbine'
@@ -133,6 +198,16 @@ export const experiments = {
           'bamboo skewer with point',
           'tape',
           'scrap paper'
+        ],
+        '',
+        [
+          `Pot à lait`,
+          `des ciseaux`,
+          `une règle`,
+          `une perforatrice`,
+          `un sharpie`,
+          `une brochette de bambou avec pointe`,
+          `du papier brouillon`
         ]
       ),
       new MultiLingual(
@@ -140,6 +215,13 @@ export const experiments = {
           'Pre-cut and pre-hole-punched plastic square from milk jug with drawn diagonal lines',
           'Bamboo skewer with point',
           'Scissors'
+        ],
+        '',
+        [
+          `Un carré en plastique prédécoupé et prépercé`,
+          `avec des lignes diagonales dessinées`,
+          `Une brochette de bambou avec pointe`,
+          `Des ciseaux`
         ]
       )
     ],
@@ -148,6 +230,12 @@ export const experiments = {
         'Pinwheels are like little turbines. Once children have made them, they can try them out in “wind” by blowing on them or running while holding them, outside, or creating a “turbine field” outside the classroom.',
         'Then, you can have them place them under running water to simulate a turbine in a hydroelectric dam.',
         'For detailed instructions on building the pinwheels, click the "Open PDF" button below'
+      ],
+      '',
+      [
+        'Les moulins à vent sont comme de petites turbines.',
+        `Une fois que les enfants les ont fabriqués, ils peuvent les essayer dans le  ''vent'' en soufflant dessus ou en courant tout en les tenant, à l'extérieur, ou en créant un ''champ de turbines'' à l'extérieur de la classe.`,
+        `Ensuite, vous pouvez leur demander de les placer sous l'eau courante pour simuler une turbine dans un barrage hydroélectrique.`,
       ]
     ),
     '',
@@ -155,19 +243,25 @@ export const experiments = {
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/5.jpg`,
         new MultiLingual(
-          'In <u>My Light</u>, on the fifth (including title page) two-page spread, the left-hand page talks about a dam and turbines and the right-hand page shows a picture of the turbine.'
+          'In <u>My Light</u>, on the fifth (including title page) two-page spread, the left-hand page talks about a dam and turbines and the right-hand page shows a picture of the turbine.',
+          '',
+          `Dans le livre, <u>Ma lumiére</u>, sur la cinquième page de double page (y compris la page de titre), la page de gauche décrit un barrage et de turbines et la page de droite montre une image de la turbine.`
         )
       ),
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/7.jpg`,
         new MultiLingual(
-          'The seventh two-page spread describes and shows wind turbines.'
+          'The seventh two-page spread describes and shows wind turbines.',
+          '',
+          `La septième page de double page décrit et montre les éoliennes.`
         )
       ),
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/11.jpg`,
         new MultiLingual(
-          'The eleventh two-page spread describes and shows the turbines pushed by the steam made by heating water at coal-burning power plants.'
+          'The eleventh two-page spread describes and shows the turbines pushed by the steam made by heating water at coal-burning power plants.',
+          '',
+          `La onzième page de double page décrit et montre les turbines poussées par la vapeur produite par le chauffage de l'eau dans les centrales électriques au charbon.`
         )
       ),
     ],
@@ -183,6 +277,10 @@ export const experiments = {
       [
         'Stopwatch (or a stopwatch on a cellphone)'
       ],
+      '',
+      [
+        `Un chronomètre (ou un chronomètre sur un téléphone portable)-`
+      ]
     ),
     new MultiLingual(
       [
@@ -190,13 +288,22 @@ export const experiments = {
         'Instruct the children to find their heartbeat using any finger but the thumb at the jugular vein on their neck or on their wrist.',
         'Have them count the number of beats for 15 seconds.',
         'Have them multiply by four to find their beats per minute.'
+      ],
+      '',
+      [
+        `À quelle vitesse votre cœur bat-il?`,
+        `Demandez aux enfants de trouver leur rythme cardiaque en utilisant n'importe quel doigt, sauf le pouce au niveau de la veine jugulaire de leur cou ou de leur poignet. (Tournez votre main comme si vous alliez serrer la main. Suivez une ligne droite à partir de votre pouce jusqu'à ce que vous sentiez un endroit où il y a un petit creux. Vous sentirez votre cœur battre un peu plus fort ici.)`,
+        `Demandez-leur de compter le nombre de battements pendant 15 secondes.`,
+        `Demandez-leur de multiplier par quatre pour trouver les battements par minute.`,
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/2.jpg`,
       new MultiLingual(
-        'In <u>Living Sunlight</u>, on the second (including title page) two-page spread, the right-hand page talks about feeling your heart.'
+        'In <u>Living Sunlight</u>, on the second (including title page) two-page spread, the right-hand page talks about feeling your heart.',
+        '',
+        `Dans le livre La lumière vivante du soleil, sur la deuxième page de double page (y compris la page de titre), la page de droite parle de ressentir votre cœur.`
       )
     )
 

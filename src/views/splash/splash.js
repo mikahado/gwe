@@ -32,11 +32,15 @@ export function Splash(props) {
     return `${process.env.PUBLIC_URL}/assets/images/logos/GWElogo.png`;
   }
 
+  function handleLangChange(e){
+    props.selectLanguage(e.target.id);
+  }
+
   return (
     <div className={"Splash d-grid position-relative w-100"}>
       <div className={"splashBody position-relative"}>
-        <div className={"menuWrap d-flex"}>
-          <div className={"menu d-flex flex-column align-items-center"}>
+        <div className={"menuWrap d-flex justify-content-md-center justify-content-xl-end align-items-md-start"}>
+          <div className={"menu d-flex flex-column align-items-center mr-md-5 mt-md-4"}>
             <div className="splashLogo">
               <img src={getLogo()} alt={""} />
             </div>
@@ -48,6 +52,22 @@ export function Splash(props) {
             />
 
             <Button text={pageText.buttons.landing.teachGuide.get(props.language)} link={"/guide"} />
+
+            <div className={'langs d-flex flex-row'}>
+              {
+                props.suppLangs.map( lang =>{
+                  return(
+                    <button
+                      id={lang}
+                      onClick={handleLangChange}
+                      className={props.language === lang ? 'current' : null }
+                    >
+                      {pageText.labels.languages[lang]}
+                    </button>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
 

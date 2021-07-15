@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 // Sub-Components
-import Translate from "../translate/translate";
+//import Translate from "../translate/translate";
 import { Button } from "../buttons/buttons";
 
 // Style Sheet
@@ -33,6 +33,7 @@ export function NavButton(props) {
 function TopNav(props) {
   const [mobile, setMobile] = useState(false);
   let [expand, setExpand] = useState(0);
+  let [languageSelect, setLangageSelect] = useState(false);
 
   function checkMobile() {
     let short = window.matchMedia(`(max-height: 500px)`).matches;
@@ -63,6 +64,20 @@ function TopNav(props) {
       setExpand(0);
     }
   }
+  function toggleLanguageSelect(){
+    console.log(languageSelect);
+    setLangageSelect(languageSelect ? false : true);
+  }
+  function hideLanguageSelect(){
+    setLangageSelect(false);
+  }
+  function showLanguageSelect(){
+    setLangageSelect(true);
+  }
+  function handleLangChange(e){
+    props.selectLanguage(e.target.id);
+    setLangageSelect(false);
+  }
 
   return (
     <nav
@@ -78,10 +93,41 @@ function TopNav(props) {
           </Link>
         </div>
 
+        <div
+          className={'langDrop position-relative'}
+          onMouseEnter={showLanguageSelect}
+          onMouseLeave={hideLanguageSelect}
+        >
+          <Button
+            text={pageText.labels.languages[props.language]}
+            class={'current'}
+            iconType={languageSelect ? 'upArrow' : 'downArrow' }
+            click={toggleLanguageSelect}
+          />
+          {
+            languageSelect ?
+              <div className="langButtons d-flex flex-column">
+
+                {
+                  props.suppLangs.map( lang =>{
+                    return lang !== props.language ?
+                      <button id={lang} onClick={handleLangChange}>{pageText.labels.languages[lang]}</button>
+                      :null
+                  })
+                }
+
+              </div>
+              :null
+          }
+        </div>
+
+        {/*}
         <Translate
           language={props.language}
           changeLanguage={props.changeLanguage}
         />
+        {*/}
+
       </div>
 
       <div className={"d-flex flex-column flex-sm-row"}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useHistory, useLocation, withRouter} from 'react-router-dom';
+import {useHistory, useLocation, } from 'react-router-dom';
 
 // Data
 import pageText from "../../data/pageText";
@@ -24,6 +24,9 @@ import "./discuss.css";
 import "./readMediaQueries.css";
 import { useParams } from "react-router-dom";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
+import '../../components/table.css';
+
+let parse = require('html-react-parser');
 
 // SUB-COMPONENTS
 class Discuss extends React.Component {
@@ -95,7 +98,8 @@ class Discuss extends React.Component {
               );
               // Return Plain Text
             } else {
-              newLine.push(lineData[i]);
+
+              newLine.push( parse( lineData[i] ) );
             }
           }
           if (newLine.length) {
@@ -105,6 +109,7 @@ class Discuss extends React.Component {
         });
         //Return Assembled Page Text
         if (convertedText.length) {
+          console.log(convertedText);
           return <div className={"discText col-md"}>{convertedText}</div>;
         }
       }
@@ -151,7 +156,9 @@ class Discuss extends React.Component {
   getImages(discussion, page) {
     const images = this.props.images;
 
-    if (Array.isArray(images)) {
+    if (!images.length){
+      return null;
+    } else if (Array.isArray(images)) {
       if (typeof images[0] !== "string") {
         return this.characterGrid(images);
       } else {

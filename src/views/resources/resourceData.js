@@ -548,6 +548,30 @@ const resources = [
     noIframe: true,
     regions: ["intl", "usa", "nm"],
   },
+  {
+    name: `The Global Warming Express`,
+    link: `https://vimeo.com/110723960`,
+    embedLink: `https://player.vimeo.com/video/110723960`,
+    type: `video`,
+    kids: true,
+    regions: ["nm"],
+  },
+  {
+    name: `The Global Warming Express - Santa Fe, NM`,
+    link: `https://vimeo.com/132480220`,
+    embedLink: `https://player.vimeo.com/video/132480220`,
+    type: `video`,
+    kids: true,
+    regions: ["nm"],
+  },
+  {
+    name: `The Global Warming Express - Santa Fe, NM - Indiegogo Campaign`,
+    link: `https://vimeo.com/136319729`,
+    embedLink: `https://player.vimeo.com/video/136319729`,
+    type: `video`,
+    kids: true,
+    regions: ["nm"],
+  },
 ];
 
 export function getFilterState() {
@@ -725,6 +749,128 @@ export function compileFilters(filterObj) {
   }
 }
 
+export function sortAllResources(){
+
+  let grouped = {
+    kids: {},
+    other: {}
+  };
+
+  resources.forEach( resource => {
+    if (resource.regions.includes('nm')){
+      resource.region = 'nm';
+    } else if (resource.regions.includes('usa')){
+      resource.region = 'usa';
+    } else {
+      resource.region = 'intl';
+    }
+    if (!grouped[resource.kids ? 'kids' : 'other'].hasOwnProperty(resource.type)){
+      grouped[resource.kids ? 'kids' : 'other'][resource.type] = {};
+    }
+    if (!grouped[resource.kids ? 'kids' : 'other'][resource.type].hasOwnProperty(resource.region)) {
+      grouped[resource.kids ? 'kids' : 'other'][resource.type][resource.region] = [];
+    }
+    grouped[resource.kids ? 'kids' : 'other'][resource.type][resource.region].push(resource);
+  });
+
+  let sorted = {};
+  Object.keys(grouped).forEach(ageKey=>{
+    sorted[ageKey] = [];
+
+    Object.keys(grouped[ageKey]).forEach(categoryKey =>{
+
+        sorted[ageKey].push({
+          heading: categoryKey,
+          list: []
+        });
+
+      Object.keys(grouped[ageKey][categoryKey]).forEach(regionKey =>{
+
+        sorted[ageKey].find( (catObj) => catObj.heading === categoryKey ).list.push({
+          heading: categoryLabels[regionKey],
+          list: grouped[ageKey][categoryKey][regionKey]
+        })
+
+      })
+    })
+  });
+
+  function sortTypes(a, b) {
+    const categoryPriority = [
+      "video",
+      "article",
+      "pub",
+      "info",
+      "people",
+      "bus",
+    ];
+
+    //(a);
+
+    if (a.heading === "org") {
+      return 1;
+    } else if (b.heading === "org") {
+      return -1;
+    } else if (categoryPriority.indexOf(a.heading) < 0) {
+      return 1;
+    } else if (
+      categoryPriority.indexOf(a.heading) <
+      categoryPriority.indexOf(b.heading)
+    ) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+  function sortRegions(a, b) {
+
+    const regionPriority = [
+      'New Mexico',
+      'U.S.A.',
+      'International',
+    ]
+    if (regionPriority.indexOf(a.heading) < regionPriority.indexOf(b.heading)){
+      return -1
+    } else {
+      return 1;
+    }
+  }
+  function sortResources(a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+  }
+
+  Object.keys(sorted).forEach(ageKey =>{
+    sorted[ageKey].sort(sortTypes);
+    sorted[ageKey].forEach(type =>{
+      type.list.sort(sortRegions);
+      type.list.forEach(typeRegion =>{
+        typeRegion.list.sort(sortResources)
+      })
+    })
+  })
+
+  let output = {};
+
+  Object.keys(sorted).forEach(ageKey =>{
+    output[ageKey] = [];
+    sorted[ageKey].forEach(cat =>{
+      cat.list.forEach(catRegion =>{
+        output[ageKey].push({
+          heading: `${categoryLabels[cat.heading]} - ${catRegion.heading}`,
+          list: catRegion.list
+        })
+      })
+    })
+  })
+
+  return output;
+
+  //output.ageKey.sort(compare);
+  //return
+}
+
 function getRegionResources(region) {
   const regionResources = resources[region].resources;
 
@@ -810,4 +956,8 @@ function getAllResources() {
 
   return allResources;
 }
+
+sortAllResources();
+
 export { resources, categoryLabels, getRegionResources, getAllResources };
+

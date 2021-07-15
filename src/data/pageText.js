@@ -222,6 +222,33 @@ const pageText = {
         'Businesses'
       ),
     },
+    experiments: {
+      supplies: new MultiLingual(
+        'Supplies',
+        '',
+        'Les besoins'
+      ),
+      fromText: new MultiLingual(
+        'From The Text:',
+        '',
+        'Du texte: '
+      ),
+      instructions: new MultiLingual(
+        'Instructions',
+        '',
+        'Instructions'
+      ),
+      or: new MultiLingual(
+        'OR:',
+        '',
+        'OU:'
+      )
+    },
+    languages: {
+      eng: 'English',
+      spa: 'Español',
+      fra: 'Français'
+    },
 
     // Reader Start
     readBy: new MultiLingual(

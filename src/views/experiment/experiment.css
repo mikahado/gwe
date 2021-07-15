@@ -58,6 +58,7 @@
   margin-top: 1rem;
 }
 .experimentWrap .instructions {
+  width: 100%;
   overflow-anchor: none;
 }
 .experimentWrap .instructions a {

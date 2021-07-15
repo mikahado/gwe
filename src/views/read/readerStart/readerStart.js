@@ -17,9 +17,11 @@ export function ReaderStart(props) {
     byAuthor = content.byAuthor.get(props.language);
   }
   if (content.reader) {
-    reader = content.reader.get(props.language);
-    readerName = reader.name;
-    readerPhoto = reader.photo;
+    if (content.reader.get(props.language,false)){
+      reader = content.reader.get(props.language, false);
+      readerName = reader.name;
+      readerPhoto = reader.photo;
+    }
   }
   if (content.narration) {
     if (content.runTime) {

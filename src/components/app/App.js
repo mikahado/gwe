@@ -37,8 +37,13 @@ export function App(props) {
   const [language, setLanguage] = useState("spa");
   const [page, setPage] = useState("");
 
+  const suppLangs = ['eng', 'spa', 'fra'];
+
   function changeLanguage() {
     setLanguage(language === "eng" ? "spa" : "eng");
+  }
+  function selectLanguage(newLang) {
+    setLanguage(newLang);
   }
 
   return (
@@ -49,6 +54,8 @@ export function App(props) {
             language={language}
             changeLanguage={changeLanguage}
             page={page}
+            suppLangs={suppLangs}
+            selectLanguage={selectLanguage}
           />
         </div>
       </div>
@@ -198,7 +205,12 @@ export function App(props) {
             render={({ match }) => {
               setPage("splash");
               return (
-                <Splash language={language} changeLanguage={changeLanguage} />
+                <Splash
+                  language={language}
+                  changeLanguage={changeLanguage}
+                  suppLangs={suppLangs}
+                  selectLanguage={selectLanguage}
+                />
               );
             }}
           />

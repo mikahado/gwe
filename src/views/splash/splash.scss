@@ -86,6 +86,7 @@
     //margin: 1rem;
     //top: 2rem;
     //right: 2rem;
+    //margin-right: 2rem;
 
     button {
       width: 15rem;
@@ -102,6 +103,17 @@
       border: 0.15rem solid aliceblue;
       border-radius: 100%;
       margin: 0 0 0 0.5rem;
+    }
+
+    .langs{
+      background-color: aliceblue;
+      border-radius: 1rem;
+      button{
+        width: fit-content;
+      }
+      .current{
+        background-color: var(--primary-blue);
+      }
     }
   }
 }

@@ -27,6 +27,9 @@
   border-radius: 1rem;
   text-align: center;
 }
+.resourceCategory a {
+  color: darkgreen;
+}
 
 .filterColumn {
   height: fit-content;

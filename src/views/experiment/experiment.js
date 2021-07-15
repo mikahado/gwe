@@ -9,6 +9,7 @@ import {ReadClose} from "../read/readClose/readClose";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import {Lightbox} from "./lightbox/lightbox";
 import {NextMaterial} from "../read/nextMaterial/nextMaterial";
+import pageText from "../../data/pageText";
 
 let parse = require('html-react-parser');
 
@@ -17,6 +18,8 @@ export function Experiment(props) {
   let [lightboxSrc,setLightboxSrc] = useState('');
 
   let content = props.content;
+
+  let textLabels = pageText.labels.experiments;
 
   // Functions
   function parseSupplies(supplies){
@@ -43,7 +46,7 @@ export function Experiment(props) {
               })
             }
           </ul>
-          <p><b>OR:</b></p>
+          <p><b>{textLabels.or.get(props.language)}</b></p>
           <ul>
             {
               supplies[1].get(props.language).map( supply =>{
@@ -134,7 +137,7 @@ export function Experiment(props) {
           content.suppliesList ?
             <div className={'col-lg-auto supplies d-flex justify-content-center mb-2'}>
               <section>
-                <h2><b>Supplies</b></h2>
+                <h2><b>{textLabels.supplies.get(props.language)}</b></h2>
                 {parseSupplies(content.suppliesList)}
               </section>
             </div>
@@ -146,16 +149,16 @@ export function Experiment(props) {
           {
             content.excerpts ?
               <section className={'container'}>
-                <h2>From The Text:</h2>
+                <h2>{textLabels.fromText.get(props.language)}</h2>
                 <div className={'container'}>
                   {
                     Array.isArray(content.excerpts) ?
                       content.excerpts.map( excerpt =>{
                         return(
-                          <ExperimentExcerpt imgSrc={excerpt.imgSrc} caption={excerpt.caption} openLightbox={openLightbox} />
+                          <ExperimentExcerpt imgSrc={excerpt.imgSrc} caption={excerpt.caption} openLightbox={openLightbox} language={props.language}/>
                         )
                       })
-                      : <ExperimentExcerpt imgSrc={content.excerpts.imgSrc} caption={content.excerpts.caption} openLightbox={openLightbox} />
+                      : <ExperimentExcerpt imgSrc={content.excerpts.imgSrc} caption={content.excerpts.caption} openLightbox={openLightbox} language={props.language}/>
                   }
                 </div>
               </section>
@@ -163,7 +166,7 @@ export function Experiment(props) {
           }
 
           <section className={'instructions'}>
-            <h2><b>Instructions</b></h2>
+            <h2><b>{textLabels.instructions.get(props.language)}</b></h2>
             {parseBody(content.body.get(props.language))}
             {console.log(content.videoSrc)}
             {

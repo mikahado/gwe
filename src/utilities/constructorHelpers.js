@@ -3,8 +3,8 @@ import discussionPages from "../data/discussions/discussionPages";
 import { MultiLingual } from "../data/model/multiLingual";
 import pageText from "../data/pageText";
 import translationsSpa from "../data/books/translationsSpa";
-
-const noGraphic = `${process.env.PUBLIC_URL}/assets/images/noMediaImage.png`;
+import {discussionPagesFra} from "../data/discussions/DiscussionPagesFra";
+import {discussionPagesSpa} from "../data/discussions/discussionPagesSpa";
 
 export function assembleBookPages(contentId, endPage) {
   const contentPages = [];
@@ -41,7 +41,7 @@ export function assembleDiscussionPages(contentId) {
   }
   function processPageImgData(pageImgData) {
     if (!pageImgData.length) {
-      pageImgData = noGraphic;
+      //pageImgData = noGraphic;
     }
 
     const convertedImages = [];
@@ -67,9 +67,11 @@ export function assembleDiscussionPages(contentId) {
     return convertedImages;
   }
   function processPageTextData(pageTextData) {
-    const assembledPageText = new MultiLingual(pageTextData, [
-      pageText.messages.spanishComing,
-    ]);
+    const assembledPageText = new MultiLingual(
+      pageTextData.eng,
+      pageTextData.spa,
+      pageTextData.fra
+    );
     return assembledPageText;
   }
 
@@ -88,9 +90,23 @@ export function assembleDiscussionPages(contentId) {
   for (let page = 2; page <= Object.keys(pagesData).length; page++) {
     let pageData = pagesData[page];
 
+    let fraPageText, spaPageText;
+    if (discussionPagesFra[contentId]){
+      fraPageText = discussionPagesFra[contentId][page];
+    }
+    if (discussionPagesSpa[contentId]){
+      spaPageText = discussionPagesSpa[contentId][page];
+    }
+
+    let pageTextData = {
+      eng: pageData.text,
+      spa: spaPageText,
+      fra: fraPageText
+    }
+
     contentPages.push({
       img: processPageImgData(pageData.images),
-      text: processPageTextData(pageData.text),
+      text: processPageTextData(pageTextData),
       audio: new MultiLingual(
         `${process.env.PUBLIC_URL}/assets/discussion/${contentId}/audio/eng/${page}.mp3`
       ),

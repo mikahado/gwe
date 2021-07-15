@@ -4,7 +4,7 @@
 
 The GWE Online Learning App / OLA (formerly OLP) is a web application which allows teachers and students from anywhere in the world to access the educational curriculum of the non-profit organization [The Global Warming Express](https://theglobalwarmingexpress.org/). 
 
-The curriculum is comprised of sessions, each session containing roughly one class period's worth of material, with a teacher presumably covering 1-2 sessions per week. With this online curriculum, teachers are provided with enough material to teach GWE-provided material on a regular basis over the course of a full school year.
+The curriculum is comprised of sessions, each session containing roughly one class period's worth of material, with a teacher presumably covering 1-2 sessions per week. With this online curriculum, teachers are provided with enough material to teach GWE-provided content on a regular basis over the course of a full school year.
 
 ## Technical Overview / Dependencies
 
@@ -151,13 +151,13 @@ While the Book data model defines the shared programming that all Books have in 
 
 One thing to be aware of is how the books are linked with their descriptions and translations - these values are not passed in as arguments, instead they are defined in different files (`src/data/books/bookDescriptions.js` & `src/data/books/translationsSpa.js` - soon to come: `src/data/books/translationsFra.js`), and the Book constructor automatically finds this data during the Book's creation because of it's shared content ID (e.g. `commonGround` or `myLight`). These content IDs are a source of much of the data compilation in this app so be careful with them - one typo in a content ID could cause problems in a variety of places in the app.
 
-## Discussions
+### Discussions
 
 The "discussions" in the OLA are a less self-explanatory format of content, but they are very simple to understand. The discussions are original content, created specifically for the GWE OLA, and can be simply described as illustrated stories involving the GWE organization's mascot characters (originating from the book _The Global Warming Express_), in which these mascot characters _discuss_ the key concepts presented in the curriculum's books.
 
 As an alternative to unique illustrations on every page of these stories, the discussions utilize reccuring illustrations for each character, so that each page of text is accompanied by a grouping of illustrations of each character from that section of text. 
 
-### Discussion Assets
+#### Discussion Assets
 
 The assets that make up the discussions are as follows:
 * JavaScript-coded text for all languages, which contains the actual text users will read, in a format the app can process, and also the characters whose illustrations will appear on each page
@@ -171,13 +171,13 @@ The assets that make up the discussions are as follows:
 * A specifc image unique to each individual discussion - used as the cover photo and at one point in the discussion
   * `public/assets/discussion/[Discussion ID]/special.png` 
     
-### The Discussion Page Text Object
+#### The Discussion Pages Object
 
 As mentioned above, `discussionPages.js` contains the data for what will be displayed on each page of each discussion. This data object contains a property for each discussion (represented by the discussion ID which MUST correspond to the ID in the `discussions.js` data object where the discussions are intialized).
 
 Under the key for each discussion on this object, there is a key for each page of the discussion, each of which has two properties - text and images. Each of these is explained here:
 
-#### images
+##### images
 
 This is an array with a list of the images that will be displayed on the page. At first glance, these don't seem to be images, as the value will look something like this: `"sally", "marina", "joanna"`. These names correspond to values on the `discussionCharacters.js` object, which contains the values for the characters' names as they should be displayed to the reader, as well as the image file that will be displayed. If a value in this `images` property matches a value on the `discussionCharacters.js` object, then that character will be displayed - their image and appropriate name.
 
@@ -185,7 +185,43 @@ Another option for a value in this array is `SPECIAL`, in which case the app wil
 
 In order to display a different image on a dicussion page (other than a character image or a discussion's special image), the URL path of that image can be listed in the images array. Because of how [Webpack](https://webpack.js.org/concepts/) compiled the assets at build time, however, it can be complicated to understand what the file path to an image should be - the simplest way to do so would be to include that image within the same folder as `discussionPages.js` so that the relative path is simple to understand. 
 
-Within `discussionPages.js`, the data is present for which illustrations will be displayed in each page. You will find this data on the `images` property for each page  
+##### text
+
+The `text` property is an array of nested arrays, which will be broken down here. 
+* The outer array, i.e. the direct child of a page number's text property - this is the wrapper array that contains all the text date for this page
+  * the inner array - this represents a line of text (which will wrap if needed) on the screen (will eventually be placed inside of a `<p>` element). These arrays are a shorthand way to tell the app how to split the text visually on the screen.
+    
+In some of the discussion pages data, you will see what looks like this: 
+
+```javascript
+        [
+          {
+            speech: true,
+            text: '“That was a scary story,"',
+          },
+          ' said Sally, ',
+          {
+            speech: true,
+            text: '“At least the part about us.”',
+          },
+        ],
+```
+This is one shorthand option to write code that will result in the dialogue receiving alternate styling from the other (descriptive) text.
+
+As the app is converting the discussion page data into html which can be represented visually, when it encounters object with a `true` `speech` property, it writes that object's text property into a `<span>` element with a specific class - `discussSpeechBubble`. To simpify, this above code will be converted into the following html:
+
+```html
+<p>
+    <span class="discussSpeechBubble">
+        “That was a scary story,"
+    </span> 
+    said Sally, 
+    <span class="discussSpeechBubble">
+        “At least the part about us.”
+    </span>
+</p>
+```
+The end result is that the discussion is easier to read / process for users (particularly for younger readers) because the dialogue sticks out from the descriptions. The effect of this stying is easy to spot when viewing the app as a user.
 
 #### Other Content Data Models  
 

@@ -139,6 +139,12 @@ return <img src={myBook.pageData[3].img}/>
 // Returns an image with the src set to the new book's page 4 (zero-indexed) image
 // Assumes there is an image located in: 
 // ./public/assets/book/uniqueId/pages/4.jpg
+
+return <audio src={myBook.pageData[3].audio.get(props.lang)}/>
+// Returns an audio element with the src set to the new book's page 4 audio narration
+// Chooses the audio file to load based on the app's current language
+// Assumes there is an audio located in: 
+// ./public/assets/book/uniqueId/audio/[Current Language i.e. 'eng' or 'spa']/4.mp3
 ```
 
 The Book data model is looked at `src/data/model/book.js`. 
@@ -179,7 +185,7 @@ Under the key for each discussion on this object, there is a key for each page o
 
 ##### images
 
-This is an array with a list of the images that will be displayed on the page. At first glance, these don't seem to be images, as the value will look something like this: `"sally", "marina", "joanna"`. These names correspond to values on the `discussionCharacters.js` object, which contains the values for the characters' names as they should be displayed to the reader, as well as the image file that will be displayed. If a value in this `images` property matches a value on the `discussionCharacters.js` object, then that character will be displayed - their image and appropriate name.
+The `images` property is an array with a list of the images that will be displayed on the page. At first glance, these don't seem to be images, as the value will look something like this: `"sally", "marina", "joanna"`. These names correspond to values on the `discussionCharacters.js` object, which contains the values for the characters' names as they should be displayed to the reader, as well as the image file that will be displayed. If a value in this `images` property matches a value on the `discussionCharacters.js` object, then that character will be displayed - their image and appropriate name.
 
 Another option for a value in this array is `SPECIAL`, in which case the app will display this discussion's unique image (as mentioned above).
 
@@ -194,7 +200,9 @@ The `text` property is an array of nested arrays, which will be broken down here
 In some of the discussion pages data, you will see what looks like this: 
 
 ```javascript
-        [
+2: { // object containing all data for this page
+  text:[ // array wrapping all text data for this page
+        [ // array wrapping text data for this line of text
           {
             speech: true,
             text: '“That was a scary story,"',

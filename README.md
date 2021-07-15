@@ -6,7 +6,7 @@ The GWE Online Learning App / OLA (formerly OLP) is a web application which allo
 
 The curriculum is comprised of sessions, each session containing roughly one class period's worth of material, with a teacher presumably covering 1-2 sessions per week. With this online curriculum, teachers are provided with enough material to teach GWE-provided material on a regular basis over the course of a full school year.
 
-##Technical Overview / Dependencies
+## Technical Overview / Dependencies
 
 ### Tech Stack:
 * JavaScript
@@ -27,7 +27,7 @@ Some key ReactJS concepts and their corresponding documentation:
 * [Components & Props](https://reactjs.org/docs/components-and-props.html)
 * [State](https://reactjs.org/docs/state-and-lifecycle.html)
 
-_**NOTE:**_ **There is one aspect of the GWA which can be updated with no understanding of ReactJS - The curriculum content.** The educational content itself is all coded in vanilla JavaScript, which makes adding, removing, or altering content possible with no undesrstanding of ReactJS*. The inner workings of the GWA take the educational material as data (from the `src/data/` folder), and represent them in the user interface built with ReactJS (in the `src/views/` & `src/components/` folders). 
+_**NOTE:**_ **There is one aspect of the OLA which can be updated with no understanding of ReactJS - The curriculum content.** The educational content itself is all coded in vanilla JavaScript, which makes adding, removing, or altering content possible with no undesrstanding of ReactJS*. The inner workings of the OLA take the educational material as data (from the `src/data/` folder), and represent them in the user interface built with ReactJS (in the `src/views/` & `src/components/` folders). 
 
 *The app currently supports 4 specific types of content: books, discussions, videos, and experiments. The ReactJS UI contains the ability to automatically render these types of content when they are properly coded into the curriculum. Supporting any other type of content will require building out the functionality in the ReactJS user interface.
 
@@ -80,7 +80,7 @@ console.log(helloEng, helloSpa, helloFra);
 ```
 
 ### The Language State & Prop
-What makes MultiLingual especially useful is its pairing with [React state](https://reactjs.org/docs/state-and-lifecycle.html), namely the GWA's `language` state, which is declared in the app's outer-most [component]() `src/components/app/App.js`, and then passed down to all child components as a [prop](https://reactjs.org/docs/components-and-props.html) (Another ReactJS feature). The `language` state (and it's dependent props) always contains a string representing one of the supported languages (at the time of writing - `eng`, `spa`, or `fra`).
+What makes MultiLingual especially useful is its pairing with [React state](https://reactjs.org/docs/state-and-lifecycle.html), namely the OLA's `language` state, which is declared in the app's outer-most [component]() `src/components/app/App.js`, and then passed down to all child components as a [prop](https://reactjs.org/docs/components-and-props.html) (Another ReactJS feature). The `language` state (and it's dependent props) always contains a string representing one of the supported languages (at the time of writing - `eng`, `spa`, or `fra`).
 
 What this accumulates to can be illustrated with the following:
 
@@ -95,7 +95,7 @@ return <p>{hello.get(props.language)}</p>
 ```
 In the above code, a 'Hello world' `p` element would be displayed in the app's current language, as determined by the app's `language` state and passed down to this component's `language` prop. If the user clicked one of the other language selector buttons, this `p` element would immediately display the string of the new language just clicked, as can be witnessed with any of the text in the running app.
 
-**NOTE:** In the example above, we assumes that this code is included in a React component inside the GWA, and that the `language` state is being passed as a prop to this component. 
+**NOTE:** In the example above, we assumes that this code is included in a React component inside the OLA, and that the `language` state is being passed as a prop to this component. 
 
 ### The PageText Data Object
 `src/data/pageText.js` is the source of most of the general text for the app - buttons, labels, etc. This file exports a tree object of nested multi-lingual text data which can be accessed to insert text into the app which has multi-lingual functionality.

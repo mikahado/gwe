@@ -7,6 +7,7 @@ import {MultiLingual} from "../model/multiLingual";
 import myLight3 from './MyLight3.jpg';
 import {ExperimentExcerpt} from "../model/experimentCaption";
 import pinwheelInstructions from './GWE-PinwheelInstructions.pdf';
+import pizzaBoxInstructions from './Pizza Box Solar Oven Directions.pdf';
 import {ExperimentVideo} from "../model/experimentVideo";
 
 export const experiments = {
@@ -162,12 +163,26 @@ export const experiments = {
     new MultiLingual(
       [
         'This experiment will help the children understand the process of making clouds in a little more detail.',
-        'By GWE Mentor Beverly Williams, also known as The Brainiac Baroness--how clouds are made'
+        'By GWE Mentor Beverly Williams, also known as The Brainiac Baroness--how clouds are made',
       ],
       '',
       ['Regardez le vidéo - (c\'est en anglais).']
     ),
-    "https://www.youtube.com/embed/wBW6q41gB_M?hl=en&amp;cc_lang_pref=en&amp;cc_load_policy=1&amp;cc=1",
+    [
+      new ExperimentVideo(
+        "https://www.youtube.com/embed/wBW6q41gB_M?hl=en&amp;cc_lang_pref=en&amp;cc_load_policy=1&amp;cc=1",
+        new MultiLingual(
+          'Making Clouds'
+        ),
+        [
+          `Welcome to today’s episode of Think with the Brainiac Baroness with me, Beverly Williams, the Brainiac Baroness. Today we will consider how are clouds made?`,
+          `White, puffy clouds. How are they made? In Molly Bang’s book, <u>My Light</u>, the sun explains that it is her radiance which warms the land and water. The caption for this picture says, “Tiny drops of warm water rise and form clouds.” The energy of the sun shines on the water and turns it into water vapor which rises to the sky. What is that called when the water is turned to water vapor by the sun? If you guessed evaporation, you would be correct. What happens to the water vapor as it rises into the sky to turn into clouds? Hmmm...that’s a little harder. Let’s try to understand it this way. What is the tallest mountain you can think of? Well, let’s talk about Mount McKinley in Alaska. The peak is about four miles above sea level. When you get to the top of that mountain will you be hotter or colder than you were at the base of the mountain? Yes, that’s right, you would be colder. That’s because you are four miles higher. Let’s get back to water vapor as it rises into the air above the earth. Will it also get colder? Yes, it will. Is that what turns it into a cloud? Let’s watch this demonstration and find out.`,
+          'I have two sixteen ounce canning jars, but any jar of any size would do. I have a cup of hot water and a bowl filled with ice. If you’re doing the demonstration with me at home, have an adult help you with the hot water. It doesn’t need to be boiling, but it should be hotter than you want to touch. Feel free to use a hot pot mitt to protect yourself from burns. I also have a box of matches, which you also need an adult to help you with. Fill both jars about a quarter of the way with water. Let’s make them even just for fun. The picture in Molly Bang’s My Light book helps us guess that if we cool the water vapor coming from the hot water, a cloud should form. So, let’s put ice in the lid so that we can cool the water vapor coming from the hot water. Let’s wait a little bit to see if a cloud forms. Is a cloud forming? What? No cloud? Hmmm.... What’s happening? In fact we are missing a key part to what happens in the sky to make clouds. Do you know what that is? If you guessed dust you would be correct. There are tiny bits of dust in the air all the time all around us. You can even see the dust sometimes floating in a shaft of light as that light comes into your house. Let’s light a match over the other jar to make some more dust in it. We’ll just drop a match in there and then we don’t have to worry about it. And then we’ll cool that jar of water with the lid filled with ice. Do we have a cloud forming in the jar with the dust from the match? It sure looks cloudier than the first jar. I think a cloud formed almost immediately. Let’s lift the lid off and see the cloud float to the sky. Can you see that?',
+          'Clouds are made when tiny bits of water vapor condense, that is, get cold enough to turn back into water, on a slightly bigger piece of dust. That piece of dust is still so small that you and I can’t see it. That piece of dust is called an aerosol.',
+          `And now you know how clouds are made. Thanks for taking the time to think with the Brainiac Baroness.`
+        ]
+      )
+    ],
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/myLight/pages/3.jpg`,
       new MultiLingual(
@@ -539,7 +554,8 @@ export const experiments = {
     '',
     new MultiLingual(
       [
-        'Using the sun’s energy for good! Make a pizza box solar oven to use the greenhouse effect to heat marshmallows.'
+        'Using the sun’s energy for good! Make a pizza box solar oven to use the greenhouse effect to heat marshmallows.',
+        'See the videos below, or see included PDF instructions'
       ]
     ),
     [
@@ -555,7 +571,9 @@ export const experiments = {
           'Instructions for children to make the solar oven from the pizza box kits:'
         )
       )
-    ]
+    ],
+    '',
+    pizzaBoxInstructions
   ),
   //-------------------------------------------------------
   golfBallExp: new Experiment(

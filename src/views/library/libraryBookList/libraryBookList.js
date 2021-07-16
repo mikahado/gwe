@@ -25,7 +25,7 @@ class LibraryBookList extends React.Component {
           //key={content.label}
           image={book.graphic}
           changeBook={this.props.changeBook}
-          title={get.extractFromData.title(book.title, this.props.language)}
+          title={book.title.get(this.props.language)}
           author={book.author}
         />
       );

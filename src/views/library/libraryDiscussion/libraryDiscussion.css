@@ -20,14 +20,14 @@
 }
 .libraryDiscussion #summaryMediaDets {
   position: absolute;
-  top: 0;
+  top: -1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* Size */
-  width: 80%;
-  height: 6rem;
+  width: 100%;
+  height: fit-content;
   padding: 0.25rem;
   /* Background */
   background-color: var(--primary-green);

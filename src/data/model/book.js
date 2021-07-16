@@ -44,7 +44,8 @@ export class Book extends ReadContent {
 
     this.byAuthor = new MultiLingual(
       pageText.labels.byAuthor(this.author, "eng"),
-      pageText.labels.byAuthor(this.author, "spa")
+      pageText.labels.byAuthor(this.author, "spa"),
+      pageText.labels.byAuthor(this.author, "fra"),
     );
 
     this.preloads = {};

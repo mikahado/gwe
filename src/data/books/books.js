@@ -7,7 +7,7 @@ import readers from "../readers/readers.js";
 const books = {
   commonGround: new Book(
     "commonGround",
-    new MultiLingual("Common Ground", "Terreno Común"),
+    new MultiLingual("Common Ground", "Terreno Común", 'Le terrain d\'entente'),
     new MultiLingual(new RunTime(6), new RunTime(5)),
     18,
     new MultiLingual(true, true),
@@ -30,7 +30,7 @@ const books = {
 
   myLight: new Book(
     "myLight",
-    new MultiLingual("My Light", "Mi Luz"),
+    new MultiLingual("My Light", "Mi Luz", `Ma Lumière`),
     new MultiLingual(new RunTime(5), new RunTime(5)),
     15,
     new MultiLingual(true, true),
@@ -40,7 +40,7 @@ const books = {
 
   livingSunlight: new Book(
     "livingSunlight",
-    new MultiLingual("Living Sunlight", "Luz Viviente"),
+    new MultiLingual("Living Sunlight", "Luz Viviente", `La lumière vivante du soleil`),
     new MultiLingual(new RunTime(6), new RunTime(6)),
     15,
     new MultiLingual(true, true),
@@ -60,7 +60,7 @@ const books = {
 
   riversOfSunlight: new Book(
     "riversOfSunlight",
-    new MultiLingual("Rivers Of Sunlight", "Ríos de Luz"),
+    new MultiLingual("Rivers Of Sunlight", "Ríos de Luz", `Les rivières d'ensoleillement`),
     new MultiLingual(new RunTime(10), new RunTime(13)),
     18,
     new MultiLingual(true, true),

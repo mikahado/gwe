@@ -1,6 +1,6 @@
 # Online Learning App for The Global Warming Express
 
-## What is the OLA?
+## What is the GWE OLA?
 
 The GWE Online Learning App / OLA (formerly OLP) is a web application which allows teachers and students from anywhere in the world to access the educational curriculum of the non-profit organization [The Global Warming Express](https://theglobalwarmingexpress.org/). 
 

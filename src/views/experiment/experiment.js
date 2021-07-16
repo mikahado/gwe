@@ -100,7 +100,22 @@ export function Experiment(props) {
         return(
           <div className={'videos'}>
             <h2>{video.heading.get(props.language)}</h2>
-            <ExperimentVideo src={video.videoSrc}/>
+            <ExperimentVideo
+              src={video.videoSrc}
+              transcript={video.transcript}
+            />
+            {
+              video.transcript ?
+                <div className={'videoTranscript'}>
+                  <h3>Video Transcript</h3>
+                  {
+                    video.transcript.map( line =>{
+                      return <p>{parse(line)}</p>
+                    })
+                  }
+                </div>
+                :null
+            }
           </div>
         )
       })

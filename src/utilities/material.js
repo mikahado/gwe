@@ -23,8 +23,8 @@ export function materialRouter(params, language, changeLanguage) {
   //let params = useParams();
   //const {language, changeLanguage} = props;
 
-  let sessionId = parseInt(params.sessionId);
-  let partNo = params.partNo ? parseInt(params.partNo) : 1;
+  let sessionId = Number(params.sessionId);
+  let partNo = params.partNo ? Number(params.partNo) : 1;
 
   let session = getSessionFromId(sessionId);
   let material = getMaterialFromSessionAndPartNo(session, partNo);

@@ -19,17 +19,16 @@ const pageText = {
         `¡No hay tiempo que perder!`,
       ],
     },
-    library: {
-      coolBooks: new MultiLingual(
+    library: [
+      new MultiLingual(
         'Look how many cool books we can choose from!',
         '¡Tantas buenas opciones para elegir!'
       ),
-      eng: [
-        "Look how many cool books we can choose from!",
+      new MultiLingual(
         `Which book should we read today?`,
-      ],
-      spa: [`¡Tantas buenas opciones para elegir!`, `¿Cuál quieres leer hoy?`],
-    },
+        `¿Cuál quieres leer hoy?`
+      )
+    ],
     summary: {
       eng: [`That's one of my favorites!`, `That book is awesome! `],
       spa: [`¡Ese es uno de mis favoritos!`, `¡Ese es buenísimo!`],
@@ -47,9 +46,9 @@ const pageText = {
       ],
     },
     getSpeech(type, language) {
-      const options = this[type][language];
+      const options = this[type];
       const random = Math.floor(Math.random() * (options.length - 1));
-      return options[random];
+      return options[random].get(language);
     },
   },
   buttons: {
@@ -256,6 +255,11 @@ const pageText = {
       "Leído por",
     ),
     byAuthor(author, language) {
+      switch (language){
+        case "spa": return `Por ${author}`;
+        case "fra": return `par ${author}`;
+        default: return `By ${author}`;
+      }
       return language === "eng" ? `By ${author}` : `Por ${author}`;
     },
 

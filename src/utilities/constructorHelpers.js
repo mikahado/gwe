@@ -5,11 +5,10 @@ import pageText from "../data/pageText";
 import translationsSpa from "../data/books/translationsSpa";
 import {discussionPagesFra} from "../data/discussions/DiscussionPagesFra";
 import {discussionPagesSpa} from "../data/discussions/discussionPagesSpa";
+import {translationsFra} from "../data/books/translationsFra";
 
 export function assembleBookPages(contentId, endPage) {
   const contentPages = [];
-
-  console.log(translationsSpa[contentId]);
 
   for (let page = 1; page <= endPage; page++) {
     contentPages.push({
@@ -20,7 +19,8 @@ export function assembleBookPages(contentId, endPage) {
       ),
       translation: new MultiLingual(
         null,
-        translationsSpa[contentId] ? translationsSpa[contentId][page] : null
+        translationsSpa[contentId] ? translationsSpa[contentId][page] : null,
+        translationsFra[contentId] ? translationsFra[contentId][page] : null
       ),
       text: null,
     });

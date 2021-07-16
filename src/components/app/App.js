@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // React Components
-import { Route } from "react-router-dom";
+import {Route, useHistory, useLocation} from "react-router-dom";
 
 // Sub-Components
 import { Splash } from "../../views/splash/splash";
@@ -29,12 +29,13 @@ import "./fonts.css";
 import "./elements.css";
 import "./animations.css";
 import discussions from "../../data/discussions/discussions";
+import * as path from "path";
 
 
 
 
 export function App(props) {
-  const [language, setLanguage] = useState("spa");
+  const [language, setLanguage] = useState("fra");
   const [page, setPage] = useState("");
 
   const suppLangs = ['eng', 'spa', 'fra'];
@@ -48,6 +49,7 @@ export function App(props) {
 
   return (
     <div className="App container-fluid">
+
       <div className={"row w-100 m-0"}>
         <div className={"col no-gutters p-0"}>
           <TopNav
@@ -88,11 +90,10 @@ export function App(props) {
           <Route
             path={[
               "/library/section=:sectionId",
-              "/library/",
+              "/library"
             ]}
             render={({ match }) => {
               setPage("library");
-              console.log(match.params);
               return (
                 <Library
                   language={language}
@@ -105,6 +106,7 @@ export function App(props) {
 
           <Route
             path={[
+              "/s:sessionId/p:partNo/page=:page",
               "/s:sessionId/p:partNo/:next",
               "/s:sessionId/p:partNo",
               "/s:sessionId",

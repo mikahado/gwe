@@ -35,7 +35,7 @@ import * as path from "path";
 
 
 export function App(props) {
-  const [language, setLanguage] = useState("fra");
+  const [language, setLanguage] = useState("eng");
   const [page, setPage] = useState("");
 
   const suppLangs = ['eng', 'spa', 'fra'];

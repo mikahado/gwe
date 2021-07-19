@@ -6,6 +6,48 @@ The GWE Online Learning App / OLA (formerly OLP) is a web application which allo
 
 The curriculum is comprised of sessions, each session containing roughly one class period's worth of material, with a teacher presumably covering 1-2 sessions per week. With this online curriculum, teachers are provided with enough material to teach GWE-provided content on a regular basis over the course of a full school year.
 
+The GWE OLA was originally developed by Sam Pool, beginning in August of 2020.
+
+## Getting Started
+
+This README is written for the purpose of familiarizing a new developer with the app's codebase so that s/he can take over development. This section provides steps to download the app's codebase to begin local development.
+
+Most likely you have found this README from the app's repo on GitHub. If not, the app's codebase is hosted on GitHub and can be accessed [here](https://github.com/mrsampool/gwe) (https://github.com/mrsampool/gwe).
+
+**NOTE:** This section assumes that you have **NodeJS** and **NPM** installed, and that you have **Terminal** _OR_ **similar command-line tool** available. If you do not have these tools installed, return to this repo after you have installed them.
+
+### Fork the Repo (Optional)
+
+If you are taking over development of this app, you will most likely want to host your updated version of the app on GitHub as well. If so, you should start by `fork`ing this repo to your own account.
+
+### Clone the Repo
+
+Next, you will want to clone this repo to your local computer to begin development. To do this, open a terminal or alternate command-line tool in the folder on your local computer that you wish to download the project to. From there, downloading the entire project can be performed with one command. If you are not utilizing your own forked repo, the command will be: 
+
+`git clone https://github.com/mrsampool/gwe`
+
+If you are cloning from a different account, you will replace 'mrsampool' with the account you are cloning from.
+
+### Install Dependencies
+
+Once you cloned the repo, navigate into the repo (`cd gwe`). To install the dependencies, simply run `npm install`. Once the depencies finish installing, you are ready to begin developing!
+
+### Start A Live Development Server
+
+As with any `create-react-app`, starting a live local development server is super simple, and only takes one command in your command line. From the project's root directory, just run:
+
+`yarn start`
+
+This will start a local development server and should automatically launch the app in your browser. If the browser doesn't launch automatically, you can open the app by visiting `http://localhost:3000/` in your browser after the server has launched. One great feature of this local server is that your app is automatically updated and re-served with every update to the app's files, allowing you to see updates in the browser as you make them in your editor!
+
+### Building the App For Production & Deployment
+
+Once you are ready to update the app online, you will simply create a production build by running this command from the project's root directory:
+
+`yarn build`
+
+Running this command will create (or update if it already exists) a new directory in your project's root directory - `/build/`. For more info on this, see the _File Bundling w/ Webpack_ section below. The resulting contents of the build folder can now be uploading to any hosting platform and the app should work as expected. Currently, the app's build is hosted on the GWE organization's server with cPanel access, under a subdomain folder. To update the app, simply replace the files in the subdomain folder with the new files resulting from your build process.
+
 ## Technical Overview / Dependencies
 
 ### Tech Stack:
@@ -17,7 +59,7 @@ The curriculum is comprised of sessions, each session containing roughly one cla
 
 ### ReactJS for User Interface
 
-This app's user interface is built with [ReactJS](https://reactjs.org/docs/getting-started.html), an extremely popular (at the time of writing) JavaScript library originally developed by the Facebook software engineering team and currently used by countless major organizations. Specifically, this app was initialized using  [create-react-app](https://github.com/facebook/create-react-app), a common starter package for simple React apps.
+This app's user interface is built with [ReactJS](https://reactjs.org/docs/getting-started.html), an extremely popular (at the time of writing) JavaScript library originally developed by the Facebook software engineering team and currently used by countless major organizations. Specifically, this app was initialized using  [create-react-app](https://github.com/facebook/create-react-app), a common starter package for simple React apps. Many of the questions you might have about the development, architecture, and functionality of this app will be answered by understanding ReactJS and the create-react-app package. 
 
 ReactJS is a component-based system primarily used for SPAs (Single Page Applications), which means there is only one traditional web page in the entire app (`/public/index.html`) which is essentially empty. Components are all written into seperate files and are compiled and inserted into the HTML page at runtime via JavaScript, and the components change responding the user interaction via JavaScript. Because the app doesn't rely on loading new HTML pages in order to change the current on-screen content, the app runs much faster than a more traditional website. What a user experiences as what seems to them to be a traditional web page, we refer to as a "view" (*e.g. Library View, Sessions View, etc*), since these views are not technically "pages". 
 
@@ -49,7 +91,13 @@ The main reason this is important for a high level understanding of this app's f
 
 The app's `./public` folder is unique in that it's contents will be present in the app's build, which is why certain elements, such as images, etc. are present in that folder. 
 
+One detail to note is that, when running your live local server (see _Start a Live Development Server_ section above), the app will serve a temporary build of the app which is automatically updated and re-served as files are edited. Don't mistake this to think that your project's file structure as is should be deployed to a production server: when you are ready to deploy the app, you should create a production build by running `yarn build`. 
+
 **NOTE:** Putting content files in the `./public` should not be thought of as a go-to solution for files that the developer want to be present in the app for reasons that won't be explained in detail here. The go-to solution for almost all files should be a relative import from a relevant `./src/` subfolder.
+
+### Babel for Live Compiling
+
+Another feature fo developing this project which comes standard with create-react-app is its [Babel](https://babeljs.io/docs/en/) integration. Babel is a JavaScript compiler which transforms ES6+ JavaScript into syntax compatible with older browsers, so code can use `import`/`export`, arrow functions, and other ES6 conveniences without a problem. In create-react-app projects, Babel compilation occurs with the live webpack builds, so starting your live local development server will automatically trigger the compilation and will instantly re-compile with every saved changed to your code.
 
 ## Multiple Language Programming
 

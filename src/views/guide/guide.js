@@ -2,6 +2,7 @@ import React from "react";
 import "./guide.css";
 import {guideText} from "./guideText";
 import {Button} from "../../components/buttons/buttons";
+import pageText from "../../data/pageText";
 
 export function Guide(props) {
 
@@ -15,7 +16,7 @@ export function Guide(props) {
     <div className={"guide container"}>
       <div className={'row'}>
         <div className={'col'}>
-          <h1 className={'pageTitle'}>Curriculum Guide for GWE Online Curriculum App</h1>
+          <h1 className={'pageTitle'}>{pageText.pageTitles.guide.get(props.language)}</h1>
         </div>
       </div>
       <div className={"row"}>
@@ -27,10 +28,10 @@ export function Guide(props) {
                 return (
                   section.heading ?
                     <button
-                      id={`Link - ${section.heading}`}
+                      id={`Link - ${section.heading.get(props.language)}`}
                       onClick={sectionLinkClickHandler}
                       className={'sectionButton'}
-                    >{section.heading}</button>
+                    >{section.heading.get(props.language)}</button>
                     : null
                 )
               })
@@ -42,14 +43,14 @@ export function Guide(props) {
             {
               guideText.map( section =>{
                 return(
-                  <section id={section.heading}>
+                  <section id={section.heading.get(props.language)}>
                     {
                       section.heading ?
-                        <h1 className={'sectionHeader'}>{section.heading}</h1>
+                        <h1 className={'sectionHeader'}>{section.heading.get(props.language)}</h1>
                         :null
                     }
                     {
-                      section.body.map( paragraph =>{
+                      section.body.get(props.language).map( paragraph =>{
                         return paragraph
                       })
                     }

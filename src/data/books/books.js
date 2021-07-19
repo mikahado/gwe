@@ -19,7 +19,8 @@ const books = {
     "globalWarmingExpress",
     new MultiLingual(
       "The Global Warming Express",
-      "El Expreso del Calentamiento Global"
+      "El Expreso del Calentamiento Global",
+      `L'express de réchauffement climatique`
     ),
     null,
     126,
@@ -50,7 +51,7 @@ const books = {
 
   buriedSunlight: new Book(
     "buriedSunlight",
-    new MultiLingual("Buried Sunlight", "Luz Enterrada"),
+    new MultiLingual("Buried Sunlight", "Luz Enterrada",`L'ensoleillement enterré`),
     new MultiLingual(new RunTime(12), new RunTime(11)),
     18,
     new MultiLingual(true, true),

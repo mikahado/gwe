@@ -186,15 +186,15 @@ export function Experiment(props) {
             {console.log(content.videoSrc)}
             {
               content.videoSrc ?
-                parseVideos(content.videoSrc)
+                parseVideos(content.videoSrc['eng'] ? content.videoSrc.get(props.language) : null)
                 :''
             }
           </section>
 
           <div className={'d-flex justify-content-center w-100'}>
             {
-              content.pdf ?
-                <Button text={'Open PDF'} extLink={content.pdf}/>
+              content.pdf && content.pdf.get(props.language, false) ?
+                <Button text={'Open PDF'} extLink={content.pdf.get(props.language)}/>
                 :''
             }
             {

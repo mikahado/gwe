@@ -285,7 +285,7 @@ export const experiments = {
   //-------------------------------------------------------
   heartbeatExp: new Experiment(
     'heartbeatExp',
-    new MultiLingual('Heartbeat Experiment'),
+    new MultiLingual('Heartbeat Experiment', '',`Expérience de battement de coeur`),
     new MultiLingual('Learn your heartbeats per minute'),
     '',
     new MultiLingual(
@@ -327,7 +327,9 @@ export const experiments = {
   breathHoldExp: new Experiment(
     'breathHoldExp',
     new MultiLingual(
-      'Breath Holding Experiment'
+      'Breath Holding Experiment',
+      '',
+      `Expérience de retenue du souffle`
     ),
     new MultiLingual(
       'Learn why you need to breath'
@@ -336,6 +338,10 @@ export const experiments = {
     new MultiLingual(
       [
         'Stopwatch (or a stopwatch on a cellphone'
+      ],
+      '',
+      [
+        `Un chronomètre (ou un chronomètre sur un téléphone portable`
       ]
     ),
     new MultiLingual(
@@ -345,13 +351,21 @@ export const experiments = {
         'What’s the longest you can hold your breath?  Time it!',
         'What does it feel like?  How does it feel to breathe again?',
         'Why can’t you hold your breath longer?  That’s because you need oxygen from plants to live.  Some of what you breathe out, that is, exhale, is carbon dioxide (Living Sunlight, on the thirteenth two-page spread).  Plants use that to make the oxygen you breathe in!'
+      ],
+      '',
+      [
+        `Pour combien de temps pouvez-vous retenir votre souffle? Essayez de retenir votre souffle.`,
+        `Quelle est la durée maximale pendant laquelle vous pouvez retenir votre souffle?`,
+        `C'était comment? C'est comment de respirer à nouveau?`,
+        `Pourquoi ne pouvez-vous pas retenir votre respiration plus longtemps?`,
+        `C'est parce que vous avez besoin de l'oxygène des plantes pour vivre. Une partie de ce que vous expirez  est du dioxyde de carbone (La lumière vivante du soleil sur la treizième page de double page). Les plantes l'utilisent pour fabriquer l'oxygène que vous respirez!`,
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`,
       new MultiLingual(
-        'In <u>Living Sunlight</u>, on the twelfth (including title page) two-page spread describes breathing in the oxygen plants make.'
+        'Dans le livre, <i>La lumière vivante du soleil</i>, sur la douzième page (y compris la page de titre), deux pages décrivent la respiration dans l\'oxygène que produisent les plantes. '
       )
     )
 
@@ -360,7 +374,9 @@ export const experiments = {
   countBreathExp: new Experiment(
     'countBreathExp',
     new MultiLingual(
-      'Breath Counting Experiment'
+      'Breath Counting Experiment',
+      '',
+      `Expérience de comptage de respiration`
     ),
     new MultiLingual(
       'Learn how exercising uses more energy'
@@ -369,6 +385,10 @@ export const experiments = {
     new MultiLingual(
       [
         'Stopwatch (or a stopwatch on a cell phone)'
+      ],
+      '',
+      [
+        `Chronomètre (ou un chronomètre sur un téléphone portable)`
       ]
     ),
     new MultiLingual(
@@ -379,6 +399,14 @@ export const experiments = {
         'When the minute of exercise is done, count your breaths for 30 seconds and compare with your resting number. It should be way more.',
         'That’s because it takes more energy to exercise than to rest.  The food you eat gives your body energy to exercise, rest and even grow!',
         'Repeat by measuring your heart rate for 15 seconds at rest and after one minute of exercise.'
+      ],
+      '',
+      [
+        `Mesurez le nombre de respirations que vous prenez en 30 secondes.`,
+        `Utilisez le chronomètre pour compter le nombre de respirations que vous prenez en restant assis (ne retenez pas votre souffle cette fois).`,
+        `Maintenant, faites une minute complète de course sur place, ou sautez des étoiles. Lorsque la minute d'exercice est terminée, comptez vos respirations pendant 30 secondes et comparez avec votre nombre de repos.  C'est beaucoup plus.`,
+        `C'est parce qu'il faut plus d'énergie pour faire de l'exercice que pour se reposer. La nourriture que vous mangez donne à votre corps de l'énergie pour faire de l'exercice, se reposer et même grandir!`,
+        `Répétez en mesurant votre fréquence cardiaque pendant 15 secondes au repos et après une minute d'exercice.`,
       ]
     ),
     '',
@@ -386,7 +414,9 @@ export const experiments = {
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/10.jpg`,
         new MultiLingual(
-          '<u>Living Sunlight</u>, on the tenth (including title page) two-page spread, talks about how animals get their energy from the plants they eat.  Everything you do takes energy from food, even resting!'
+          '<u>Living Sunlight</u>, on the tenth (including title page) two-page spread, talks about how animals get their energy from the plants they eat.  Everything you do takes energy from food, even resting!',
+          '',
+          `Le livre, La lumière vivante du soleil, sur la dixième page de double page (y compris la page de titre), explique comment les animaux tirent leur énergie des plantes qu'ils mangent. Tout ce que vous faites prend de l'énergie à partir de la nourriture, même au repos!`
         )
       ),
       new ExperimentExcerpt(
@@ -395,7 +425,9 @@ export const experiments = {
           `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`
         ],
         new MultiLingual(
-          'The eleventh and twelfth two-page spread explains that your body uses oxygen to turn those plant sugars into the energy you use to move.'
+          'The eleventh and twelfth two-page spread explains that your body uses oxygen to turn those plant sugars into the energy you use to move.',
+          '',
+          `Les onzième et douzième page de double page expliquent que votre corps utilise de l'oxygène pour transformer ces sucres végétaux en énergie que vous utilisez pour vous déplacer.`
         )
       )
     ]
@@ -404,7 +436,9 @@ export const experiments = {
   photoSynthDramaExp: new Experiment(
     'photoSynthDramaExp',
     new MultiLingual(
-      'Photosynthesis Drama'
+      'Photosynthesis Drama',
+      '',
+      `Drame sur la photosynthèse`
     ),
     new MultiLingual(
       'Learn the process of photosynthesis'
@@ -420,6 +454,16 @@ export const experiments = {
         'O2: gold headband (can be a purple piece of paper or O2 and oxygen written on a paper)',
         'Chlorophyll: green hat (can be a green piece of paper)',
         'Plant: magic fake plant (can be a piece of paper with a plant drawn on it)'
+      ],
+      '',
+      [
+        `Soleil : chapeau jaune (peut être un morceau de papier jaune ou un dessin du soleil)`,
+        `pluie / eau : chapeau bleu (peut être un morceau de papier bleu ou un dessin de gouttes d'eau)`,
+        `Nuage: toque de chef (peut être un morceau de papier blanc ou un dessin de nuages)`,
+        `Sol: chapeau d'emoji de crotte/caca (peut être un morceau de papier marron ou un dessin d'emoji)`,
+        `CO2 : bandeau noir (peut être un morceau de papier noir ou CO2 et dioxyde de carbone, écrit sur un papier) O2: bandeau doré (peut être un morceau de papier violet ou O2 et oxygène écrit sur un papier)`,
+        `Chlorophylle : chapeau vert (peut être un morceau de papier vert)`,
+        `Plante: fausse plante magique (peut être un morceau de papier avec une plante dessinée dessus)`,
       ]
     ),
     new MultiLingual(
@@ -448,6 +492,21 @@ export const experiments = {
             'oxygen (O2)'
           ]
         ]
+      ],
+      '',
+      [
+        `Après avoir lu ceci aux enfants, aidez-les à le comprendre en les faisant jouer! Questions possibles à poser avant le drame: Que se passe-t-il lorsque les plantes poussent?`,
+        `Les réponses possibles incluent:`,
+        `Les graines dans la terre et de l'eau et le soleil (et le dioxyde de carbone, le CO2 et la chlorophylle) sont égaux`,
+        `La croissance des plantes à la suite de ... Photosynthèse`,
+        `Produit du glucose (plus de plante) et de l'oxygène (O2)`,
+        `Accédez à la ''photosynthèse'' - demandez aux enfants de créér la meilleure définition avec de nombreuses étapes`,
+        `Parler d'où nous obtenons le CO2 (dioxyde de carbone)? Il est dans l'air parce que nous en exhalons et il est fabriqué (un sous-produit d'une combustion incomplète, c'est-à-dire de la combustion) lorsque nous brûlons du charbon, du bois et du gaz.`,
+        `Mettons en scène ces étapes avec différents enfants jouant les différentes parties de la photosynthèse dans les voix différents.`,
+        `On peut commencer avec une petite plante au lieu de graines`,
+        `La plante peut dire ce dont elle a besoin (du sol,du  soleil, de l'eau/de la pluie, du CO2, de la chlorophylle qui rend la plante verte)`,
+        `Que fait la plante avec toutes ces pièces : du glucose, c'est-à-dire du sucre (plus de plantes, ce qui signifie croissance et nourriture délicieuse pour nous), et`,
+        `l'oxygène (O2)`,
       ]
     ),
     '',
@@ -456,6 +515,8 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/6.jpg`,
         new MultiLingual(
           '<u>Living Sunlight</u>, on the sixth, seventh, and eighth (including title page) two-page spreads pictures and describes photosynthesis.',
+          '',
+          `Dans le livre, <i>La lumière vivante du soleil</i>, sur les sixième, septième et huitième (y compris la page de titre) les double page, des images et la description de la photosynthèse.`
         )
       ),
       new ExperimentExcerpt(
@@ -470,7 +531,9 @@ export const experiments = {
   squashPlantsExp: new Experiment(
     'squashPlantsExp',
     new MultiLingual(
-      'Squashed Plants Experiment'
+      'Squashed Plants Experiment',
+      '',
+      `Expérience sur les plantes écrasées`
     ),
     new MultiLingual(
       'Learn where fossil fuels come from'
@@ -482,6 +545,13 @@ export const experiments = {
         'dead leaves',
         'orange peels',
         'bricks (or large rocks)'
+      ],
+      '',
+      [
+        `feuilles`,
+        `mortes feuilles`,
+        `écorces d'orange`,
+        `briques (ou gros rochers)`
       ]
     ),
     new MultiLingual(
@@ -492,13 +562,23 @@ export const experiments = {
         'Give each group a brick. Have children gently press the brick on the clump of plant material. Take turns pressing as hard as they can for five minutes.',
         'Remove brick.  What does the plant material look like now?',
         'Discuss:  How hard and for how long would you have to press the plant material to make coal, oil, or gas?'
+      ],
+      '',
+      [
+        `Demandez aux enfants d'essayer cela en groupes de 2-4.`,
+        `Donnez aux enfants de la matière organique (feuilles, pelures d'orange et de pomme, etc.) avec l'instruction de faire une motte de matière végétale (compost).`,
+        `Que se passe-t-il si la touffe est recouverte par le poids de plus en plus de compost? Donnez une brique à chaque groupe. Demandez aux enfants d'appuyer doucement la brique sur la touffe de matériel végétal. À tour de rôle, appuyez aussi fort que possible pendant cinq minutes.`,
+        `Retirez la brique. A quoi ressemble le matériel végétal maintenant?`,
+        `Discuter: À quel point et pendant combien de temps auriez-vous à presser la matière végétale pour produire du charbon, du pétrole ou du gaz?`,
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/9.jpg`,
       new MultiLingual(
-        'On the ninth two-page spread <u>Buried Sunlight</u> pictures and describes how plant matter piled up and got squashed to make fossil fuels.'
+        'On the ninth two-page spread <u>Buried Sunlight</u> pictures and describes how plant matter piled up and got squashed to make fossil fuels.',
+        '',
+        `Sur la neuvième page de double page, <i>L'ensoleillement enterré</i> présente des images et décrit comment la matière végétale s'est empilée et a été écrasée pour produire des combustibles fossiles.`
       )
     )
   ),
@@ -506,7 +586,9 @@ export const experiments = {
   carGreenhouseExp: new Experiment(
     'carGreenhouseExp',
     new MultiLingual(
-      'Car Greenhouse Experiment'
+      'Car Greenhouse Experiment',
+      '',
+      `Expérience de serre de voiture`
     ),
     new MultiLingual(
       'Learn how a greenhouse works'
@@ -516,6 +598,11 @@ export const experiments = {
       [
         'thermometer (2 thermometers are better)',
         'car or greenhouse'
+      ],
+      '',
+      [
+        `2 thermomètres`,
+        `Une voiture ou une serre`
       ]
     ),
     new MultiLingual(
@@ -531,13 +618,30 @@ export const experiments = {
         'Write down the time and the temperature reading of both thermometers on a piece of paper',
         'Over the course of a few hours, visit the car once per half-hour or hour and write down the temperature reading of both thermometers next to the time of day.  (If you put an ice cube near the thermometers, note what happened to it when you read the temperature and write that down, too.)',
         'This is like our Earth. The air around the Earth, called the atmosphere, lets the sunshine in. Some of that sunshine is absorbed by the Earth and some is reflected back toward the atmosphere. When the reflected sunshine tries to get out of the atmosphere, some of it gets trapped by being reflected back to the Earth by the atmosphere. That makes the earth just warm enough. When the atmosphere gets too many of the types of gases that trap sunshine, it gets too warm. Gases that make the earth too warm are carbon dioxide (CO2) and methane (CH4). Our car and factory exhaust, called pollution, are made of these gases.'
+      ],
+      '',
+      [
+        `Durée : toute la classe!`,
+        `Il est préférable de mettre en place cette expérience au début de votre classe et de vérifier à la fin de votre classe. Si vous pouvez effectuer cette expérience toute la journée, vérifiez à intervalles réguliers, par exemple toutes les demi-heures ou toutes les heures de la journée.`,
+        `Discutez si l'un des enfants a déjà entendu parler ou vu une serre. Demandez-lui de le décrire pour les autres enfants. Guidez-les pour décrire ce qui se passe dans une serre (et par extension ce qui se passe sur Terre avec son atmosphère) pour la réchauffer.`,
+        `Une serre est une maison avec des murs et un plafond en verre. Le verre laisse entrer la majeure partie du soleil. Une partie du soleil est absorbée par les plantes et le sol et une partie est réfléchie par les plantes et le sol vers le verre. Lorsque le soleil essaie de sortir à travers le verre, une partie est à nouveau réfléchie vers le sol, le piégeant ainsi que sa chaleur. Cela rend l'intérieur d'une serre plus chaud que l'extérieur.`,
+        `La même chose se produit avec une voiture qui a été laissée au soleil pendant quelques heures. Parce que les vitres laissent entrer le soleil, mais emprisonnent le soleil, l'intérieur de la voiture sera plus chaud qu'à l'extérieur.`,
+        `Utilisez un thermomètre pour tester ceci : Si votre famille a une voiture, demandez au propriétaire de garer la voiture au soleil le matin, de préférence à l'abri de l'ombre.`,
+        `Placez le thermomètre à l'intérieur de la voiture, scotché à l'appui-tête du siège du conducteur.`,
+        `Placez un autre thermomètre collé sur un bâton à côté de la voiture`,
+        `Facultatif : placez un glaçon dans une tasse (ou une barre de chocolat dans son emballage, ou un morceau de fromage dans une assiette, ou des fleurs fraîches coupées) près de chaque thermomètre`,
+        `Notez l'heure et la température des deux thermomètres sur une feuille de papier`,
+        `Au cours de quelques heures, visitez la voiture une fois par demi-heure ou heure et notez la lecture de la température des deux thermomètres à côté de l'heure de la journée. (Si vous placez un glaçon près des thermomètres, notez ce qui lui est arrivé lorsque vous lisez la température et notez-le également.)`,
+        `C'est comme notre Terre. L'air autour de la Terre, appelé atmosphère, laisse entrer le soleil. Une partie de ce soleil est absorbée par la Terre et une autre est réfléchie vers l'atmosphère. Lorsque le soleil réfléchi essaie de sortir de l'atmosphère, une partie est piégée en étant réfléchie vers la Terre par l'atmosphère. Cela rend la terre juste assez chaude. Lorsque l'atmosphère reçoit trop de types de gaz qui piègent le soleil, elle devient trop chaude. Les gaz qui rendent la terre trop chaude sont le dioxyde de carbone (CO2) et le méthane (CH4). Les gaz d'échappement de nos voitures et de nos usines, appelés pollution, sont constitués de ces gaz.`,
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/13.jpg`,
       new MultiLingual(
-        'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A greenhouse does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).'
+        'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A greenhouse does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).',
+        '',
+        `Qu'est-ce qu'une serre ? Sur la treizième page de double page (y compris la page de titre), <i>L'ensoleillement enterré</i> décrit, avec les images, comment l'air autour de la Terre (appelée couverture de gaz autour de la Terre, ou atmosphère) aide à contrôler la température de la Terre. Une serre fait la même chose pour faire pousser de la nourriture toute l'année plutôt que juste pendant l'été (ou les saisons de croissance de votre région).`
       )
     )
   ),
@@ -545,7 +649,9 @@ export const experiments = {
   pizzaBoxExp: new Experiment(
     'pizzaBoxExp',
     new MultiLingual(
-      'Pizza Box Solar Oven Experiment'
+      'Pizza Box Solar Oven Experiment',
+      ``,
+      `Expérience de four solaire de boîte à pizza`
     ),
     new MultiLingual(
       'Learn how the sun\'s rays work'
@@ -556,30 +662,64 @@ export const experiments = {
       [
         'Using the sun’s energy for good! Make a pizza box solar oven to use the greenhouse effect to heat marshmallows.',
         'See the videos below, or see included PDF instructions'
+      ],
+      '',
+      [
+        `Utiliser l'énergie du soleil pour de bon!`,
+        `Fabriquez un four solaire de boîte à pizza pour utiliser l'effet de serre pour chauffer des guimauves/pour faire des 's'mores'.`,
       ]
     ),
-    [
-      new ExperimentVideo(
-        "https://www.youtube.com/embed/QrUCkS5682I",
-        new MultiLingual(
-          'Instructions for teachers to make the kits:',
+    new MultiLingual(
+      [
+        new ExperimentVideo(
+          "https://www.youtube.com/embed/QrUCkS5682I",
+          new MultiLingual(
+            'Instructions for teachers to make the kits:',
+          )
+        ),
+        new ExperimentVideo(
+          "https://www.youtube.com/embed/iXHvWVvaguI",
+          new MultiLingual(
+            'Instructions for children to make the solar oven from the pizza box kits:'
+          )
         )
-      ),
-      new ExperimentVideo(
-        "https://www.youtube.com/embed/iXHvWVvaguI",
-        new MultiLingual(
-          'Instructions for children to make the solar oven from the pizza box kits:'
+      ],
+      '',
+      [
+        new ExperimentVideo(
+          `https://www.youtube.com/embed/EnPkIljz9bg`,
+          new MultiLingual(
+            '',
+            '',
+            `Ce vidéo est en français`
+          )
+        ),
+        new ExperimentVideo(
+          "https://www.youtube.com/embed/QrUCkS5682I",
+          new MultiLingual(
+            '','','Pour les vidéos en anglais (1/2):'
+          )
+        ),
+        new ExperimentVideo(
+          "https://www.youtube.com/embed/iXHvWVvaguI",
+          new MultiLingual(
+            '','','Pour les vidéos en anglais (2/2):'
+          )
         )
-      )
-    ],
+      ]
+    ),
     '',
-    pizzaBoxInstructions
+    new MultiLingual(
+      pizzaBoxInstructions
+    )
   ),
   //-------------------------------------------------------
   golfBallExp: new Experiment(
     'golfBallExp',
     new MultiLingual(
-      'Earth\'s Water Experiment'
+      'Earth\'s Water Experiment',
+      '',
+      `Expérience sur l'eau de la Terre`
     ),
     new MultiLingual(
       'Learn about the earth\'s salt water and fresh water'
@@ -591,6 +731,13 @@ export const experiments = {
         'several golfballs',
         'several blue marbles',
         'several tiny beads (the size of tiny seeds and small seeds can be used as a substitute)'
+      ],
+      '',
+      [
+        `Un globe standard (environ 12 pouces de diamètre)`,
+        `Plusieurs balles de golf`,
+        `Plusieurs billes bleues`,
+        `Plusieurs petites perles (la taille des petites graines) ou (des petites graines peut être utilisée comme substitut)`,
       ]
     ),
     new MultiLingual(
@@ -605,13 +752,22 @@ export const experiments = {
             'Tiny beads (seeds) represent fresh water available to us'
           ]
         ]
+      ],
+      '',
+      [
+        `Pour aider les enfants à mieux comprendre cela (et montrer le rapport approximatif de la terre à l'eau à l'eau douce), faites les activités suivantes:`,
+        `La balle de golf représente l'eau disponible (principalement l'eau salée dans les océans)`,
+        `Le marbre bleu représente l'eau douce (principalement enfermée dans la glace aux pôles)`,
+        `De minuscules perles (graines) représentent l'eau douce à notre disposition`,
       ]
     ),
     '',
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/3.jpg`,
       new MultiLingual(
-        'In <u>Rivers of Sunlight</u>, on the third (including title page) two-page spread, the text describes the amount of water available to us as salt water and as fresh water.'
+        'In <u>Rivers of Sunlight</u>, on the third (including title page) two-page spread, the text describes the amount of water available to us as salt water and as fresh water.',
+        '',
+        `Dans le livre Les rivières d'ensoleillement, sur la troisième page de double page (y compris la page de titre), le texte décrit la quantité d'eau à notre disposition sous forme d'eau salée et d'eau douce. `
       )
     )
   ),
@@ -619,7 +775,9 @@ export const experiments = {
   waterCycleDramaExp: new Experiment(
     'waterCycleDramaExp',
     new MultiLingual(
-      'Water Cycle Drama'
+      'Water Cycle Drama',
+      '',
+      `Drame du cycle de l'eau`
     ),
     new MultiLingual(
       'Learn about the water cycle'
@@ -632,6 +790,14 @@ export const experiments = {
         'Water vapor:  white/silver ribbon (or white tissue paper or regular paper cut in strips leaving 2 inches at one end to hold)',
         'Cloud: chef’s hat (can be a white piece of paper or a drawing of clouds)',
         'Rain: blue hat (can be a blue piece of paper or a drawing of water drops)'
+      ],
+      '',
+      [
+        `Le soleil: chapeau jaune (peut être un morceau de papier jaune ou un dessin du soleil)`,
+        `L'eau de mer: ruban bleu (ou vagues dessinées sur une feuille de papier)`,
+        `L vapeur d'eau : ruban blanc/argent (ou papier de soie blanc ou papier ordinaire coupé en bandes laissant 2 pouces à une extrémité pour tenir)`,
+        `Un nuage: toque de chef (peut être un morceau de papier blanc ou un dessin de nuages)`,
+        `La pluie : chapeau bleu (peut être un morceau de papier bleu ou un dessin de gouttes d'eau)`,
       ]
     ),
     new MultiLingual(
@@ -648,14 +814,29 @@ export const experiments = {
           ],
           'Teachers draw water cycle with help from children--children can draw, too!'
         ]
-
-      ]
+      ],
+      '',
+      [
+        `Discuter et mettre en scène le cycle de l'eau - voir la description ci-dessus`,
+        `Mettre en scène le cycle de l'eau (la lumière du soleil, l'eau comme l'océan, la vapeur d'eau, des nuages, la pluie)`,
+        `Soleil : chapeau jaune (peut être un morceau de papier jaune ou un dessin du soleil): soulève l'eau de la mer salée par évaporation`,
+        `Eau de mer : ruban bleu (ou vagues dessinées sur une feuille de papier)`,
+        `Vapeur d'eau : ruban blanc/argent (ou papier de soie blanc ou papier ordinaire coupé en bandes laissant 2 pouces à une extrémité pour tenir).`,
+        `L'eau de mer évaporée (ou n'importe quelle eau) se transforme en vapeur d'eau, un gaz qui flotte dans le ciel`,
+        `Nuage : toque de chef (peut être une feuille de papier blanc ou un dessin de nuages). Lorsque la vapeur d'eau monte dans le ciel, elle se refroidit autour des grains de poussière pour former des nuages.`,
+        `Pluie : chapeau bleu (peut être un morceau de papier bleu ou un dessin de gouttes d'eau). Lorsqu'une quantité suffisante de vapeur d'eau se refroidit autour des grains de poussière dans les nuages, elle produit des gouttelettes d'eau qui tombent sur la Terre sous forme de pluie (ou de neige si elle est froide).`,
+        `Les enseignants dessinent le cycle de l'eau avec l'aide des enfants - les enfants aussi peuvent dessiner!`,
+        ]
     ),
     '',
     [
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/4.jpg`,
-        new MultiLingual("<u>Rivers of Sunlight</u>'s description of the water cycle - starts on the fourth (including title page) two-page spread of <u>Rivers of Sunlight</u> and goes to the seventh two-page spread")
+        new MultiLingual(
+          "<u>Rivers of Sunlight</u>'s description of the water cycle - starts on the fourth (including title page) two-page spread of <u>Rivers of Sunlight</u> and goes to the seventh two-page spread",
+          '',
+          `Description du cycle de l'eau de <i>Les rivières d'ensoleillement</i>- commence sur la quatrième (y compris la page de titre) de double page de <i>Les rivières d'ensoleillement</i> et va à la septième de double page`
+  )
       ),
       new ExperimentExcerpt(
         [
@@ -674,7 +855,9 @@ export const experiments = {
   waterMathExp: new Experiment(
     'waterMathExp',
     new MultiLingual(
-      'Water Math'
+      'Water Math',
+      '',
+      `Mathématiques de l'eau`
     ),
     new MultiLingual(
       'Learn how much water you use'
@@ -695,6 +878,19 @@ export const experiments = {
           'Add all the numbers together for student’s average daily water use',
           'Brainstorm how this water use can be reduced.  20% water waste is leakage in the house.  Low flow toilets, low flow faucets, don’t let water run, don’t flush toilet if you don’t “need” to (no flushing for trash, “If yellow, be mellow.  If brown flush it down.”), use “gray” water from kitchen for your plants.  Discuss what gray water is and how it can be used.'
         ]
+      ],
+      '',
+      [
+        `Combien d'eau utilisez-vous?  Cela utilise la consommation d'eau moyenne de diverses activités typiques (par exemple: les toilettes à faible débit utilisent 6 à 7 litres, la normale utilise 19 litres, je suppose 11 litres par chasse)`,
+        `Combien de fois tirez-vous la chasse d'eau des toilettes pendant la journée? Multipliez le nombre par 3.`,
+        `Combien de fois vous brossez-vous les dents et laissez-vous couler l'eau? Multipliez le nombre par 2.`,
+        `Combien de fois par jour vous brossez-vous les dents sans laisser couler l'eau? Multipliez le nombre par .5`,
+        `Combien de minutes par jour prenez-vous une douche? (Aidez les enfants à comprendre cela s'ils ne se douchent pas tous les jours.) Multipliez le nombre par 2.`,
+        `Combien de fois par jour vous lavez-vous les mains? Multiplier le nombre par 1.`,
+        `Blanchisserie. Supposons que les vêtements soient lavés une fois par semaine avec une machine moyenne (entre l'efficacité standard et élevée): ajoutez 16 litres par jour`,
+        `à votre total cuisine/cuisine: quelqu'un lave et cuisine des aliments et nettoie la vaisselle qui utilise de l'eau. Ajoutez 32 litres par jour à votre total.`,
+        `Additionnez tous les chiffres pour la consommation d'eau quotidienne moyenne de l'élève`,
+        `Réfléchissez à la manière dont cette utilisation d'eau peut être réduite. 20% d'eau gaspillée est une fuite dans la maison. Toilettes à faible débit, robinets à faible débit, ne laissez pas l'eau couler, ne tirez pas la chasse d'eau si vous n'en avez pas ''besoin'' (pas de chasse d'eau pour les ordures,) (''C'est jaune, c'est bon.  C'est noir, au revoir!), utilisez de l'eau 'grise' de la cuisine pour vos plantes. Discutez de ce qu'est l'eau grise et de la façon dont elle peut être utilisée.`,
       ]
     )
   ),
@@ -702,7 +898,9 @@ export const experiments = {
   waterReqExp: new Experiment(
     'waterReqExp',
     new MultiLingual(
-      'Water Requirements'
+      'Water Requirements',
+      '',
+      `Les besoins en eau`
     ),
     new MultiLingual(
       'Eye-opening water requirements for everyday items'
@@ -730,6 +928,29 @@ export const experiments = {
           'One gallon of gasoline: 13 gallons',
           'One car:  39,090 gallons'
         ]
+      ],
+      '',
+      [
+        `Besoins en eau révélateurs pour certaines des choses que vous pourriez porter/manger/utiliser en ce moment (les estimations varient - vous voyez l'idée).`,
+        `Demandez à vos enfants de réfléchir à l'eau nécessaire pour fabriquer chaque article et pourquoi.`,
+        [
+          `Une paire de chaussures: 8 544 litres`,
+          `Une paire de jeans: 9 978 litres`,
+          `Un t-shirt en coton: 2 700 litres`,
+          `Une barre de chocolat: 1 719 litres`,
+          `Un morceau de bœuf: 15 000 litres`,
+          `Un hamburger: 2 392 litres`,
+          `Une pizza au fromage nature: 1 215 litres`,
+          `Une tranche de fromage: 151 litres`,
+          `Une pinte de bière: 170 litres`,
+          `Une tasse de café: 132 litres`,
+          `Une pomme: 83 litres`,
+          `Une miche de pain: 49 litres`,
+          `Une feuille de papier: 11 litres`,
+          `Un téléphone portable: 908 litres`,
+          `Un gallon d'essence: 49 litres`,
+          `Une voiture: 147 972 litres`
+          ]
       ]
     )
   ),
@@ -737,10 +958,12 @@ export const experiments = {
   dirtyWaterExp: new Experiment(
     'dirtyWaterExp',
     new MultiLingual(
-      'Dirty Water Experiment'
+      'Dirty Water Experiment',
+      '',
+      `Expérience de l'eau sale`
     ),
     new MultiLingual(
-      'Learn how water gets dirty'
+      'Learn how water gets dirty',
     ),
     '',
     new MultiLingual(
@@ -748,6 +971,12 @@ export const experiments = {
         '3 clear pitchers',
         '1 tablespoon of dirt',
         '1 tablespoon of salt',
+      ],
+      '',
+      [
+        `3 pichets transparents`,
+        `1 cuillère à soupe de saleté`,
+        `1 cuillère à soupe de sel`,
       ]
     ),
     new MultiLingual(
@@ -776,6 +1005,25 @@ export const experiments = {
             'This could be expanded with discussion'
           ]
         ]
+      ],
+      '',
+      [
+        `Remplissez d'eau les trois pichets transparents - avec les enfants qui regardent`,
+        `Placez-les sur la table devant eux`,
+        `Mettez une cuillère à soupe de terre dans un pichet`,
+        `Placez une cuillère à soupe de sel dans le pichet suivant`,
+        `Laissez un troisième pichet d'eau pure`,
+        `Offrez un verre aux enfants et demandez dans quel pichet verser.`,
+        `Puis, en buvant, demandez pourquoi ils ont choisi cette eau`,
+        [
+          `Comment l'eau se salit-elle?`,
+          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Les sables bitumineux.`,
+          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Le Côte du Golfe.`,
+          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Le ruisseau Acorn.`,
+          `Quelle sont les sources de notre eau? Rivières et aquifères.`,
+          `L'eau doit être propre pour être bue. Qu'y a-t-il dedans que nous devons nettoyer? Faites une liste.`,
+          `Comment le nettoie-t-on ? Cela pourrait être étendu avec une visite à une usine de traitement de l'eau Cela pourrait être élargi avec la discussion`,
+        ]
       ]
     )
   ),
@@ -783,7 +1031,9 @@ export const experiments = {
   conveyorBeltExp: new Experiment(
     'conveyorBeltExp',
     new MultiLingual(
-      'Water Conveyor Belt Experiment'
+      'Water Conveyor Belt Experiment',
+      '',
+      `Expérience de tapis roulant d'eau`
     ),
     new MultiLingual(
       'Learn about water currents'
@@ -798,6 +1048,16 @@ export const experiments = {
         'Red and blue food coloring',
         'Method of heating a small amount of water',
         'Way to freeze water into ice'
+      ],
+      '',
+      [
+        `Un conteneur de 4 litres transparent à large ouverture (DOIT être transparent)`,
+        `De l'eau à température ambiante`,
+        `Un conteneur de shampoing de voyage vide`,
+        `Un bac à glaçons ou quatre tasses dixie`,
+        `Du colorant alimentaire rouge et bleu`,
+        `Méthode de chauffage d'une petite quantité d'eau`,
+        `Façon de congeler l'eau en glace`,
       ]
     ),
     new MultiLingual(
@@ -813,6 +1073,21 @@ export const experiments = {
         'Place shampoo container (without lid) filled with hot red water on its side in clear gallon container filled with room temperature water',
         'Once your children see all the pieces, have them guess and/or draw what they think will happen when you put them in the same container. Then, have the children watch what happens and draw it.',
         'When the water at the equator heats up it creates currents that travel on the surface of the oceans.  When the water gets cold at the North and South poles, it creates currents that travel on the floors of the oceans.  This is one of the ways that the sun moves water around the earth.'
+      ],
+      '',
+      [
+        `Cette expérience nécessite de congeler de l'eau en glaçons. Préparation avancée requise.`,
+        [
+          `Remplissez quatre glaçons dans un bac à glaçons avec de l'eau (ou quatre tasses dixie à moitié avec de l'eau)`,
+          `Faites de l'eau bleue avec dix-vingt gouttes de colorant alimentaire bleu`,
+          `Congelez pendant la nuit`,
+          `Remplissez un récipient transparent de 4 litres avec de l'eau et laissez reposer pendant quelques heures pour le ramener à la température ambiante`,
+          `Remplissez le contenant de shampoing de voyage avec de l'eau chaude (ou de l'eau froide et passez-le au micro-ondes pendant environ 30 secondes jusqu'à ce qu'il soit chaud, mais pas trop chaud pour être manipulé)`,
+          `Faites de l'eau chaude rouge avec dix-vingt gouttes de colorant alimentaire rouge`,
+          `Placer les glaçons bleus dans un contenant d'un gallon transparent rempli d'eau à température ambiante Placez le récipient de shampooing (sans couvercle) rempli d'eau rouge chaude sur le côté dans un récipient transparent d'un gallon rempli d'eau à température ambiante`,
+          `Une fois que vos enfants ont vu toutes les pièces, demandez-leur de deviner et/ou de dessiner ce qu'ils pensent qu'il se passera lorsque vous les aurez mis dans le même récipient. Ensuite, demandez aux enfants de regarder ce qui se passe et de le dessiner.`,
+          `Lorsque l'eau à l'équateur se réchauffe, elle crée des courants qui se déplacent à la surface des océans. Lorsque l'eau se refroidit aux pôles Nord et Sud, elle crée des courants qui se déplacent sur le fond des océans. C'est l'une des façons dont le soleil déplace l'eau autour de la terre.`,
+        ]
       ]
     ),
     '',
@@ -820,7 +1095,9 @@ export const experiments = {
       new ExperimentExcerpt(
         `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/11.jpg`,
         new MultiLingual(
-          'Hot water rises and cold water sinks as described on the eleventh through fourteenth two-page spreads of <u>Rivers of Sunlight</u>.'
+          'Hot water rises and cold water sinks as described on the eleventh through fourteenth two-page spreads of <u>Rivers of Sunlight</u>.',
+          '',
+          `L'eau chaude monte et l'eau froide descend comme décrit dans les onzième à quatorzième feuillets de double page de Les rivières d'ensoleillement.`
         )
       ),
       new ExperimentExcerpt(

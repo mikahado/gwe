@@ -248,6 +248,11 @@ const pageText = {
       spa: 'Español',
       fra: 'Français'
     },
+    teachersGuide: {
+      sections: new MultiLingual(
+        'Sections'
+      )
+    },
 
     // Reader Start
     readBy: new MultiLingual(
@@ -273,6 +278,11 @@ const pageText = {
       "Learning Library",
       "Biblioteca Educativa",
     ),
+    guide: new MultiLingual(
+      `Curriculum Guide for GWE Online Curriculum App`,
+      '',
+      `Guide du programme pour l'application du programme en ligne de GWE`
+    )
   },
   messages: {
     materialComplete: new MultiLingual(

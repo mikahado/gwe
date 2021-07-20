@@ -196,6 +196,8 @@ export const experiments = {
   pinwheelExp: new Experiment(
     'pinwheelExp',
     new MultiLingual(
+      'Pinwheel Experiment',
+      '',
       'Expérience de moulinet'
     ),
     new MultiLingual(
@@ -280,7 +282,9 @@ export const experiments = {
         )
       ),
     ],
-    pinwheelInstructions
+    new MultiLingual(
+      pinwheelInstructions
+    )
   ),
   //-------------------------------------------------------
   heartbeatExp: new Experiment(
@@ -365,6 +369,8 @@ export const experiments = {
     new ExperimentExcerpt(
       `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`,
       new MultiLingual(
+        'In <u>Living Sunlight</u>, on the twelfth (including title page) two-page spread describes breathing in the oxygen plants make.',
+        '',
         'Dans le livre, <i>La lumière vivante du soleil</i>, sur la douzième page (y compris la page de titre), deux pages décrivent la respiration dans l\'oxygène que produisent les plantes. '
       )
     )

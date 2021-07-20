@@ -186,7 +186,7 @@ export function Experiment(props) {
             {console.log(content.videoSrc)}
             {
               content.videoSrc ?
-                parseVideos(content.videoSrc['eng'] ? content.videoSrc.get(props.language) : null)
+                parseVideos(content.videoSrc['eng'] ? content.videoSrc.get(props.language) : content.videoSrc)
                 :''
             }
           </section>

@@ -3,8 +3,8 @@ import { MultiLingual } from "../model/multiLingual";
 const bookDescriptions = {
   commonGround: new MultiLingual(
     `How do our individual actions affect the world? Through the example of a shared village green and the growing needs of the townspeople who share it, Molly Bang presents the challenge of handling our planet's natural resources.`,
-
-    "¿Cómo afectan nuestras acciones individuales al mundo? Molly Bang presenta el reto de manejar los recursos naturales de nuestro planeta, usando como ejemplo el área verde comunal de una aldea, y las necesidades crecientes de los aldeanos que la comparten."
+    "¿Cómo afectan nuestras acciones individuales al mundo? Molly Bang presenta el reto de manejar los recursos naturales de nuestro planeta, usando como ejemplo el área verde comunal de una aldea, y las necesidades crecientes de los aldeanos que la comparten.",
+    `Comment nos actions individuelles affectent-elles le monde? Par l'exemple d'un village vert partagé et les besoins croissants des citadins qui le partagent, Molly Bang présente le défi de la gestion des ressources naturelles de notre planète.`
   ),
 
   globalWarmingExpress: new MultiLingual(

@@ -16,7 +16,7 @@ export const experiments = {
     'blanketExp',
     new MultiLingual(
       'Blanket Drama / Experiment',
-      '',
+      'Drama de Cobija / Experimento',
       'Expérience de couverture'
     ),
     new MultiLingual(
@@ -30,13 +30,18 @@ export const experiments = {
         'OR: 1 sheet & 1 blanket per student',
         'At least 2 thermometers for measuring room temperature'
       ],
-      '',
+      [
+        '1 sábana (o cobija ligera)',
+        '1 cobija más pesada',
+        'ó: 1 sábana y 1 cobija por estudiante',
+        'por lo menos 2 termómetros para medir la temperatura ambiente',
+      ],
       [
         `1 drap (ou couverture légère)`,
         `1 couverture plus lourde`,
         `OU: 1 drap & 1 couverture par élève`,
         `Au moins 2 thermomètres pour mesurer la température ambiante`,
-]
+      ]
     ),
     new MultiLingual(
       [
@@ -47,7 +52,14 @@ export const experiments = {
         'Now, add the blanket to the sheet over the child and measure the temperature after a few minutes.',
         'Explain that now the atmosphere, the air, is filled with too many bad gases, pollution from factories and cars (and yes, cow burps!) and it’s like having a sheet and a blanket.  It’s getting too warm!  How do we remove a blanket?  That’s what we are trying to solve.'
       ],
-      '',
+      [
+        `Describe como el aire que rodea la Tierra, llamado “atmósfera”, le da a la Tierra una cobertura para mantenerla cálida.`,
+        `Mide la temperatura ambiente del cuarto. Escríbela en el pizarrón.`,
+        `Al mismo tiempo, cubre a él/la niño/a con una sábana (o que los niños se cubran a si mismos con sábanas) y mide la temperatura ambiente debajo de la sábana después de unos minutos.  Escribe la temperatura de la sábana junto a la temperatura del cuarto.`,
+        `Explica que, si no hubiera atmósfera, la Tierra no tendría la temperatura necesaria para que nosotros viviéramos en ella.`,
+        `Ahora, agrega la cobija sobre la sábana que cubre a él/la niño/a y mide la temperatura después de unos minutos.`,
+        `Explica que ahora la atmósfera, el aire, está lleno de demasiados gases malos, contaminación de fábricas y carros (¡y sí, eructos de vaca!) y es como si tuviera una sábana y una cobija. ¡Se está poniendo demasiado caliente! ¿Cómo le quitamos la cobija? Eso es lo que estamos intentando resolver.`,
+      ],
       [
         `Décrivez comment l'air autour de la Terre, appelé 'atmosphère', donne à la Terre une couche pour la garder au chaud.`,
         `Mesurez la température de l'air dans votre pièce. Écrivez-le au tableau blanc.`,
@@ -65,7 +77,7 @@ export const experiments = {
     'evapExp',
     new MultiLingual(
       'Evaporation Experiment',
-      '',
+      'Experimento De Evaporación',
       `Expérience d'évaporation`
 ),
     new MultiLingual(
@@ -82,7 +94,15 @@ export const experiments = {
         'Shallow dish or pie plate',
         'sunshine'
       ],
-      '',
+      [
+        `agua`,
+        `sal`,
+        `cuchara de medir`,
+        `taza de medir`,
+        `cuchara`,
+        `un plato no profundo ó un molde para pay`,
+        `luz del sol`,
+      ],
       [
         `L'eau`,
         `Le sel`,
@@ -102,7 +122,16 @@ export const experiments = {
         'What does it look like after two hours or so?  The water should be gone, but there should be a dusty layer of salt.  Why?  The sun evaporated the water, but left the salt behind.',
         'Advanced option:  include a dish with the same amount of fresh water, preferably distilled water, as an experimental control and have the children predict, draw what will happen. Place next to the salted water outside and observe every time you observe the salted water. If your water is especially hard and you don’t have distilled water, skip this part of the experiment because the minerals in hard water will leave a dust as well.',
       ],
-      '',
+      [
+        `Antes del experimento: Con la contribución de los niños, define la evaporación. Escribe la definición de los niños en el pizarrón.`,
+        `Describe el experimento que sigue y dile a los niños que escriban lo que parece al principio. Dibújenlo. Adivinen como se verá al final del experimento y escriban una descripción o dibújenlo.`,
+        `Mezcla una cucharadita de sal con ½ taza de agua tibia.`,
+        `Vierte un poco del agua en el molde para pay (vidrio transparente es preferible) para que solo cubra el fondo con una capa delgada.`,
+        `Colócalo bajo la luz del sol, preferiblemente afuera. Si hay demasiado viento, coloca una piedra o espera un día con menos viento.`,
+        `Revísalo cada media hora.`,
+        `¿Cómo se ve después de aproximadamente 2 horas? El agua ya no debería estar ahí, pero debería haber una capa polvorosa de sal. ¿Porqué? El sol evaporó el agua, pero la sal se quedó ahí.`,
+        `Opción Avanzada: incluye un plato con la misma cantidad de agua fresca, preferiblemente agua destilada, como un control experimental, y diles a los niños que predigan, y dibujen lo que pasará. Colócalo afuera, al lado del agua con sal y obsérvalo cada vez que observes el agua salada. Si tu agua es especialmente dura y no tienes agua destilada, te puedes saltar esta parte del experimento porque los minerales que tiene el agua dura también dejarán una capa polvorosa.`,
+      ],
       [
         `Avant l'expérience: `,
         ` Avec la contribution des enfants, définissez l'évaporation.`,
@@ -126,7 +155,7 @@ export const experiments = {
       myLight3,
       new MultiLingual(
         'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of evaporation.',
-        '',
+        'En <u>Mi Luz</u>, en la tercera (incluyendo la página del título) extensión de dos páginas, la página de la derecha dice: Cada día yo caliento tu tierra y tu agua. Pequeñas gotas de agua tibia suben y forman nubes. Esta es una imagen y descripción simplificada de la evaporación.',
         `Dans le livre, <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit : ''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.'' Ceci est une image simplifiée et une description de l'évaporation. `
       )
     )
@@ -136,7 +165,7 @@ export const experiments = {
     'cloudExp',
     new MultiLingual(
       'Cloud Experiment',
-      '',
+      'Experimento de Nube',
       `Expérience d'un nuage`
     ),
     new MultiLingual(
@@ -151,7 +180,13 @@ export const experiments = {
         'ice',
         'matches'
       ],
-      '',
+      [
+        `frasco de 12oz con tapa`,
+        `agua`,
+        `alguna forma de calentar el agua`,
+        `hielo`,
+        `cerillos`,
+      ],
       [
         `un pot de 360 ml. avec couvercle`,
         `de l'eau`,
@@ -165,7 +200,10 @@ export const experiments = {
         'This experiment will help the children understand the process of making clouds in a little more detail.',
         'By GWE Mentor Beverly Williams, also known as The Brainiac Baroness--how clouds are made',
       ],
-      '',
+      [
+        `Este experimento les ayudará a los niños a entender el proceso de la formación de nubes de manera más detallada.`,
+        `Escrito por Beverly Williams, mentora de GWE, también conocida como “The Brainiac Baroness”—cómo se hacen las nubes.`,
+      ],
       ['Regardez le vidéo - (c\'est en anglais).']
     ),
     [
@@ -187,7 +225,7 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/myLight/pages/3.jpg`,
       new MultiLingual(
         'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of cloud formation.',
-        '',
+        'En <u>Mi Luz</u>, En la tercera (incluyendo la página del título) extensión de dos páginas, la página de la derecha dice: Cada día yo caliento tu tierra y tu agua. Pequeñas gotas de agua tibia suben y forman nubes. Esta es una imagen simplificada y descripción de la formación de nubes.',
         `Dans <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit: <i>''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.''</i> Il s'agit d'une image et d'une description simplifiées de la formation des nuages.`
       )
     )
@@ -289,14 +327,16 @@ export const experiments = {
   //-------------------------------------------------------
   heartbeatExp: new Experiment(
     'heartbeatExp',
-    new MultiLingual('Heartbeat Experiment', '',`Expérience de battement de coeur`),
+    new MultiLingual('Heartbeat Experiment', 'Experimento del Latido del Corazón',`Expérience de battement de coeur`),
     new MultiLingual('Learn your heartbeats per minute'),
     '',
     new MultiLingual(
       [
         'Stopwatch (or a stopwatch on a cellphone)'
       ],
-      '',
+      [
+        'cronómetro (o un cronómetro de un teléfono celular)'
+      ],
       [
         `Un chronomètre (ou un chronomètre sur un téléphone portable)-`
       ]
@@ -308,7 +348,12 @@ export const experiments = {
         'Have them count the number of beats for 15 seconds.',
         'Have them multiply by four to find their beats per minute.'
       ],
-      '',
+      [
+        `¿Qué tan rápido late tu corazón?`,
+        `Diles a los niños que encuentren el latido de su corazón, usando cualquier dedo menos el pulgar, en la vena yugular en su cuello o en su muñeca.`,
+        `Pídeles que cuenten el número de latidos durante 15 segundos.`,
+        `Diles que multipliquen el número de latidos que contaron por 4 para encontrar sus latidos por minuto.`,
+      ],
       [
         `À quelle vitesse votre cœur bat-il?`,
         `Demandez aux enfants de trouver leur rythme cardiaque en utilisant n'importe quel doigt, sauf le pouce au niveau de la veine jugulaire de leur cou ou de leur poignet. (Tournez votre main comme si vous alliez serrer la main. Suivez une ligne droite à partir de votre pouce jusqu'à ce que vous sentiez un endroit où il y a un petit creux. Vous sentirez votre cœur battre un peu plus fort ici.)`,
@@ -321,18 +366,17 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/2.jpg`,
       new MultiLingual(
         'In <u>Living Sunlight</u>, on the second (including title page) two-page spread, the right-hand page talks about feeling your heart.',
-        '',
+        `En <u>Luz Viviente</u>, en la segunda (incluyendo la página del título) extensión de dos páginas, la página de la derecha habla sobre sentir el latido de tu corazón.`,
         `Dans le livre La lumière vivante du soleil, sur la deuxième page de double page (y compris la page de titre), la page de droite parle de ressentir votre cœur.`
       )
     )
-
   ),
   //-------------------------------------------------------
   breathHoldExp: new Experiment(
     'breathHoldExp',
     new MultiLingual(
       'Breath Holding Experiment',
-      '',
+      'Experimento De Aguantar La Respiración',
       `Expérience de retenue du souffle`
     ),
     new MultiLingual(
@@ -343,7 +387,9 @@ export const experiments = {
       [
         'Stopwatch (or a stopwatch on a cellphone'
       ],
-      '',
+      [
+        'cronómetro (o un cronómetro de un teléfono celular)'
+      ],
       [
         `Un chronomètre (ou un chronomètre sur un téléphone portable`
       ]
@@ -356,7 +402,13 @@ export const experiments = {
         'What does it feel like?  How does it feel to breathe again?',
         'Why can’t you hold your breath longer?  That’s because you need oxygen from plants to live.  Some of what you breathe out, that is, exhale, is carbon dioxide (Living Sunlight, on the thirteenth two-page spread).  Plants use that to make the oxygen you breathe in!'
       ],
-      '',
+      [
+        `¿Cuánto tiempo puedes aguantar la respiración?`,
+        `Intenta aguantar la respiración.`,
+        `¿Qué es lo más que puedes aguantar la respiración? ¡Mídelo!`,
+        `¿Cómo se siente? ¿Qué se siente respirar de nuevo?`,
+        `¿Por qué no puedes aguantar la respiración por más tiempo? Es porque necesitas el oxígeno de las plantas para vivir. Algo de lo que exhalas es dióxido de carbono (Luz Viviente, en la décimo tercera extensión de dos páginas). ¡Las plantas lo usan para hacer el oxígeno que tú respiras!`,
+      ],
       [
         `Pour combien de temps pouvez-vous retenir votre souffle? Essayez de retenir votre souffle.`,
         `Quelle est la durée maximale pendant laquelle vous pouvez retenir votre souffle?`,
@@ -370,7 +422,7 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/12.jpg`,
       new MultiLingual(
         'In <u>Living Sunlight</u>, on the twelfth (including title page) two-page spread describes breathing in the oxygen plants make.',
-        '',
+        'En <u>Luz Viviente</u>, en la doceava (incluyendo la página del título) extensión de dos páginas, se describe lo que es respirar el oxígeno que producen las plantas.',
         'Dans le livre, <i>La lumière vivante du soleil</i>, sur la douzième page (y compris la page de titre), deux pages décrivent la respiration dans l\'oxygène que produisent les plantes. '
       )
     )
@@ -381,7 +433,7 @@ export const experiments = {
     'countBreathExp',
     new MultiLingual(
       'Breath Counting Experiment',
-      '',
+      'Experimento de Contar la Respiración',
       `Expérience de comptage de respiration`
     ),
     new MultiLingual(
@@ -392,7 +444,9 @@ export const experiments = {
       [
         'Stopwatch (or a stopwatch on a cell phone)'
       ],
-      '',
+      [
+        `cronómetro (o un cronómetro de un teléfono celular)`
+      ],
       [
         `Chronomètre (ou un chronomètre sur un téléphone portable)`
       ]
@@ -406,7 +460,14 @@ export const experiments = {
         'That’s because it takes more energy to exercise than to rest.  The food you eat gives your body energy to exercise, rest and even grow!',
         'Repeat by measuring your heart rate for 15 seconds at rest and after one minute of exercise.'
       ],
-      '',
+      [
+        `¿Cuántas respiraciones tomas y que tan rápido late tu corazón cuando descansas? ¿Cuántas respiraciones tomas y que tan rápido late tu corazón después de hacer saltos de tijera por un minuto?`,
+        `Midamos tu energía de una manera sencilla, midiendo cuantas respiraciones tomas en 30 segundos. Usa el mismo cronómetro para contar cuantas respiraciones tomas mientras estas sentado/a sin moverte (esta vez no aguantes la respiración).`,
+        `Ahora, durante un minuto, corre en tu lugar o aún mejor, haz saltos de tijera.`,
+        `Cuando termines el minuto de ejercicio, cuenta tu respiración por 30 segundos y compáralo con tu número descansando. Debería ser un número mucho mayor.`,
+        `Eso es porque requiere más energía hacer ejercicio que descansar. ¡La comida que consumes le da a tu cuerpo energía para hacer ejercicio, descansar, y hasta crecer!`,
+        `Repítelo midiendo tu latido durante 15 segundos descansando, y después de un minuto de ejercicio.`,
+      ],
       [
         `Mesurez le nombre de respirations que vous prenez en 30 secondes.`,
         `Utilisez le chronomètre pour compter le nombre de respirations que vous prenez en restant assis (ne retenez pas votre souffle cette fois).`,
@@ -421,7 +482,7 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/10.jpg`,
         new MultiLingual(
           '<u>Living Sunlight</u>, on the tenth (including title page) two-page spread, talks about how animals get their energy from the plants they eat.  Everything you do takes energy from food, even resting!',
-          '',
+          'En <u>Luz Viviente</u>, en la décima (incluyendo la página del título) extensión de 2 páginas, habla sobre cómo los animales obtienen su energía de las plantas que comen. ¡Todo lo que haces requiere energía que proviene de la comida, hasta descansar!',
           `Le livre, La lumière vivante du soleil, sur la dixième page de double page (y compris la page de titre), explique comment les animaux tirent leur énergie des plantes qu'ils mangent. Tout ce que vous faites prend de l'énergie à partir de la nourriture, même au repos!`
         )
       ),
@@ -432,7 +493,7 @@ export const experiments = {
         ],
         new MultiLingual(
           'The eleventh and twelfth two-page spread explains that your body uses oxygen to turn those plant sugars into the energy you use to move.',
-          '',
+          'Las onceavas y doceavas extensiones de dos páginas, explican que tu cuerpo usa oxígeno para convertir los azúcares de esas plantas en energía que usas para moverte.',
           `Les onzième et douzième page de double page expliquent que votre corps utilise de l'oxygène pour transformer ces sucres végétaux en énergie que vous utilisez pour vous déplacer.`
         )
       )
@@ -443,7 +504,7 @@ export const experiments = {
     'photoSynthDramaExp',
     new MultiLingual(
       'Photosynthesis Drama',
-      '',
+      'Drama de Fotosíntesis',
       `Drame sur la photosynthèse`
     ),
     new MultiLingual(
@@ -461,7 +522,16 @@ export const experiments = {
         'Chlorophyll: green hat (can be a green piece of paper)',
         'Plant: magic fake plant (can be a piece of paper with a plant drawn on it)'
       ],
-      '',
+      [
+        `Sol: sombrero amarillo (puede ser un papel amarillo o el dibujo de un sol)`,
+        `Lluvia/arcoíris: sombrero azul (puede ser un papel azul o un dibujo de gotas de agua)`,
+        `Nube: sombrero de chef (puede ser un papel blanco o el dibujo de unas nubes)`,
+        `Suelo: sombrero del emoji de popó (puede ser un papel café o el dibujo de un emoji de popó)`,
+        `CO2: diadema o paliacate color negro para la cabeza (puede ser un papel negro o CO2 y dióxido de carbono, escrito en un papel)`,
+        `O2: diadema o paliacate color dorado para la cabeza (puede ser un papel dorado u O2 y oxígeno escrito en un papel)`,
+        `Clorofila: sombrero verde (puede ser un papel verde)`,
+        `Planta: planta mágica falsa (puede ser el dibujo de una planta)`,
+      ],
       [
         `Soleil : chapeau jaune (peut être un morceau de papier jaune ou un dessin du soleil)`,
         `pluie / eau : chapeau bleu (peut être un morceau de papier bleu ou un dessin de gouttes d'eau)`,
@@ -499,7 +569,32 @@ export const experiments = {
           ]
         ]
       ],
-      '',
+      [
+        `Después de leer esto a los niños, ayúdales a entenderlo pidiéndoles que lo actúen.`,
+        `Preguntas posibles que hacerles antes de la dramatización:`,
+        [
+          `¿Qué sucede cuando crecen las plantas? Las respuestas posibles incluyen:`,
+          [
+            `La semilla en la tierra más agua y sol (y dióxido de carbono, CO2, y clorofila) es igual a...`,
+            `El crecimiento de las plantas como resultado de...`,
+            `Fotosíntesis`,
+            `Forma glucosa (más planta) y oxígeno (O2)`,
+          ],
+          `Llega a “fotosíntesis”—intenta que los niños la definan y trabájalo hasta llegar a la mejor definición con varios pasos.`,
+          `Habla sobre ¿de dónde obtenemos el CO2 (dióxido de carbón)? Está en el aire porque lo exhalamos y se produce (un derivado de la combustión incompleta que es la quema) cuando quemamos carbón, madera, y gas.`,
+        ],
+        'Vamos a actuar estos pasos con diferentes niños actuando los diferentes roles de las partes de la fotosíntesis.',
+        [
+          `Se puede comenzar con una planta bebé en vez de una semilla.`,
+          `Sería divertido que las diferentes piezas tuvieran diferentes voces.`,
+          `La planta puede decir qué necesita (suelo, sol, agua/lluvia, CO2, clorofila que hace verde a la planta)`,
+          `¿Qué es lo que produce la planta con todas estas partes?:`,
+          [
+            `glucosa, es decir, azúcar (más planta, que significa crecimiento y comida rica para nosotros), y`,
+            `oxígeno (O2)`,
+          ]
+        ]
+      ],
       [
         `Après avoir lu ceci aux enfants, aidez-les à le comprendre en les faisant jouer! Questions possibles à poser avant le drame: Que se passe-t-il lorsque les plantes poussent?`,
         `Les réponses possibles incluent:`,
@@ -521,7 +616,7 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/livingSunlight/pages/6.jpg`,
         new MultiLingual(
           '<u>Living Sunlight</u>, on the sixth, seventh, and eighth (including title page) two-page spreads pictures and describes photosynthesis.',
-          '',
+          '<u>Luz Viviente</u>, en las sexta, séptima, y octavas (incluyendo la página del título) extensiones de dos páginas se muestra y describe la fotosíntesis.',
           `Dans le livre, <i>La lumière vivante du soleil</i>, sur les sixième, septième et huitième (y compris la page de titre) les double page, des images et la description de la photosynthèse.`
         )
       ),
@@ -538,7 +633,7 @@ export const experiments = {
     'squashPlantsExp',
     new MultiLingual(
       'Squashed Plants Experiment',
-      '',
+      'Experimento de Plantas Aplastadas',
       `Expérience sur les plantes écrasées`
     ),
     new MultiLingual(
@@ -552,7 +647,12 @@ export const experiments = {
         'orange peels',
         'bricks (or large rocks)'
       ],
-      '',
+      [
+        `hojas`,
+        `hojas muertas`,
+        `cáscaras de naranja`,
+        `ladrillos (o piedras grandes)`,
+      ],
       [
         `feuilles`,
         `mortes feuilles`,
@@ -569,7 +669,14 @@ export const experiments = {
         'Remove brick.  What does the plant material look like now?',
         'Discuss:  How hard and for how long would you have to press the plant material to make coal, oil, or gas?'
       ],
-      '',
+      [
+        `Que los niños intenten esto en grupos de 2-4.`,
+        `Dales materia orgánica a los niños (hojas, cáscaras de manzanas y naranjas, etc.) con la instrucción de hacer un grumo de materia vegetal (composta).`,
+        `¿Qué pasa si el grumo es cubierto por el peso de más y más composta?`,
+        `Dale un ladrillo a cada grupo. Pídeles a los niños que presionen el ladrillo suavemente sobre el grumo de materia vegetal. Que tomen turnos presionando lo más fuerte que puedan durante cinco minutos.`,
+        `Quita el ladrillo. ¿Cómo se ve ahora la materia vegetal?`,
+        `Discute: ¿Qué tan duro y por cuánto tiempo tendrías que presionar la materia vegetal para formar carbón, petróleo, o gas?`,
+      ],
       [
         `Demandez aux enfants d'essayer cela en groupes de 2-4.`,
         `Donnez aux enfants de la matière organique (feuilles, pelures d'orange et de pomme, etc.) avec l'instruction de faire une motte de matière végétale (compost).`,
@@ -583,7 +690,7 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/9.jpg`,
       new MultiLingual(
         'On the ninth two-page spread <u>Buried Sunlight</u> pictures and describes how plant matter piled up and got squashed to make fossil fuels.',
-        '',
+        'En la novena extensión de dos páginas, <u>Luz Enterrada</u> muestra y describe cómo la materia vegetal se apiló y aplastó para formar combustibles fósiles. ',
         `Sur la neuvième page de double page, <i>L'ensoleillement enterré</i> présente des images et décrit comment la matière végétale s'est empilée et a été écrasée pour produire des combustibles fossiles.`
       )
     )
@@ -593,7 +700,7 @@ export const experiments = {
     'carGreenhouseExp',
     new MultiLingual(
       'Car Greenhouse Experiment',
-      '',
+      'Experimento Carro Invernadero',
       `Expérience de serre de voiture`
     ),
     new MultiLingual(
@@ -605,7 +712,10 @@ export const experiments = {
         'thermometer (2 thermometers are better)',
         'car or greenhouse'
       ],
-      '',
+      [
+        `termómetro (es mejor 2 termómetros)`,
+        `carro o invernadero`,
+      ],
       [
         `2 thermomètres`,
         `Une voiture ou une serre`
@@ -625,7 +735,19 @@ export const experiments = {
         'Over the course of a few hours, visit the car once per half-hour or hour and write down the temperature reading of both thermometers next to the time of day.  (If you put an ice cube near the thermometers, note what happened to it when you read the temperature and write that down, too.)',
         'This is like our Earth. The air around the Earth, called the atmosphere, lets the sunshine in. Some of that sunshine is absorbed by the Earth and some is reflected back toward the atmosphere. When the reflected sunshine tries to get out of the atmosphere, some of it gets trapped by being reflected back to the Earth by the atmosphere. That makes the earth just warm enough. When the atmosphere gets too many of the types of gases that trap sunshine, it gets too warm. Gases that make the earth too warm are carbon dioxide (CO2) and methane (CH4). Our car and factory exhaust, called pollution, are made of these gases.'
       ],
-      '',
+      [
+        `Duración: ¡La clase entera! Es mejor preparar el experimento al principio de tu clase y revisarlo al final de tu clase. Si puedes ejecutar este experimento todo el día, entonces revisa en intervalos regulares, como cada media hora o cada hora a lo largo del día.`,
+        `Habla sobre si alguno de los niños ha oído hablar de, o visto un, invernadero en alguna ocasión. Pídeles que lo describan para los otros niños. Guíalos a describir qué es lo que sucede en un invernadero (y por extensión qué está sucediendo en la Tierra con su atmósfera) para mantenerlo cálido.`,
+        `Un invernadero es una casa con paredes y techo de vidrio. El vidrio permite que entre la mayoría de la luz solar. Algo de la luz solar es absorbida por las plantas y el suelo, y algo se refleja por las plantas y el suelo de vuelta a los vidrios. Cuando la luz solar trata de salir por el vidrio una parte se refleja de nuevo hacia el suelo, atrapándola a ella y a su calor. Esto hace que el interior de un invernadero sea más caliente que el exterior. Lo mismo pasa con un carro que se ha dejado expuesto al sol por algunas horas.  Porque las ventanas dejan entrar el sol, pero lo atrapan, el interior del carro estará más caliente que el exterior.`,
+        `Usa un termómetro para comprobar esto:`,
+        `Si tu familia tiene un carro, pide al dueño que lo estacione en el sol por la mañana, de preferencia alejado de cualquier sombra.`,
+        `Pon el termómetro dentro del carro, pegado con cinta adhesiva al reposacabezas del asiento del conductor.`,
+        `Pon otro termómetro pegado con cinta adhesiva a un palo colocado junto al carro.`,
+        `Opcional: pon un cubo de hielo en un vaso (o una barra de chocolate envuelto, o un trozo de queso en un plato, o flores frescas recién cortadas) cerca de cada termómetro.`,
+        `Apunta la hora y la lectura de temperatura de los termómetros en un papel.`,
+        `A lo largo de algunas horas, visita el carro cada hora o media hora, y apunta le lectura de temperatura de ambos termómetros junto a la hora del día. (Si pones un cubo de hielo cerca de los termómetros, anota qué le pasó cuando leíste la temperatura, y anota eso también.)`,
+        `Esto es como nuestra Tierra. El aire alrededor de la tierra, llamado atmósfera, permite que entre la luz solar. Algo de esa luz es absorbida por la Tierra y algo es reflejada de nuevo hacia la atmósfera. Cuando la luz reflejada trata de salir de la atmósfera, una parte se queda atrapada al ser reflejada de nuevo a la Tierra por la atmósfera. Eso hace que la Tierra esté justo lo suficientemente cálida. Cuando la atmósfera tiene demasiados de los tipos de gases que atrapan la luz solar, se pone demasiado cálida. Los gases que hacen que la tierra esté demasiado cálida son el dióxido de carbono (CO2) y el metano (CH4). Nuestra emisión de los carros y fábricas, llamada contaminación, está formada por estos gases.`,
+      ],
       [
         `Durée : toute la classe!`,
         `Il est préférable de mettre en place cette expérience au début de votre classe et de vérifier à la fin de votre classe. Si vous pouvez effectuer cette expérience toute la journée, vérifiez à intervalles réguliers, par exemple toutes les demi-heures ou toutes les heures de la journée.`,
@@ -646,7 +768,7 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/buriedSunlight/pages/13.jpg`,
       new MultiLingual(
         'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A greenhouse does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).',
-        '',
+        '¿Qué es un invernadero? En la décimo tercera (incluyendo la página del título) extensión de dos páginas, <u>Luz Enterrada</u> muestra y describe cómo el aire que rodea la Tierra (llamada la capa de gases alrededor de la Tierra, o la atmósfera) ayuda a controlar la temperatura de la Tierra. Un invernadero hace lo mismo para producir alimento todo el año en vez de solamente durante el verano (o la temporada de cultivo de tu zona).',
         `Qu'est-ce qu'une serre ? Sur la treizième page de double page (y compris la page de titre), <i>L'ensoleillement enterré</i> décrit, avec les images, comment l'air autour de la Terre (appelée couverture de gaz autour de la Terre, ou atmosphère) aide à contrôler la température de la Terre. Une serre fait la même chose pour faire pousser de la nourriture toute l'année plutôt que juste pendant l'été (ou les saisons de croissance de votre région).`
       )
     )

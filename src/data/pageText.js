@@ -137,7 +137,10 @@ const pageText = {
         "Back to Library",
         "De Nuevo a la Biblioteca",
       ),
-    }
+    },
+    gweSite: new MultiLingual(
+      'Visit The GWE Website'
+    )
   },
   labels: {
     materialTypes: {
@@ -224,17 +227,17 @@ const pageText = {
     experiments: {
       supplies: new MultiLingual(
         'Supplies',
-        '',
+        'Materiales',
         'Les besoins'
       ),
       fromText: new MultiLingual(
         'From The Text:',
-        '',
+        'Del Texto:',
         'Du texte: '
       ),
       instructions: new MultiLingual(
         'Instructions',
-        '',
+        'Instrucciones',
         'Instructions'
       ),
       or: new MultiLingual(
@@ -282,6 +285,11 @@ const pageText = {
       `Curriculum Guide for GWE Online Curriculum App`,
       '',
       `Guide du programme pour l'application du programme en ligne de GWE`
+    ),
+    aboutGWE: new MultiLingual(
+      'About GWE',
+      '',
+      'À propos de GWE'
     )
   },
   messages: {

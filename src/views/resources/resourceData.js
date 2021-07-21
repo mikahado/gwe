@@ -787,7 +787,7 @@ export function sortAllResources(){
       Object.keys(grouped[ageKey][categoryKey]).forEach(regionKey =>{
 
         sorted[ageKey].find( (catObj) => catObj.heading === categoryKey ).list.push({
-          heading: categoryLabels[regionKey],
+          heading: regionKey,
           list: grouped[ageKey][categoryKey][regionKey]
         })
 
@@ -858,7 +858,7 @@ export function sortAllResources(){
     sorted[ageKey].forEach(cat =>{
       cat.list.forEach(catRegion =>{
         output[ageKey].push({
-          heading: `${categoryLabels[cat.heading]} - ${catRegion.heading}`,
+          heading: [cat.heading, catRegion.heading],
           list: catRegion.list
         })
       })

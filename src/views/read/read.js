@@ -708,6 +708,7 @@ export function Read(props) {
             className={"default"}
             page={page}
             startPage={startPage}
+            language={props.language}
             //Methods
             changePage={changePage}
           />
@@ -738,6 +739,7 @@ export function Read(props) {
             type={">"}
             className={"default"}
             page={page}
+            language={props.language}
             //Methods
             nextPage={nextPage}
           />
@@ -751,6 +753,7 @@ export function Read(props) {
             className={"default"}
             page={page}
             startPage={startPage}
+            language={props.language}
             //Methods
             changePage={changePage}
           />
@@ -769,6 +772,7 @@ export function Read(props) {
             type={">"}
             className={"default"}
             page={page}
+            language={props.language}
             //Methods
             nextPage={nextPage}
           />

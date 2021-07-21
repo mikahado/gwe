@@ -1,14 +1,20 @@
+//React
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+// Data Models
 import {Experiment} from "../model/experiment";
 import {MultiLingual} from "../model/multiLingual";
+import {ExperimentExcerpt} from "../model/experimentCaption";
+import {ExperimentVideo} from "../model/experimentVideo";
+
+//PDFs
+import pinwheelInstructions from './GWE-PinwheelInstructions.pdf';
+import pinwheelInstructionsSPA from './GWE-PinwheelInstructions(ESP).pdf';
+import pizzaBoxInstructions from './Pizza Box Solar Oven Directions.pdf';
 
 import myLight3 from './MyLight3.jpg';
-import {ExperimentExcerpt} from "../model/experimentCaption";
-import pinwheelInstructions from './GWE-PinwheelInstructions.pdf';
-import pizzaBoxInstructions from './Pizza Box Solar Oven Directions.pdf';
-import {ExperimentVideo} from "../model/experimentVideo";
+
 
 export const experiments = {
 
@@ -235,7 +241,7 @@ export const experiments = {
     'pinwheelExp',
     new MultiLingual(
       'Pinwheel Experiment',
-      '',
+      'Experimento De Molinillo',
       'Expérience de moulinet'
     ),
     new MultiLingual(
@@ -254,7 +260,16 @@ export const experiments = {
           'tape',
           'scrap paper'
         ],
-        '',
+        [
+          `galón de leche`,
+          `tijeras`,
+          `regla`,
+          `perforadora`,
+          `marcador permanente`,
+          `palo para brocheta de bambú con punta`,
+          `cinta adhesiva`,
+          `papel borrador`,
+        ],
         [
           `Pot à lait`,
           `des ciseaux`,
@@ -271,7 +286,11 @@ export const experiments = {
           'Bamboo skewer with point',
           'Scissors'
         ],
-        '',
+        [
+          `cuadro de plástico ya cortado de un galón para leche, con hoyos ya perforados y con líneas diagonales dibujadas.`,
+          `palo para Brocheta de bambú con punta`,
+          `tijeras`,
+        ],
         [
           `Un carré en plastique prédécoupé et prépercé`,
           `avec des lignes diagonales dessinées`,
@@ -286,7 +305,11 @@ export const experiments = {
         'Then, you can have them place them under running water to simulate a turbine in a hydroelectric dam.',
         'For detailed instructions on building the pinwheels, click the "Open PDF" button below'
       ],
-      '',
+      [
+        `Los molinillos son como turbinas pequeñas. Después de que los niños los han hecho, pueden probarlos en “viento”, soplándoles o corriendo mientras los sostienen, afuera, o creando un “campo de turbinas” afuera del salón de clases.`,
+        `Después, puedes decirles que coloquen los molinillos debajo de una corriente de agua para simular la turbina de una presa hidroeléctrica.`,
+        `Para instrucciones más detalladas de cómo construir los molinillos, selecciona el botón de "Abrir PDF" abajo.`,
+      ],
       [
         'Les moulins à vent sont comme de petites turbines.',
         `Une fois que les enfants les ont fabriqués, ils peuvent les essayer dans le  ''vent'' en soufflant dessus ou en courant tout en les tenant, à l'extérieur, ou en créant un ''champ de turbines'' à l'extérieur de la classe.`,
@@ -299,7 +322,7 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/5.jpg`,
         new MultiLingual(
           'In <u>My Light</u>, on the fifth (including title page) two-page spread, the left-hand page talks about a dam and turbines and the right-hand page shows a picture of the turbine.',
-          '',
+          'En <u>Mi Luz</u>, en la quinta (incluyendo la página del título) extensión de dos páginas, la página de la izquierda habla sobre una presa y turbinas, y la página de la derecha muestra una imagen de la turbina.',
           `Dans le livre, <u>Ma lumiére</u>, sur la cinquième page de double page (y compris la page de titre), la page de gauche décrit un barrage et de turbines et la page de droite montre une image de la turbine.`
         )
       ),
@@ -307,7 +330,7 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/7.jpg`,
         new MultiLingual(
           'The seventh two-page spread describes and shows wind turbines.',
-          '',
+          'La séptima extensión de dos páginas describe y muestra turbinas de viento.',
           `La septième page de double page décrit et montre les éoliennes.`
         )
       ),
@@ -315,13 +338,14 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/myLight/pages/11.jpg`,
         new MultiLingual(
           'The eleventh two-page spread describes and shows the turbines pushed by the steam made by heating water at coal-burning power plants.',
-          '',
+          'La onceava extensión de dos páginas describe y muestra las turbinas empujadas por el vapor que está formado por el calentamiento de agua en plantas de energía que queman carbón.',
           `La onzième page de double page décrit et montre les turbines poussées par la vapeur produite par le chauffage de l'eau dans les centrales électriques au charbon.`
         )
       ),
     ],
     new MultiLingual(
-      pinwheelInstructions
+      pinwheelInstructions,
+      pinwheelInstructionsSPA
     )
   ),
   //-------------------------------------------------------

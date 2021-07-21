@@ -23,12 +23,12 @@ const discussionDescriptions = {
   ),
   riversOfSunlightDiscuss: new MultiLingual(
     `Marina, Joanna, and the animals discuss the importance of Earth's water.`,
-    '',
+    'Marina, Joanna, y los animales discuten la importancia del agua de la Tierra.',
     `Marina, Joanna et les animaux discutent de l'importance de l'eau de la Terre.`
   ),
   commonGroundDiscuss: new MultiLingual(
     "Marina, Joanna, and the animals discuss their role in saving the environment.",
-    '',
+    'Marina, Joanna, y los animales discuten su papel en la conservación del medio ambiente.',
     `Discussion de terrain d'entente`
   ),
 };

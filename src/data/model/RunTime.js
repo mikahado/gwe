@@ -7,6 +7,12 @@ export class RunTime {
     this.string = new MultiLingual(
       `${minutes} minute${minutes > 1 ? "s" : ""}${
         seconds ? " , " + seconds + " seconds" : ""
+      }`,
+      `${minutes} minuto${minutes > 1 ? "s" : ""}${
+        seconds ? " , " + seconds + " segundos" : ""
+      }`,
+      `${minutes} minute${minutes > 1 ? "s" : ""}${
+        seconds ? " , " + seconds + " secondes" : ""
       }`
     );
   }

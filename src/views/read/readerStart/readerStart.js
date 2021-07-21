@@ -25,7 +25,8 @@ export function ReaderStart(props) {
   }
   if (content.narration) {
     if (content.runTime) {
-      if (content.runTime.get(props.language)) {
+      if (content.runTime.get(props.language, false)) {
+        console.log(content.runTime.get(props.language, false))
         runTime = content.runTime
           .get(props.language)
           .string.get(props.language);
@@ -65,7 +66,7 @@ export function ReaderStart(props) {
       } else {
         return (
           <div className={"label"} id={"readerStartLoading"}>
-            <p>Material Loading</p>
+            <p>{pageText.labels.readLabels.loading.get(props.language)}</p>
 
             <div className={"readerStartLoadingWrap"}>
               <Loading loading={1} circleClass={"noBG"} />
@@ -100,7 +101,7 @@ export function ReaderStart(props) {
         ) : (
           ""
         )}
-        {runTime ? <p className={"mt-1"}>Run-time: {runTime}</p> : ""}
+        {runTime ? <p className={"mt-1"}>{pageText.labels.readLabels.runTime.get(props.language)}: {runTime}</p> : ""}
         {showButton()}
         {reader ? <Button text={pageText.buttons.read.aboutThisReader.get(props.language)} click={playIntro} /> : ""}
       </div>

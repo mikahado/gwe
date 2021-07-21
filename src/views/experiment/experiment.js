@@ -194,7 +194,7 @@ export function Experiment(props) {
           <div className={'d-flex justify-content-center w-100'}>
             {
               content.pdf && content.pdf.get(props.language, false) ?
-                <Button text={'Open PDF'} extLink={content.pdf.get(props.language)}/>
+                <Button text={pageText.buttons.openPDF.get(props.language)} extLink={content.pdf.get(props.language)}/>
                 :''
             }
             {

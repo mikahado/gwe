@@ -255,7 +255,7 @@ function SessionMap(props) {
 
       <div className={"row no-gutters"}>
         <div className={"col"}>
-          <SessionJump moveTrain={moveTrain} currentSession={currentSession} />
+          <SessionJump moveTrain={moveTrain} currentSession={currentSession} language={props.language}/>
         </div>
       </div>
 

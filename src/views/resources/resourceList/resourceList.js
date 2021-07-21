@@ -2,6 +2,8 @@ import React from "react";
 import { ResourceCategory } from "../resources";
 import { sortAllResources} from "../resourceData";
 
+import pageText from "../../../data/pageText";
+
 export function ResourceList(props) {
   //const filteredResources = filterResources(props.filters);
 
@@ -10,7 +12,7 @@ export function ResourceList(props) {
   return (
     <div className={"position-relative"}>
       <section className={"d-flex flex-column align-items-center "}>
-        <h2 className={'sectionHeader'}>For Kid's Action</h2>
+        <h2 className={'sectionHeader'}>{pageText.labels.resources.kidsAction.get(props.language)}</h2>
 
           {filteredResources.kids.length ? (
             filteredResources.kids.map((categoryObj) => {
@@ -19,6 +21,7 @@ export function ResourceList(props) {
                   heading={categoryObj.heading}
                   resourceList={categoryObj.list}
                   key={`Kids ${categoryObj.heading} Resource Category`}
+                  language={props.language}
                 />
               );
             })
@@ -31,7 +34,7 @@ export function ResourceList(props) {
       </section>
 
       <section className={"d-flex flex-column align-items-center "}>
-        <h2 className={'sectionHeader'}>To Learn More</h2>
+        <h2 className={'sectionHeader'}>{pageText.labels.resources.learnMore.get(props.language)}</h2>
         {filteredResources.other.length ? (
           filteredResources.other.map((categoryObj) => {
             return (
@@ -39,6 +42,7 @@ export function ResourceList(props) {
                 heading={categoryObj.heading}
                 resourceList={categoryObj.list}
                 key={`${categoryObj.heading} Resource Category`}
+                language={props.language}
               />
             );
           })

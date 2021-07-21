@@ -108,6 +108,7 @@ export function Book(props) {
             visible={!skinnyWindow}
             zoomFunction={zoomPage}
             zoomState={pageZoom}
+            language={props.language}
           />
         ) : (
           ""

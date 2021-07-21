@@ -62,7 +62,9 @@ const sessionArray= [
       53,
       95,
       new MultiLingual(
-        "Join Marina, Joanna, and their animal friends as they continue their adventure to save the animal's homes."
+        "Join Marina, Joanna, and their animal friends as they continue their adventure to save the animal's homes.",
+        "Únete a Marina, Joanna, y a sus amigos animales mientras continúan su aventura para rescatar los hogares de los animales. ",
+        "Rejoignez Marina, Joanna et leurs amis les animaux alors qu'ils poursuivent leur aventure pour 	sauver les maisons de l'animal."
       )
     ),
   ]),
@@ -122,7 +124,9 @@ const sessionArray= [
       96,
       127,
       new MultiLingual(
-        "Join Marina, Joanna, and their animal friends on the final leg of their brave journey."
+        "Join Marina, Joanna, and their animal friends on the final leg of their brave journey.",
+        "Únete a Marina, Joanna, y a sus amigos animales en el último tramo de su valiente viaje.",
+        "Rejoignez Marina, Joanna et leurs amis les animaux lors de la dernière étape de leur courageux voyage."
       )
     ),
   ]),

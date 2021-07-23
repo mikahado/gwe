@@ -11,6 +11,7 @@ import {ExperimentVideo} from "../model/experimentVideo";
 //PDFs
 import pinwheelInstructions from './GWE-PinwheelInstructions.pdf';
 import pinwheelInstructionsSPA from './GWE-PinwheelInstructions(ESP).pdf';
+import pinwheelInstructionsFRA from './GWE-PinwheelInstructions(FRA).pdf';
 import pizzaBoxInstructions from './Pizza Box Solar Oven Directions.pdf';
 
 import myLight3 from './MyLight3.jpg';
@@ -345,7 +346,8 @@ export const experiments = {
     ],
     new MultiLingual(
       pinwheelInstructions,
-      pinwheelInstructionsSPA
+      pinwheelInstructionsSPA,
+      pinwheelInstructionsFRA
     )
   ),
   //-------------------------------------------------------
@@ -802,7 +804,7 @@ export const experiments = {
     'pizzaBoxExp',
     new MultiLingual(
       'Pizza Box Solar Oven Experiment',
-      ``,
+      `Experimento de Horno Solar Hecho con Caja de Pizza`,
       `Expérience de four solaire de boîte à pizza`
     ),
     new MultiLingual(
@@ -815,7 +817,10 @@ export const experiments = {
         'Using the sun’s energy for good! Make a pizza box solar oven to use the greenhouse effect to heat marshmallows.',
         'See the videos below, or see included PDF instructions'
       ],
-      '',
+      [
+        `¡Usando la energía del sol para algo bueno! Haz un horno solar con una caja de pizza, para usar el efecto invernadero para calentar malvaviscos.`,
+        `Ve los videos de abajo, o ve las instrucciones incluidas en PDF`,
+      ],
       [
         `Utiliser l'énergie du soleil pour de bon!`,
         `Fabriquez un four solaire de boîte à pizza pour utiliser l'effet de serre pour chauffer des guimauves/pour faire des 's'mores'.`,
@@ -827,12 +832,14 @@ export const experiments = {
           "https://www.youtube.com/embed/QrUCkS5682I",
           new MultiLingual(
             'Instructions for teachers to make the kits:',
+            'Instrucciones para que los maestros hagan los kits:'
           )
         ),
         new ExperimentVideo(
           "https://www.youtube.com/embed/iXHvWVvaguI",
           new MultiLingual(
-            'Instructions for children to make the solar oven from the pizza box kits:'
+            'Instructions for children to make the solar oven from the pizza box kits:',
+            'Instrucciones para que los niños hagan el horno solar con kits de caja de pizza:'
           )
         )
       ],
@@ -870,7 +877,7 @@ export const experiments = {
     'golfBallExp',
     new MultiLingual(
       'Earth\'s Water Experiment',
-      '',
+      'Experimento del Agua de la Tierra',
       `Expérience sur l'eau de la Terre`
     ),
     new MultiLingual(
@@ -884,7 +891,12 @@ export const experiments = {
         'several blue marbles',
         'several tiny beads (the size of tiny seeds and small seeds can be used as a substitute)'
       ],
-      '',
+      [
+        `globo terráqueo estándar (aproximadamente 12 pulgadas de diámetro)`,
+        `varias pelotas de golf`,
+        `varias canicas azules`,
+        `varias cuentas diminutas (del tamaño de semillas diminutas, y se pueden usar como sustituto semillas pequeñas)`,
+      ],
       [
         `Un globe standard (environ 12 pouces de diamètre)`,
         `Plusieurs balles de golf`,
@@ -905,7 +917,18 @@ export const experiments = {
           ]
         ]
       ],
-      '',
+      [
+        `Para ayudar a los niños a entender esto mejor (y demostrar la proporción aproximada de la tierra al agua y al agua fresca.), haz las siguientes actividades:`,
+        [
+          `Ten un globo terráqueo estándar (aproximadamente 12 pulgadas de diámetro)`,
+          `Ten varias pelotas de golf, varias canicas azules, y varias cuentas diminutas (del tamaño de semillas diminutas, y se pueden usar como sustituto semillas pequeñas)`,
+          [
+            `La pelota de golf representa el agua disponible (principalmente agua salada en los océanos)`,
+            `La canica azul representa el agua fresca (principalmente atrapada en hielo en los polos)`,
+            `Las cuentas (semillas) diminutas representan el agua fresca disponible para nosotros`,
+          ]
+        ]
+      ],
       [
         `Pour aider les enfants à mieux comprendre cela (et montrer le rapport approximatif de la terre à l'eau à l'eau douce), faites les activités suivantes:`,
         `La balle de golf représente l'eau disponible (principalement l'eau salée dans les océans)`,
@@ -918,7 +941,7 @@ export const experiments = {
       `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/3.jpg`,
       new MultiLingual(
         'In <u>Rivers of Sunlight</u>, on the third (including title page) two-page spread, the text describes the amount of water available to us as salt water and as fresh water.',
-        '',
+        'En <u>Ríos de Luz</u>, en la tercera (incluyendo la página del título) extensión de dos páginas, el texto describe la cantidad de agua disponible para nosotros como agua salada y como agua fresca.',
         `Dans le livre Les rivières d'ensoleillement, sur la troisième page de double page (y compris la page de titre), le texte décrit la quantité d'eau à notre disposition sous forme d'eau salée et d'eau douce. `
       )
     )
@@ -928,7 +951,7 @@ export const experiments = {
     'waterCycleDramaExp',
     new MultiLingual(
       'Water Cycle Drama',
-      '',
+      'Drama del Ciclo del Agua',
       `Drame du cycle de l'eau`
     ),
     new MultiLingual(
@@ -943,7 +966,13 @@ export const experiments = {
         'Cloud: chef’s hat (can be a white piece of paper or a drawing of clouds)',
         'Rain: blue hat (can be a blue piece of paper or a drawing of water drops)'
       ],
-      '',
+      [
+        `Sol: gorro amarillo (puede ser un trozo de papel amarillo o un dibujo del sol)`,
+        `Agua del océano: listón azul (u olas dibujadas en un pedazo de papel)`,
+        `Vapor de agua: listón blanco/plateado (o papel de china blanco, o papel común cortado en tiras dejando 2 pulgadas en un extremo para sostenerlo)`,
+        `Nube: gorro de cocinero (puede ser un pedazo de papel blanco o un dibujo de unas nubes)`,
+        `Lluvia: gorro azul (puede ser un pedazo de papel azul o un dibujo de gotas de agua)`,
+      ],
       [
         `Le soleil: chapeau jaune (peut être un morceau de papier jaune ou un dessin du soleil)`,
         `L'eau de mer: ruban bleu (ou vagues dessinées sur une feuille de papier)`,
@@ -967,7 +996,21 @@ export const experiments = {
           'Teachers draw water cycle with help from children--children can draw, too!'
         ]
       ],
-      '',
+      [
+        `Discute y actúa el ciclo del agua—ver la descripción de arriba.`,
+        [
+          `Actúa el ciclo de agua (luz solar, agua como océano, vapor de agua, nubes, lluvia)`,
+          [
+            `Sol: gorro amarillo (puede ser un trozo de papel amarillo o un dibujo del sol): levanta agua del mar salado por medio de la evaporación`,
+            `Agua del océano: listón azul (u olas dibujadas en un pedazo de papel)`,
+            `Vapor de agua: listón blanco/plateado (o papel de china blanca, o papel común cortado en tiras dejando 2 pulgadas en un extremo para sostenerlo). El agua del mar evaporada (o cualquier agua) se vuelve vapor de agua, un gas que flota hacia el cielo.`,
+            `Nube: gorro de cocinero (puede ser un pedazo de papel blanco o un dibujo de unas nubes). Cuando el vapor de agua flota hacia el cielo, se enfría alrededor de motas de polvo para hacer nubes.`,
+            `Lluvia: gorro azul (puede ser un pedazo de papel azul o un dibujo de gotas de aguas). Cuando suficiente vapor de agua se enfría alrededor de motas de polvo en las nubes, forma gotas de agua que caen a la tierra como lluvia (o nieve, si hace frio).`,
+
+          ],
+          `Los/Las maestros/as dibujan el ciclo del agua con ayuda de los niños--¡los niños también pueden dibujar!`,
+        ]
+      ],
       [
         `Discuter et mettre en scène le cycle de l'eau - voir la description ci-dessus`,
         `Mettre en scène le cycle de l'eau (la lumière du soleil, l'eau comme l'océan, la vapeur d'eau, des nuages, la pluie)`,
@@ -986,9 +1029,9 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/4.jpg`,
         new MultiLingual(
           "<u>Rivers of Sunlight</u>'s description of the water cycle - starts on the fourth (including title page) two-page spread of <u>Rivers of Sunlight</u> and goes to the seventh two-page spread",
-          '',
+          'La descripción del ciclo del agua en <u>Ríos de Luz</u>– empieza en la cuarta (incluyendo la página del título) extensión de dos páginas de <u>Ríos de Luz</u> y continúa hasta la séptima extensión de dos páginas.',
           `Description du cycle de l'eau de <i>Les rivières d'ensoleillement</i>- commence sur la quatrième (y compris la page de titre) de double page de <i>Les rivières d'ensoleillement</i> et va à la septième de double page`
-  )
+        )
       ),
       new ExperimentExcerpt(
         [
@@ -1008,7 +1051,7 @@ export const experiments = {
     'waterMathExp',
     new MultiLingual(
       'Water Math',
-      '',
+      'Matemáticas de Agua',
       `Mathématiques de l'eau`
     ),
     new MultiLingual(
@@ -1031,7 +1074,18 @@ export const experiments = {
           'Brainstorm how this water use can be reduced.  20% water waste is leakage in the house.  Low flow toilets, low flow faucets, don’t let water run, don’t flush toilet if you don’t “need” to (no flushing for trash, “If yellow, be mellow.  If brown flush it down.”), use “gray” water from kitchen for your plants.  Discuss what gray water is and how it can be used.'
         ]
       ],
-      '',
+      [
+        `¿Cuánta agua usas? ¡Hora de las matemáticas! Esto usa el uso promedio de varias actividades típicas (por ejemplo: un escusado de bajo flujo usa 1.5-2 galones, uno normal usa 5 galones, yo asumo 3 galones por descarga)`,
+        `¿Cuántas veces descargas un escusado durante el día? Multiplica ese número por 3.`,
+        `¿Cuántas veces te lavas los dientes y dejas el agua corriendo? Multiplica ese número por 2.`,
+        `¿Cuántas veces al día te lavas los dientes y NO dejas el agua corriendo? Multiplica ese número por 1/2.`,
+        `¿Cuántas veces te bañas al día? (Ayuda a los niños a averiguarlo si no se bañan a diario.) Multiplica ese número por 2.`,
+        `¿Cuántas veces al día te lavas las manos? Multiplica ese número por 1.`,
+        `Lavado de ropa: Supongamos que la ropa se lava una vez a la semana con una lavadora promedio (entre estándar y de alta eficiencia): agrega 4 galones por día a tu total.`,
+        `Cocina/cocinar: alguien está lavando y cocinando comida y lavando los trastes todo lo cual requiere agua. Agrega 8 galones por día a tu total.`,
+        `Agrega todos los números para conseguir el uso de agua promedio del alumno por día.`,
+        `Haz una lluvia de ideas sobre cómo se puede reducir este uso del agua. El 20% del desperdicio de agua es una fuga en el hogar. Escusados de bajo flujo, llaves de bajo flujo, no dejes el agua corriendo, no le bajes al escusado si no es “necesario” (No lo uses para basura, “Si es amarillo, déjalo un ratillo. Si es marrón, dale un bajón.”), usa agua “gris” de la cocina para tus plantas. Platica sobre qué es el agua gris y cómo se puede usar.`,
+      ],
       [
         `Combien d'eau utilisez-vous?  Cela utilise la consommation d'eau moyenne de diverses activités typiques (par exemple: les toilettes à faible débit utilisent 6 à 7 litres, la normale utilise 19 litres, je suppose 11 litres par chasse)`,
         `Combien de fois tirez-vous la chasse d'eau des toilettes pendant la journée? Multipliez le nombre par 3.`,
@@ -1051,7 +1105,7 @@ export const experiments = {
     'waterReqExp',
     new MultiLingual(
       'Water Requirements',
-      '',
+      'Requisitos del Agua',
       `Les besoins en eau`
     ),
     new MultiLingual(
@@ -1081,7 +1135,27 @@ export const experiments = {
           'One car:  39,090 gallons'
         ]
       ],
-      '',
+      [
+        `Requisitos reveladores sobre algunas de las cosas que puedes estarte poniendo/comiendo/o usando en este momento (los estimados varían –te das una idea). Diles a los niños que hagan una lluvia de ideas sobre cómo se usa el agua para hacer cada uno de los siguientes objetos y por qué.`,
+        [
+          `Un par de zapatos: 2,257 galones`,
+          `Unos pantalones de mezclilla: 2,636 galones`,
+          `Una camiseta de algodón: 713 galones`,
+          `Una barra de chocolate: 454 galones`,
+          `Un trozo de carne de res: 4,000 galones`,
+          `Una hamburguesa: 632 galones`,
+          `Una pizza de puro queso: 321 galones`,
+          `Una rebanada de queso: 40 galones`,
+          `Medio litro de cerveza: 45 galones`,
+          `Una taza de café: 35 galones`,
+          `Una manzana: 22 galones`,
+          `Una hogaza de pan: 13 galones`,
+          `Una hoja de papel: 3 galones`,
+          `Un teléfono celular: 240 galones`,
+          `Un galón de gasolina: 13 galones`,
+          `Un carro: 39,090 galones`,
+        ]
+      ],
       [
         `Besoins en eau révélateurs pour certaines des choses que vous pourriez porter/manger/utiliser en ce moment (les estimations varient - vous voyez l'idée).`,
         `Demandez à vos enfants de réfléchir à l'eau nécessaire pour fabriquer chaque article et pourquoi.`,
@@ -1111,7 +1185,7 @@ export const experiments = {
     'dirtyWaterExp',
     new MultiLingual(
       'Dirty Water Experiment',
-      '',
+      'Experimento de Agua Sucia',
       `Expérience de l'eau sale`
     ),
     new MultiLingual(
@@ -1124,7 +1198,11 @@ export const experiments = {
         '1 tablespoon of dirt',
         '1 tablespoon of salt',
       ],
-      '',
+      [
+        `3 jarras transparentes`,
+        `1 cucharadita de tierra`,
+        `1 cucharada de sal`,
+      ],
       [
         `3 pichets transparents`,
         `1 cuillère à soupe de saleté`,
@@ -1158,7 +1236,32 @@ export const experiments = {
           ]
         ]
       ],
-      '',
+      [
+        `Ten tres jarras transparentes—mientras los niños observan, llénalas con agua (o diles a los niños que las llenen) y ponlas sobre el piso/mesa enfrente de ellos.`,
+        [
+          `Pon una cucharadita de tierra adentro de una de las jarras`,
+          `Pon una cucharada de sal en la siguiente jarra`,
+          `Deja la tercera jarra con pura agua`,
+          `Ofréceles a los niños un vaso de agua y pregúntales que de qué jarra prefieren tomar.`,
+          `Después, mientras toman, pregúntales por qué eligieron esa jarra`,
+          `¿Cómo se ensucia el agua?`,
+          [
+            <Link to={'/read/book/globalWarmingExpress/page=69'}>Lee <u>El Tren del Calentamiento Global</u>, de Marina Weber, capítulo titulado Las Arenas Petroliferas.</Link>,
+            <Link to={'/read/book/globalWarmingExpress/page=86'}>Lee <u>El Tren del Calentamiento Global</u>, de Marina Weber capítulo titulado La Costa del Golfo.</Link>,
+            <Link to={'/read/book/globalWarmingExpress/page=95'}>Lee <u>El Tren del Calentamiento Global</u>, de Marina Weber capítulo titulado Acorn Creek.</Link>,
+          ],
+        ],
+        `¿De dónde obtenemos nuestra agua? De ríos y acuíferos.`,
+        `El agua necesita estar limpia para poderla tomar.`,
+        [
+          `¿Qué es lo que tenemos que eliminar del agua para limpiarla? Haz una lista`,
+          `¿Cómo la limpiamos?`,
+          [
+            `Esto se puede suplementar con una visita a una planta de tratamiento de agua`,
+            `Esto se puede suplementar con una plática`,
+          ]
+        ]
+      ],
       [
         `Remplissez d'eau les trois pichets transparents - avec les enfants qui regardent`,
         `Placez-les sur la table devant eux`,
@@ -1184,7 +1287,7 @@ export const experiments = {
     'conveyorBeltExp',
     new MultiLingual(
       'Water Conveyor Belt Experiment',
-      '',
+      'Experimento de Cinta Transportadora de Agua',
       `Expérience de tapis roulant d'eau`
     ),
     new MultiLingual(
@@ -1201,7 +1304,15 @@ export const experiments = {
         'Method of heating a small amount of water',
         'Way to freeze water into ice'
       ],
-      '',
+      [
+        `Contenedor de un galón, transparente con boca grande (TIENE que ser transparente)`,
+        `Agua a temperatura ambiente`,
+        `Botellita de champú tamaño para viajar vacía`,
+        `Bandeja de hielo o 4 vasitos desechables de papel`,
+        `Colorante alimenticio rojo y azul`,
+        `Método para calentar una cantidad pequeña de agua`,
+        `Manera de congelar agua para volverla hielo`,
+      ],
       [
         `Un conteneur de 4 litres transparent à large ouverture (DOIT être transparent)`,
         `De l'eau à température ambiante`,
@@ -1226,7 +1337,19 @@ export const experiments = {
         'Once your children see all the pieces, have them guess and/or draw what they think will happen when you put them in the same container. Then, have the children watch what happens and draw it.',
         'When the water at the equator heats up it creates currents that travel on the surface of the oceans.  When the water gets cold at the North and South poles, it creates currents that travel on the floors of the oceans.  This is one of the ways that the sun moves water around the earth.'
       ],
-      '',
+      [
+        `Duración: Este experimento requiere congelar agua para hacer cubos de hielo. Requiere preparación por adelantado.`,
+        `Llena cuatro de los espacios en la bandeja de hielo con agua (o llena los 4 vasos de papel a la mitad con agua)`,
+        `Pinta el agua de azul con 10-20 gotas de colorante alimenticio azul`,
+        `Congela durante toda la noche`,
+        `Llena un recipiente transparente de un galón con agua y déjalo reposar durante unas horas para que alcance la temperatura ambiente.`,
+        `Llena la botellita de champú tamaño para viajar con agua caliente (o con agua fría y caliéntala en el microondas por aproximadamente 30 segundos hasta que esté caliente, pero no tanto que no se pueda tocar)`,
+        `Pinta el agua caliente de rojo con 10-20 gotas de colorante alimenticio rojo`,
+        `Coloca los cubos de hielo azul en un recipiente transparente de un galón lleno de agua a temperatura ambiente`,
+        `Coloca la botellita de champú (sin tapa) llena de agua caliente roja de lado, en un recipiente transparente de un galón lleno de agua a temperatura ambiente.`,
+        `Una vez que los niños vean todas las partes, pídeles que adivinen y /o dibujen lo que creen que sucederá cuando se coloquen en el mismo recipiente. Después, deja que los niños observen lo que sucede y lo dibujen.`,
+        `Cuando el agua en el ecuador se calienta, crea corrientes que viajan por la superficie de los océanos. Cuando el agua se enfría en los polos norte y sur, crea corrientes que viajan por el suelo de los océanos. Esta es una de las formas en que el sol mueve el agua alrededor de la tierra.`,
+      ],
       [
         `Cette expérience nécessite de congeler de l'eau en glaçons. Préparation avancée requise.`,
         [
@@ -1248,7 +1371,7 @@ export const experiments = {
         `${process.env.PUBLIC_URL}/assets/book/riversOfSunlight/pages/11.jpg`,
         new MultiLingual(
           'Hot water rises and cold water sinks as described on the eleventh through fourteenth two-page spreads of <u>Rivers of Sunlight</u>.',
-          '',
+          'El agua caliente sube y el agua fría baja, tal como se describe de la onceava a la decimocuarta extensión de dos páginas en Ríos de Luz.',
           `L'eau chaude monte et l'eau froide descend comme décrit dans les onzième à quatorzième feuillets de double page de Les rivières d'ensoleillement.`
         )
       ),

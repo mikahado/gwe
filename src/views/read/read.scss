@@ -4,6 +4,8 @@
 
   min-height: 100%;
   max-width: 100%;
+
+
 }
 .ReaderContent {
   max-width: 95vw;
@@ -114,3 +116,42 @@
     text-align: center;
   }
 }
+
+#nextPageInfo{
+  right: 1rem;
+  left: auto;
+
+  .arrow{
+    margin-right: 1rem;
+    background-color: var(--light-blue);
+  }
+}
+
+.readContentWrap, .readContentWrap div{
+}
+
+#imgWrap{
+  height: 100%;
+  width: fit-content;
+}
+#imgWrap.sizeWidth{
+  width: 100%;
+  height: fit-content;
+}
+#pageImg{
+  border: 0.25rem solid aliceblue;
+  border-radius: 1rem;
+  height: 100%;
+  width: auto;
+}
+#imgWrap.sizeWidth #pageImg{
+  width: 100%;
+  max-height: 100%;
+}
+
+.zoomWrap{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+

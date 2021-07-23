@@ -110,7 +110,7 @@ label {
 /* Reader Start */
 #readerPhoto {
   margin: 0.5rem 0 0.5rem 0;
-  width: 95%;
+  width: 10rem;
   height: auto;
   border-radius: 100%;
   border: 0.2em solid #7dc4e8;

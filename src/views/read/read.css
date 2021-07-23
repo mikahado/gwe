@@ -88,4 +88,41 @@
   text-align: center;
 }
 
+#nextPageInfo {
+  right: 1rem;
+  left: auto;
+}
+#nextPageInfo .arrow {
+  margin-right: 1rem;
+  background-color: var(--light-blue);
+}
+
+#imgWrap {
+  height: 100%;
+  width: fit-content;
+}
+
+#imgWrap.sizeWidth {
+  width: 100%;
+  height: fit-content;
+}
+
+#pageImg {
+  border: 0.25rem solid aliceblue;
+  border-radius: 1rem;
+  height: 100%;
+  width: auto;
+}
+
+#imgWrap.sizeWidth #pageImg {
+  width: 100%;
+  max-height: 100%;
+}
+
+.zoomWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /*# sourceMappingURL=read.css.map */

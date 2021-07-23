@@ -1,7 +1,6 @@
 export const translationsFra = {
   commonGround: {
     1:[
-
     ],
     2:[
       `Puissions-nous prendre nos décisions pour la septième génération.`
@@ -184,11 +183,10 @@ export const translationsFra = {
       `Ces lumières sont la lumière des étoiles - ma lumière.`,
     ],
     3:[
-
-    ],
-    4:[
       `Je suis votre soleil d'or.`,
       `Vous voyez mon éclat comme la lumière.`,
+    ],
+    4:[
       `Chaque jour je rechauffe votre terre et l'eau.`,
       `Petites gouttes d'eau chaude montent et créent les nuages.`,
     ],
@@ -439,6 +437,12 @@ export const translationsFra = {
     ]
   },
   globalWarmingExpress:{
+    1:[
+      `L'express de réchauffement climatique`,
+      `par Marina Weber`,
+      'Les illustrations par Joanna Whysner',
+      `L'avant-propos par le sénateur Tom Udall`,
+    ],
     2:[
       `À notre professeur de la troisième année , Barbara McCarthy, qui nous a lancés dans ce voyage.`
     ],

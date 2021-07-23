@@ -165,6 +165,7 @@ const pageText = {
       backLibrary: new MultiLingual(
         "Back to Library",
         "De Nuevo a la Biblioteca",
+        'Retournez à la bibliothèque'
       ),
     },
     openPDF: new MultiLingual(
@@ -172,7 +173,9 @@ const pageText = {
       'Abrir PDF'
     ),
     gweSite: new MultiLingual(
-      'Visit The GWE Website'
+      'Visit The GWE Website',
+      '',
+      'Visitez le site Web GWE'
     )
   },
   labels: {

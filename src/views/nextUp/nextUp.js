@@ -9,7 +9,7 @@ import pageText from "../../data/pageText";
 // Style Sheets
 import "./nextUp.css";
 import { useParams } from "react-router-dom";
-import AboutGWE from "../../components/aboutGWE/aboutGWE";
+//import AboutGWE from "../../components/aboutGWE/aboutGWE";
 import curriculum from "../../data/curriculum/curriculum";
 
 export function NextUp(props) {
@@ -20,9 +20,9 @@ export function NextUp(props) {
     return (
       <div className="nextUpBody">
         <h1 className={"nextUpTitle label"}>{pageText.messages.courseComplete.get(props.language)}</h1>
-        <p className="label">{pageText.messages.courseComplete.get(props.language)}</p>
+        <p className="label">{pageText.messages.courseCongrats.get(props.language)}</p>
 
-        <AboutGWE language={props.language} />
+        <Button link={'/about'} text={pageText.buttons.nav.aboutGWE.get(props.language)} language={props.language}/>
 
         <Button
           text={pageText.buttons.completions.backSessions.get(props.language)}
@@ -32,7 +32,7 @@ export function NextUp(props) {
         />
 
         <Button
-          text={pageText.buttons.completions.repeatSession}
+          text={pageText.buttons.completions.repeatSession.get(props.language)}
           link={`/s${params.sessionId}`}
           language={props.language}
           iconType={"leftArrow"}

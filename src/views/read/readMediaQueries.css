@@ -10,7 +10,7 @@
   }
 
   #readerPhoto {
-    width: 10rem;
+    /*width: 10rem;*/
   }
 }
 @media only screen and (max-width: 600px) {

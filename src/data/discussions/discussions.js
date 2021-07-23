@@ -47,7 +47,7 @@ const discussions = {
     "riversOfSunlightDiscuss",
     new MultiLingual(
       "Rivers Of Sunlight Discussion",
-      '',
+      'Plática sobre Ríos de Luz',
       'Discussion sur les rivières de la lumière du soleil'
     ),
     new MultiLingual(new RunTime(5)),

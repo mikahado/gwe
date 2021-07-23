@@ -1,7 +1,7 @@
 import discussionCharacters from "../data/discussions/discussionCharacters/discussionCharacters";
 import discussionPages from "../data/discussions/discussionPages";
 import { MultiLingual } from "../data/model/multiLingual";
-import pageText from "../data/pageText";
+//import pageText from "../data/pageText";
 import translationsSpa from "../data/books/translationsSpa";
 import {discussionPagesFra} from "../data/discussions/DiscussionPagesFra";
 import {discussionPagesSpa} from "../data/discussions/discussionPagesSpa";

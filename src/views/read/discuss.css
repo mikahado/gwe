@@ -101,13 +101,15 @@
   max-width: 100%;
   margin: 1rem;
   padding: 1rem;
-  background-color: var(--dark-accent);
   border-radius: 1rem;
 }
 
 .discText p {
-  margin-bottom: 0.75rem;
-  color: #7de87d;
+  background-color: var(--light-blue);
+  border-radius: 1rem;
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  color: black;
   font-weight: bold;
 }
 
@@ -119,7 +121,7 @@
 .discussSpeechBubble {
   border-radius: 1rem;
   padding: 0.25rem;
-  color: aliceblue;
+  color: var(--dark-accent);
 }
 
 .textline {

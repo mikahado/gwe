@@ -5,7 +5,11 @@ import parse from "html-react-parser";
 export const discussionPagesFra = {
   greenhouseDiscuss: {
     2:[
-
+      [`<span class="discussSpeechBubble">''C’était une histoire effrayante'', a-t-elle dit Sally, <span class="discussSpeechBubble">''au moins la partie qui nous concernait''.`],
+      [`<span class="discussSpeechBubble">''Vous voulez dire que le feu faisait peur?''</span> demandé-t-elle Marina.`],
+      [`<span class="discussSpeechBubble">''Oui, l’histoire du feu était effrayante, mais au moment où cela se produisait, je n’avais pas vraiment peur parce que j’étais dans la patte de Tomàs''</span>, a-t-elle répondu Sally.`],
+      [`<span class="discussSpeechBubble">''C’est drôle de voir que parfois nous n’avons pas peur avant que quelque chose de mauvais ne se soit produit''</span>, a-t-elle dit Joanna.`],
+      [`<span class="discussSpeechBubble">''La Terre devient trop chaude, mais nous, les humains, n’avons pas très peur''</span>, a-t-elle déclaré Marina. <span class="discussSpeechBubble">''La Terre a un phénomène appelé effet de serre, tout comme nous en avons parlé dans le livre L'express de rechauffement climatique.`],
     ],
     3:[
       [`<span class="discussSpeechBubble">"Je ne comprends toujours pas ce qu'est une serre"</span>, a-t-il déclaré Tomàs.`],

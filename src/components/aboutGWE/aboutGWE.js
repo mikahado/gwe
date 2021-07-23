@@ -11,7 +11,7 @@ class AboutGWE extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {pageText.buttons.aboutGWE[this.props.language]}
+          {pageText.buttons.nav.aboutGWE.get(this.props.language)}
         </a>
       </button>
     );

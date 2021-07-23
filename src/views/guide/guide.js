@@ -59,7 +59,7 @@ export function Guide(props) {
               })
             }
             <div className={'d-flex justify-content-center'}>
-              <Button text={'Jump Onboard'} link={'/map'} iconType={'rightArrow'} />
+              <Button text={pageText.buttons.landing.jumpOnboard.get(props.language)} link={'/map'} iconType={'rightArrow'} />
             </div>
           </div>
         </div>

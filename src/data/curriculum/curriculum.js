@@ -20,6 +20,7 @@ const sessionArray= [
       new MultiLingual(
         pageText.labels.sessionInfo.partOf(1,3,'eng'),
         pageText.labels.sessionInfo.partOf(1,3,'spa'),
+        pageText.labels.sessionInfo.partOf(1,3,'fra'),
       ),
       1,
       52
@@ -58,9 +59,10 @@ const sessionArray= [
       new MultiLingual(
         pageText.labels.sessionInfo.partOf(2,3,'eng'),
         pageText.labels.sessionInfo.partOf(2,3,'spa'),
+        pageText.labels.sessionInfo.partOf(2,3,'fra'),
       ),
-      53,
-      95,
+      52,
+      94,
       new MultiLingual(
         "Join Marina, Joanna, and their animal friends as they continue their adventure to save the animal's homes.",
         "Únete a Marina, Joanna, y a sus amigos animales mientras continúan su aventura para rescatar los hogares de los animales. ",
@@ -120,9 +122,10 @@ const sessionArray= [
       new MultiLingual(
         pageText.labels.sessionInfo.partOf(3,3,'eng'),
         pageText.labels.sessionInfo.partOf(3,3,'spa'),
+        pageText.labels.sessionInfo.partOf(3,3,'fra')
       ),
-      96,
-      127,
+      95,
+      126,
       new MultiLingual(
         "Join Marina, Joanna, and their animal friends on the final leg of their brave journey.",
         "Únete a Marina, Joanna, y a sus amigos animales en el último tramo de su valiente viaje.",

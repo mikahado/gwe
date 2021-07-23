@@ -221,7 +221,7 @@ export const guideText = [
       '',
       [
         <p>Tous les matériaux que nous utilisons stimuilent l'imagination des élèves. Pendant que vous présentez l'application GWE Online Curriculum, il est préférable de prendre votre temps. Entrecoupez votre enseignement avec des activités, à la fois à l'intérieur et à l'extérieur, des jeux, des jeux et des sorties créatives, telles que la chanson, la danse, les spectacles de marionnettes, les pièces de théâtre, le dessin, la peinture, les peintures murales et les films. Nous avons découvert que tous les faits peuvent être enseignés au moyen du théâtre créatif. Creative Drama fonde le matériel dans la conscience kinesthésique des étudiants en étant vécu à travers leur corps.</p>,
-        <p>Pour des idées d'expériences et d'expériences à l'intérieur et à l'extérieur, consultez le programme <a href={guide} target={'_blank'} rel={'noopener  noreferrer'} className={'textLink'}>GWE After School Curriculum</a>, également sur le site Web.</p>
+        <p>Pour des idées d'expériences et d'expériences à l'intérieur et à l'extérieur, consultez le programme <a href={guide} target={'_blank'} rel={'noopener  noreferrer'} className={'textLink'}>GWE programme parascolaire</a>, également sur le site Web.</p>
         ]
     )
   },

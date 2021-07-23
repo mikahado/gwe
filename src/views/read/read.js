@@ -25,6 +25,7 @@ import "./readMediaQueries.css";
 import { useParams } from "react-router-dom";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import '../../components/table.css';
+import {ZoomBook} from "./zoomBook/zoomBook";
 
 let parse = require('html-react-parser');
 
@@ -177,9 +178,9 @@ class Discuss extends React.Component {
   }
   render() {
     return (
-      <div className={"col no-gutters"}>
+
         <div
-          className={`discWrap col d-flex flex-column flex-md-row justify-content-center ${
+          className={`discWrap d-flex flex-column flex-md-row justify-content-center ${
             typeof this.props.images[0] === "string" ? "fullImg" : ""
           }`}
           id={"discWrap"}
@@ -187,7 +188,7 @@ class Discuss extends React.Component {
           {this.getImages()}
           {this.getText()}
         </div>
-      </div>
+
     );
   }
 }
@@ -398,6 +399,28 @@ export function PageImage(props) {
   );
 }
 
+export function Translation(props) {
+
+  return (
+    props.textData ?
+      <div className={'w-100'}>
+        {props.textData.map( line =>{
+          return(
+            <p style ={{
+              backgroundColor: 'var(--light-blue)',
+              marginBottom: '0.5rem',
+              padding: '0.5rem',
+              borderRadius: '1rem',
+              width: '100%',
+              textAlign: 'center'
+            }}>{line}</p>
+          )
+        })}
+      </div>
+      : null
+  )
+}
+
 export function Read(props) {
   let params = useParams();
 
@@ -424,6 +447,10 @@ export function Read(props) {
   const [cachedAudio, setCachedAudio] = useState([]);
   const [preloadingImg, setPreloadingImg] = useState("");
   const [preloadingAudio, setPreloadingAudio] = useState("");
+
+  const [pageZoom, setPageZoom] = useState(0);
+  const [skinnyFrame, setSkinnyFrame] = useState(0);
+
 
   // FUNCTIONS
 
@@ -616,38 +643,6 @@ export function Read(props) {
     }
   }
 
-  //Component Handlers
-  function handlePage() {
-    switch (props.content.format) {
-      case "book":
-        return (
-          <Book
-            pageImg={props.content.pageData[page - 1].img}
-            content={props.content}
-            page={page}
-            language={props.language}
-            imgLoad={imgLoad}
-            //Functions
-            mediaLoaded={mediaLoaded}
-            nextPage={nextPage}
-          />
-        );
-
-      case "discussion":
-        return (
-          <Discuss
-            status={status}
-            images={props.content.pageData[page - 1].img}
-            text={props.content.pageData[page - 1].text}
-            loaded={mediaLoaded}
-            language={props.language}
-          />
-        );
-      default:
-        break;
-    }
-  }
-
   // DOM Functions
   function clearPageInput() {
     /*
@@ -663,25 +658,157 @@ export function Read(props) {
   function hideAudioBubble() {
     setAudioBubble(0);
   }
-
-  function autoStart() {
-    console.log("autostart");
-    narrationControl("play");
-    if (page === startPage) {
-      nextPage();
+  function openScroll(){
+    let content = document.getElementsByClassName('readContentWrap')[0];
+    if(content){
+      content.scrollIntoView(true);
     }
   }
 
+  // Layout
+  function checkDimensions() {
+
+    const imgWrap = document.getElementById('imgWrap');
+    const pageImg = document.getElementById('pageImg');
+
+    if (imgWrap) {
+
+      const frameWidth = imgWrap.offsetWidth;
+      const frameHeight = imgWrap.offsetHeight;
+
+      if (pageImg){
+
+        const imgWidth = pageImg.offsetWidth;
+        const imgHeight = pageImg.offsetHeight;
+
+        if (imgWidth > frameWidth){
+          //setSizeHeight(false);
+          //pageImg.classList.add('sizeWidth');
+        } else {
+          pageImg.classList.remove('sizeWidth');
+        }
+
+      }
+    }
+  }
+  function getFlow(){
+    if (layout.isMobile){
+      return 'column';
+    } else if (!layout.singlePage){
+      return 'column'
+    }
+  }
+  function toggleZoom(){
+    setPageZoom(!pageZoom)
+    setLayout(buildLayout());
+  }
+  function buildLayout(){
+
+    let newLayout = {};
+
+    const windowWidth = document.documentElement.clientWidth;
+    const windowHeight = document.documentElement.clientHeight;
+    const pageImg = new Image();
+    pageImg.src = props.content.pageData[page - 1].img;
+
+    if (pageImg.naturalHeight > 0) {
+
+      newLayout.isMobile = windowWidth < 1000 //!(windowWidth > 1000 || windowHeight > 1000);
+      newLayout.isPortrait = windowHeight > windowWidth;
+      newLayout.readerStart = page === props.content.startPage;
+      newLayout.singlePage = pageImg.naturalHeight > pageImg.naturalWidth;
+      newLayout.sideTrans = newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom && props.content.pageData[page - 1].translation.get(props.language);
+      newLayout.bottomArrows = newLayout.isMobile && newLayout.isPortrait || pageZoom;
+      newLayout.sizeHeight = true;
+    }
+    return newLayout;
+  }
+  function updateLayout(){
+    setLayout(buildLayout())
+  }
+  const [layout, setLayout] = useState(buildLayout());
+
+  useEffect( ()=>{
+
+    function handleResize() {
+      setTimeout(updateLayout, 1000);
+    }
+
+    setLayout(buildLayout());
+    openScroll();
+    window.addEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
-    if (params.autoStart) {
-      console.log("effect");
-      window.addEventListener("load", autoStart);
+    checkDimensions();
+    let testLayout = buildLayout();
+
+    for (let key in testLayout){
+      if (layout[key] !== testLayout[key]){
+        updateLayout();
+      }
     }
   });
 
+  if (props.page === props.content.startPage && pageZoom ){
+    setPageZoom(0);
+  }
+
+  const renderedComponents = {
+    pageArrow: [
+      (
+        <PageArrow
+          type={"<"}
+          className={"default"}
+          page={page}
+          startPage={startPage}
+          language={props.language}
+          //Methods
+          changePage={changePage}
+        />
+      ),
+      (
+        <PageArrow
+          type={">"}
+          className={"default"}
+          page={page}
+          language={props.language}
+          //Methods
+          nextPage={nextPage}
+        />
+      )
+    ],
+    readerStart: (
+      <ReaderStart
+        content={props.content}
+        sessionInfo={props.sessionInfo}
+        language={props.language}
+        page={page}
+        //Methods
+        narrationControl={narrationControl}
+        nextPage={nextPage}
+        setAudioBubble={setAudioBubble}
+        //narrationState={narrationState}
+      />
+    )
+  }
+
+  let text = function(){
+    if(props.content.format === 'book'){
+      if (props.content.pageData[page - 1].translation){
+        return
+      }
+    } else if (props.format === 'discussion') {
+      if (props.content.pageData[page - 1].text) {
+        return props.content.pageData[page - 1].text.get(props.language)
+      }
+    }
+  }
+
+  let translation = <Translation textData={ props.content.format === 'book' ? props.content.pageData[page - 1].translation.get(props.language) : null }/>
+
   return (
     <div className="Read m-0 p-0 d-flex flex-column align-items-center justify-content-center">
-      <ReaderControlBar
+      {<ReaderControlBar
         narrationState={narrationState}
         page={page}
         status={status}
@@ -694,10 +821,142 @@ export function Read(props) {
         changeLanguage={props.changeLanguage}
         audioBubble={audioBubble}
         hideAudioBubble={hideAudioBubble}
-      />
+      />}
 
       <MaterialHeader sessionInfo={props.sessionInfo} content={content} language={props.language}/>
 
+      <div style={{
+        //border: '0.5rem solid red',
+        minHeight: '100vh'
+      }} className={'container-fluid readContentWrap'}>
+
+        <div style={{
+          //border: '0.5rem solid orange',
+          height: !layout.isPortrait && !pageZoom ? '85vh' : 'fit-content'
+        }} className={'row d-flex align-items-center'}>
+
+          <div className={`col-auto d-${ layout.bottomArrows ? 'none' : 'flex'}` }>
+            {renderedComponents.pageArrow[0]}
+          </div>
+
+          <div style={{
+            borderColor: 'yellow',
+            height: '100%'
+          }} className={'col'}>
+
+            <div className={`row flex-${getFlow()} justify-content-center align-items-center`} style={{
+              //display: "grid",
+              //gridTemplateColumns: '1fr 1fr',
+              borderColor: 'green',
+              height: '100%'
+            }}>
+
+              <div id={'imgWrap'} className={`${pageZoom ? 'sizeWidth' : null} col d-flex align-items-center justify-content-center position-relative`}>
+                {
+                  props.content.format === 'discussion' ?
+                    <Discuss
+                      status={status}
+                      images={props.content.pageData[page - 1].img}
+                      text={props.content.pageData[page - 1].text}
+                      loaded={mediaLoaded}
+                      language={props.language}
+                    />
+                    :
+                    <img id={'pageImg'} src={props.content.pageData[page - 1].img} onLoad={checkDimensions}/>
+                }
+
+                <ZoomBook
+                  visible={layout.singlePage && !layout.readerStart && !layout.isPortrait}
+                  zoomFunction={toggleZoom}
+                  zoomState={pageZoom}
+                  language={props.language}
+                />
+              </div>
+
+              {
+                layout.readerStart && !layout.isPortrait ?
+                  <div className={`col d-flex align-items-center justify-content-center`}>
+                    {renderedComponents.readerStart}
+                  </div>
+                  : null
+              }
+
+              {
+                layout.sideTrans ?
+                  <div className={`col d-flex`} style={{
+                    height: '100%',
+                    overflow: 'auto'
+                  }}>
+                    {translation}
+                  </div>
+                  : null
+              }
+
+            </div>
+          </div>
+
+          <div className={`col-auto position-relative h-100 d-${ layout.bottomArrows ? 'none' : 'flex'} align-items-center`}>
+
+            {renderedComponents.pageArrow[1]}
+
+          </div>
+
+        </div>
+
+        <div className={`h-100 w-100 d-${layout.readerStart || layout.sideTrans ? 'none' : 'flex' } justify-content-center align-items-center mt-3`}>
+          {translation}
+        </div>
+
+        <div className={`d-${layout.readerStart && layout.isPortrait ? 'flex' : 'none' } justify-content-center pt-3`}>
+          {renderedComponents.readerStart}
+        </div>
+
+        <div className={`d-${layout.bottomArrows ? 'flex' : 'none'} justify-content-between`} style={{
+          position: 'sticky',
+          bottom: '1rem'
+        }}>
+          {renderedComponents.pageArrow[0]}{renderedComponents.pageArrow[1]}
+        </div>
+
+      </div>
+
+      <div className={"misc row"}>
+        <div className={"col"}>
+          <Preloader
+            preloads={props.content.preloads}
+            preloadingImg={preloadingImg}
+            preloadingAudio={preloadingAudio}
+            page={page}
+            //Methods
+            setCachedImgs={setCachedImgs}
+            preloadCached={preloadCached}
+          />
+
+          <Congrats
+            language={props.language}
+            changePage={changePage}
+            sessionInfo={props.sessionInfo}
+          />
+
+          <Audio
+            src={props.content.pageData[page - 1].audio.get(props.language)}
+            language={props.language}
+            nextPage={nextPage}
+            mediaLoaded={mediaLoaded}
+            setNarrationState={setNarrationState}
+            page={page}
+            startPage={content.startPage}
+            narrationControl={narrationControl}
+          />
+        </div>
+      </div>
+
+
+    </div>
+  )
+}
+
+/*
       <div
         id="ReaderContent"
         className="ReaderContent justify-content-center align-items-center no-gutters"
@@ -714,11 +973,7 @@ export function Read(props) {
           />
         </div>
 
-        <div
-          className={
-            "d-flex flex-column flex-lg-row align-items-center justify-content-around"
-          }
-        >
+        <div className={"d-flex flex-column flex-lg-row align-items-center justify-content-around"} >
           <ReaderStart
             content={props.content}
             sessionInfo={props.sessionInfo}
@@ -813,6 +1068,4 @@ export function Read(props) {
           />
         </div>
       </div>
-    </div>
-  );
-}
+      */

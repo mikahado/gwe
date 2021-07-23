@@ -37,7 +37,7 @@ function TopNav(props) {
 
   function checkMobile() {
     let short = window.matchMedia(`(max-height: 500px)`).matches;
-    let skinny = window.matchMedia(`(max-width: 1000px)`).matches;
+    let skinny = window.matchMedia(`(max-width: 1250px)`).matches;
 
     if (short || skinny) {
       setMobile(true);
@@ -57,6 +57,12 @@ function TopNav(props) {
     window.addEventListener("resize", handleResize);
   });
 
+  function showMenu(){
+    setExpand(1);
+  }
+  function hideMenu(){
+    setExpand(0);
+  }
   function toggleMenu() {
     if (!expand) {
       setExpand(1);
@@ -131,12 +137,13 @@ function TopNav(props) {
       </div>
 
       <div className={"d-flex flex-column flex-sm-row"}>
-        <div className={"position-relative"}>
+        <div className={"position-relative"} onMouseEnter={showMenu} onMouseLeave={hideMenu}>
           {mobile ? (
             <Button
               text={navText.menu.get(props.language)}
               iconType={!expand ? "downArrow" : "upArrow"}
               click={toggleMenu}
+
             />
           ) : (
             ""

@@ -9,10 +9,9 @@ import "./readerStart.css";
 export function ReaderStart(props) {
   const content = props.content;
   const title = content.title.get(props.language);
-  const subtitle = content.subtitle;
   const description = content.description.get(props.language);
 
-  let byAuthor, reader, readerName, readerPhoto, runTime;
+  let byAuthor, reader, readerName, readerPhoto, runTime, subtitle;
   if (content.byAuthor) {
     byAuthor = content.byAuthor.get(props.language);
   }
@@ -32,6 +31,9 @@ export function ReaderStart(props) {
           .string.get(props.language);
       }
     }
+  }
+  if (content.subtitle){
+    subtitle = content.subtitle.get(props.language);
   }
 
   function playIntro() {
@@ -86,24 +88,26 @@ export function ReaderStart(props) {
         {subtitle ? <p>{subtitle}</p> : ""}
         {<p className={"startDescr"}>{description}</p>}
         {reader ? (
-          <div>
+          <div className={'d-flex w-100 justify-content-center align-items-center'}>
             {readerPhoto ? (
               <img id="readerPhoto" src={readerPhoto} alt={`Narrator`} />
             ) : (
               ""
             )}
 
-            <div>
-              <p>{pageText.labels.readBy[props.language]}</p>
-              <p>{readerName}</p>
+            <div className={'h-100 d-flex flex-column align-items-center ml-3'}>
+              <p>{pageText.labels.readBy[props.language]} {readerName}</p>
+              {reader ? <Button text={pageText.buttons.read.aboutThisReader.get(props.language)} click={playIntro} /> : ""}
             </div>
+
           </div>
         ) : (
           ""
         )}
-        {runTime ? <p className={"mt-1"}>{pageText.labels.readLabels.runTime.get(props.language)}: {runTime}</p> : ""}
+
         {showButton()}
-        {reader ? <Button text={pageText.buttons.read.aboutThisReader.get(props.language)} click={playIntro} /> : ""}
+        {runTime ? <p className={"mt-1"}>{pageText.labels.readLabels.runTime.get(props.language)}: {runTime}</p> : ""}
+
       </div>
     );
   } else {

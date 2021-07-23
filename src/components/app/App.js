@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // React Components
-import {Route, useHistory, useLocation} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 // Sub-Components
 import { Splash } from "../../views/splash/splash";
@@ -29,7 +29,7 @@ import "./fonts.css";
 import "./elements.css";
 import "./animations.css";
 import discussions from "../../data/discussions/discussions";
-import * as path from "path";
+//import * as path from "path";
 
 
 
@@ -107,6 +107,7 @@ export function App(props) {
           <Route
             path={[
               "/s:sessionId/p:partNo/page=:page",
+              "/s:sessionId/page=:page",
               "/s:sessionId/p:partNo/:next",
               "/s:sessionId/p:partNo",
               "/s:sessionId",

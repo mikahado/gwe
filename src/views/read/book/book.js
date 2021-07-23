@@ -11,6 +11,7 @@ export function Book(props) {
   //STATES
   const [pageZoom, setPageZoom] = useState(0);
   const [skinnyWindow, setSkinnyWindow] = useState(0);
+  const [skinnyPage, setSkinnyPage] = useState(0);
 
   //FUNCTIONS
   function checkDimensions() {
@@ -83,8 +84,12 @@ export function Book(props) {
     window.addEventListener("resize", handleResize);
   });
 
+  if (props.page === props.content.startPage && pageZoom ){
+    setPageZoom(0);
+  }
+
   return (
-    <div className="readerPage col-lg-auto d-flex flex-column align-items-center p-0">
+    <div className={`readerPage col-lg-auto d-flex ${!skinnyWindow && skinnyPage && props.page !== props.content.startPage ? 'flex-row' : 'flex-column' } align-items-center p-0`}>
       <div className={"d-flex flex-row align-items-center"}>
         <div
           id={"pageImgFrame"}

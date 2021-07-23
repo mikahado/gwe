@@ -7,7 +7,7 @@ export function ZoomBook(props) {
   const [bubble, setBubble] = useState(1);
 
   function handleIcon() {
-    if (props.zoomState === 0) {
+    if (!props.zoomState) {
       return "zoomIn";
     } else {
       return "zoomOut";

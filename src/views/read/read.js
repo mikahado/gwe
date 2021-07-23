@@ -26,10 +26,25 @@ import { useParams } from "react-router-dom";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import '../../components/table.css';
 import {ZoomBook} from "./zoomBook/zoomBook";
+import discussionCharacters from "../../data/discussions/discussionCharacters/discussionCharacters";
 
 let parse = require('html-react-parser');
 
 // SUB-COMPONENTS
+
+export function DiscussionCharacter(props){
+  return(
+    <div className={`discGridCharacter of${props.gridSize} ${props.zoom ? 'zoom' : null}`}>
+      <img
+        src={props.characterData.img}
+        //onLoad={this.imgLoaded}
+        id={"discGridImg"}
+        alt={props.characterData.label}
+      />
+      <p>{props.characterData.label}</p>
+    </div>
+  )
+}
 class Discuss extends React.Component {
   constructor(props) {
     super(props);
@@ -401,19 +416,55 @@ export function PageImage(props) {
 
 export function Translation(props) {
 
+  function processText(line){
+    if (Array.isArray(line)) {
+      if (line.length === 1) {
+        return <p style={{
+          backgroundColor: 'var(--light-blue)',
+          marginBottom: '0.5rem',
+          padding: '0.5rem',
+          borderRadius: '1rem',
+          width: '100%',
+          textAlign: 'center'
+        }}>{parse(line[0])}</p>
+
+      } else {
+        let compiled = '';
+        line.forEach( segment =>{
+          if (segment.hasOwnProperty('text')){
+            compiled += `<span class="discussSpeechBubble">${segment.text}</span>`
+          } else {
+            compiled += segment
+          }
+        })
+        return <p style={{
+          backgroundColor: 'var(--light-blue)',
+          marginBottom: '0.5rem',
+          padding: '0.5rem',
+          borderRadius: '1rem',
+          width: '100%',
+          textAlign: 'center'
+        }}>{parse(compiled)}</p>
+      }
+    } else if (line.hasOwnProperty('speech')){
+      return <span>{line}</span>
+    } else if (typeof line === 'string'){
+      return <p style ={{
+        backgroundColor: 'var(--light-blue)',
+        marginBottom: '0.5rem',
+        padding: '0.5rem',
+        borderRadius: '1rem',
+        width: '100%',
+        textAlign: 'center'
+      }}>{parse(line)}</p>
+    }
+  }
+
   return (
     props.textData ?
       <div className={'w-100'}>
         {props.textData.map( line =>{
-          return(
-            <p style ={{
-              backgroundColor: 'var(--light-blue)',
-              marginBottom: '0.5rem',
-              padding: '0.5rem',
-              borderRadius: '1rem',
-              width: '100%',
-              textAlign: 'center'
-            }}>{line}</p>
+          return(processText(line)
           )
         })}
       </div>
@@ -448,7 +499,7 @@ export function Read(props) {
   const [preloadingImg, setPreloadingImg] = useState("");
   const [preloadingAudio, setPreloadingAudio] = useState("");
 
-  const [pageZoom, setPageZoom] = useState(0);
+  const [pageZoom, setPageZoom] = useState(false);
   const [skinnyFrame, setSkinnyFrame] = useState(0);
 
 
@@ -664,6 +715,13 @@ export function Read(props) {
       content.scrollIntoView(true);
     }
   }
+  function textScroll(){
+    let text = document.getElementById('sideTrans');
+    if (text){
+      console.log(text);
+      text.scrollTo(0,0);
+    }
+  }
 
   // Layout
   function checkDimensions() {
@@ -692,8 +750,10 @@ export function Read(props) {
     }
   }
   function getFlow(){
-    if (layout.isMobile){
+    if (layout.isMobile) {
       return 'column';
+    } else if (props.content.format === 'discussion'){
+      return 'row';
     } else if (!layout.singlePage){
       return 'column'
     }
@@ -711,22 +771,69 @@ export function Read(props) {
     const pageImg = new Image();
     pageImg.src = props.content.pageData[page - 1].img;
 
-    if (pageImg.naturalHeight > 0) {
+    //if (pageImg.naturalHeight > 0) {
 
       newLayout.isMobile = windowWidth < 1000 //!(windowWidth > 1000 || windowHeight > 1000);
       newLayout.isPortrait = windowHeight > windowWidth;
       newLayout.readerStart = page === props.content.startPage;
-      newLayout.singlePage = pageImg.naturalHeight > pageImg.naturalWidth;
-      newLayout.sideTrans = newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom && props.content.pageData[page - 1].translation.get(props.language);
-      newLayout.bottomArrows = newLayout.isMobile && newLayout.isPortrait || pageZoom;
+      newLayout.singlePage = function(){
+        if (props.content.format === 'discussion'){
+          return true;
+        } else {
+          return pageImg.naturalHeight > pageImg.naturalWidth;
+        }
+      }()
+      newLayout.sideTrans = function(){
+        if (newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom){
+          if (props.content.format === 'discussion'){
+            return true;
+          } else if (props.content.pageData[page - 1].translation.get(props.language)){
+            return true;
+          }
+        }
+        return newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom && (props.content.pageData[page - 1].translation.get(props.language) || props.content.pageData[page - 1].text.get(props.language));
+      }()
+      newLayout.bottomArrows = (newLayout.isMobile && newLayout.isPortrait) || pageZoom;
       newLayout.sizeHeight = true;
-    }
+    //}
     return newLayout;
   }
   function updateLayout(){
     setLayout(buildLayout())
   }
   const [layout, setLayout] = useState(buildLayout());
+
+  //Discussion
+  function processDiscussionImages(imgData){
+    if (Array.isArray(imgData)){
+      if (imgData.length === 1){
+        if (typeof imgData === 'string'){
+          return <img id={'pageImg'} src={imgData[0]} onLoad={checkDimensions}/>
+        } else if (imgData.hasOwnProperty('label')){
+          return (
+            <DiscussionCharacter
+              characterData={imgData}
+              gridSize={1}
+              zoom={pageZoom}
+            />
+          )
+        }
+        return <img id={'pageImg'} src={imgData[0]} onLoad={checkDimensions}/>
+      } else if(imgData.length > 1) {
+        if ( imgData[0].hasOwnProperty('label') ){
+          return imgData.map( charData =>{
+            return (
+              <DiscussionCharacter
+                characterData={charData}
+                gridSize={imgData.length}
+                zoom={pageZoom}
+              />
+            )
+          })
+        }
+      }
+    }
+  }
 
   useEffect( ()=>{
 
@@ -740,6 +847,7 @@ export function Read(props) {
   }, []);
   useEffect(() => {
     checkDimensions();
+    textScroll();
     let testLayout = buildLayout();
 
     for (let key in testLayout){
@@ -804,7 +912,7 @@ export function Read(props) {
     }
   }
 
-  let translation = <Translation textData={ props.content.format === 'book' ? props.content.pageData[page - 1].translation.get(props.language) : null }/>
+  let translation = <Translation textData={props.content.pageData[page - 1].text.get(props.language)}/>
 
   return (
     <div className="Read m-0 p-0 d-flex flex-column align-items-center justify-content-center">
@@ -848,30 +956,33 @@ export function Read(props) {
               //display: "grid",
               //gridTemplateColumns: '1fr 1fr',
               borderColor: 'green',
-              height: '100%'
+              height: '100%',
+              width: '100%'
             }}>
 
-              <div id={'imgWrap'} className={`${pageZoom ? 'sizeWidth' : null} col d-flex align-items-center justify-content-center position-relative`}>
-                {
-                  props.content.format === 'discussion' ?
-                    <Discuss
-                      status={status}
-                      images={props.content.pageData[page - 1].img}
-                      text={props.content.pageData[page - 1].text}
-                      loaded={mediaLoaded}
+              {
+                props.content.pageData[page - 1].img && props.content.pageData[page - 1].img.length ?
+
+                  <div id={'imgWrap'} className={`${pageZoom || props.content.format === 'discussion' ? 'sizeWidth' : null} col d-flex align-items-center justify-content-center position-relative flex-wrap`}>
+                    {
+                      props.content.format === 'discussion' ?
+                        processDiscussionImages(props.content.pageData[page - 1].img)
+                        :
+                        <img id={'pageImg'} src={props.content.pageData[page - 1].img} onLoad={checkDimensions}/>
+                    }
+
+                    <ZoomBook
+                      visible={layout.singlePage && !layout.readerStart && !layout.isPortrait}
+                      zoomFunction={toggleZoom}
+                      zoomState={pageZoom}
                       language={props.language}
                     />
-                    :
-                    <img id={'pageImg'} src={props.content.pageData[page - 1].img} onLoad={checkDimensions}/>
-                }
+                  </div>
 
-                <ZoomBook
-                  visible={layout.singlePage && !layout.readerStart && !layout.isPortrait}
-                  zoomFunction={toggleZoom}
-                  zoomState={pageZoom}
-                  language={props.language}
-                />
-              </div>
+                  : null
+              }
+
+
 
               {
                 layout.readerStart && !layout.isPortrait ?
@@ -883,7 +994,7 @@ export function Read(props) {
 
               {
                 layout.sideTrans ?
-                  <div className={`col d-flex`} style={{
+                  <div id={'sideTrans'} className={`col d-flex`} style={{
                     height: '100%',
                     overflow: 'auto'
                   }}>

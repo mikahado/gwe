@@ -17,12 +17,11 @@ export function assembleBookPages(contentId, endPage) {
         `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/eng/${page}.mp3`,
         `${process.env.PUBLIC_URL}/assets/book/${contentId}/audio/spa/${page}.mp3`
       ),
-      translation: new MultiLingual(
+      text: new MultiLingual(
         null,
         translationsSpa[contentId] ? translationsSpa[contentId][page] : null,
         translationsFra[contentId] ? translationsFra[contentId][page] : null
       ),
-      text: null,
     });
   }
   return contentPages;
@@ -83,7 +82,7 @@ export function assembleDiscussionPages(contentId) {
     audio: new MultiLingual(
       `${process.env.PUBLIC_URL}/assets/discussion/emptyAudio.mp3`
     ),
-    text: null,
+    text: new MultiLingual(),
   });
 
   // Assemble Additional Page Data

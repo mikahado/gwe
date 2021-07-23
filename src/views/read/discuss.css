@@ -53,7 +53,12 @@
   padding: 0.1rem 1rem;
 }
 
-.discGridImg:hover {
+.discGridCharacter.zoom {
+  width: 15rem;
+  height: 15rem;
+}
+
+.discGridCharacter:hover {
   z-index: 5;
   animation: growBig 0.25s ease-out forwards;
 }
@@ -64,13 +69,16 @@
   }
 }
 @keyframes growBig {
+  0% {
+    transform: scale(1);
+  }
   100% {
     transform: scale(1.5);
   }
 }
 .discGridCharacter {
-  width: 12rem;
-  height: 12rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 #discGridImg {

@@ -246,7 +246,7 @@ const discussionPages = {
     },
     7: {
       images: [],
-      text: [[`<table>
+      text: [`<table>
         <thead>
         <th>Greenhouse Gas</th>
         <th>Major Sources</th>
@@ -285,7 +285,7 @@ const discussionPages = {
           <td>Water Vapor</td>
           <td>Evaporation</td>
         </tr>
-      </table>`]],
+      </table>`],
     },
     8: {
       images: ["joanna", "creamy", "marina", "theFluff", "sally"],

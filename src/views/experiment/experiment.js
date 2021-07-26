@@ -5,7 +5,7 @@ import {Button} from "../../components/buttons/buttons";
 import './experiment.css';
 import {ExperimentExcerpt} from "./experimentExcerpt/experimentExcerpt";
 import {ExperimentVideo} from "./experimentVideo";
-import {ReadClose} from "../read/readClose/readClose";
+import {ReadClose} from "../read/readClose";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import {Lightbox} from "./lightbox/lightbox";
 import {NextMaterial} from "../read/nextMaterial/nextMaterial";
@@ -107,9 +107,9 @@ export function Experiment(props) {
             {
               video.transcript ?
                 <div className={'videoTranscript'}>
-                  <h3>Video Transcript</h3>
+                  <h3>{pageText.labels.experiments.videoTranscript.get(props.language)}</h3>
                   {
-                    video.transcript.map( line =>{
+                    video.transcript.get(props.language).map( line =>{
                       return <p>{parse(line)}</p>
                     })
                   }
@@ -191,17 +191,20 @@ export function Experiment(props) {
             }
           </section>
 
-          <div className={'d-flex justify-content-center w-100'}>
+          <div className={'d-flex flex-column justify-content-center align-items-center w-100'}>
             {
               content.pdf && content.pdf.get(props.language, false) ?
-                <Button text={pageText.buttons.openPDF.get(props.language)} extLink={content.pdf.get(props.language)}/>
+                <div className={'w-100 d-flex justify-content-center align-items-center'}>
+                  <Button text={pageText.buttons.openPDF.get(props.language)} extLink={content.pdf.get(props.language)}/>
+                </div>
+
                 :''
             }
             {
               props.sessionInfo ?
-                <div className={'d-flex flex-column align-items-center'}>
-                  <Button text={'Next Material'} iconType={'rightArrow'} link={`/s${props.sessionInfo.sessionId}/p${props.sessionInfo.partNo}/next`}/>
-                  <NextMaterial sessionInfo={props.sessionInfo}/>
+                <div className={'d-flex flex-column align-items-center w-100'}>
+                  <Button text={pageText.labels.readLabels.otherMaterial.next.get(props.language)} iconType={'rightArrow'} link={`/s${props.sessionInfo.sessionId}/p${props.sessionInfo.partNo}/next`}/>
+                  <div className={'w-100 d-flex justify-content-end'}><NextMaterial sessionInfo={props.sessionInfo} language={props.language}/></div>
                 </div>
                 :''
             }

@@ -170,7 +170,8 @@ const pageText = {
     },
     openPDF: new MultiLingual(
       'Open PDF',
-      'Abrir PDF'
+      'Abrir PDF',
+      'Ouvrir le PDF'
     ),
     gweSite: new MultiLingual(
       'Visit The GWE Website',
@@ -236,7 +237,19 @@ const pageText = {
         'Material Loading',
         'Material cargando',
         'Chargement du matériel'
-      )
+      ),
+      otherMaterial: {
+        next: new MultiLingual(
+          'Next Material',
+          'Material Siguiente',
+          'document suivant'
+        ),
+        prev: new MultiLingual(
+          'Previous',
+          'Material Anterior',
+          'document précédent'
+        )
+      }
     },
     sessionInfo: {
       sessionNo(sessionNo, language) {
@@ -344,6 +357,11 @@ const pageText = {
         'OR:',
         'Ó:',
         'OU:'
+      ),
+      videoTranscript: new MultiLingual(
+        'Video Transcript',
+        'Transcripción de video',
+        'Transcription vidéo'
       )
     },
     languages: {
@@ -353,9 +371,11 @@ const pageText = {
     },
     teachersGuide: {
       sections: new MultiLingual(
-        'Sections'
+        'Sections',
+        'Secciones'
       )
     },
+
 
     // Reader Start
     readBy: new MultiLingual(
@@ -396,7 +416,7 @@ const pageText = {
     ),
     aboutGWE: new MultiLingual(
       'About GWE',
-      '', // todo: Spanish About GWE page title
+      'Sobre GWE',
       'À propos de GWE'
     )
   },

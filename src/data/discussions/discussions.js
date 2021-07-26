@@ -57,7 +57,7 @@ const discussions = {
     "commonGroundDiscuss",
     new MultiLingual(
       "Common Ground Discussion",
-      '',
+      'Plática sobre Terreno Común',
       `Discussion de terrain d'entente`
 ),
     new MultiLingual(new RunTime(5)),

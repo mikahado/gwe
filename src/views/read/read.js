@@ -7,14 +7,14 @@ import pageText from "../../data/pageText";
 // Sub-Components
 import { Button } from "../../components/buttons/buttons";
 import Loading from "../../components/loading/loading";
-import { Audio } from "./audio/audio";
+import { Audio } from "./audio";
 import { ReaderStart } from "./readerStart/readerStart";
-import { Book } from "./book/book";
+import { Book } from "./book";
 import { Preloader } from "./preloader/preloader";
 import Congrats from "../../components/congrats/congrats";
 import { InfoBubble } from "../../components/infoBubble/infoBubble";
-import { PageArrow } from "./pageArrow/pageArrow";
-import { ReadClose } from "./readClose/readClose";
+import { PageArrow } from "./pageArrow";
+import { ReadClose } from "./readClose";
 import { NextMaterial } from "./nextMaterial/nextMaterial";
 
 // Style Sheets
@@ -25,7 +25,7 @@ import "./readMediaQueries.css";
 import { useParams } from "react-router-dom";
 import {MaterialHeader} from "../../components/materialHeader/materialHeader";
 import '../../components/table.css';
-import {ZoomBook} from "./zoomBook/zoomBook";
+import {ZoomBook} from "./zoomBook";
 import discussionCharacters from "../../data/discussions/discussionCharacters/discussionCharacters";
 
 let parse = require('html-react-parser');
@@ -45,6 +45,7 @@ export function DiscussionCharacter(props){
     </div>
   )
 }
+/*
 class Discuss extends React.Component {
   constructor(props) {
     super(props);
@@ -125,7 +126,6 @@ class Discuss extends React.Component {
         });
         //Return Assembled Page Text
         if (convertedText.length) {
-          console.log(convertedText);
           return <div className={"discText col-md"}>{convertedText}</div>;
         }
       }
@@ -207,6 +207,7 @@ class Discuss extends React.Component {
     );
   }
 }
+ */
 
 function ReaderControlBar(props) {
   function NarrationControl() {
@@ -418,7 +419,8 @@ export function Translation(props) {
 
   function processText(line){
     if (Array.isArray(line)) {
-      if (line.length === 1) {
+
+      if (line.length === 1 && typeof line[0] === 'string') {
         return <p style={{
           backgroundColor: 'var(--light-blue)',
           marginBottom: '0.5rem',
@@ -508,6 +510,7 @@ export function Read(props) {
   // Page Control
   function changePage(newPage, stop) {
     if (newPage !== page) {
+
       if (stop) {
         // Stop Narration
         const audio = document.getElementById("narrator");
@@ -547,7 +550,7 @@ export function Read(props) {
     if (page >= props.content.endPage) {
       openCompleteWindow();
     } else {
-      changePage(page + 1, stop);
+      changePage(page + 1, stop ? stop : null);
     }
   }
 
@@ -566,9 +569,9 @@ export function Read(props) {
 
       switch (action) {
         case "play":
-          console.log("play");
 
           if (playPromise !== undefined) {
+
             playPromise
               .then(() => {
                 if (status !== "playing") {
@@ -718,13 +721,14 @@ export function Read(props) {
   function textScroll(){
     let text = document.getElementById('sideTrans');
     if (text){
-      console.log(text);
       text.scrollTo(0,0);
     }
   }
 
   // Layout
   function checkDimensions() {
+
+    setLayout(buildLayout());
 
     const imgWrap = document.getElementById('imgWrap');
     const pageImg = document.getElementById('pageImg');
@@ -768,40 +772,50 @@ export function Read(props) {
 
     const windowWidth = document.documentElement.clientWidth;
     const windowHeight = document.documentElement.clientHeight;
-    const pageImg = new Image();
-    pageImg.src = props.content.pageData[page - 1].img;
+    const pageImg = document.getElementById('pageImg');
 
-    //if (pageImg.naturalHeight > 0) {
-
-      newLayout.isMobile = windowWidth < 1000 //!(windowWidth > 1000 || windowHeight > 1000);
-      newLayout.isPortrait = windowHeight > windowWidth;
-      newLayout.readerStart = page === props.content.startPage;
-      newLayout.singlePage = function(){
+    newLayout.isMobile = windowWidth < 1000 //!(windowWidth > 1000 || windowHeight > 1000);
+    newLayout.isPortrait = windowHeight > windowWidth;
+    newLayout.readerStart = page === props.content.startPage;
+    newLayout.singlePage = function(){
+      if (props.content.format === 'discussion'){
+        return true;
+      } else {
+        if (pageImg.naturalHeight > 0){
+          return pageImg.naturalHeight > pageImg.naturalWidth;
+        } else {
+          return layout.singlePage;
+        }
+      }
+    }()
+    newLayout.sideTrans = function(){
+      if (
+        newLayout.singlePage
+        && !newLayout.readerStart
+        && !newLayout.isPortrait && !pageZoom
+      ){
         if (props.content.format === 'discussion'){
           return true;
-        } else {
-          return pageImg.naturalHeight > pageImg.naturalWidth;
+        } else if (props.content.pageData[page - 1].text.get(props.language)){
+          return true;
         }
-      }()
-      newLayout.sideTrans = function(){
-        if (newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom){
-          if (props.content.format === 'discussion'){
-            return true;
-          } else if (props.content.pageData[page - 1].translation.get(props.language)){
-            return true;
-          }
-        }
-        return newLayout.singlePage && !newLayout.readerStart && !newLayout.isPortrait && !pageZoom && (props.content.pageData[page - 1].translation.get(props.language) || props.content.pageData[page - 1].text.get(props.language));
-      }()
-      newLayout.bottomArrows = (newLayout.isMobile && newLayout.isPortrait) || pageZoom;
-      newLayout.sizeHeight = true;
-    //}
+      }
+      return(
+        newLayout.singlePage &&
+        !newLayout.readerStart &&
+        !newLayout.isPortrait &&
+        !pageZoom &&
+        props.content.pageData[page - 1].text.get(props.language)
+      );
+    }()
+    newLayout.bottomArrows = (newLayout.isMobile && newLayout.isPortrait) || pageZoom;
+    newLayout.sizeHeight = true;
     return newLayout;
   }
   function updateLayout(){
     setLayout(buildLayout())
   }
-  const [layout, setLayout] = useState(buildLayout());
+  const [layout, setLayout] = useState({});
 
   //Discussion
   function processDiscussionImages(imgData){
@@ -846,9 +860,13 @@ export function Read(props) {
     window.addEventListener("resize", handleResize);
   }, []);
   useEffect(() => {
-    checkDimensions();
+    //checkDimensions();
     textScroll();
     let testLayout = buildLayout();
+
+    if (status === 'playing'){
+      narrationControl('play');
+    }
 
     for (let key in testLayout){
       if (layout[key] !== testLayout[key]){
@@ -857,9 +875,11 @@ export function Read(props) {
     }
   });
 
-  if (props.page === props.content.startPage && pageZoom ){
+  /*
+  if (layout.readerStart && pageZoom ){
     setPageZoom(0);
   }
+   */
 
   const renderedComponents = {
     pageArrow: [
@@ -897,22 +917,11 @@ export function Read(props) {
         setAudioBubble={setAudioBubble}
         //narrationState={narrationState}
       />
+    ),
+    translation: (
+      <Translation textData={props.content.pageData[page - 1].text.get(props.language)}/>
     )
   }
-
-  let text = function(){
-    if(props.content.format === 'book'){
-      if (props.content.pageData[page - 1].translation){
-        return
-      }
-    } else if (props.format === 'discussion') {
-      if (props.content.pageData[page - 1].text) {
-        return props.content.pageData[page - 1].text.get(props.language)
-      }
-    }
-  }
-
-  let translation = <Translation textData={props.content.pageData[page - 1].text.get(props.language)}/>
 
   return (
     <div className="Read m-0 p-0 d-flex flex-column align-items-center justify-content-center">
@@ -982,8 +991,6 @@ export function Read(props) {
                   : null
               }
 
-
-
               {
                 layout.readerStart && !layout.isPortrait ?
                   <div className={`col d-flex align-items-center justify-content-center`}>
@@ -998,7 +1005,7 @@ export function Read(props) {
                     height: '100%',
                     overflow: 'auto'
                   }}>
-                    {translation}
+                    {renderedComponents.translation}
                   </div>
                   : null
               }
@@ -1015,12 +1022,22 @@ export function Read(props) {
         </div>
 
         <div className={`h-100 w-100 d-${layout.readerStart || layout.sideTrans ? 'none' : 'flex' } justify-content-center align-items-center mt-3`}>
-          {translation}
+          {renderedComponents.translation}
         </div>
 
         <div className={`d-${layout.readerStart && layout.isPortrait ? 'flex' : 'none' } justify-content-center pt-3`}>
           {renderedComponents.readerStart}
         </div>
+
+        {
+          props.sessionInfo ?
+            <div className={'d-flex justify-content-end'}>
+              <NextMaterial
+                sessionInfo={props.sessionInfo} language={props.language}
+              />
+            </div>
+            :null
+        }
 
         <div className={`d-${layout.bottomArrows ? 'flex' : 'none'} justify-content-between`} style={{
           position: 'sticky',

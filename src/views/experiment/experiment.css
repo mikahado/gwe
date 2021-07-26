@@ -30,6 +30,10 @@
 .experimentWrap .supplies {
   max-width: 20rem;
 }
+.experimentWrap .supplies section {
+  position: sticky;
+  top: 1rem;
+}
 .experimentWrap .supplies ul li {
   margin-bottom: 1rem;
 }

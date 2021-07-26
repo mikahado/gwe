@@ -132,7 +132,8 @@
 .discussSpeechBubble {
   border-radius: 1rem;
   padding: 0.25rem;
-  color: var(--dark-accent);
+  color: hsl(200,50%,40%);
+  font-weight: bold;
 }
 .textline {
   border: 0.25rem solid red;

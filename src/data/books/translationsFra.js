@@ -1422,6 +1422,11 @@ export const translationsFra = {
       `Si on va les brûler, le CO2 de la Terre, la couche deviendra de plus en plus épaisse.`,
       `La Terre va se rechauffer tellement que personne ne peut prédire comment elle va changer.`,
       `Mais elle va changer.`,
+    ],
+    18:[
+      `Est-ce que vous, les humains, continuerez-vous à brûler de plus en plus de combustibles fossiles chaque année et risquerez-vous les changements que cela va apporter?`,
+      `Ou travaillerez-vous ensemble pour utiliser plus lentement ma lumière solaire ancienne, trouverez-vous d’autres sources d’énergie, et inventerez-vous des façons d’éclaircir la couverture de CO2?`,
+      `Le choix vous appartient.`,
     ]
   }
 };

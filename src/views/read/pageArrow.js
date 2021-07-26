@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { InfoBubble } from "../../../components/infoBubble/infoBubble";
-import { Button } from "../../../components/buttons/buttons";
-import pageText from "../../../data/pageText";
+import { InfoBubble } from "../../components/infoBubble/infoBubble";
+import { Button } from "../../components/buttons/buttons";
+import pageText from "../../data/pageText";
 
 export function PageArrow(props) {
   const [bubble1, setBubble1] = useState(1);

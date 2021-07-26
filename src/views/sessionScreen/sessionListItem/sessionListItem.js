@@ -12,6 +12,8 @@ import pageText from "../../../data/pageText";
 //Style Sheet
 import "./sessionListItem.css";
 
+let parse = require('html-react-parser');
+
 export function expIcon(){
   return(
     <svg
@@ -68,7 +70,7 @@ class SessionListItem extends React.Component {
             </div>
 
             <div className={'materialTitle'}>
-              <p>{this.props.title}</p>
+              <p>{parse(this.props.title)}</p>
               {
                 this.props.subtitle ?
                   <p>{this.props.subtitle}</p> : null

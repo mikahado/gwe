@@ -22,7 +22,7 @@ export function NextUp(props) {
         <h1 className={"nextUpTitle label"}>{pageText.messages.courseComplete.get(props.language)}</h1>
         <p className="label">{pageText.messages.courseCongrats.get(props.language)}</p>
 
-        <Button link={'/about'} text={pageText.buttons.nav.aboutGWE.get(props.language)} language={props.language}/>
+        <Button link={'/aboutGWE'} text={pageText.buttons.nav.aboutGWE.get(props.language)} language={props.language}/>
 
         <Button
           text={pageText.buttons.completions.backSessions.get(props.language)}

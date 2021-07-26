@@ -25,7 +25,6 @@ export function ReaderStart(props) {
   if (content.narration) {
     if (content.runTime) {
       if (content.runTime.get(props.language, false)) {
-        console.log(content.runTime.get(props.language, false))
         runTime = content.runTime
           .get(props.language)
           .string.get(props.language);
@@ -45,7 +44,7 @@ export function ReaderStart(props) {
   function showButton() {
     function getClick() {
       if (props.content.preloads.audio.length) {
-        //props.setAudioBubble(1);
+        props.setAudioBubble(1);
         props.nextPage();
         playNarration();
       } else {

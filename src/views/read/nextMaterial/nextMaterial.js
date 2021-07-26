@@ -2,6 +2,7 @@ import React from "react";
 
 import "./nextMaterial.css";
 import curriculum from "../../../data/curriculum/curriculum";
+import pageText from "../../../data/pageText";
 import { Button } from "../../../components/buttons/buttons";
 
 export function NextMaterial(props) {
@@ -17,13 +18,13 @@ export function NextMaterial(props) {
         curriculum.sessions[currentMaterial.sessionId - 1].material[
           currentMaterial.partNo
         ];
-      other = "Next";
+      other = "next";
     } else {
       nextMaterial =
         curriculum.sessions[currentMaterial.sessionId - 1].material[
           currentMaterial.partNo - 2
         ];
-      other = "Previous";
+      other = "prev";
     }
 
     let nextId = nextMaterial.sessionInfo.materialId;
@@ -34,16 +35,16 @@ export function NextMaterial(props) {
     return (
       <div className={"nextMaterial"}>
         <div className={"d-flex flex-column align-items-center"}>
-          <h1>{other} Material</h1>
-          <Button text={title} link={`/s${nextSession}/p${nextPartNo}`} />
+          <h1>{pageText.labels.readLabels.otherMaterial[other].get(props.language)}</h1>
+
           <div className={"sessionInfo"}>
             <p>
-              Part {nextPartNo} of {ofParts}
+              {pageText.labels.sessionInfo.partOf(nextPartNo, ofParts, props.language)}
             </p>
-            <p>Session {nextId}</p>
+            <p>{pageText.labels.sessionInfo.sessionNo(nextId, props.language)}</p>
           </div>
+          <Button text={title} link={`/s${nextSession}/p${nextPartNo}`} />
         </div>
-        <div></div>
       </div>
     );
   } else {

@@ -22,7 +22,7 @@ export function Guide(props) {
       <div className={"row"}>
 
         <div className={'col-md-auto guideSections d-flex flex-column align-items-center'}>
-            <h2 className={'pageTitle'}>Sections</h2>
+            <h2 className={'pageTitle'}>{pageText.labels.teachersGuide.sections.get(props.language)}</h2>
             {
               guideText.map(section => {
                 return (

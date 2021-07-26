@@ -58,7 +58,7 @@
   height: 15rem;
 }
 
-.discGridCharacter:hover {
+.discGridImg:hover {
   z-index: 5;
   animation: growBig 0.25s ease-out forwards;
 }
@@ -129,7 +129,8 @@
 .discussSpeechBubble {
   border-radius: 1rem;
   padding: 0.25rem;
-  color: var(--dark-accent);
+  color: #337799;
+  font-weight: bold;
 }
 
 .textline {

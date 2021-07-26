@@ -7,7 +7,6 @@ export function Audio(props) {
   }
 
   function handleEnd() {
-    console.log("end");
     if (props.page !== props.startPage) {
       props.nextPage();
     } else {

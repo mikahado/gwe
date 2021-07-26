@@ -1,4 +1,4 @@
-import { Button } from "../../../components/buttons/buttons";
+import { Button } from "../../components/buttons/buttons";
 import React from "react";
 
 export function ReadClose(props) {

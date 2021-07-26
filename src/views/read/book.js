@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Loading from "../../../components/loading/loading";
-import { PageImage } from "../read";
-import { ZoomBook } from "../zoomBook/zoomBook";
+import Loading from "../../components/loading/loading";
+import { PageImage } from "./read";
+import { ZoomBook } from "./zoomBook";
 
-import pageText from "../../../data/pageText";
+import pageText from "../../data/pageText";
 
 let parse = require('html-react-parser');
 

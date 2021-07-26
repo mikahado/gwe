@@ -31,6 +31,11 @@
     }
     .supplies{
         max-width: 20rem;
+
+      section{
+        position: sticky;
+        top: 1rem;
+      }
     }
     .supplies ul li{
         margin-bottom: 1rem;

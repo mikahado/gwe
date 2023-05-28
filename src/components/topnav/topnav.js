@@ -195,6 +195,14 @@ function TopNav(props) {
                 linkPage={"aboutGWE"}
                 page={props.page}
               />
+
+              <NavButton
+                text={"GWE.org"}
+                extLink={"https://theglobalwarmingexpress.org/"}
+                linkPage={"aboutGWE"}
+                page={props.page}
+              />
+
             </div>
           ) : (
             ""

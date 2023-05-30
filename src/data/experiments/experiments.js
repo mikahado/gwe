@@ -54,7 +54,7 @@ export const experiments = {
     new MultiLingual(
   [
     <div>
-    <h3><u>Blanket and Earth Drama/Exercise</u></h3>
+    <h2>Blanket and Earth Drama/Exercise</h2>
     <p>
     Get the globe. Let your kids put their hands on it, spin it. <br/>
     Ask them where on the globe of the earth they live. (they may know - or not) <br/>

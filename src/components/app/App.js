@@ -35,7 +35,7 @@ import discussions from "../../data/discussions/discussions";
 
 
 export function App(props) {
-  const [language, setLanguage] = useState("spa");
+  const [language, setLanguage] = useState("eng");
   const [page, setPage] = useState("");
 
   const suppLangs = ['eng', 'spa', 'fra'];

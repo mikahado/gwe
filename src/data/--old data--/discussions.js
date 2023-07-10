@@ -926,7 +926,7 @@ const discussions = {
             {
               speech: true,
               text: parse(
-                `“Well, we humans don’t <i>have</i> to do all those things,”`
+                `“Well, we humans don’t have to do all those things,”`
               ),
             },
             ` Joanna answered.`,

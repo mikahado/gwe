@@ -854,7 +854,7 @@ const discussionPages = {
       images: ["marina", "flora", "joanna", "creamy"],
       text: [
         [
-          { speech: true, text: parse(`“What <i>is</i> up?”`) },
+          { speech: true, text: parse(`“What <em>is</em> up?”`) },
           ` Marina said, smiling.`,
         ],
         [
@@ -870,7 +870,7 @@ const discussionPages = {
           ` She giggled.`,
         ],
         [
-          { speech: true, text: parse(`“It feels <i>hot!</i>”`) },
+          { speech: true, text: parse(`“It feels hot!”`) },
           ` Creamy said, fanning herself with her flipper`,
         ],
         [
@@ -885,7 +885,7 @@ const discussionPages = {
           {
             speech: true,
             text: parse(
-              `“Well, I sure don’t want to release <i>my</i> heat energy by being burned!”`
+              `“Well, I sure don’t want to release my heat energy by being burned!”`
             ),
           },
           ` Creamy replied. `,
@@ -913,7 +913,7 @@ const discussionPages = {
           {
             speech: true,
             text: parse(
-              `“Well, we humans don’t <i>have</i> to do all those things,”`
+              `“Well, we humans don’t have to do all those things,”`
             ),
           },
           ` Joanna answered.`,
@@ -932,7 +932,7 @@ const discussionPages = {
           {
             speech: true,
             text: parse(
-              `“So it’s not really <i>better</i> if it means that animals and other parts of the world are harmed,”`
+              `“So it’s not really better if it means that animals and other parts of the world are harmed,”`
             ),
           },
           ` interrupted Lauren. `,
@@ -1293,7 +1293,7 @@ const discussionPages = {
           {
             speech: true,
             text: parse(
-              `“So, perhaps this train <i>is</i> moving ahead, after all,”`
+              `“So, perhaps this train is moving ahead, after all,”`
             ),
           },
           ` Edgar said.`,

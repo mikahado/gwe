@@ -257,7 +257,7 @@ const pageText = {
           //case ('spa'): return `*ML* #${sessionNo}`
           case('spa'): return `Sesión #${sessionNo}`;
           case('fra'): return `Séance #${sessionNo}`;
-          default: return `Sesssion #${sessionNo}`;
+          default: return `Session #${sessionNo}`;
         }
       },
       partOf(partNo, numParts, language) {

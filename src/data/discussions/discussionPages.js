@@ -854,7 +854,7 @@ const discussionPages = {
       images: ["marina", "flora", "joanna", "creamy"],
       text: [
         [
-          { speech: true, text: parse(`“What <em>is</em> up?”`) },
+          { speech: true, text: parse(`“What is up?”`) },
           ` Marina said, smiling.`,
         ],
         [

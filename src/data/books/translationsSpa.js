@@ -1324,7 +1324,7 @@ en este viaje.`
       `En cada paso de su travesía, conocen a algunos de los animales que han sido lastimados o dejado huérfanos, o ambas cosas, debido al cambio climático. Ven el daño a nuestro aire, nuestra agua, y nuestra tierra. Desde incendios forestales y la sequía en Nuevo México, hasta un huracán en Nueva York, el mensaje es claro. El planeta se está calentando. La Tierra está en peligro. Todos debemos hacer algo sobre esto.`,
         `Como explica Marina, no podemos seguir sofocando al planeta con gases de invernadero. Nuestro mundo se está sobrecalentando. Si no hacemos todos nuestra parte, “la Tierra no puede destaparse de sus cobijas”.`,
 `Marina y Joanna y sus amigos animales-- incluyendo a un pingüino exiliado llamado The Fluff, una perica estudiosa llamada Inoah, un cachorro de oso negro llamado Tomás, y un canario ángel guardián llamado Croissant—siguen adelante. Su viaje a través de nuestra nación es en un tren impulsado por la esperanza. Y su súplica a todos nosotros es esta: También tenemos que continuar. Tampoco podemos darnos por vencidos.`,
-  `<i>El Tren del Calentamiento Global</i> es una llamada de atención sobre el gran reto del cambio climático—y una que espero que todos escuchemos.`,
+  `El Tren del Calentamiento Global es una llamada de atención sobre el gran reto del cambio climático—y una que espero que todos escuchemos.`,
     ],
     6: [
       `Gracias Marina, por una extraordinaria historia de aventuras, y por recordarnos, como lo hizo mi padre en su época, que tenemos que cuidar nuestro planeta. Tenemos que protegerlo para tu generación, y para las generaciones que vienen.`,

@@ -321,7 +321,7 @@ export const experiments = {
       new MultiLingual(
         'In <u>My Light</u>, on the third (including title page) two-page spread, the right-hand page text says:  Each day I warm your land and water.  Tiny drops of warm water rise and form clouds.  This is a simplified picture and description of cloud formation.',
         'En <u>Mi Luz</u>, En la tercera (incluyendo la página del título) extensión de dos páginas, la página de la derecha dice: Cada día yo caliento tu tierra y tu agua. Pequeñas gotas de agua tibia suben y forman nubes. Esta es una imagen simplificada y descripción de la formación de nubes.',
-        `Dans <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit: <i>''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.''</i> Il s'agit d'une image et d'une description simplifiées de la formation des nuages.`
+        `Dans <u>Ma lumière</u>, sur la troisième page de double page (y compris la page de titre), le texte de la page de droite dit: ''Chaque jour, je réchauffe votre terre et votre eau. De minuscules gouttes d'eau chaude montent et forment des nuages.'' Il s'agit d'une image et d'une description simplifiées de la formation des nuages.`
       )
     )
   ),
@@ -537,7 +537,7 @@ export const experiments = {
       new MultiLingual(
         'In <u>Living Sunlight</u>, on the twelfth (including title page) two-page spread describes breathing in the oxygen plants make.',
         'En <u>Luz Viviente</u>, en la doceava (incluyendo la página del título) extensión de dos páginas, se describe lo que es respirar el oxígeno que producen las plantas.',
-        'Dans le livre, <i>La lumière vivante du soleil</i>, sur la douzième page (y compris la page de titre), deux pages décrivent la respiration dans l\'oxygène que produisent les plantes. '
+        'Dans le livre, La lumière vivante du soleil, sur la douzième page (y compris la page de titre), deux pages décrivent la respiration dans l\'oxygène que produisent les plantes. '
       )
     )
 
@@ -731,7 +731,7 @@ export const experiments = {
         new MultiLingual(
           '<u>Living Sunlight</u>, on the sixth, seventh, and eighth (including title page) two-page spreads pictures and describes photosynthesis.',
           '<u>Luz Viviente</u>, en las sexta, séptima, y octavas (incluyendo la página del título) extensiones de dos páginas se muestra y describe la fotosíntesis.',
-          `Dans le livre, <i>La lumière vivante du soleil</i>, sur les sixième, septième et huitième (y compris la page de titre) les double page, des images et la description de la photosynthèse.`
+          `Dans le livre, La lumière vivante du soleil, sur les sixième, septième et huitième (y compris la page de titre) les double page, des images et la description de la photosynthèse.`
         )
       ),
       new ExperimentExcerpt(
@@ -805,7 +805,7 @@ export const experiments = {
       new MultiLingual(
         'On the ninth two-page spread <u>Buried Sunlight</u> pictures and describes how plant matter piled up and got squashed to make fossil fuels.',
         'En la novena extensión de dos páginas, <u>Luz Enterrada</u> muestra y describe cómo la materia vegetal se apiló y aplastó para formar combustibles fósiles. ',
-        `Sur la neuvième page de double page, <i>L'ensoleillement enterré</i> présente des images et décrit comment la matière végétale s'est empilée et a été écrasée pour produire des combustibles fossiles.`
+        `Sur la neuvième page de double page, L'ensoleillement enterré présente des images et décrit comment la matière végétale s'est empilée et a été écrasée pour produire des combustibles fossiles.`
       )
     )
   ),
@@ -883,7 +883,7 @@ export const experiments = {
       new MultiLingual(
         'What is a greenhouse?  On the thirteenth (including title page) two-page spread, <u>Buried Sunlight</u>  pictures and describes how the air around the Earth (called the blanket of gases around the Earth, or the atmosphere) helps control the Earth’s temperature.  A greenhouse does the same thing to grow food all year round rather than just during the summer (or growing seasons of your area).',
         '¿Qué es un invernadero? En la décimo tercera (incluyendo la página del título) extensión de dos páginas, <u>Luz Enterrada</u> muestra y describe cómo el aire que rodea la Tierra (llamada la capa de gases alrededor de la Tierra, o la atmósfera) ayuda a controlar la temperatura de la Tierra. Un invernadero hace lo mismo para producir alimento todo el año en vez de solamente durante el verano (o la temporada de cultivo de tu zona).',
-        `Qu'est-ce qu'une serre ? Sur la treizième page de double page (y compris la page de titre), <i>L'ensoleillement enterré</i> décrit, avec les images, comment l'air autour de la Terre (appelée couverture de gaz autour de la Terre, ou atmosphère) aide à contrôler la température de la Terre. Une serre fait la même chose pour faire pousser de la nourriture toute l'année plutôt que juste pendant l'été (ou les saisons de croissance de votre région).`
+        `Qu'est-ce qu'une serre ? Sur la treizième page de double page (y compris la page de titre), L'ensoleillement enterré décrit, avec les images, comment l'air autour de la Terre (appelée couverture de gaz autour de la Terre, ou atmosphère) aide à contrôler la température de la Terre. Une serre fait la même chose pour faire pousser de la nourriture toute l'année plutôt que juste pendant l'été (ou les saisons de croissance de votre région).`
       )
     )
   ),
@@ -1119,7 +1119,7 @@ export const experiments = {
         new MultiLingual(
           "<u>Rivers of Sunlight</u>'s description of the water cycle - starts on the fourth (including title page) two-page spread of <u>Rivers of Sunlight</u> and goes to the seventh two-page spread",
           'La descripción del ciclo del agua en <u>Ríos de Luz</u>– empieza en la cuarta (incluyendo la página del título) extensión de dos páginas de <u>Ríos de Luz</u> y continúa hasta la séptima extensión de dos páginas.',
-          `Description du cycle de l'eau de <i>Les rivières d'ensoleillement</i>- commence sur la quatrième (y compris la page de titre) de double page de <i>Les rivières d'ensoleillement</i> et va à la septième de double page`
+          `Description du cycle de l'eau de Les rivières d'ensoleillement- commence sur la quatrième (y compris la page de titre) de double page de Les rivières d'ensoleillement et va à la septième de double page`
         )
       ),
       new ExperimentExcerpt(
@@ -1361,9 +1361,9 @@ export const experiments = {
         `Puis, en buvant, demandez pourquoi ils ont choisi cette eau`,
         [
           `Comment l'eau se salit-elle?`,
-          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Les sables bitumineux.`,
-          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Le Côte du Golfe.`,
-          `Lisez le chapitre <i>L'express de réchauffement climatique</i>, de Marina Weber, intitulé Le ruisseau Acorn.`,
+          `Lisez le chapit L'express de réchauffement climatique, de Marina Weber, intitulé Les sables bitumineux.`,
+          `Lisez le chapitre L'express de réchauffement climatique, de Marina Weber, intitulé Le Côte du Golfe.`,
+          `Lisez le chapitre L'express de réchauffement climatique, de Marina Weber, intitulé Le ruisseau Acorn.`,
           `Quelle sont les sources de notre eau? Rivières et aquifères.`,
           `L'eau doit être propre pour être bue. Qu'y a-t-il dedans que nous devons nettoyer? Faites une liste.`,
           `Comment le nettoie-t-on ? Cela pourrait être étendu avec une visite à une usine de traitement de l'eau Cela pourrait être élargi avec la discussion`,

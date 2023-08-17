@@ -6,7 +6,7 @@ The GWE Online Learning App / OLA (formerly OLP) is a web application which allo
 
 The curriculum is comprised of sessions, each session containing roughly one class period's worth of material, with a teacher presumably covering 1-2 sessions per week. With this online curriculum, teachers are provided with enough material to teach GWE-provided content on a regular basis over the course of a full school year.
 
-The GWE OLA was originally developed by Sam Pool, beginning in August of 2020.
+The GWE OLA was originally developed by Sam Pool, beginning in August of 2020. It was transferred to Michael Harrell in January of 2023.
 
 ## Getting Started
 

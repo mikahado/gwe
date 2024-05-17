@@ -169,7 +169,7 @@ function TopNav(props) {
               />
 
               <NavButton
-                text={navText.sesssions.get(props.language)}
+                text={navText.sessions.get(props.language)}
                 link={"/map"}
                 linkPage={"sessions"}
                 page={props.page}

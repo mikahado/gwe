@@ -70,7 +70,7 @@ const pageText = {
         'Guía',
         'Guide'
       ),
-      sesssions: new MultiLingual(
+      sessions: new MultiLingual(
         'Sessions',
         'Sesiones',
         'Sessions'

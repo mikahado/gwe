@@ -6,6 +6,7 @@ import discussions from "../discussions/discussions";
 import { MultiLingual } from "../model/multiLingual";
 import videos from "../videos/videos";
 import {experiments} from "../experiments/experiments";
+import {dramas} from "../dramas/dramas"
 import pageText from "../pageText";
 
 const sessionArray= [
@@ -23,7 +24,7 @@ const sessionArray= [
         pageText.labels.sessionInfo.partOf(1,3,'fra'),
       ),
       1,
-      52
+      51
     ),
   ]),
 
@@ -33,24 +34,30 @@ const sessionArray= [
   ]),
 
   new Session([
-    new Material(books.myLight)
-  ]),
-
-  new Session([
+    new Material(books.myLight),
     new Material(discussions.myLightDiscuss),
+    new Material(experiments.evapExp),
+    new Material(experiments.cloudExp),
+    new Material(experiments.pinwheelExp),
+    new Material(experiments.evapExp),
+    new Material(experiments.cloudExp),
   ]),
 
-  new Session([
-    new Material(experiments.evapExp)
-  ]),
+  // new Session([
+  //   new Material(discussions.myLightDiscuss),
+  // ]),
 
-  new Session([
-    new Material(experiments.cloudExp)
-  ]),
+  // new Session([
+  //   new Material(experiments.evapExp)
+  // ]),
 
-  new Session([
-    new Material(experiments.pinwheelExp)
-  ]),
+  // new Session([
+  //   new Material(experiments.cloudExp)
+  // ]),
+
+  // new Session([
+  //   new Material(experiments.pinwheelExp)
+  // ]),
 
   new Session([
     new Material(

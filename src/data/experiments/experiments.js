@@ -329,7 +329,7 @@ export const experiments = {
   pinwheelExp: new Experiment(
     'pinwheelExp',
     new MultiLingual(
-      'Pinwheel Experiment',
+      'Turbine Experiment',
       'Experimento De Molinillo',
       'Expérience de moulinet'
     ),

@@ -7,6 +7,7 @@ import { MultiLingual } from "../model/multiLingual";
 import videos from "../videos/videos";
 import {experiments} from "../experiments/experiments";
 import {dramas} from "../dramas/dramas"
+import {awarenesses} from "../awarenesses/awarenesses"
 import pageText from "../pageText";
 
 const sessionArray= [
@@ -35,29 +36,15 @@ const sessionArray= [
 
   new Session([
     new Material(books.myLight),
-    new Material(discussions.myLightDiscuss),
-    new Material(experiments.evapExp),
-    new Material(experiments.cloudExp),
+    // new Material(dramas.photonDrama),
+    // new Material(awarenesses.photonDrama),
     new Material(experiments.pinwheelExp),
+    // new Material(awarenesses.breathingInTheSun),
     new Material(experiments.evapExp),
     new Material(experiments.cloudExp),
+    new Material(discussions.myLightDiscuss),
   ]),
 
-  // new Session([
-  //   new Material(discussions.myLightDiscuss),
-  // ]),
-
-  // new Session([
-  //   new Material(experiments.evapExp)
-  // ]),
-
-  // new Session([
-  //   new Material(experiments.cloudExp)
-  // ]),
-
-  // new Session([
-  //   new Material(experiments.pinwheelExp)
-  // ]),
 
   new Session([
     new Material(
@@ -78,25 +65,29 @@ const sessionArray= [
     ),
   ]),
 
+  // 
   new Session([
-    new Material(books.livingSunlight)
+    new Material(books.livingSunlight),
+    // new Material(dramas.photosynthesisDance),
+    new Material(discussions.livingSunlightDiscuss),
+    // new Material(dramas.photosynthesisDrama),
+
+    // experiement below not in GWE Session Structure? 
+    new Material(experiments.heartbeatExp),
   ]),
 
   new Session([
+    new Material(books.livingSunlight),
     new Material(discussions.livingSunlightDiscuss)
   ]),
 
-  new Session([
-    new Material(experiments.heartbeatExp)
-  ]),
+  // new Session([
+  //   new Material(experiments.breathHoldExp)
+  // ]),
 
-  new Session([
-    new Material(experiments.breathHoldExp)
-  ]),
-
-  new Session([
-    new Material(experiments.countBreathExp)
-  ]),
+  // new Session([
+  //   new Material(experiments.countBreathExp)
+  // ]),
 
   new Session([
     new Material(experiments.photoSynthDramaExp)

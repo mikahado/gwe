@@ -58,6 +58,7 @@ class SessionListItem extends React.Component {
             </div>
 
             <div id={"mediaEntry"} className={`sessionGraphic ${wideThumb ? "wideThumb" : ""}`}>
+              
               {
                 this.props.format === 'experiment' ?
                   <div className={'experiment'}>
@@ -67,6 +68,7 @@ class SessionListItem extends React.Component {
                   :
                   <img src={this.props.image} alt={"Session Graphic"} />
               }
+              
             </div>
 
             <div className={'materialTitle'}>

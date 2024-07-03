@@ -1,5 +1,11 @@
 key files:
 curriculum.js for sessions
+ICONS are in sessionJump.js
+
+possible code to present session number in library:
+<h2 className="">{pageText.labels.sessionInfo.sessionNo(this.props.sessionId, this.props.language)}</h2>
+
+
 
 Sessions for GWE App
 

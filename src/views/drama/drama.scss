@@ -1,0 +1,102 @@
+.experimentWrap{
+    overflow-anchor: none;
+    ul{
+        //list-style-position: inside;
+        padding-left: 1rem;
+
+        li{
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+        ul{
+            li{
+                list-style-type: circle;
+            }
+            ul li{
+                list-style-type: disc;
+            }
+        }
+    }
+    h1{margin: 1rem;}
+    section{
+        overflow-anchor: none;
+        background-color: var(--dark-accent);
+        border-radius: 1rem;
+        //margin: 1rem;
+        padding: 1rem;
+        color: white;
+        height: fit-content;
+        width: fit-content;
+        max-width: 100%;
+    }
+    .supplies{
+        max-width: 20rem;
+
+      section{
+        position: sticky;
+        top: 1rem;
+      }
+    }
+    .supplies ul li{
+        margin-bottom: 1rem;
+    }
+    .body{
+
+
+        overflow-anchor: none;
+
+        section{
+            margin-bottom: 1rem;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+        }
+        iframe{
+            width: 100%;
+            height: 500px;
+          //min-width: 50rem;
+            border-radius: 1rem;
+        }
+        img{
+            width: 100%;
+            border-radius: 1rem;
+        }
+        .videos{
+            border-top: 0.5rem solid var(--primary-blue);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+    }
+    .instructions{
+      width: 100%;
+        overflow-anchor: none;
+        a{
+            background-color: var(--primary-green);
+            padding: 0.25rem;
+            border-radius: 1rem;
+        }
+    }
+  .videoTranscript{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3{
+      font-weight: bold;
+    }
+    p{
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  }
+    aside{
+        img{
+            width: 100%;
+        }
+    }
+    ul{
+
+    }
+
+}

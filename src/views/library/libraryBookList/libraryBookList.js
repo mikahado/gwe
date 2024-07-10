@@ -6,10 +6,12 @@ import "./libraryList.css";
 // Media Data
 import { default as get } from "../../../utilities/contentGetters";
 import { experimentsArray} from "../../../data/experiments/experiments";
+import { dramasArray} from "../../../data/dramas/dramas";
 
 // Sub - Components
 import LibraryBook from "../libraryBook/libraryBook";
 import LibraryExperiment from "../libraryExperiment/libraryExperiment";
+import LibraryDrama from "../libraryDrama/libraryDrama";
 import {discussionsArray} from "../../../data/discussions/discussions";
 import LibraryDiscussion from "../libraryDiscussion/libraryDiscussion";
 import pageText from "../../../data/pageText";
@@ -84,6 +86,22 @@ class LibraryBookList extends React.Component {
           }
 
         </div>
+
+        {/* <h2 className={'sectionHeader'} id={'dramas'}>{typeLabels.dramas.get(this.props.language)}</h2> */}
+        {/* <div className="d-flex flex-wrap justify-content-center align-items-baseline">
+          {
+            dramasArray.map( drama =>{
+              return(
+                <LibraryDrama
+                  title={drama.title.get(this.props.language)}
+                  contentId={drama.contentId}
+                />
+              )
+            })
+          }
+
+        </div> */}
+
       </div>
     );
   }

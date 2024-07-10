@@ -13,6 +13,7 @@ import { AboutGWE } from "../../views/aboutGWE/aboutGWE";
 import { Guide } from "../../views/guide/guide";
 import TopNav from "../topnav/topnav";
 import {Experiment} from "../../views/experiment/experiment";
+import {Drama} from "../../views/drama/drama";
 import { Resources } from "../../views/resources/resources";
 import { Read } from "../../views/read/read";
 
@@ -20,6 +21,7 @@ import { Read } from "../../views/read/read";
 import books from "../../data/books/books";
 import "../../data/curriculum/curriculum";
 import {experiments} from "../../data/experiments/experiments";
+import {dramas} from "../../data/dramas/dramas";
 
 
 // Style Sheets
@@ -198,6 +200,19 @@ export function App(props) {
               setPage("experiment");
               return (
                 <Experiment content={experiments[match.params.contentId]} language={language} changeLanguage={changeLanguage} />
+              );
+            }}
+          />
+
+<Route
+            exact
+            path={[
+              '/drama/id=:contentId',
+            ]}
+            render={({ match }) => {
+              setPage("drama");
+              return (
+                <Drama content={dramas[match.params.contentId]} language={language} changeLanguage={changeLanguage} />
               );
             }}
           />

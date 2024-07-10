@@ -191,10 +191,21 @@ const pageText = {
         'Pláticas',
         'Discussions'
       ),
+      
       experiments: new MultiLingual(
         'Experiments',
         'Experimentos',
         'Expériences'
+      ),
+      dramas: new MultiLingual(
+        'Dramas',
+        'Dramas',
+        'Dramas'
+      ),
+      awarenesses: new MultiLingual(
+        'Awareness',
+        'Awareness',
+        'Awareness'
       )
     },
     readLabels: {
@@ -338,6 +349,33 @@ const pageText = {
       }
     },
     experiments: {
+      supplies: new MultiLingual(
+        'Supplies',
+        'Materiales',
+        'Les besoins'
+      ),
+      fromText: new MultiLingual(
+        'From The Text:',
+        'Del Texto:',
+        'Du texte: '
+      ),
+      instructions: new MultiLingual(
+        'Instructions',
+        'Instrucciones',
+        'Instructions'
+      ),
+      or: new MultiLingual(
+        'OR:',
+        'Ó:',
+        'OU:'
+      ),
+      videoTranscript: new MultiLingual(
+        'Video Transcript',
+        'Transcripción de video',
+        'Transcription vidéo'
+      )
+    },
+    dramas: {
       supplies: new MultiLingual(
         'Supplies',
         'Materiales',

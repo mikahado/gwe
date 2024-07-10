@@ -1,0 +1,43 @@
+.libraryExpWrap {
+  position: relative;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* Size */
+  width: 13rem;
+  height: 13rem;
+  margin: 1em;
+  /* Border & Background */
+  border-radius: 1em;
+  border: 0.25rem solid aliceblue;
+  background-color: var(--dark-accent);
+  box-shadow: 0 0 1rem midnightblue;
+}
+.libraryExpWrap svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* Text Box */
+.expHeader {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Size */
+  width: 100%;
+  height: fit-content;
+  padding: 0.25rem;
+  /* Background */
+  background-color: var(--primary-green);
+  border-radius: 1rem;
+  border: 0.25rem solid aliceblue;
+  /* Animation */
+  animation: none;
+}
+
+/*# sourceMappingURL=libraryDrama.css.map */

@@ -10,11 +10,15 @@ import {dramas} from "../dramas/dramas"
 import {awarenesses} from "../awarenesses/awarenesses"
 import pageText from "../pageText";
 
-const sessionArray= [
+const sessionArray = [
+
+  // 1
   new Session([new Material(books.commonGround)]),
 
+  // 2
   new Session([new Material(videos.gweBackstory)]),
 
+  // 3
   new Session([
     new Material(
       books.globalWarmingExpress,
@@ -29,20 +33,28 @@ const sessionArray= [
     ),
   ]),
 
+  // 4
   new Session([
     new Material(discussions.greenhouseDiscuss),
     new Material(experiments.blanketExp)
   ]),
 
+  // 5
   new Session([
     new Material(books.myLight),
-    // new Material(dramas.photonDrama),
+    new Material(dramas.photonDrama),
+    
     // new Material(awarenesses.photonDrama),
     new Material(experiments.pinwheelExp),
     // new Material(awarenesses.breathingInTheSun),
     new Material(experiments.evapExp),
     new Material(experiments.cloudExp),
     new Material(discussions.myLightDiscuss),
+  ]),
+  // 6
+  new Session([
+    new Material(books.livingSunlight),
+    new Material(discussions.livingSunlightDiscuss)
   ]),
 
 
@@ -65,7 +77,7 @@ const sessionArray= [
     ),
   ]),
 
-  // 
+  // 8
   new Session([
     new Material(books.livingSunlight),
     // new Material(dramas.photosynthesisDance),
@@ -74,43 +86,27 @@ const sessionArray= [
 
     // experiement below not in GWE Session Structure? 
     new Material(experiments.heartbeatExp),
-  ]),
-
-  new Session([
-    new Material(books.livingSunlight),
-    new Material(discussions.livingSunlightDiscuss)
-  ]),
-
-  // new Session([
-  //   new Material(experiments.breathHoldExp)
-  // ]),
-
-  // new Session([
-  //   new Material(experiments.countBreathExp)
-  // ]),
-
-  new Session([
     new Material(experiments.photoSynthDramaExp)
   ]),
 
+  //  9
   new Session([
-    new Material(books.buriedSunlight)
-  ]),
-
-  new Session([
+    new Material(books.buriedSunlight),
     new Material(discussions.buriedSunlightDiscuss),
-  ]),
-
-  new Session([
-    new Material(experiments.squashPlantsExp)
-  ]),
-
-  new Session([
-    new Material(experiments.carGreenhouseExp)
-  ]),
-
-  new Session([
+    new Material(experiments.squashPlantsExp),
+    new Material(experiments.carGreenhouseExp),
     new Material(experiments.pizzaBoxExp)
+  ]),
+
+  new Session([
+    new Material(books.riversOfSunlight),
+    new Material(discussions.riversOfSunlightDiscuss),
+    new Material(experiments.golfBallExp),
+    new Material(experiments.waterCycleDramaExp),
+    new Material(experiments.waterMathExp),
+    new Material(experiments.waterReqExp),
+    new Material(experiments.dirtyWaterExp),
+    new Material(experiments.conveyorBeltExp)
   ]),
 
   new Session([
@@ -133,42 +129,7 @@ const sessionArray= [
   ]),
 
   new Session([
-    new Material(books.riversOfSunlight),
-  ]),
-
-  new Session([
-    new Material(discussions.riversOfSunlightDiscuss),
-  ]),
-
-  new Session([
-    new Material(experiments.golfBallExp)
-  ]),
-
-  new Session([
-    new Material(experiments.waterCycleDramaExp)
-  ]),
-
-  new Session([
-    new Material(experiments.waterMathExp)
-  ]),
-
-  new Session([
-    new Material(experiments.waterReqExp)
-  ]),
-
-  new Session([
-    new Material(experiments.dirtyWaterExp)
-  ]),
-
-  new Session([
-    new Material(experiments.conveyorBeltExp)
-  ]),
-
-  new Session([
-    new Material(books.commonGround)
-  ]),
-
-  new Session([
+    new Material(books.commonGround),
     new Material(discussions.commonGroundDiscuss)
   ])
 ];

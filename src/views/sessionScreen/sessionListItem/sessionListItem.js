@@ -6,27 +6,27 @@ import { Button } from "../../../components/buttons/buttons";
 
 //Data
 import curriculum from "../../../data/curriculum/curriculum";
-import {sessionIcons} from "../sessionJump/sessionJump";
+import { sessionIcons } from "../sessionJump/sessionJump";
 import pageText from "../../../data/pageText";
 
 //Style Sheet
 import "./sessionListItem.css";
 
-let parse = require('html-react-parser');
+let parse = require("html-react-parser");
 
-export function expIcon(){
-  return(
+export function expIcon() {
+  return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
       fill="currentColor"
       className="bi bi-tools"
-      viewBox="0 0 16 16">
-      <path
-        d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z"/>
+      viewBox="0 0 16 16"
+    >
+      <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z" />
     </svg>
-  )
+  );
 }
 
 class SessionListItem extends React.Component {
@@ -50,37 +50,41 @@ class SessionListItem extends React.Component {
       >
         <Link
           to={`/s${this.props.currentMaterial[0]}/p${this.props.currentMaterial[1]}`}
-          className={'h-100'}
+          className={"h-100"}
         >
           <button className={"sessionItem"}>
-            <div className={"d-flex flex-column justify-content-center align-items-center sessionTitle"}>
-              <h2 className="">{pageText.labels.sessionInfo.sessionNo(this.props.sessionId,this.props.language)}</h2>
-            </div>
-
-            <div id={"mediaEntry"} className={`sessionGraphic ${wideThumb ? "wideThumb" : ""}`}>
-              
-              {
-                this.props.format === 'experiment' ?
-                  <div className={'experiment'}>
-                    {sessionIcons.experiment}
-
-                  </div>
-                  :
-                  <img src={this.props.image} alt={"Session Graphic"} />
+            <div
+              className={
+                "d-flex flex-column justify-content-center align-items-center sessionTitle"
               }
-              
+            >
+              <h2 className="">
+                {pageText.labels.sessionInfo.sessionNo(
+                  this.props.sessionId,
+                  this.props.language
+                )}
+              </h2>
             </div>
 
-            <div className={'materialTitle'}>
+            <div
+              id={"mediaEntry"}
+              className={`sessionGraphic ${wideThumb ? "wideThumb" : ""}`}
+            >
+              {this.props.format === "experiment" ? (
+                <div className={"experiment"}>{sessionIcons.experiment}</div>
+              ) : this.props.format === "drama" ? (
+                <div className={"drama"}>{sessionIcons.drama}</div>
+              ) : this.props.format === "awareness" ? (
+                <div className={"awareness"}>{sessionIcons.awareness}</div>
+              ) : (
+                <img src={this.props.image} alt={"Session Icon"} />
+              )}
+            </div>
+
+            <div className={"materialTitle"}>
               <p>{parse(this.props.title)}</p>
-              {
-                this.props.subtitle ?
-                  <p>{this.props.subtitle}</p> : null
-              }
+              {this.props.subtitle ? <p>{this.props.subtitle}</p> : null}
             </div>
-
-
-
           </button>
         </Link>
 

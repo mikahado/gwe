@@ -104,7 +104,7 @@ Another feature fo developing this project which comes standard with create-reac
 One important aspect of the app to understand is that it is programmed with multiple languages for all user-facing text. At any time a user can click a language selector button in the top nav bar and change the language of all text on the screen. Currently the app supports English & Spanish, and French is in the process of being incorporated.
 
 ### The MultiLingual API
-`src/data/model/multiLingual.js` is the heart of most of the app's multi-lingual capabilities. MultiLingual is a class whose consructor creates an object which can contain strings for enlish, spanish, and/or french and provides a basic API for getting the desired text in a specified language. 
+`src/data/model/multiLingual.js` is the heart of most of the app's multi-lingual capabilities. MultiLingual is a class whose consructor creates an object which can contain strings for english, spanish, and/or french and provides a basic API for getting the desired text in a specified language. 
 
 To illustrate how MultiLingual works, see the following code:
 
@@ -152,9 +152,9 @@ Having this text stored in a seperate file allows for multiple components to sha
 
 ## Educational Content
 
-The purpose of the OLA is displaying the included educational content to users. The OLA has 4 types of built-in content which it currently supports - books, discussions, videos, and experiments. For users, this content can be accessed specifically and individually from the Library view, or as it appears in the curriculum.
+The purpose of the OLA is displaying the included educational content to users. The OLA has 6 types of built-in content which it currently supports - books, discussions, videos, drama, awarenesses, and experiments. For users, this content can be accessed specifically and individually from the Library view, or as it appears in the curriculum.
 
-The media files associated with the content is mostly located in (`/public/assets/`). In that folder you will find folders labelled `book` and `discussion`. These folders contain 
+The media files associated with the content is mostly located in (`/public/assets/`). In that folder you will find folders labelled `book` and `discussion`. 
 
 ### Books
 
@@ -203,7 +203,7 @@ As you will see, the Book's constructor utilizes some helper functions, namely `
 
 While the Book data model defines the shared programming that all Books have in common, the books data object (`src/data/books/books.js`) is where the individual books are all defined. Each book is created as a `new Book()` (Book being a reference to the Book data model), with arguments passed in for the books unique values. 
 
-One thing to be aware of is how the books are linked with their descriptions and translations - these values are not passed in as arguments, instead they are defined in different files (`src/data/books/bookDescriptions.js` & `src/data/books/translationsSpa.js` - soon to come: `src/data/books/translationsFra.js`), and the Book constructor automatically finds this data during the Book's creation because of it's shared content ID (e.g. `commonGround` or `myLight`). These content IDs are a source of much of the data compilation in this app so be careful with them - one typo in a content ID could cause problems in a variety of places in the app.
+One thing to be aware of is how the books are linked with their descriptions and translations - these values are not passed in as arguments, instead they are defined in different files (`src/data/books/bookDescriptions.js` & `src/data/books/translationsSpa.js` - soon to come: `src/data/books/translationsFra.js`), and the Book constructor automatically finds this data during the Book's creation because of its shared content ID (e.g. `commonGround` or `myLight`). These content IDs are a source of much of the data compilation in this app so be careful with them - one typo in a content ID could cause problems in a variety of places in the app.
 
 ### Discussions
 

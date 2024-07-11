@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//Sub-Components
+// Sub-Components
 import { Button } from "../../../components/buttons/buttons";
 
-//Data
+// Data
 import curriculum from "../../../data/curriculum/curriculum";
 import { sessionIcons } from "../sessionJump/sessionJump";
 import pageText from "../../../data/pageText";
 
-//Style Sheet
+// Style Sheet
 import "./sessionListItem.css";
 
 let parse = require("html-react-parser");
@@ -34,14 +34,18 @@ class SessionListItem extends React.Component {
     super(props);
     this.setBook = this.setBook.bind(this);
   }
+
   setBook() {
     this.props.changeSession(this.props.currentMaterial);
   }
+
   render() {
     const image = new Image();
     image.src = this.props.image;
 
     let wideThumb = image.naturalWidth > image.naturalHeight;
+
+    console.log("SessionListItem props:", this.props);
 
     return (
       <div
@@ -52,7 +56,7 @@ class SessionListItem extends React.Component {
           to={`/s${this.props.currentMaterial[0]}/p${this.props.currentMaterial[1]}`}
           className={"h-100"}
         >
-          <button className={"sessionItem"}>
+          <button className={"sessionItem"} onClick={() => console.log("Link clicked!")}>
             <div
               className={
                 "d-flex flex-column justify-content-center align-items-center sessionTitle"
@@ -70,6 +74,7 @@ class SessionListItem extends React.Component {
               id={"mediaEntry"}
               className={`sessionGraphic ${wideThumb ? "wideThumb" : ""}`}
             >
+              
               {this.props.format === "experiment" ? (
                 <div className={"experiment"}>{sessionIcons.experiment}</div>
               ) : this.props.format === "drama" ? (
@@ -111,3 +116,4 @@ class SessionListItem extends React.Component {
 }
 
 export default SessionListItem;
+

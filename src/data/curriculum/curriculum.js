@@ -1,6 +1,7 @@
 import { Curriculum } from "../model/Curriculum.js";
 import { Session } from "../model/Session.js";
 import { Material } from "../model/Material.js";
+
 import books from "../books/books.js";
 import discussions from "../discussions/discussions";
 import { MultiLingual } from "../model/multiLingual";
@@ -42,8 +43,8 @@ const sessionArray = [
   // 5
   new Session([
     new Material(books.myLight),
-    new Material(dramas.photonDrama),
-    
+    new Material(dramas.blanketDrama),
+
     // new Material(awarenesses.photonDrama),
     new Material(experiments.pinwheelExp),
     // new Material(awarenesses.breathingInTheSun),

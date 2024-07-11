@@ -44,7 +44,6 @@ class LibraryBookList extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div id="libraryList" className={'pageBody LibraryList  p-md-2'}>

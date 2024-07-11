@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import { Button } from "../../components/buttons/buttons";
 
-import './drama.css';  // Update CSS import path
-import { DramaExcerpt } from "./dramaExcerpt/dramaExcerpt";  // Update component imports
-import { DramaVideo } from "./dramaVideo";  // Update component imports
+import './drama.css';  // Correct CSS import path
+import { DramaExcerpt } from "./dramaExcerpt/dramaExcerpt";  // Correct component imports
+import { DramaVideo } from "./dramaVideo";  // Correct component imports
 import { ReadClose } from "../read/readClose";
 import { MaterialHeader } from "../../components/materialHeader/materialHeader";
 import { Lightbox } from "./lightbox/lightbox";
@@ -19,7 +19,7 @@ export function Drama(props) {
 
   let content = props.content;
 
-  let textLabels = pageText.labels.experiments;  // Update labels reference to dramas or adjust as needed
+  let textLabels = pageText.labels.dramas;  // Update labels reference to dramas
 
   // Functions
   function parseSupplies(supplies) {
@@ -71,18 +71,18 @@ export function Drama(props) {
 
   function parseVideos(videoData) {
     if (typeof videoData === 'string') {
-      return <DramaVideo src={videoData} />;  // Update component name to DramaVideo
+      return <DramaVideo src={videoData} />;  // Correct component name to DramaVideo
     } else if (Array.isArray(videoData)) {
       return videoData.map(video => (
-        <div className={'videos'}>
+        <div className={'dramaVideos'}>
           <h2>{video.heading.get(props.language)}</h2>
           <DramaVideo
             src={video.videoSrc}
             transcript={video.transcript}
           />
           {video.transcript ? (
-            <div className={'videoTranscript'}>
-              <h3>{pageText.labels.experiments.videoTranscript.get(props.language)}</h3>
+            <div className={'dramaVideoTranscript'}>
+              <h3>{pageText.labels.dramas.videoTranscript.get(props.language)}</h3>
               {video.transcript.get(props.language).map(line => (
                 <p>{parse(line)}</p>
               ))}
@@ -106,7 +106,7 @@ export function Drama(props) {
   }, []);
 
   return (
-    <div className={'dramaWrap container-fluid'}>  {/* Update className to dramaWrap */}
+    <div className={'dramaWrap container-fluid'}>  {/* Correct className to dramaWrap */}
 
       <div className={'row'}>
         <div className={'col d-flex w-100 justify-content-center'}>
@@ -115,7 +115,7 @@ export function Drama(props) {
 
           <MaterialHeader sessionInfo={props.sessionInfo} content={content} partLabel={'hide'} language={props.language} title={content.title.get(props.language)} />
 
-          <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'dramas'} />  {/* Update librarySection to dramas */}
+          <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'dramas'} />  {/* Correct librarySection to dramas */}
         </div>
 
       </div>
@@ -123,7 +123,7 @@ export function Drama(props) {
       <div className={'row'}>
 
         {content.suppliesList ? (
-          <div className={'col-lg-auto supplies d-flex justify-content-center mb-2'}>
+          <div className={'col-lg-auto dramaSupplies d-flex justify-content-center mb-2'}>
             <section>
               <h2><b>{textLabels.supplies.get(props.language)}</b></h2>
               {parseSupplies(content.suppliesList)}
@@ -131,7 +131,7 @@ export function Drama(props) {
           </div>
         ) : null}
 
-        <div className={'col-lg body d-flex flex-column align-items-center'}>
+        <div className={'col-lg dramaBody d-flex flex-column align-items-center'}>
 
           {content.excerpts ? (
             <section className={'container'}>
@@ -148,7 +148,7 @@ export function Drama(props) {
             </section>
           ) : null}
 
-          <section className={'instructions'}>
+          <section className={'dramaInstructions'}>
             <h2><b>{textLabels.instructions.get(props.language)}</b></h2>
             {parseBody(content.body.get(props.language))}
             {console.log(content.videoSrc)}

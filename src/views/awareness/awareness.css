@@ -1,23 +1,23 @@
-.experimentWrap {
+.awarenessWrap {
   overflow-anchor: none;
 }
-.experimentWrap ul {
+.awarenessWrap ul {
   padding-left: 1rem;
 }
-.experimentWrap ul li {
+.awarenessWrap ul li {
   margin-bottom: 1rem;
   list-style-type: disc;
 }
-.experimentWrap ul ul li {
+.awarenessWrap ul ul li {
   list-style-type: circle;
 }
-.experimentWrap ul ul ul li {
+.awarenessWrap ul ul ul li {
   list-style-type: disc;
 }
-.experimentWrap h1 {
+.awarenessWrap h1 {
   margin: 1rem;
 }
-.experimentWrap section {
+.awarenessWrap section {
   overflow-anchor: none;
   background-color: var(--dark-accent);
   border-radius: 1rem;
@@ -27,63 +27,63 @@
   width: fit-content;
   max-width: 100%;
 }
-.experimentWrap .supplies {
+.awarenessWrap .supplies {
   max-width: 20rem;
 }
-.experimentWrap .supplies section {
+.awarenessWrap .supplies section {
   position: sticky;
   top: 1rem;
 }
-.experimentWrap .supplies ul li {
+.awarenessWrap .supplies ul li {
   margin-bottom: 1rem;
 }
-.experimentWrap .body {
+.awarenessWrap .body {
   overflow-anchor: none;
 }
-.experimentWrap .body section {
+.awarenessWrap .body section {
   margin-bottom: 1rem;
 }
-.experimentWrap .body h2 {
+.awarenessWrap .body h2 {
   text-align: center;
   font-weight: bold;
 }
-.experimentWrap .body iframe {
+.awarenessWrap .body iframe {
   width: 100%;
   height: 500px;
   border-radius: 1rem;
 }
-.experimentWrap .body img {
+.awarenessWrap .body img {
   width: 100%;
   border-radius: 1rem;
 }
-.experimentWrap .body .videos {
+.awarenessWrap .body .videos {
   border-top: 0.5rem solid var(--primary-blue);
   padding-top: 1rem;
   margin-top: 1rem;
 }
-.experimentWrap .instructions {
+.awarenessWrap .instructions {
   width: 100%;
   overflow-anchor: none;
 }
-.experimentWrap .instructions a {
+.awarenessWrap .instructions a {
   background-color: var(--primary-green);
   padding: 0.25rem;
   border-radius: 1rem;
 }
-.experimentWrap .videoTranscript {
+.awarenessWrap .videoTranscript {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.experimentWrap .videoTranscript h3 {
+.awarenessWrap .videoTranscript h3 {
   font-weight: bold;
 }
-.experimentWrap .videoTranscript p {
+.awarenessWrap .videoTranscript p {
   margin-bottom: 1rem;
   width: 100%;
 }
-.experimentWrap aside img {
+.awarenessWrap aside img {
   width: 100%;
 }
 
-/*# sourceMappingURL=experiment.css.map */
+/*# sourceMappingURL=awareness.css.map */

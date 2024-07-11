@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { Button } from "../../components/buttons/buttons";
-
-import './awareness.css';  // Update CSS import path
-import { AwarenessExcerpt } from "./awarenessExcerpt/awarenessExcerpt";  // Update component imports
-import { AwarenessVideo } from "./awarenessVideo";  // Update component imports
+import './awareness.css';  
+import { AwarenessExcerpt } from "./awarenessExcerpt/awarenessExcerpt";  
+import { AwarenessVideo } from "./awarenessVideo";  
 import { ReadClose } from "../read/readClose";
 import { MaterialHeader } from "../../components/materialHeader/materialHeader";
 import { Lightbox } from "./lightbox/lightbox";
@@ -19,7 +17,7 @@ export function Awareness(props) {
 
   let content = props.content;
 
-  let textLabels = pageText.labels.experiments;  // Update labels reference to Awarenesss or adjust as needed
+  let textLabels = pageText.labels.awareness;  // Update labels reference to awareness or adjust as needed
 
   // Functions
   function parseSupplies(supplies) {
@@ -82,7 +80,7 @@ export function Awareness(props) {
           />
           {video.transcript ? (
             <div className={'videoTranscript'}>
-              <h3>{pageText.labels.experiments.videoTranscript.get(props.language)}</h3>
+              <h3>{pageText.labels.awareness.videoTranscript.get(props.language)}</h3>
               {video.transcript.get(props.language).map(line => (
                 <p>{parse(line)}</p>
               ))}
@@ -115,7 +113,7 @@ export function Awareness(props) {
 
           <MaterialHeader sessionInfo={props.sessionInfo} content={content} partLabel={'hide'} language={props.language} title={content.title.get(props.language)} />
 
-          <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'awarenessess'} />  {/* Update librarySection to awarenessess */}
+          <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'awareness'} />  {/* Update librarySection to awareness */}
         </div>
 
       </div>

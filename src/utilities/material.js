@@ -7,7 +7,6 @@ import { Experiment } from "../views/experiment/experiment";
 import { Drama } from "../views/drama/drama"; 
 import { Awareness } from "../views/awareness/awareness";
 
-
 export function materialRouter(params, language, changeLanguage) {
   function getSessionFromId(sessionId) {
     return curriculum.sessions[sessionId - 1];

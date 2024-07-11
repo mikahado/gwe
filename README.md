@@ -79,9 +79,8 @@ This is an _**entirely front-end application**_, meaning there is no server func
 
 The project does use a system which gives it some of the functionality of a back-end server despite being only a frontend app. This system is [ReactRouter](https://reactrouter.com/web/guides/quick-start), a supplemental library which interacts with React to render components conditionally based on the app's URL. In short, this allows the app to display the Library view by visiting the URL `(website.com)/library`**, or to display the Resources view when visiting `(website.com)/resources`. 
 
-**At one point, there was discussion of user login functionality, but since the app's primary audience are children, this could potentially put the app into [COPPA](https://www.ftc.gov/tips-advice/business-center/guidance/complying-coppa-frequently-asked-questions-0) territory, since something as simple as saving a child's name and email address is delicate under COPPA. For this reason the decision was made to have the app open to the public with no login required.*
+*Since the app's primary audience are children, this could potentially put the app into [COPPA](https://www.ftc.gov/tips-advice/business-center/guidance/complying-coppa-frequently-asked-questions-0) territory, since something as simple as saving a child's name and email address is delicate under COPPA. For this reason the decision was made to have the app open to the public with no login required.*
 
-***At the time of writing, the app's domain name has not been finalized, so I use website.com as placeholder.* 
 
 ### File Bundling w/ Webpack
 

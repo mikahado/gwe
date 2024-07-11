@@ -1,0 +1,10 @@
+.excerpt {
+  border-top: 0.25rem solid var(--primary-blue);
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+.excerpt img {
+  border-radius: 1rem;
+}
+
+/*# sourceMappingURL=experimentExcerpt.css.map */

@@ -1,16 +1,12 @@
-// React
 import React from "react";
-
-// Utilities & Data
 import curriculum from "../data/curriculum/curriculum";
-
-// Sub-Components
 import { Read } from "../views/read/read";
 import { Video } from "../views/video/video";
 import { NextUp } from "../views/nextUp/nextUp";
-import {Experiment} from "../views/experiment/experiment";
+import { Experiment } from "../views/experiment/experiment";
+import { Drama } from "../views/drama/drama"; 
+import { Awareness } from "../views/awareness/awareness";
 
-// Utilities
 
 export function materialRouter(params, language, changeLanguage) {
   function getSessionFromId(sessionId) {
@@ -19,9 +15,6 @@ export function materialRouter(params, language, changeLanguage) {
   function getMaterialFromSessionAndPartNo(session, partNo) {
     return session.material[partNo - 1];
   }
-
-  //let params = useParams();
-  //const {language, changeLanguage} = props;
 
   let sessionId = Number(params.sessionId);
   let partNo = params.partNo ? Number(params.partNo) : 1;
@@ -50,14 +43,34 @@ export function materialRouter(params, language, changeLanguage) {
         return <Video src={videoSrc} />;
 
       case "experiment":
-        return(
+        return (
           <Experiment
             content={content}
             sessionInfo={material.sessionInfo}
             language={language}
             changeLanguage={changeLanguage}
           />
-          );
+        );
+
+      case "drama":
+        return (
+          <Drama
+            content={content}
+            sessionInfo={material.sessionInfo}
+            language={language}
+            changeLanguage={changeLanguage}
+          />
+        );
+
+        case "awareness":
+        return (
+          <Awareness
+            content={content}
+            sessionInfo={material.sessionInfo}
+            language={language}
+            changeLanguage={changeLanguage}
+          />
+        );
 
       default:
         break;

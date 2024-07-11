@@ -1,0 +1,89 @@
+.experimentWrap {
+  overflow-anchor: none;
+}
+.experimentWrap ul {
+  padding-left: 1rem;
+}
+.experimentWrap ul li {
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+.experimentWrap ul ul li {
+  list-style-type: circle;
+}
+.experimentWrap ul ul ul li {
+  list-style-type: disc;
+}
+.experimentWrap h1 {
+  margin: 1rem;
+}
+.experimentWrap section {
+  overflow-anchor: none;
+  background-color: var(--dark-accent);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  height: fit-content;
+  width: fit-content;
+  max-width: 100%;
+}
+.experimentWrap .supplies {
+  max-width: 20rem;
+}
+.experimentWrap .supplies section {
+  position: sticky;
+  top: 1rem;
+}
+.experimentWrap .supplies ul li {
+  margin-bottom: 1rem;
+}
+.experimentWrap .body {
+  overflow-anchor: none;
+}
+.experimentWrap .body section {
+  margin-bottom: 1rem;
+}
+.experimentWrap .body h2 {
+  text-align: center;
+  font-weight: bold;
+}
+.experimentWrap .body iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 1rem;
+}
+.experimentWrap .body img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.experimentWrap .body .videos {
+  border-top: 0.5rem solid var(--primary-blue);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+.experimentWrap .instructions {
+  width: 100%;
+  overflow-anchor: none;
+}
+.experimentWrap .instructions a {
+  background-color: var(--primary-green);
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+.experimentWrap .videoTranscript {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.experimentWrap .videoTranscript h3 {
+  font-weight: bold;
+}
+.experimentWrap .videoTranscript p {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.experimentWrap aside img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=experiment.css.map */

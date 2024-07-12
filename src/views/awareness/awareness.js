@@ -17,7 +17,7 @@ export function Awareness(props) {
 
   let content = props.content;
 
-  let textLabels = pageText.labels.awareness;  // Update labels reference to awareness or adjust as needed
+  let textLabels = pageText.labels.awarenesses;  
 
   // Functions
   function parseSupplies(supplies) {

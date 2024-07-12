@@ -191,7 +191,6 @@ const pageText = {
         'Pláticas',
         'Discussions'
       ),
-      
       experiments: new MultiLingual(
         'Experiments',
         'Experimentos',
@@ -200,14 +199,15 @@ const pageText = {
       dramas: new MultiLingual(
         'Dramas',
         'Dramas',
-        'Dramas'
+        'Drames'
       ),
       awarenesses: new MultiLingual(
         'Awareness',
-        'Awareness',
-        'Awareness'
+        'Conciencia',
+        'Sensibilisation'
       )
     },
+    
     readLabels: {
       // Read View Labels
       page: new MultiLingual(

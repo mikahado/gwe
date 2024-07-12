@@ -43,7 +43,7 @@ const sessionArray = [
   // 5
   new Session([
     new Material(books.myLight),
-    new Material(dramas.blanketDrama),
+    new Material(dramas.photonDrama),
 
     // new Material(awarenesses.photonDrama),
     new Material(experiments.pinwheelExp),
@@ -54,8 +54,9 @@ const sessionArray = [
   ]),
   // 6
   new Session([
-    new Material(books.livingSunlight),
-    new Material(discussions.livingSunlightDiscuss)
+// add awarenesses here
+    new Material(discussions.livingSunlightDiscuss),
+    // new Material(dramas.photosynthesisDrama)
   ]),
 
 
@@ -81,9 +82,9 @@ const sessionArray = [
   // 8
   new Session([
     new Material(books.livingSunlight),
-    // new Material(dramas.photosynthesisDance),
+    new Material(dramas.photosynthesisDance),
     new Material(discussions.livingSunlightDiscuss),
-    // new Material(dramas.photosynthesisDrama),
+    new Material(dramas.photosynthesisDrama),
 
     // experiement below not in GWE Session Structure? 
     new Material(experiments.heartbeatExp),
@@ -98,10 +99,12 @@ const sessionArray = [
     new Material(experiments.carGreenhouseExp),
     new Material(experiments.pizzaBoxExp)
   ]),
-
+// 10
   new Session([
     new Material(books.riversOfSunlight),
     new Material(discussions.riversOfSunlightDiscuss),
+    new Material(dramas.waterCycleDrama),
+    new Material(dramas.h2oDrama),
     new Material(experiments.golfBallExp),
     new Material(experiments.waterCycleDramaExp),
     new Material(experiments.waterMathExp),

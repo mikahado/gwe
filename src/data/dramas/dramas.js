@@ -138,9 +138,9 @@ export const dramas = {
   photosynthesisDrama: new Drama(
     "photosynthesisDrama",
     new MultiLingual(
-      "Photosynthesis Drama! (Narration from Living Sunlight)",
-      "Drama de la Fotosíntesis! (Narración de Luz Viva)",
-      "Drame de la Photosynthèse! (Narration de Lumière Vivante)"
+      "Photosynthesis Drama!",
+      "Drama de la Fotosíntesis!",
+      "Drame de la Photosynthèse!"
     ),
     new MultiLingual(
       "Explore the process of photosynthesis through a dramatic presentation involving various characters and props."

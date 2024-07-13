@@ -45,9 +45,9 @@ const sessionArray = [
     new Material(books.myLight),
     new Material(dramas.photonDrama),
 
-    new Material(awarenesses.h2oDrama),
+    new Material(awarenesses.AwarenessWithWalking),
     new Material(experiments.pinwheelExp),
-    // new Material(awarenesses.breathingInTheSun),
+    new Material(awarenesses.breathingInTheSun),
     new Material(experiments.evapExp),
     new Material(experiments.cloudExp),
     new Material(discussions.myLightDiscuss),
@@ -55,8 +55,8 @@ const sessionArray = [
   // 6
   new Session([
 // add awarenesses here
-    new Material(discussions.livingSunlightDiscuss),
-    // new Material(dramas.photosynthesisDrama)
+    new Material(awarenesses.awarenessWithRunning),
+    new Material(awarenesses.threePartBreath)
   ]),
 
 

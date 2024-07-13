@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // React Components
-import {Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 // Sub-Components
 import { Splash } from "../../views/splash/splash";
@@ -12,17 +12,18 @@ import { materialRouter } from "../../utilities/material";
 import { AboutGWE } from "../../views/aboutGWE/aboutGWE";
 import { Guide } from "../../views/guide/guide";
 import TopNav from "../topnav/topnav";
-import {Experiment} from "../../views/experiment/experiment";
-import {Drama} from "../../views/drama/drama";
+import { Experiment } from "../../views/experiment/experiment";
+import { Drama } from "../../views/drama/drama";
+import { Awareness } from "../../views/awareness/awareness";
 import { Resources } from "../../views/resources/resources";
 import { Read } from "../../views/read/read";
 
 //Data
 import books from "../../data/books/books";
 import "../../data/curriculum/curriculum";
-import {experiments} from "../../data/experiments/experiments";
-import {dramas} from "../../data/dramas/dramas";
-
+import { experiments } from "../../data/experiments/experiments";
+import { dramas } from "../../data/dramas/dramas";
+import { awarenesses } from "../../data/awarenesses/awarenesses"
 
 // Style Sheets
 import "./App.css";
@@ -33,14 +34,11 @@ import "./animations.css";
 import discussions from "../../data/discussions/discussions";
 //import * as path from "path";
 
-
-
-
 export function App(props) {
   const [language, setLanguage] = useState("eng");
   const [page, setPage] = useState("");
 
-  const suppLangs = ['eng', 'spa', 'fra'];
+  const suppLangs = ["eng", "spa", "fra"];
 
   function changeLanguage() {
     setLanguage(language === "eng" ? "spa" : "eng");
@@ -51,7 +49,6 @@ export function App(props) {
 
   return (
     <div className="App container-fluid">
-
       <div className={"row w-100 m-0"}>
         <div className={"col no-gutters p-0"}>
           <TopNav
@@ -90,10 +87,7 @@ export function App(props) {
           />
 
           <Route
-            path={[
-              "/library/section=:sectionId",
-              "/library"
-            ]}
+            path={["/library/section=:sectionId", "/library"]}
             render={({ match }) => {
               setPage("library");
               return (
@@ -121,10 +115,7 @@ export function App(props) {
           />
 
           <Route
-            path={[
-              "/read/book/:contentId/page=:page",
-              "/read/book/:contentId"
-            ]}
+            path={["/read/book/:contentId/page=:page", "/read/book/:contentId"]}
             render={({ match }) => {
               setPage("");
               const content = books[match.params.contentId];
@@ -147,7 +138,7 @@ export function App(props) {
           <Route
             path={[
               "/read/discussion/:contentId/page=:page",
-              "/read/discussion/:contentId"
+              "/read/discussion/:contentId",
             ]}
             render={({ match }) => {
               setPage("");
@@ -193,26 +184,45 @@ export function App(props) {
 
           <Route
             exact
-            path={[
-              '/experiment/id=:contentId',
-            ]}
+            path={["/experiment/:contentId"]}
             render={({ match }) => {
               setPage("experiment");
               return (
-                <Experiment content={experiments[match.params.contentId]} language={language} changeLanguage={changeLanguage} />
+                <Experiment
+                  content={experiments[match.params.contentId]}
+                  language={language}
+                  changeLanguage={changeLanguage}
+                />
               );
             }}
           />
 
-<Route
+          <Route
             exact
-            path={[
-              '/drama/id=:contentId',
-            ]}
+            path={["/drama/:contentId"]}
             render={({ match }) => {
               setPage("drama");
               return (
-                <Drama content={dramas[match.params.contentId]} language={language} changeLanguage={changeLanguage} />
+                <Drama
+                  content={dramas[match.params.contentId]}
+                  language={language}
+                  changeLanguage={changeLanguage}
+                />
+              );
+            }}
+          />
+
+          <Route
+            exact
+            path={["/awareness/:contentId"]}
+            render={({ match }) => {
+              setPage("awareness");
+              return (
+                <Awareness
+                  content={awarenesses[match.params.contentId]}
+                  language={language}
+                  changeLanguage={changeLanguage}
+                />
               );
             }}
           />
@@ -232,7 +242,6 @@ export function App(props) {
               );
             }}
           />
-          
         </div>
       </div>
     </div>

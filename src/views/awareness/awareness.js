@@ -13,9 +13,11 @@ let parse = require('html-react-parser');
 
 export function Awareness(props) {
 
+  console.log('hi')
+
   let [lightboxSrc, setLightboxSrc] = useState('');
 
-  let content = props.content;
+  let content = props.content || {};
 
   let textLabels = pageText.labels.awarenesses;  
 

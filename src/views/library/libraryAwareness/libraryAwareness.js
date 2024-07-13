@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function libraryAwareness(props){
   return (
-    <Link to={`/awareness/id=${props.contentId}`}>
+    <Link to={`/awareness/${props.contentId}`}>
       <button className="libraryAwarenessWrap">
 
         {sessionIcons.awareness}

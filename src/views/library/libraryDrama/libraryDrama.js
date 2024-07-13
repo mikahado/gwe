@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function LibraryDrama(props){
   return (
-    <Link to={`/drama/id=${props.contentId}`}>
+    <Link to={`/drama/${props.contentId}`}>
       <button className="libraryDramaWrap">
 
         {sessionIcons.drama}

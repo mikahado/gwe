@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function LibraryExperiment(props){
   return (
-    <Link to={`/experiment/id=${props.contentId}`}>
+    <Link to={`/experiment/${props.contentId}`}>
       <button className="libraryExpWrap">
 
         {sessionIcons.experiment}

@@ -7,7 +7,7 @@ import "./libraryList.css";
 import { default as get } from "../../../utilities/contentGetters";
 import { experimentsArray} from "../../../data/experiments/experiments";
 import { dramasArray} from "../../../data/dramas/dramas";
-import { awarenessArray} from "../../../data/awarenesses/awarenesses";
+import { awarenessesArray} from "../../../data/awarenesses/awarenesses";
 
 // Sub - Components
 import LibraryBook from "../libraryBook/libraryBook";
@@ -88,8 +88,8 @@ class LibraryBookList extends React.Component {
 
         </div>
 
-        {/* <h2 className={'sectionHeader'} id={'dramas'}>{typeLabels.dramas.get(this.props.language)}</h2> */}
-        {/* <div className="d-flex flex-wrap justify-content-center align-items-baseline">
+        <h2 className={'sectionHeader'} id={'dramas'}>{typeLabels.dramas.get(this.props.language)}</h2>
+        <div className="d-flex flex-wrap justify-content-center align-items-baseline">
           {
             dramasArray.map( drama =>{
               return(
@@ -101,7 +101,22 @@ class LibraryBookList extends React.Component {
             })
           }
 
-        </div> */}
+        </div>
+
+        <h2 className={'sectionHeader'} id={'awarenesses'}>{typeLabels.awarenesses.get(this.props.language)}</h2>
+        <div className="d-flex flex-wrap justify-content-center align-items-baseline">
+          {
+            awarenessesArray.map( awareness =>{
+              return(
+                <LibraryAwareness
+                  title={awareness.title.get(this.props.language)}
+                  contentId={awareness.contentId}
+                />
+              )
+            })
+          }
+
+        </div>
 
       </div>
     );

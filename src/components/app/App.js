@@ -23,7 +23,7 @@ import books from "../../data/books/books";
 import "../../data/curriculum/curriculum";
 import { experiments } from "../../data/experiments/experiments";
 import { dramas } from "../../data/dramas/dramas";
-import { awarenesses } from "../../data/awarenesses/awarenesses"
+import { awarenesses } from "../../data/awarenesses/awarenesses";
 
 // Style Sheets
 import "./App.css";

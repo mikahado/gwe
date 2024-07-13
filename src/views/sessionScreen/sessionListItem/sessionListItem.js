@@ -56,7 +56,7 @@ class SessionListItem extends React.Component {
           to={`/s${this.props.currentMaterial[0]}/p${this.props.currentMaterial[1]}`}
           className={"h-100"}
         >
-          <button className={"sessionItem"} onClick={() => console.log("Link clicked!")}>
+          <button className={"sessionItem"}>
             <div
               className={
                 "d-flex flex-column justify-content-center align-items-center sessionTitle"

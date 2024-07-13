@@ -1,4 +1,4 @@
-.libraryDramaWrap {
+.libraryAwarenessWrap {
   position: relative;
   /* Display */
   display: flex;
@@ -15,13 +15,13 @@
   background-color: var(--dark-accent);
   box-shadow: 0 0 1rem midnightblue;
 }
-.libraryDramaWrap svg {
+.libraryAwarenessWrap svg {
   width: 5rem;
   height: 5rem;
 }
 
 /* Text Box */
-.dramaHeader {
+.awarenessHeader {
   position: absolute;
   top: 0;
   display: flex;
@@ -40,4 +40,4 @@
   animation: none;
 }
 
-/*# sourceMappingURL=libraryDrama.css.map */
+/*# sourceMappingURL=libraryAwareness.css.map */

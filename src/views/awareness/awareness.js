@@ -23,11 +23,15 @@ export function Awareness(props) {
 
   // Functions
   function parseSupplies(supplies) {
+    if (!supplies) {
+      return null;
+    }
+
     if (supplies['eng']) {
       return (
         <ul>
-          {supplies.get(props.language).map(supply => (
-            <li>{supply}</li>
+          {supplies.get(props.language).map((supply, index) => (
+            <li key={index}>{supply}</li>
           ))}
         </ul>
       );
@@ -35,14 +39,14 @@ export function Awareness(props) {
       return (
         <div>
           <ul>
-            {supplies[0].get(props.language).map(supply => (
-              <li>{supply}</li>
+            {supplies[0].get(props.language).map((supply, index) => (
+              <li key={index}>{supply}</li>
             ))}
           </ul>
           <p><b>{textLabels.or.get(props.language)}</b></p>
           <ul>
-            {supplies[1].get(props.language).map(supply => (
-              <li>{supply}</li>
+            {supplies[1].get(props.language).map((supply, index) => (
+              <li key={index}>{supply}</li>
             ))}
           </ul>
         </div>
@@ -51,9 +55,13 @@ export function Awareness(props) {
   }
 
   function parseBody(body) {
+    if (!body) {
+      return null;
+    }
+
     function parseLines(line) {
       if (Array.isArray(line)) {
-        return <ul>{line.map(subLine => parseLines(subLine))}</ul>;
+        return <ul>{line.map((subLine, index) => parseLines(subLine, index))}</ul>;
       } else if (typeof line === 'string') {
         return <li>{parse(line)}</li>;
       } else {
@@ -62,19 +70,23 @@ export function Awareness(props) {
     }
     return (
       <ul>
-        {body.map(paragraph => (
-          parseLines(paragraph)
+        {body.map((paragraph, index) => (
+          parseLines(paragraph, index)
         ))}
       </ul>
     );
   }
 
   function parseVideos(videoData) {
+    if (!videoData) {
+      return null;
+    }
+
     if (typeof videoData === 'string') {
       return <AwarenessVideo src={videoData} />;  // Update component name to AwarenessVideo
     } else if (Array.isArray(videoData)) {
-      return videoData.map(video => (
-        <div className={'videos'}>
+      return videoData.map((video, index) => (
+        <div className={'videos'} key={index}>
           <h2>{video.heading.get(props.language)}</h2>
           <AwarenessVideo
             src={video.videoSrc}
@@ -83,8 +95,8 @@ export function Awareness(props) {
           {video.transcript ? (
             <div className={'videoTranscript'}>
               <h3>{pageText.labels.awareness.videoTranscript.get(props.language)}</h3>
-              {video.transcript.get(props.language).map(line => (
-                <p>{parse(line)}</p>
+              {video.transcript.get(props.language).map((line, index) => (
+                <p key={index}>{parse(line)}</p>
               ))}
             </div>
           ) : null}
@@ -113,7 +125,7 @@ export function Awareness(props) {
 
           <Lightbox imgSrc={lightboxSrc} closeLightbox={closeLightbox} />
 
-          <MaterialHeader sessionInfo={props.sessionInfo} content={content} partLabel={'hide'} language={props.language} title={content.title.get(props.language)} />
+          <MaterialHeader sessionInfo={props.sessionInfo} content={content} partLabel={'hide'} language={props.language} title={content.title?.get(props.language)} />
 
           <ReadClose sessionInfo={props.sessionInfo} language={props.language} librarySection={'awareness'} />  {/* Update librarySection to awareness */}
         </div>
@@ -138,8 +150,8 @@ export function Awareness(props) {
               <h2>{textLabels.fromText.get(props.language)}</h2>
               <div className={'container'}>
                 {Array.isArray(content.excerpts) ? (
-                  content.excerpts.map(excerpt => (
-                    <AwarenessExcerpt imgSrc={excerpt.imgSrc} caption={excerpt.caption} openLightbox={openLightbox} language={props.language} />
+                  content.excerpts.map((excerpt, index) => (
+                    <AwarenessExcerpt key={index} imgSrc={excerpt.imgSrc} caption={excerpt.caption} openLightbox={openLightbox} language={props.language} />
                   ))
                 ) : (
                   <AwarenessExcerpt imgSrc={content.excerpts.imgSrc} caption={content.excerpts.caption} openLightbox={openLightbox} language={props.language} />
@@ -150,8 +162,7 @@ export function Awareness(props) {
 
           <section className={'instructions'}>
             <h2><b>{textLabels.instructions.get(props.language)}</b></h2>
-            {parseBody(content.body.get(props.language))}
-            {console.log(content.videoSrc)}
+            {parseBody(content.body?.get(props.language))}
             {content.videoSrc ? (
               parseVideos(content.videoSrc['eng'] ? content.videoSrc.get(props.language) : content.videoSrc)
             ) : null}

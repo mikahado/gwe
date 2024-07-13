@@ -7,11 +7,13 @@ import "./libraryList.css";
 import { default as get } from "../../../utilities/contentGetters";
 import { experimentsArray} from "../../../data/experiments/experiments";
 import { dramasArray} from "../../../data/dramas/dramas";
+import { awarenessArray} from "../../../data/awarenesses/awarenesses";
 
 // Sub - Components
 import LibraryBook from "../libraryBook/libraryBook";
 import LibraryExperiment from "../libraryExperiment/libraryExperiment";
 import LibraryDrama from "../libraryDrama/libraryDrama";
+import LibraryAwareness from "../libraryAwareness/libraryAwareness";
 import {discussionsArray} from "../../../data/discussions/discussions";
 import LibraryDiscussion from "../libraryDiscussion/libraryDiscussion";
 import pageText from "../../../data/pageText";

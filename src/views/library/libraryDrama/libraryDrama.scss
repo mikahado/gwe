@@ -1,40 +1,40 @@
-.libraryExpWrap{
-  //Position
+.libraryDramaWrap {
+  /* Position */
   position: relative;
 
   /* Display */
   display: flex;
   flex-direction: column;
   align-items: center;
-    justify-content: flex-end;
+  justify-content: flex-end;
 
   /* Size */
   width: 13rem;
   height: 13rem;
 
-  //Spacing
+  /* Spacing */
   margin: 1em;
 
   /* Border & Background */
   border-radius: 1em;
   border: 0.25rem solid aliceblue;
-    background-color: var(--dark-accent);
-
+  background-color: var(--dark-accent);
   box-shadow: 0 0 1rem midnightblue;
 
-    svg{
-        width: 5rem;
-        height: 5rem;
-    }
+  /* SVG */
+  svg {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 /* Text Box */
-.expHeader{
-  //Position
+.dramaHeader {
+  /* Position */
   position: absolute;
   top: 0;
 
-  //Display
+  /* Display */
   display: flex;
   flex-direction: column;
   align-items: center;

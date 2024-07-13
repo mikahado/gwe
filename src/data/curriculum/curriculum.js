@@ -45,7 +45,7 @@ const sessionArray = [
     new Material(books.myLight),
     new Material(dramas.photonDrama),
 
-    new Material(awarenesses.photonDrama),
+    new Material(awarenesses.photonDramo),
     new Material(experiments.pinwheelExp),
     // new Material(awarenesses.breathingInTheSun),
     new Material(experiments.evapExp),

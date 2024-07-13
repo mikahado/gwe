@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 // Data Models
 import { Awareness } from "../model/awareness";
-import { Drama } from "../model/drama";
+
 
 import { MultiLingual } from "../model/multiLingual";
-import { DramaExcerpt } from "../model/dramaCaption";
-import { DramaVideo } from "../model/dramaVideo";
+import { AwarenessExcerpt } from "../model/dramaCaption";
+import { AwarenessVideo } from "../model/dramaVideo";
 
 // possible delete:
 import pinwheelInstructions from "./GWE-PinwheelInstructions.pdf";
@@ -21,10 +21,10 @@ import myLight3 from "./MyLight3.jpg";
 
 export const awarenesses = {
 
-  photonDrama: new Awareness(
+  photonDramo: new Awareness(
     "photonDrama",
     new MultiLingual(
-      "Photon Drama / Experiment",  // Update titles for dramas
+      "Photon Drama / Experiment",  
       "Drama de Fotones / Experimento",
       "Expérience de Photon"
     ),
@@ -101,7 +101,7 @@ export const awarenesses = {
           <p>Scenes 1 and 2 can be repeated, with students changing places as characters.</p>
         </div>,
       ]
-    ),
+    )
   )
 };
 
@@ -110,5 +110,7 @@ let AwarenessesArray = [];
 for (let awareness in awarenesses) {
   AwarenessesArray.push(awarenesses[awareness]);
 }
+
+console.log(AwarenessesArray)
 
 export { AwarenessesArray };

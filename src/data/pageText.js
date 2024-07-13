@@ -181,33 +181,33 @@ const pageText = {
   },
   labels: {
     materialTypes: {
-      books: new MultiLingual(
-        'Books',
-        'Libros',
-        'Livres'
-      ),
-      discussions: new MultiLingual(
-        'Discussions',
-        'Pláticas',
-        'Discussions'
-      ),
-      experiments: new MultiLingual(
-        'Experiments',
-        'Experimentos',
-        'Expériences'
-      ),
-      dramas: new MultiLingual(
-        'Dramas',
-        'Dramas',
-        'Drames'
-      ),
-      awarenesses: new MultiLingual(
-        'Awareness',
-        'Conciencia',
-        'Sensibilisation'
-      )
-    },
-    
+  books: new MultiLingual(
+    'Books',
+    'Libros',
+    'Livres'
+  ),
+  discussions: new MultiLingual(
+    'Discussions',
+    'Pláticas',
+    'Discussions'
+  ),
+  experiments: new MultiLingual(
+    'Experiments',
+    'Experimentos',
+    'Expériences'
+  ),
+  dramas: new MultiLingual(
+    'Dramas',
+    'Dramas',
+    'Drames'
+  ),
+  awarenesses: new MultiLingual(
+    'Awareness',
+    'Conciencia',
+    'Sensibilisation'
+  )
+},
+
     readLabels: {
       // Read View Labels
       page: new MultiLingual(
@@ -376,6 +376,33 @@ const pageText = {
       )
     },
     dramas: {
+      supplies: new MultiLingual(
+        'Supplies',
+        'Materiales',
+        'Les besoins'
+      ),
+      fromText: new MultiLingual(
+        'From The Text:',
+        'Del Texto:',
+        'Du texte: '
+      ),
+      instructions: new MultiLingual(
+        'Instructions',
+        'Instrucciones',
+        'Instructions'
+      ),
+      or: new MultiLingual(
+        'OR:',
+        'Ó:',
+        'OU:'
+      ),
+      videoTranscript: new MultiLingual(
+        'Video Transcript',
+        'Transcripción de video',
+        'Transcription vidéo'
+      )
+    },
+    awarenesses: {
       supplies: new MultiLingual(
         'Supplies',
         'Materiales',

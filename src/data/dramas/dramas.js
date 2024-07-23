@@ -461,9 +461,9 @@ export const dramas = {
   waterCycleDrama: new Drama(
     "waterCycleDrama",
     new MultiLingual(
-      "Water Cycle Drama (for group of 16 or more)",
-      "Drama del Ciclo del Agua (para grupo de 16 o más)",
-      "Drame du Cycle de l'Eau (pour un groupe de 16 personnes ou plus)"
+      "Water Cycle Drama",
+      "Drama del Ciclo del Agua",
+      "Drame du Cycle de l'Eau"
     ),
     new MultiLingual(
       "Explore the water cycle through an engaging and interactive drama performance."

@@ -83,9 +83,10 @@ export function ReaderStart(props) {
       <div className="ReaderStart lightText col-md-auto d-flex flex-column">
         <h1 className={"lightText"}>{title}</h1>
 
-        {byAuthor ? <p>{byAuthor}</p> : ""}
+        {byAuthor ? <p> {byAuthor}</p> : ""}
         {subtitle ? <p>{subtitle}</p> : ""}
         {<p className={"startDescr"}>{description}</p>}
+        
         {reader ? (
           <div className={'d-flex w-100 justify-content-center align-items-center'}>
             {readerPhoto ? (

@@ -472,39 +472,50 @@ export const dramas = {
     new MultiLingual(
       [
         "Globe",
-        "Evaporation:",
-        "4 children act as the sun, shining heat & light toward",
-        "4 salt and 4 H2O children on the ocean.",
-        "The H2O children start to RISE UP as they bump into each other.",
-        "The Salts remain below in the ocean.",
-        "The H2Os rise up and float to join",
-        "8 atmosphere children surrounding the globe with linked arms.",
-        "2 H2O children stay with the atmosphere while 2 rise higher into the cold atmosphere.",
-        "Suddenly, the high H2Os are joined by 1 dust particle!",
-        "More dust particles join, making the H2O cloud heavier.",
-        "The cloud moves gently and feels heavier as more atmosphere children join.",
-        "Finally, enough dust particles join to make the cloud FALL DOWN!",
-        "Heavy water droplets fall from the sky.",
-        "All children fall to earth as water.",
+        "4 salt and 4 H2O children on the ocean.", 
+        "8 atmosphere children surrounding the globe with linked arms.",  
       ],
       [
         "Globo",
-        "Evolución:",
-        "4 niños representan el sol, brillando con calor y luz hacia",
         "4 niños de sal y 4 niños de H2O en el océano.",
-        "Los niños de H2O comienzan a SUBIR mientras chocan entre sí.",
-        "Las sales permanecen abajo en el océano.",
-        "Los H2Os suben y flotan para unirse",
         "8 niños de la atmósfera rodean el globo con los brazos enlazados.",
-        "2 niños de H2O se quedan con la atmósfera mientras 2 suben más alto hacia la atmósfera fría.",
-        "¡De repente, los H2O altos son acompañados por 1 partícula de polvo!",
-        "Más partículas de polvo se unen, haciendo más pesada la nube de H2O.",
-        "La nube se mueve suavemente y se siente más pesada mientras más niños de la atmósfera se unen.",
-        "¡Finalmente, suficientes partículas de polvo se unen para hacer que la nube CAIGA!",
-        "Gotas pesadas de agua caen del cielo.",
-        "Todos los niños caen a la tierra como agua.",
       ]
-    )
+    ),
+    new MultiLingual([
+      <div>
+  <p>Evaporation:</p>
+  <ul>
+    <li>The H2O children start to RISE UP as they bump into each other.</li>
+    <li>The Salts remain below in the ocean.</li>
+    <li>The H2Os rise up and float to join</li>
+    <li>8 atmosphere children surrounding the globe with linked arms.</li>
+    <li>2 H2O children stay with the atmosphere while 2 rise higher into the cold atmosphere.</li>
+    <li>Suddenly, the high H2Os are joined by 1 dust particle!</li>
+    <li>More dust particles join, making the H2O cloud heavier.</li>
+    <li>The cloud moves gently and feels heavier as more atmosphere children join.</li>
+    <li>Finally, enough dust particles join to make the cloud FALL DOWN!</li>
+    <li>Heavy water droplets fall from the sky.</li>
+    <li>All children fall to earth as water.</li>
+  </ul>
+</div>
+    ],
+  [<div>
+    <p>Evolución:</p>
+    <ul>
+      <li>Los niños de H2O comienzan a SUBIR mientras chocan entre sí.</li>
+      <li>Las sales permanecen abajo en el océano.</li>
+      <li>Los H2Os suben y flotan para unirse</li>
+      <li>8 niños de la atmósfera rodean el globo con los brazos enlazados.</li>
+      <li>2 niños de H2O se quedan con la atmósfera mientras 2 suben más alto hacia la atmósfera fría.</li>
+      <li>¡De repente, los H2O altos son acompañados por 1 partícula de polvo!</li>
+      <li>Más partículas de polvo se unen, haciendo más pesada la nube de H2O.</li>
+      <li>La nube se mueve suavemente y se siente más pesada mientras más niños de la atmósfera se unen.</li>
+      <li>¡Finalmente, suficientes partículas de polvo se unen para hacer que la nube CAIGA!</li>
+      <li>Gotas pesadas de agua caen del cielo.</li>
+      <li>Todos los niños caen a la tierra como agua.</li>
+    </ul>
+  </div>
+  ])
   ),
 
   // -----

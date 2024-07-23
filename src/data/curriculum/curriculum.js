@@ -37,7 +37,7 @@ const sessionArray = [
   // 4
   new Session([
     new Material(discussions.greenhouseDiscuss),
-    new Material(experiments.blanketExp)
+    new Material(experiments.blanketExp),
   ]),
 
   // 5
@@ -103,9 +103,9 @@ const sessionArray = [
   new Session([
     new Material(books.riversOfSunlight),
     new Material(discussions.riversOfSunlightDiscuss),
+    new Material(experiments.golfBallExp),
     new Material(dramas.waterCycleDrama),
     new Material(dramas.h2oDrama),
-    new Material(experiments.golfBallExp),
     new Material(experiments.waterCycleDramaExp),
     new Material(experiments.waterMathExp),
     new Material(experiments.waterReqExp),

@@ -23,8 +23,8 @@ export const experiments = {
   blanketExp: new Experiment(
     'blanketExp',
     new MultiLingual(
-      'Blanket Drama / Experiment',
-      'Drama de Cobija / Experimento',
+      'Blanket Drama-Experiment',
+      'Drama de Cobija-Experimento',
       'Expérience de couverture'
     ),
     new MultiLingual(

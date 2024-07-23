@@ -10,8 +10,8 @@ export const dramas = {
   photonDrama: new Drama(
     "photonDrama",
     new MultiLingual(
-      "Photon Drama / Experiment", // Update titles for dramas
-      "Drama de Fotones / Experimento",
+      "Photon Drama", // Update titles for dramas
+      "Drama de Fotones",
       "Expérience de Photon"
     ),
     new MultiLingual(
@@ -140,9 +140,9 @@ export const dramas = {
   photosynthesisDance: new Drama(
     "photosynthesisDance",
     new MultiLingual(
-      "Photosynthesis Dance / Activity",
-      "Danza de la Fotosíntesis / Actividad",
-      "Danse de la Photosynthèse / Activité"
+      "Photosynthesis Dance",
+      "Danza de la Fotosíntesis",
+      "Danse de la Photosynthèse"
     ),
     new MultiLingual(
       "Learn how plants create energy through a fun and interactive dance."
@@ -388,9 +388,9 @@ export const dramas = {
   h2oDrama: new Drama(
     "h2oDrama",
     new MultiLingual(
-      "H2O Drama (very short)",
-      "Drama H2O (muy corto)",
-      "Drame H2O (très court)"
+      "H2O Drama",
+      "Drama H2O",
+      "Drame H2O"
     ),
     new MultiLingual(
       "Explore the creation of water molecules through an interactive drama involving students."

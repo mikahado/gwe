@@ -995,8 +995,8 @@ export const awarenesses = {
 
   breathSuperpower1: new Awareness(
     "breathSuperpower1",
-    new MultiLingual("Breath Superpower (Part 1)"),
-    new MultiLingual("Breath Superpower (Part 1)"),
+    new MultiLingual("Breath Superpower 1"),
+    new MultiLingual("Breath Superpower 1"),
     "",
     "",
     new MultiLingual([
@@ -1089,8 +1089,8 @@ export const awarenesses = {
 
   breathSuperpower2: new Awareness(
     "breathSuperpower2",
-    new MultiLingual("Breath Superpower (Part 2)"),
-    new MultiLingual("Breath Superpower (Part 2)"),
+    new MultiLingual("Breath Superpower 2"),
+    new MultiLingual("Breath Superpower 2"),
     "",
     "",
     new MultiLingual([

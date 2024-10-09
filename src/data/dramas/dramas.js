@@ -410,13 +410,11 @@ export const dramas = {
           <li>
             Remind students about the conversation about atoms and molecules,
             which we had in reading the book, My Light. Give a brief explanation
-            of what Hydrogen and Oxygen molecules are.
+            of what Hydrogen and Oxygen atoms are.
           </li>
           <li>The question of the moment is: How is water created?</li>
           <li>
-            The answer is: Two Water molecules join up and bond with one
-            Hydrogen molecule and they remain bonded friends, potentially
-            forever! What would that look like?
+            The answer is: H20 -- two hydrogen atoms join up and bond with one Oxygen atom and they remain bonded friends, potentially forever! What would that look like? An H20 Hug!
           </li>
           <li>Version One:</li>
           <li>
